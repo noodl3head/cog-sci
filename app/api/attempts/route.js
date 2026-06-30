@@ -1,9 +1,10 @@
-import { sql } from '../../../lib/db';
+import { getSql } from '../../../lib/db';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request) {
   try {
+    const sql = getSql();
     const body = await request.json();
     const { bookId, chapterId, questionNumber, selectedLetter, correctLetter, isCorrect } = body;
 

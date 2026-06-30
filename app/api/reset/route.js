@@ -1,9 +1,10 @@
-import { sql } from '../../../lib/db';
+import { getSql } from '../../../lib/db';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST() {
   try {
+    const sql = getSql();
     await sql`TRUNCATE TABLE attempts`;
     return Response.json({ ok: true });
   } catch (err) {
