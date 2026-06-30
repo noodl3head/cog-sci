@@ -1,9 +1,10 @@
 # AP Psych Quizzer
 
 A chapter-based multiple-choice quiz app built from "500 AP Psychology Questions to
-Know by Test Day" and "Kaplan AP Psychology Prep Plus" (680 questions across 34
-chapters), with every answer you give recorded to a Postgres database so your stats
-persist across devices and sessions.
+Know by Test Day" and "Kaplan AP Psychology Prep Plus" (1,280 questions across 34
+chapters — including all 6 of Kaplan's full-length practice exams, tagged by topic
+and merged into their matching chapters) — with every answer you give recorded to a
+Postgres database so your stats persist across devices and sessions.
 
 ## What's included
 
