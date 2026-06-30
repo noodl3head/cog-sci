@@ -67,15 +67,18 @@ export async function GET() {
       LIMIT 25
     `;
 
-    return Response.json({
-      totalAttempts: overall.total_attempts,
-      totalCorrect: overall.total_correct,
-      byChapter,
-      byBook,
-      missedQuestions,
-      activeDays: activeDays.map((r) => r.day),
-      recent,
-    });
+    return Response.json(
+      {
+        totalAttempts: overall.total_attempts,
+        totalCorrect: overall.total_correct,
+        byChapter,
+        byBook,
+        missedQuestions,
+        activeDays: activeDays.map((r) => r.day),
+        recent,
+      },
+      { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+    );
   } catch (err) {
     console.error('Failed to load stats:', err);
     return Response.json(
