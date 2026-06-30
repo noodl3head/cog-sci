@@ -33,6 +33,7 @@
     font-family:var(--font-body);
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
+    letter-spacing:0.02em;
   }
 
   a{color:var(--text-link);}
@@ -63,7 +64,7 @@
     font-weight:700;
     font-size:clamp(20px,4vw,24px);
     margin:0;
-    letter-spacing:-0.01em;
+    letter-spacing:0.01em;
     color:var(--text-normal);
     display:flex;
     align-items:center;
@@ -269,6 +270,7 @@
     line-height:1.5;
     margin:0 0 26px;
     color:var(--text-normal);
+    letter-spacing:0.025em;
   }
 
   .options{
@@ -292,6 +294,7 @@
     font-family:var(--font-body);
     font-size:15px;
     line-height:1.45;
+    letter-spacing:0.02em;
     color:var(--text-normal);
     transition:border-color .12s ease, background .12s ease, transform .08s ease;
   }
@@ -369,6 +372,7 @@
   .feedback-text{
     font-size:14.5px;
     line-height:1.6;
+    letter-spacing:0.02em;
     margin:0;
     color:var(--text-normal);
   }
