@@ -35,6 +35,26 @@ export async function GET() {
       GROUP BY book_id
     `;
 
+    // Per-chapter: latest answer for each question (used for accurate progress bars).
+    const latestByChapter = await sql`
+      WITH latest AS (
+        SELECT DISTINCT ON (book_id, chapter_id, question_number)
+          book_id, chapter_id, question_number, is_correct
+        FROM attempts
+        ORDER BY book_id, chapter_id, question_number, created_at DESC
+      )
+      SELECT
+        book_id,
+        chapter_id,
+        COUNT(*)::int AS questions_seen,
+        COUNT(*) FILTER (WHERE is_correct)::int AS latest_correct,
+        (array_agg(question_number::int ORDER BY question_number)
+          FILTER (WHERE NOT is_correct))::int[] AS missed_numbers
+      FROM latest
+      GROUP BY book_id, chapter_id
+      ORDER BY book_id, chapter_id
+    `;
+
     // Per-question miss counts, useful for a "questions to review" list.
     const missedQuestions = await sql`
       SELECT
@@ -73,6 +93,7 @@ export async function GET() {
         totalCorrect: overall.total_correct,
         byChapter,
         byBook,
+        latestByChapter,
         missedQuestions,
         activeDays: activeDays.map((r) => r.day),
         recent,

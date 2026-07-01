@@ -1,20 +1,34 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getChapter } from '../../../../lib/quizHelpers';
 
 export default function QuizPage() {
   const params = useParams();
+  const searchParams = useSearchParams();
   const { bookId, chapterId } = params;
 
   const chapter = useMemo(() => getChapter(bookId, chapterId), [bookId, chapterId]);
 
+  // Derive initial question list (support ?missed=1,3,5 for missed-mode)
+  const initialQuestions = useMemo(() => {
+    if (!chapter) return [];
+    const missedParam = searchParams.get('missed');
+    if (!missedParam) return chapter.questions;
+    const nums = new Set(missedParam.split(',').map(Number));
+    return chapter.questions.filter((_, i) => nums.has(i + 1));
+  }, [chapter, searchParams]);
+
+  const isMissedMode = !!searchParams.get('missed');
+
+  const [questions, setQuestions] = useState(initialQuestions);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState(null);
   const [answered, setAnswered] = useState(false);
+  // Each missed entry stores the full question object + yourAnswer for retry
   const [missed, setMissed] = useState([]);
   const [finished, setFinished] = useState(false);
 
@@ -38,9 +52,27 @@ export default function QuizPage() {
     );
   }
 
-  const questions = chapter.questions;
+  if (questions.length === 0) {
+    return (
+      <div className="app">
+        <div className="masthead">
+          <h1>
+            AP <span className="accent">Psych</span> Quizzer
+          </h1>
+          <Link href="/" className="btn-link">
+            &larr; All Chapters
+          </Link>
+        </div>
+        <div className="screen active">
+          <div className="empty-state">No missed questions to practice — great job!</div>
+        </div>
+      </div>
+    );
+  }
+
   const q = questions[index];
-  const questionNumber = index + 1; // matches lib/quizHelpers indexing convention
+  // question_number is the 1-based position in the original chapter questions array
+  const questionNumber = chapter.questions.indexOf(q) + 1;
 
   function selectAnswer(letter) {
     if (answered) return;
@@ -50,17 +82,7 @@ export default function QuizPage() {
     if (isCorrect) {
       setScore((s) => s + 1);
     } else {
-      setMissed((m) => [
-        ...m,
-        {
-          question: q.question,
-          yourAnswer: letter,
-          yourText: q.options[letter],
-          correctAnswer: q.answer,
-          correctText: q.options[q.answer],
-          explanation: q.explanation,
-        },
-      ]);
+      setMissed((m) => [...m, { ...q, yourAnswer: letter }]);
     }
 
     fetch('/api/attempts', {
@@ -74,9 +96,7 @@ export default function QuizPage() {
         correctLetter: q.answer,
         isCorrect,
       }),
-    }).catch(() => {
-      // Non-fatal: quiz still works locally even if the write fails (e.g. DB not configured yet)
-    });
+    }).catch(() => {});
   }
 
   function next() {
@@ -90,6 +110,18 @@ export default function QuizPage() {
   }
 
   function retry() {
+    setQuestions(initialQuestions);
+    setIndex(0);
+    setScore(0);
+    setSelected(null);
+    setAnswered(false);
+    setMissed([]);
+    setFinished(false);
+  }
+
+  function retryMissed() {
+    const missedQs = missed.map(({ yourAnswer, ...q }) => q);
+    setQuestions(missedQs);
     setIndex(0);
     setScore(0);
     setSelected(null);
@@ -115,7 +147,10 @@ export default function QuizPage() {
         </div>
         <div className="screen active">
           <div className="summary-card">
-            <div className="chapter-name">{chapter.title}</div>
+            <div className="chapter-name">
+              {chapter.title}
+              {isMissedMode && <span style={{ color: 'var(--yellow)', marginLeft: 8 }}>· Missed Review</span>}
+            </div>
             <div className="score-ring">
               <svg width="150" height="150" viewBox="0 0 150 150">
                 <circle className="ring-bg" cx="75" cy="75" r="65" />
@@ -134,13 +169,18 @@ export default function QuizPage() {
             </p>
             <div className="summary-actions">
               <button className="btn" onClick={retry}>
-                Retry Chapter
+                {isMissedMode ? 'Retry Missed' : 'Retry Chapter'}
               </button>
+              {missed.length > 0 && (
+                <button className="btn btn-secondary" onClick={retryMissed}>
+                  ↺ Retry Wrong ({missed.length})
+                </button>
+              )}
               <Link href="/" className="btn btn-secondary">
-                Choose Another Chapter
+                All Chapters
               </Link>
               <Link href="/stats" className="btn btn-secondary">
-                View My Stats
+                My Stats
               </Link>
             </div>
 
@@ -151,8 +191,8 @@ export default function QuizPage() {
                   <div className="missed-item" key={i}>
                     <div>{m.question}</div>
                     <div style={{ marginTop: 6 }}>
-                      You chose <b>{m.yourAnswer}</b> ({m.yourText}) &middot; Correct:{' '}
-                      <b style={{ color: 'var(--green)' }}>{m.correctAnswer}</b> ({m.correctText})
+                      You chose <b>{m.yourAnswer}</b> ({m.options[m.yourAnswer]}) &middot; Correct:{' '}
+                      <b style={{ color: 'var(--green)' }}>{m.answer}</b> ({m.options[m.answer]})
                     </div>
                   </div>
                 ))}
@@ -181,7 +221,9 @@ export default function QuizPage() {
         <div className="quiz-bar">
           <div />
           <div className="quiz-meta">
-            <b>{chapter.title}</b> &middot; Score {score}/{index}
+            <b>{chapter.title}</b>
+            {isMissedMode && <span style={{ color: 'var(--yellow)' }}> · Missed Review</span>}
+            {' '}&middot; Score {score}/{index}
           </div>
         </div>
         <div className="progress-rail">
@@ -190,7 +232,8 @@ export default function QuizPage() {
 
         <div className="answer-sheet">
           <p className="q-number">
-            Question {questionNumber} of {questions.length}
+            Question {index + 1} of {questions.length}
+            {isMissedMode && ' (missed review)'}
           </p>
           <p className="q-text">{q.question}</p>
 
