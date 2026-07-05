@@ -95,6 +95,7 @@ export default function StatsPage() {
             <h2 className="section-heading">Questions to Review</h2>
             <MissedQuestions data={data} questionIndex={questionIndex} />
 
+
             <h2 className="section-heading">Recent Activity</h2>
             <ActivityFeed data={data} questionIndex={questionIndex} />
 
@@ -203,11 +204,29 @@ function ChapterStrength({ data }) {
 
 function MissedQuestions({ data, questionIndex }) {
   const rows = data.missedQuestions || [];
-  if (rows.length === 0) {
+
+  const totalMissed = (data.latestByChapter || []).reduce(
+    (sum, row) => sum + (row.missed_numbers?.length || 0),
+    0
+  );
+
+  if (totalMissed === 0 && rows.length === 0) {
     return <div className="empty-state">No missed questions yet — nice work, or you haven't started.</div>;
   }
+
   return (
     <div>
+      {totalMissed > 0 && (
+        <div className="practice-missed-banner">
+          <div className="pmb-text">
+            <span className="pmb-count">{totalMissed}</span>
+            {' '}question{totalMissed !== 1 ? 's' : ''} still need review across all chapters.
+          </div>
+          <Link href="/practice/missed" className="btn">
+            Practice All Missed
+          </Link>
+        </div>
+      )}
       {rows.map((row, i) => {
         const key = `${row.book_id}::${row.chapter_id}::${row.question_number}`;
         const q = questionIndex[key];

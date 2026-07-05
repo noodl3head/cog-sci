@@ -277,6 +277,21 @@
     position:relative;
   }
 
+  .q-chapter-tag{
+    font-family:var(--font-mono);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin:0 0 10px;
+    padding:3px 8px;
+    background:var(--bg-tertiary);
+    border:1px solid var(--divider);
+    border-radius:5px;
+    display:inline-block;
+  }
+
   .q-number{
     font-family:var(--font-mono);
     font-size:14px;
@@ -504,6 +519,44 @@
   }
   .missed-item b{ color:var(--red); }
 
+  /* ---------- Resume card ---------- */
+  .resume-card{
+    background:var(--bg-secondary);
+    border:1px solid var(--divider);
+    border-radius:10px;
+    padding:44px clamp(20px,6vw,56px);
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.24);
+    max-width:480px;
+    margin:0 auto;
+  }
+  .resume-icon{
+    font-size:40px;
+    margin-bottom:12px;
+    opacity:0.7;
+  }
+  .resume-title{
+    font-family:var(--font-display);
+    font-size:20px;
+    font-weight:700;
+    color:var(--text-normal);
+    margin:0 0 12px;
+    letter-spacing:0.01em;
+  }
+  .resume-sub{
+    font-size:15px;
+    line-height:1.6;
+    color:var(--text-muted);
+    margin:0 0 28px;
+    letter-spacing:0.02em;
+  }
+  .resume-actions{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
   footer.note{
     text-align:center;
     color:var(--text-faint);
@@ -644,6 +697,30 @@
 .streak-flame{ font-size:22px; }
 .streak-text{ font-size:14px; color:var(--text-normal); }
 .streak-text b{ color:var(--yellow); }
+
+.practice-missed-banner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  background:var(--bg-secondary);
+  border:1px solid var(--brand);
+  border-radius:8px;
+  padding:16px 20px;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.pmb-text{
+  font-size:15px;
+  color:var(--text-normal);
+  letter-spacing:0.02em;
+}
+.pmb-count{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:18px;
+  color:var(--brand-light);
+}
 
 .empty-state{
   color:var(--text-muted);

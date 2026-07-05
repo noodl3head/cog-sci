@@ -1,9 +1,17 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getChapter } from '../../../../lib/quizHelpers';
+
+function saveKey(bookId, chapterId) {
+  return `quiz_progress_${bookId}_${chapterId}`;
+}
+
+function clearSave(bookId, chapterId) {
+  try { localStorage.removeItem(saveKey(bookId, chapterId)); } catch {}
+}
 
 export default function QuizPage() {
   const params = useParams();
@@ -11,8 +19,8 @@ export default function QuizPage() {
   const { bookId, chapterId } = params;
 
   const chapter = useMemo(() => getChapter(bookId, chapterId), [bookId, chapterId]);
+  const isMissedMode = !!searchParams.get('missed');
 
-  // Derive initial question list (support ?missed=1,3,5 for missed-mode)
   const initialQuestions = useMemo(() => {
     if (!chapter) return [];
     const missedParam = searchParams.get('missed');
@@ -21,31 +29,46 @@ export default function QuizPage() {
     return chapter.questions.filter((_, i) => nums.has(i + 1));
   }, [chapter, searchParams]);
 
-  const isMissedMode = !!searchParams.get('missed');
-
   const [questions, setQuestions] = useState(initialQuestions);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState(null);
   const [answered, setAnswered] = useState(false);
-  // Each missed entry stores the full question object + yourAnswer for retry
   const [missed, setMissed] = useState([]);
   const [finished, setFinished] = useState(false);
+
+  // undefined = still checking, null = nothing saved, object = saved progress found
+  const [savedProgress, setSavedProgress] = useState(undefined);
+
+  useEffect(() => {
+    if (isMissedMode || !chapter) {
+      setSavedProgress(null);
+      return;
+    }
+    try {
+      const raw = localStorage.getItem(saveKey(bookId, chapterId));
+      if (!raw) { setSavedProgress(null); return; }
+      const data = JSON.parse(raw);
+      if (data && data.index > 0 && data.total === chapter.questions.length) {
+        setSavedProgress(data);
+      } else {
+        setSavedProgress(null);
+      }
+    } catch {
+      setSavedProgress(null);
+    }
+  }, []);
 
   if (!chapter) {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>
-            AP <span className="accent">Psych</span> Quizzer
-          </h1>
+          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
         </div>
         <div className="screen active">
           <div className="empty-state">Couldn&apos;t find that chapter.</div>
           <div style={{ marginTop: 16 }}>
-            <Link href="/" className="btn-link">
-              &larr; Back home
-            </Link>
+            <Link href="/" className="btn-link">&larr; Back home</Link>
           </div>
         </div>
       </div>
@@ -56,12 +79,8 @@ export default function QuizPage() {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>
-            AP <span className="accent">Psych</span> Quizzer
-          </h1>
-          <Link href="/" className="btn-link">
-            &larr; All Chapters
-          </Link>
+          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <Link href="/" className="btn-link">&larr; All Chapters</Link>
         </div>
         <div className="screen active">
           <div className="empty-state">No missed questions to practice — great job!</div>
@@ -70,8 +89,54 @@ export default function QuizPage() {
     );
   }
 
+  // Show resume prompt while we're still checking localStorage (savedProgress === undefined)
+  // or when we found saved progress (savedProgress is an object)
+  if (savedProgress === undefined) {
+    // Still hydrating — render nothing to avoid flash
+    return null;
+  }
+
+  if (savedProgress) {
+    function doResume() {
+      setIndex(savedProgress.index);
+      setScore(savedProgress.score);
+      setMissed(savedProgress.missed || []);
+      setSavedProgress(null);
+    }
+    function doFresh() {
+      clearSave(bookId, chapterId);
+      setSavedProgress(null);
+    }
+
+    return (
+      <div className="app">
+        <div className="masthead">
+          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <Link href="/" className="btn-link">&larr; All Chapters</Link>
+        </div>
+        <div className="screen active">
+          <div className="resume-card">
+            <div className="resume-icon">⏸</div>
+            <h2 className="resume-title">Resume {chapter.title}?</h2>
+            <p className="resume-sub">
+              You were on question <b>{savedProgress.index + 1}</b> of <b>{savedProgress.total}</b>
+              {' '}with a score of <b>{savedProgress.score}/{savedProgress.index}</b>.
+            </p>
+            <div className="resume-actions">
+              <button className="btn" onClick={doResume}>
+                Resume from Q{savedProgress.index + 1}
+              </button>
+              <button className="btn btn-secondary" onClick={doFresh}>
+                Start Fresh
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const q = questions[index];
-  // question_number is the 1-based position in the original chapter questions array
   const questionNumber = chapter.questions.indexOf(q) + 1;
 
   function selectAnswer(letter) {
@@ -79,10 +144,24 @@ export default function QuizPage() {
     setSelected(letter);
     setAnswered(true);
     const isCorrect = letter === q.answer;
-    if (isCorrect) {
-      setScore((s) => s + 1);
-    } else {
-      setMissed((m) => [...m, { ...q, yourAnswer: letter }]);
+
+    const newScore = isCorrect ? score + 1 : score;
+    const newMissed = isCorrect ? missed : [...missed, { ...q, yourAnswer: letter }];
+
+    if (isCorrect) setScore(newScore);
+    else setMissed(newMissed);
+
+    // Auto-save progress (not in missed mode — that's transient)
+    if (!isMissedMode) {
+      try {
+        localStorage.setItem(saveKey(bookId, chapterId), JSON.stringify({
+          index: index + 1,  // next question to answer on resume
+          score: newScore,
+          missed: newMissed,
+          total: questions.length,
+          savedAt: Date.now(),
+        }));
+      } catch {}
     }
 
     fetch('/api/attempts', {
@@ -105,11 +184,13 @@ export default function QuizPage() {
       setSelected(null);
       setAnswered(false);
     } else {
+      clearSave(bookId, chapterId);
       setFinished(true);
     }
   }
 
   function retry() {
+    clearSave(bookId, chapterId);
     setQuestions(initialQuestions);
     setIndex(0);
     setScore(0);
@@ -120,6 +201,7 @@ export default function QuizPage() {
   }
 
   function retryMissed() {
+    clearSave(bookId, chapterId);
     const missedQs = missed.map(({ yourAnswer, ...q }) => q);
     setQuestions(missedQs);
     setIndex(0);
@@ -138,12 +220,8 @@ export default function QuizPage() {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>
-            AP <span className="accent">Psych</span> Quizzer
-          </h1>
-          <Link href="/" className="btn-link">
-            &larr; All Chapters
-          </Link>
+          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <Link href="/" className="btn-link">&larr; All Chapters</Link>
         </div>
         <div className="screen active">
           <div className="summary-card">
@@ -176,12 +254,8 @@ export default function QuizPage() {
                   ↺ Retry Wrong ({missed.length})
                 </button>
               )}
-              <Link href="/" className="btn btn-secondary">
-                All Chapters
-              </Link>
-              <Link href="/stats" className="btn btn-secondary">
-                My Stats
-              </Link>
+              <Link href="/" className="btn btn-secondary">All Chapters</Link>
+              <Link href="/stats" className="btn btn-secondary">My Stats</Link>
             </div>
 
             {missed.length > 0 && (
@@ -209,12 +283,8 @@ export default function QuizPage() {
   return (
     <div className="app">
       <div className="masthead">
-        <h1>
-          AP <span className="accent">Psych</span> Quizzer
-        </h1>
-        <Link href="/" className="btn-link">
-          &larr; All Chapters
-        </Link>
+        <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+        <Link href="/" className="btn-link">&larr; All Chapters</Link>
       </div>
 
       <div className="screen active">
@@ -233,7 +303,6 @@ export default function QuizPage() {
         <div className="answer-sheet">
           <p className="q-number">
             Question {index + 1} of {questions.length}
-            {isMissedMode && ' (missed review)'}
           </p>
           <p className="q-text">{q.question}</p>
 
