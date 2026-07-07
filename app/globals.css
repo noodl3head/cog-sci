@@ -698,6 +698,128 @@
 .streak-text{ font-size:14px; color:var(--text-normal); }
 .streak-text b{ color:var(--yellow); }
 
+/* ---------- Chapter progress tracker ---------- */
+.cp-card{
+  background:var(--bg-secondary);
+  border:1px solid var(--divider);
+  border-radius:10px;
+  padding:24px 28px;
+  margin-bottom:8px;
+}
+.cp-top{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+.cp-score{
+  display:flex;
+  align-items:baseline;
+  gap:4px;
+  flex-shrink:0;
+}
+.cp-score-num{
+  font-family:var(--font-display);
+  font-size:42px;
+  font-weight:700;
+  color:var(--brand-light);
+  line-height:1;
+}
+.cp-score-denom{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:600;
+  color:var(--text-muted);
+}
+.cp-score-label{
+  font-size:13px;
+  color:var(--text-muted);
+  margin-left:6px;
+  letter-spacing:0.03em;
+  align-self:center;
+}
+.cp-bar-col{
+  flex:1 1 200px;
+  min-width:0;
+}
+.cp-bar-track{
+  height:10px;
+  background:var(--bg-tertiary);
+  border-radius:5px;
+  overflow:hidden;
+  display:flex;
+  margin-bottom:10px;
+}
+.cp-bar-seg{
+  height:100%;
+  transition:width .4s ease;
+}
+.cp-seg-finished{ background:var(--green); }
+.cp-seg-inprogress{ background:var(--yellow); }
+.cp-legend{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.cp-leg{
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.03em;
+}
+.cp-leg-finished{ color:var(--green); }
+.cp-leg-inprogress{ color:var(--yellow); }
+.cp-leg-notstarted{ color:var(--text-faint); }
+
+.cp-book-row{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid var(--divider);
+}
+.cp-book-name{
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--text-faint);
+  margin-bottom:8px;
+}
+.cp-dots{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.cp-dot{
+  width:20px;
+  height:20px;
+  border-radius:5px;
+  cursor:default;
+  transition:transform .1s ease;
+  flex-shrink:0;
+}
+.cp-dot:hover{ transform:scale(1.2); }
+.cp-dot-finished{ background:var(--green); }
+.cp-dot-inprogress{ background:var(--yellow); }
+.cp-dot-notstarted{ background:var(--bg-modifier-hover); border:1px solid var(--divider); }
+
+.csr-finished-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  margin-left:8px;
+  vertical-align:middle;
+  flex-shrink:0;
+}
+
 .practice-missed-banner{
   display:flex;
   align-items:center;

@@ -45,7 +45,7 @@ export default function HomePage() {
 
       <div className="screen active">
         {QUIZ_DATA.books.map((book) => {
-          const totalQ = book.chapters.reduce((a, c) => a + c.questions.length, 0);
+          const totalQ = book.chapters.reduce((a, c) => a + c.questions.filter((q) => !q.imageRequired).length, 0);
           return (
             <div className="book-section" key={book.id}>
               <h2 className="book-title">
@@ -74,7 +74,7 @@ export default function HomePage() {
                         data-num={String(ch.number).padStart(2, '0')}
                       >
                         <p className="ch-title">{ch.title}</p>
-                        <p className="ch-meta">{ch.questions.length} Questions</p>
+                        <p className="ch-meta">{ch.questions.filter((q) => !q.imageRequired).length} Questions</p>
                         {!loading && pct !== null && (
                           <div className="ch-progress">
                             <div

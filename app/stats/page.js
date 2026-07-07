@@ -2,18 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { QUIZ_DATA } from '../../lib/quizData';
 import { buildQuestionIndex, getChapter } from '../../lib/quizHelpers';
 
 function computeStreak(activeDays) {
-  // activeDays: array of 'YYYY-MM-DD' strings, descending
   if (!activeDays || activeDays.length === 0) return 0;
   const days = new Set(activeDays.map((d) => new Date(d).toDateString()));
   let streak = 0;
   let cursor = new Date();
-  // If they haven't done anything today, the streak still counts from yesterday backward.
-  if (!days.has(cursor.toDateString())) {
-    cursor.setDate(cursor.getDate() - 1);
-  }
+  if (!days.has(cursor.toDateString())) cursor.setDate(cursor.getDate() - 1);
   while (days.has(cursor.toDateString())) {
     streak++;
     cursor.setDate(cursor.getDate() - 1);
@@ -25,6 +22,32 @@ function barColor(pct) {
   if (pct >= 80) return 'var(--green)';
   if (pct >= 50) return 'var(--yellow)';
   return 'var(--red)';
+}
+
+// Returns { finished, inProgress, notStarted, total, chapters[] }
+function computeChapterProgress(latestByChapter) {
+  const seenMap = {};
+  for (const row of latestByChapter || []) {
+    seenMap[`${row.book_id}::${row.chapter_id}`] = row.questions_seen;
+  }
+
+  let finished = 0, inProgress = 0, notStarted = 0;
+  const chapters = [];
+
+  for (const book of QUIZ_DATA.books) {
+    for (const ch of book.chapters) {
+      const total = ch.questions.filter((q) => !q.imageRequired).length;
+      const seen = seenMap[`${book.id}::${ch.id}`] || 0;
+      const coverage = total > 0 ? seen / total : 0;
+      const status = coverage >= 0.6 ? 'finished' : seen > 0 ? 'inprogress' : 'notstarted';
+      if (status === 'finished') finished++;
+      else if (status === 'inprogress') inProgress++;
+      else notStarted++;
+      chapters.push({ title: ch.title, bookName: book.name, status, seen, total, coverage });
+    }
+  }
+
+  return { finished, inProgress, notStarted, total: chapters.length, chapters };
 }
 
 export default function StatsPage() {
@@ -47,9 +70,7 @@ export default function StatsPage() {
       .finally(() => setLoading(false));
   }
 
-  useEffect(() => {
-    load();
-  }, []);
+  useEffect(() => { load(); }, []);
 
   async function handleReset() {
     if (!confirm('This permanently deletes all recorded attempts. Continue?')) return;
@@ -62,12 +83,8 @@ export default function StatsPage() {
   return (
     <div className="app">
       <div className="masthead">
-        <h1>
-          AP <span className="accent">Psych</span> Quizzer
-        </h1>
-        <Link href="/" className="btn-link">
-          &larr; All Chapters
-        </Link>
+        <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+        <Link href="/" className="btn-link">&larr; All Chapters</Link>
       </div>
 
       <div className="screen active">
@@ -86,15 +103,16 @@ export default function StatsPage() {
         {data && !loading && (
           <>
             <StreakBanner activeDays={data.activeDays} />
-
             <OverallCards data={data} />
+
+            <h2 className="section-heading">Chapter Progress</h2>
+            <ChapterProgressTracker data={data} />
 
             <h2 className="section-heading">Chapter Strength</h2>
             <ChapterStrength data={data} />
 
             <h2 className="section-heading">Questions to Review</h2>
             <MissedQuestions data={data} questionIndex={questionIndex} />
-
 
             <h2 className="section-heading">Recent Activity</h2>
             <ActivityFeed data={data} questionIndex={questionIndex} />
@@ -124,9 +142,7 @@ function StreakBanner({ activeDays }) {
   return (
     <div className="streak-banner">
       <span className="streak-flame">🔥</span>
-      <span className="streak-text">
-        <b>{streak}</b> day streak — keep it going!
-      </span>
+      <span className="streak-text"><b>{streak}</b> day streak — keep it going!</span>
     </div>
   );
 }
@@ -136,7 +152,7 @@ function OverallCards({ data }) {
   const correct = data.totalCorrect || 0;
   const incorrect = total - correct;
   const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
-  const chaptersStarted = data.byChapter ? data.byChapter.length : 0;
+  const { finished, total: totalChapters } = computeChapterProgress(data.latestByChapter);
 
   return (
     <div className="stats-grid">
@@ -156,19 +172,77 @@ function OverallCards({ data }) {
         <p className="stat-value">{accuracy}%</p>
         <p className="stat-label">Accuracy</p>
       </div>
-      <div className="stat-card">
-        <p className="stat-value">{chaptersStarted}</p>
-        <p className="stat-label">Chapters Started</p>
+      <div className="stat-card accent">
+        <p className="stat-value">{finished}<span style={{ fontSize: 16, fontWeight: 500, color: 'var(--text-muted)' }}>/{totalChapters}</span></p>
+        <p className="stat-label">Chapters Finished</p>
       </div>
     </div>
   );
 }
 
+function ChapterProgressTracker({ data }) {
+  const { finished, inProgress, notStarted, total, chapters } = computeChapterProgress(data.latestByChapter);
+  const finishedPct = (finished / total) * 100;
+  const inProgressPct = (inProgress / total) * 100;
+
+  // Group chapters by book for the dot grid
+  const byBook = {};
+  for (const ch of chapters) {
+    if (!byBook[ch.bookName]) byBook[ch.bookName] = [];
+    byBook[ch.bookName].push(ch);
+  }
+
+  return (
+    <div className="cp-card">
+      {/* Top row: big numbers + bar */}
+      <div className="cp-top">
+        <div className="cp-score">
+          <span className="cp-score-num">{finished}</span>
+          <span className="cp-score-denom">/ {total}</span>
+          <span className="cp-score-label">chapters finished</span>
+        </div>
+        <div className="cp-bar-col">
+          <div className="cp-bar-track">
+            <div className="cp-bar-seg cp-seg-finished" style={{ width: finishedPct + '%' }} />
+            <div className="cp-bar-seg cp-seg-inprogress" style={{ width: inProgressPct + '%' }} />
+          </div>
+          <div className="cp-legend">
+            <span className="cp-leg cp-leg-finished">&#9632; {finished} finished</span>
+            <span className="cp-leg cp-leg-inprogress">&#9632; {inProgress} in progress</span>
+            <span className="cp-leg cp-leg-notstarted">&#9632; {notStarted} not started</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Chapter dot grid per book */}
+      {Object.entries(byBook).map(([bookName, chs]) => (
+        <div key={bookName} className="cp-book-row">
+          <div className="cp-book-name">{bookName}</div>
+          <div className="cp-dots">
+            {chs.map((ch, i) => (
+              <div
+                key={i}
+                className={`cp-dot cp-dot-${ch.status}`}
+                title={`${ch.title} — ${ch.seen}/${ch.total} attempted (${Math.round(ch.coverage * 100)}%)`}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ChapterStrength({ data }) {
+  const seenMap = {};
+  for (const row of data.latestByChapter || []) {
+    seenMap[`${row.book_id}::${row.chapter_id}`] = row.questions_seen;
+  }
+
   const rows = (data.byChapter || []).slice().sort((a, b) => {
     const pctA = a.attempts ? a.correct / a.attempts : 0;
     const pctB = b.attempts ? b.correct / b.attempts : 0;
-    return pctA - pctB; // weakest first
+    return pctA - pctB;
   });
 
   if (rows.length === 0) {
@@ -181,20 +255,25 @@ function ChapterStrength({ data }) {
         const pct = row.attempts > 0 ? Math.round((row.correct / row.attempts) * 100) : 0;
         const chapter = getChapter(row.book_id, row.chapter_id);
         const title = chapter ? chapter.title : `${row.book_id} / ${row.chapter_id}`;
+        const totalQ = chapter ? chapter.questions.filter((q) => !q.imageRequired).length : null;
+        const seen = seenMap[`${row.book_id}::${row.chapter_id}`] || row.distinct_questions;
+        const isFinished = totalQ && seen / totalQ >= 0.6;
+
         return (
           <div className="chapter-strength-row" key={row.book_id + row.chapter_id}>
             <div style={{ flex: '1 1 auto', minWidth: 0 }}>
-              <div className="csr-title">{title}</div>
+              <div className="csr-title">
+                {title}
+                {isFinished && <span className="csr-finished-badge">✓</span>}
+              </div>
               <div className="csr-sub">
-                {row.correct}/{row.attempts} correct &middot; {row.distinct_questions} questions seen
+                {row.correct}/{row.attempts} correct &middot; {seen}{totalQ ? `/${totalQ}` : ''} questions seen
               </div>
             </div>
             <div className="csr-bar-track">
               <div className="csr-bar-fill" style={{ width: pct + '%', background: barColor(pct) }} />
             </div>
-            <div className="csr-pct" style={{ color: barColor(pct) }}>
-              {pct}%
-            </div>
+            <div className="csr-pct" style={{ color: barColor(pct) }}>{pct}%</div>
           </div>
         );
       })}
@@ -204,7 +283,6 @@ function ChapterStrength({ data }) {
 
 function MissedQuestions({ data, questionIndex }) {
   const rows = data.missedQuestions || [];
-
   const totalMissed = (data.latestByChapter || []).reduce(
     (sum, row) => sum + (row.missed_numbers?.length || 0),
     0
@@ -222,9 +300,7 @@ function MissedQuestions({ data, questionIndex }) {
             <span className="pmb-count">{totalMissed}</span>
             {' '}question{totalMissed !== 1 ? 's' : ''} still need review across all chapters.
           </div>
-          <Link href="/practice/missed" className="btn">
-            Practice All Missed
-          </Link>
+          <Link href="/practice/missed" className="btn">Practice All Missed</Link>
         </div>
       )}
       {rows.map((row, i) => {
@@ -245,9 +321,7 @@ function MissedQuestions({ data, questionIndex }) {
 
 function ActivityFeed({ data, questionIndex }) {
   const rows = data.recent || [];
-  if (rows.length === 0) {
-    return <div className="empty-state">No activity yet.</div>;
-  }
+  if (rows.length === 0) return <div className="empty-state">No activity yet.</div>;
   return (
     <div>
       {rows.map((row, i) => {

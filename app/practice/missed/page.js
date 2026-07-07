@@ -37,7 +37,7 @@ export default function PracticeMissedPage() {
           for (const num of row.missed_numbers || []) {
             const key = `${row.book_id}::${row.chapter_id}::${num}`;
             const q = questionIndex[key];
-            if (q) qs.push(q);
+            if (q && !q.imageRequired) qs.push(q);
           }
         }
         setQuestions(shuffle(qs));

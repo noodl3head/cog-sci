@@ -24,9 +24,10 @@ export default function QuizPage() {
   const initialQuestions = useMemo(() => {
     if (!chapter) return [];
     const missedParam = searchParams.get('missed');
-    if (!missedParam) return chapter.questions;
+    const base = chapter.questions.filter((q) => !q.imageRequired);
+    if (!missedParam) return base;
     const nums = new Set(missedParam.split(',').map(Number));
-    return chapter.questions.filter((_, i) => nums.has(i + 1));
+    return base.filter((_, i) => nums.has(i + 1));
   }, [chapter, searchParams]);
 
   const [questions, setQuestions] = useState(initialQuestions);
