@@ -37,6 +37,9 @@ export default function HomePage() {
           <span className="tag">
             {totalQuestionCount()} Questions &middot; {totalChapterCount()} Chapters
           </span>
+          <Link href="/study" className="btn-link">
+            Study
+          </Link>
           <Link href="/stats" className="btn-link">
             My Stats
           </Link>

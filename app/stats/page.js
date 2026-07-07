@@ -84,7 +84,10 @@ export default function StatsPage() {
     <div className="app">
       <div className="masthead">
         <h1>AP <span className="accent">Psych</span> Quizzer</h1>
-        <Link href="/" className="btn-link">&larr; All Chapters</Link>
+        <div className="nav-links">
+          <Link href="/" className="btn-link">&larr; Chapters</Link>
+          <Link href="/study" className="btn-link">Study</Link>
+        </div>
       </div>
 
       <div className="screen active">
