@@ -69,6 +69,7 @@ export default function MockQuizPage() {
   const [flagged, setFlagged] = useState(new Set());
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [savedToDb, setSavedToDb] = useState(false);
+  const [saveError, setSaveError] = useState(null);
   const [reviewIndex, setReviewIndex] = useState(0);
   const timerRef = useRef(null);
 
@@ -129,8 +130,8 @@ export default function MockQuizPage() {
   const unanswered = totalQ - answeredCount;
 
   function submitMock() {
-    setPhase('results');
     const result = calcResult(quiz, answers);
+    setPhase('results');
     if (!savedToDb) {
       setSavedToDb(true);
       fetch('/api/mock-results', {
@@ -140,12 +141,15 @@ export default function MockQuizPage() {
           mockId: id,
           positiveMarks: +result.positive.toFixed(2),
           negativeMarks: +result.negative.toFixed(2),
-          totalMarks: +(result.positive - result.negative).toFixed(2),
+          totalMarks: +result.total.toFixed(2),
           timeSeconds: timeElapsed,
           s1Correct: result.s1Correct, s1Wrong: result.s1Wrong, s1Skipped: result.s1Skipped,
           s2Correct: result.s2Correct, s2Wrong: result.s2Wrong, s2Skipped: result.s2Skipped,
         }),
-      }).catch(() => {});
+      })
+        .then((r) => r.json())
+        .then((d) => { if (d.error) setSaveError(d.error); })
+        .catch((e) => setSaveError(e.message || 'Network error — result not saved.'));
     }
   }
 
@@ -338,6 +342,12 @@ export default function MockQuizPage() {
 
             {/* Normal distribution comparison */}
             <NormalDistChart score={result.total} />
+
+            {saveError && (
+              <div className="mock-save-error">
+                ⚠ Result not saved: {saveError}
+              </div>
+            )}
 
             <div className="summary-actions">
               <button className="btn" onClick={() => { setReviewIndex(0); setPhase('review'); }}>
