@@ -117,14 +117,14 @@ export default function StatsPage() {
             <h2 className="section-heading">Chapter Progress</h2>
             <ChapterProgressTracker data={data} />
 
+            <h2 className="section-heading">Mock Performance</h2>
+            <MockStats mockData={mockData} />
+
             <h2 className="section-heading">Chapter Strength</h2>
             <ChapterStrength data={data} />
 
             <h2 className="section-heading">Questions to Review</h2>
             <MissedQuestions data={data} questionIndex={questionIndex} />
-
-            <h2 className="section-heading">Mock Performance</h2>
-            <MockStats mockData={mockData} />
 
             <h2 className="section-heading">Recent Activity</h2>
             <ActivityFeed data={data} questionIndex={questionIndex} />
