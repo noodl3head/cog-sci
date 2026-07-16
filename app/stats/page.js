@@ -55,6 +55,7 @@ export default function StatsPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [resetting, setResetting] = useState(false);
+  const [mockData, setMockData] = useState(null);
 
   const questionIndex = buildQuestionIndex();
 
@@ -68,6 +69,10 @@ export default function StatsPage() {
       })
       .catch(() => setError('Could not reach the stats API.'))
       .finally(() => setLoading(false));
+    fetch('/api/mock-results')
+      .then((r) => r.json())
+      .then((d) => { if (!d.error) setMockData(d); })
+      .catch(() => {});
   }
 
   useEffect(() => { load(); }, []);
@@ -87,6 +92,7 @@ export default function StatsPage() {
         <div className="nav-links">
           <Link href="/" className="btn-link">&larr; Chapters</Link>
           <Link href="/study" className="btn-link">Study</Link>
+          <Link href="/mock" className="btn-link">Mock</Link>
         </div>
       </div>
 
@@ -116,6 +122,9 @@ export default function StatsPage() {
 
             <h2 className="section-heading">Questions to Review</h2>
             <MissedQuestions data={data} questionIndex={questionIndex} />
+
+            <h2 className="section-heading">Mock Performance</h2>
+            <MockStats mockData={mockData} />
 
             <h2 className="section-heading">Recent Activity</h2>
             <ActivityFeed data={data} questionIndex={questionIndex} />
@@ -318,6 +327,78 @@ function MissedQuestions({ data, questionIndex }) {
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function MockStats({ mockData }) {
+  if (!mockData) return <div className="empty-state">Loading mock stats…</div>;
+  const overall = mockData.overall || {};
+  const recent = mockData.recent || [];
+
+  if (!overall.total_attempts) {
+    return (
+      <div className="empty-state">
+        No mock quizzes attempted yet.{' '}
+        <a href="/mock" style={{ color: 'var(--text-link)' }}>Take a mock →</a>
+      </div>
+    );
+  }
+
+  function fmtTime(s) {
+    if (!s) return '—';
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+  }
+
+  return (
+    <div>
+      <div className="stats-grid" style={{ marginBottom: 20 }}>
+        <div className="stat-card accent">
+          <p className="stat-value">{overall.total_attempts}</p>
+          <p className="stat-label">Mocks Taken</p>
+        </div>
+        <div className="stat-card green">
+          <p className="stat-value">+{Number(overall.avg_positive).toFixed(1)}</p>
+          <p className="stat-label">Avg Positive</p>
+        </div>
+        <div className="stat-card red">
+          <p className="stat-value">−{Number(overall.avg_negative).toFixed(1)}</p>
+          <p className="stat-label">Avg Negative</p>
+        </div>
+        <div className="stat-card yellow">
+          <p className="stat-value">{Number(overall.avg_total).toFixed(1)}</p>
+          <p className="stat-label">Avg Score /50</p>
+        </div>
+        <div className="stat-card accent">
+          <p className="stat-value">{fmtTime(overall.avg_time)}</p>
+          <p className="stat-label">Avg Time</p>
+        </div>
+      </div>
+
+      <div>
+        {recent.map((row, i) => {
+          const label = row.mock_id === 'generated' ? 'Generated' : `Mock ${row.mock_id}`;
+          const pct = Math.round((Number(row.total_marks) / 50) * 100);
+          const when = new Date(row.created_at).toLocaleDateString();
+          return (
+            <div className="mock-history-row" key={i}>
+              <span className="mock-history-label">{label}</span>
+              <span className="mock-history-score">
+                <span style={{ color: 'var(--green)' }}>+{Number(row.positive_marks).toFixed(2)}</span>
+                {' '}<span style={{ color: 'var(--red)' }}>−{Number(row.negative_marks).toFixed(2)}</span>
+                {' '}= <b>{Number(row.total_marks).toFixed(2)}/50</b>
+              </span>
+              <span className="mock-history-bar-wrap">
+                <div className="mock-history-bar" style={{ width: pct + '%', background: pct >= 60 ? 'var(--green)' : pct >= 35 ? 'var(--yellow)' : 'var(--red)' }} />
+              </span>
+              <span className="mock-history-time">{fmtTime(row.time_seconds)}</span>
+              <span className="mock-history-date">{when}</span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
