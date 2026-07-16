@@ -1569,3 +1569,81 @@
   .mock-chip{ width:26px; height:26px; font-size:10px; }
   .mock-nav-row{ flex-direction:column; align-items:flex-start; }
 }
+
+/* ─── Normal Distribution Chart ──────────────────────────────────── */
+.nd-wrap{
+  margin:20px 0 8px;
+  background:var(--bg-tertiary);
+  border:1px solid var(--divider);
+  border-radius:12px;
+  padding:16px 16px 14px;
+}
+.nd-header-row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:10px;
+}
+.nd-heading{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:var(--text-muted);
+}
+.nd-sub{
+  font-size:11px;
+  color:var(--text-faint);
+  letter-spacing:0.03em;
+}
+.nd-svg{
+  width:100%;
+  height:auto;
+  display:block;
+  overflow:visible;
+}
+.nd-stats-row{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid var(--divider);
+}
+.nd-stat{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.nd-stat-grow{
+  flex:1;
+  min-width:160px;
+  justify-content:center;
+}
+.nd-stat-val{
+  font-size:19px;
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:0.01em;
+  color:var(--text-normal);
+}
+.nd-stat-grow .nd-stat-val{
+  font-size:14px;
+  color:var(--text-muted);
+  font-weight:400;
+  line-height:1.5;
+}
+.nd-stat-label{
+  font-size:10px;
+  color:var(--text-faint);
+  text-transform:uppercase;
+  letter-spacing:0.07em;
+}
+
+@media (max-width:500px){
+  .nd-stat-val{ font-size:16px; }
+  .nd-stat-grow .nd-stat-val{ font-size:13px; }
+}

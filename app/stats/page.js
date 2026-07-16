@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { QUIZ_DATA } from '../../lib/quizData';
 import { buildQuestionIndex, getChapter } from '../../lib/quizHelpers';
+import { NormalDistChart } from '../components/NormalDistChart';
 
 function computeStreak(activeDays) {
   if (!activeDays || activeDays.length === 0) return 0;
@@ -376,6 +377,8 @@ function MockStats({ mockData }) {
           <p className="stat-label">Avg Time</p>
         </div>
       </div>
+
+      <NormalDistChart score={Number(overall.avg_total)} label="Your Avg" />
 
       <div>
         {recent.map((row, i) => {

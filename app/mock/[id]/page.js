@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { generatePresetMock, generateRandomMock } from '../../../lib/mockGenerator';
+import { NormalDistChart } from '../../components/NormalDistChart';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -334,6 +335,9 @@ export default function MockQuizPage() {
                 <span>{result.total.toFixed(2)} / 50</span>
               </div>
             </div>
+
+            {/* Normal distribution comparison */}
+            <NormalDistChart score={result.total} />
 
             <div className="summary-actions">
               <button className="btn" onClick={() => { setReviewIndex(0); setPhase('review'); }}>
