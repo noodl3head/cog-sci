@@ -39,6 +39,7 @@ export default function HomePage() {
           </span>
           <Link href="/study" className="btn-link">Study</Link>
           <Link href="/mock" className="btn-link">Mock</Link>
+          <Link href="/pyq" className="btn-link">PYQ</Link>
           <Link href="/stats" className="btn-link">Stats</Link>
         </div>
       </div>

@@ -2,9 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-
-const MOCK_COUNT = 5;
+import { PYQ_PAPERS } from '../../lib/pyqData';
 
 function formatTime(s) {
   if (!s) return '—';
@@ -13,20 +11,17 @@ function formatTime(s) {
   return `${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
 }
 
-export default function MockListPage() {
-  const router = useRouter();
-  const [mockStats, setMockStats] = useState({});
+export default function PyqListPage() {
+  const [stats, setStats] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/mock-results')
+    fetch('/api/pyq-results')
       .then((r) => r.json())
       .then((data) => {
         const map = {};
-        for (const row of data.perMock || []) {
-          map[row.mock_id] = row;
-        }
-        setMockStats(map);
+        for (const row of data.perPaper || []) map[row.paper_id] = row;
+        setStats(map);
       })
       .catch(() => {})
       .finally(() => setLoading(false));
@@ -39,7 +34,7 @@ export default function MockListPage() {
         <div className="nav-links">
           <Link href="/" className="btn-link">Chapters</Link>
           <Link href="/study" className="btn-link">Study</Link>
-          <Link href="/pyq" className="btn-link">PYQ</Link>
+          <Link href="/mock" className="btn-link">Mock</Link>
           <Link href="/stats" className="btn-link">Stats</Link>
         </div>
       </div>
@@ -47,25 +42,25 @@ export default function MockListPage() {
       <div className="screen active">
         <div className="mock-list-header">
           <div>
-            <h2 className="mock-list-title">Mock Quizzes</h2>
+            <h2 className="mock-list-title">GATE XH-C5 · Previous Year Papers</h2>
             <p className="mock-list-sub">
-              35 questions &middot; 50 marks &middot; Section 1: 1mk (−⅓) &middot; Section 2: 2mk (−⅔) &middot; No instant feedback
+              Full 65-question papers &middot; 100 marks &middot; 3 sections (GA · XH-B1 · XH-C5) &middot;
+              MCQ (−⅓ / −⅔) · MSQ &amp; NAT (no negative)
             </p>
           </div>
         </div>
 
         <div className="mock-card-grid">
-          {Array.from({ length: MOCK_COUNT }, (_, i) => {
-            const id = String(i + 1);
-            const stat = mockStats[id];
+          {PYQ_PAPERS.map((p) => {
+            const stat = stats[p.id];
             return (
-              <div className="mock-card" key={id}>
-                <div className="mock-card-num">Mock {i + 1}</div>
+              <div className="mock-card pyq-card" key={p.id}>
+                <div className="mock-card-num">{p.name}</div>
                 {!loading && stat ? (
                   <div className="mock-card-stats">
                     <div className="mock-stat-row">
                       <span className="mock-stat-label">Best</span>
-                      <span className="mock-stat-val">{Number(stat.best_score).toFixed(2)}<span className="mock-stat-denom">/50</span></span>
+                      <span className="mock-stat-val">{Number(stat.best_score).toFixed(2)}<span className="mock-stat-denom">/100</span></span>
                     </div>
                     <div className="mock-stat-row">
                       <span className="mock-stat-label">Avg</span>
@@ -75,25 +70,27 @@ export default function MockListPage() {
                       <span className="mock-stat-label">Attempts</span>
                       <span className="mock-stat-val">{stat.attempts}</span>
                     </div>
+                    <div className="mock-stat-row">
+                      <span className="mock-stat-label">Avg time</span>
+                      <span className="mock-stat-val">{formatTime(stat.avg_time)}</span>
+                    </div>
                   </div>
                 ) : (
                   <div className="mock-card-empty">
                     {loading ? <span className="mock-card-empty-text">…</span> : <span className="mock-card-empty-text">Not attempted yet</span>}
                   </div>
                 )}
-                <Link href={`/mock/${id}`} className="btn mock-start-btn">Start</Link>
+                <Link href={`/pyq/${p.id}`} className="btn mock-start-btn">Start Paper</Link>
               </div>
             );
           })}
         </div>
 
-        <div className="mock-generate-block">
-          <div className="mock-generate-info">
-            <div className="mock-generate-title">+ Generate New Mock</div>
-            <div className="mock-generate-sub">Creates a fresh randomized quiz from all chapters. Result is saved to your history but doesn&apos;t appear as a fixed card.</div>
-          </div>
-          <Link href="/mock/generated" className="btn mock-start-btn">Generate</Link>
-        </div>
+        <p className="pyq-note">
+          These are the actual GATE {PYQ_PAPERS.map((p) => p.year).join(' & ')} XH-C5 papers, presented
+          section-by-section exactly as in the exam. Figures are reproduced from the original papers.
+          Your scores are tracked separately from the practice mocks.
+        </p>
       </div>
     </div>
   );

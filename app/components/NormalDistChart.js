@@ -20,10 +20,10 @@ function pdf(x, mu, sigma) {
   return Math.exp(-0.5 * ((x - mu) / sigma) ** 2) / (sigma * Math.sqrt(2 * Math.PI));
 }
 
-// Returns { pct: 0-100, rank: 1-POP }
-export function scoreRank(score) {
-  const pct = normalCDF(Math.max(0, Math.min(50, score)), ND_MU, ND_SIGMA) * 100;
-  const rank = Math.max(1, Math.min(ND_POP, Math.round((1 - pct / 100) * ND_POP)));
+// Returns { pct: 0-100, rank: 1-pop }
+export function scoreRank(score, mu = ND_MU, sigma = ND_SIGMA, total = 50, pop = ND_POP) {
+  const pct = normalCDF(Math.max(0, Math.min(total, score)), mu, sigma) * 100;
+  const rank = Math.max(1, Math.min(pop, Math.round((1 - pct / 100) * pop)));
   return { pct, rank };
 }
 
@@ -33,10 +33,12 @@ function tierColor(pct) {
   return '#f23f43';
 }
 
-export function NormalDistChart({ score, label = 'You' }) {
-  const mu = ND_MU, sigma = ND_SIGMA, total = 50;
+export function NormalDistChart({
+  score, label = 'You',
+  mu = ND_MU, sigma = ND_SIGMA, total = 50, pop = ND_POP,
+}) {
   const s = Math.max(0, Math.min(total, score));
-  const { pct, rank } = scoreRank(s);
+  const { pct, rank } = scoreRank(s, mu, sigma, total, pop);
   const color = tierColor(pct);
 
   // SVG layout
@@ -79,7 +81,7 @@ export function NormalDistChart({ score, label = 'You' }) {
     <div className="nd-wrap">
       <div className="nd-header-row">
         <span className="nd-heading">Score Distribution</span>
-        <span className="nd-sub">~{ND_POP.toLocaleString()} candidates · μ={mu} · σ={sigma}</span>
+        <span className="nd-sub">~{pop.toLocaleString()} candidates · μ={mu} · σ={sigma}</span>
       </div>
 
       <svg viewBox={`0 0 ${W} ${H}`} className="nd-svg">
@@ -114,8 +116,8 @@ export function NormalDistChart({ score, label = 'You' }) {
         {/* Axis labels */}
         <text x={sx(0)} y={base + 17}
           fill="#6d6f78" textAnchor="middle" fontSize="10" fontFamily="inherit">0</text>
-        <text x={sx(50)} y={base + 17}
-          fill="#6d6f78" textAnchor="middle" fontSize="10" fontFamily="inherit">50</text>
+        <text x={sx(total)} y={base + 17}
+          fill="#6d6f78" textAnchor="middle" fontSize="10" fontFamily="inherit">{total}</text>
       </svg>
 
       <div className="nd-stats-row">
@@ -125,7 +127,7 @@ export function NormalDistChart({ score, label = 'You' }) {
         </div>
         <div className="nd-stat">
           <span className="nd-stat-val" style={{ color }}>~{rank.toLocaleString()}</span>
-          <span className="nd-stat-label">Est. rank / {ND_POP.toLocaleString()}</span>
+          <span className="nd-stat-label">Est. rank / {pop.toLocaleString()}</span>
         </div>
         <div className="nd-stat nd-stat-grow">
           <span className="nd-stat-val">

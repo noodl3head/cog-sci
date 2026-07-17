@@ -36,3 +36,23 @@ CREATE TABLE IF NOT EXISTS mock_results (
 
 CREATE INDEX IF NOT EXISTS idx_mock_results_mock_id ON mock_results (mock_id);
 CREATE INDEX IF NOT EXISTS idx_mock_results_created_at ON mock_results (created_at);
+
+-- PYQ (previous-year GATE XH-C5 papers) results. Three sections: GA, XH-B1, XH-C5.
+-- total_marks is out of 100. Section stats are stored as JSON for flexibility since
+-- each paper mixes MCQ/MSQ/NAT differently.
+CREATE TABLE IF NOT EXISTS pyq_results (
+  id            SERIAL PRIMARY KEY,
+  paper_id      TEXT         NOT NULL,   -- '2024' | '2025'
+  positive_marks NUMERIC(6,2) NOT NULL,
+  negative_marks NUMERIC(6,2) NOT NULL,
+  total_marks   NUMERIC(6,2) NOT NULL,
+  time_seconds  INTEGER      NOT NULL,
+  ga_net        NUMERIC(6,2) NOT NULL DEFAULT 0,
+  b1_net        NUMERIC(6,2) NOT NULL DEFAULT 0,
+  c5_net        NUMERIC(6,2) NOT NULL DEFAULT 0,
+  sections      JSONB,                   -- full per-section breakdown
+  created_at    TIMESTAMPTZ  NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_pyq_results_paper_id ON pyq_results (paper_id);
+CREATE INDEX IF NOT EXISTS idx_pyq_results_created_at ON pyq_results (created_at);

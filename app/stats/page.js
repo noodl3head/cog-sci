@@ -57,6 +57,7 @@ export default function StatsPage() {
   const [loading, setLoading] = useState(true);
   const [resetting, setResetting] = useState(false);
   const [mockData, setMockData] = useState(null);
+  const [pyqData, setPyqData] = useState(null);
 
   const questionIndex = buildQuestionIndex();
 
@@ -73,6 +74,10 @@ export default function StatsPage() {
     fetch('/api/mock-results')
       .then((r) => r.json())
       .then((d) => { if (!d.error) setMockData(d); })
+      .catch(() => {});
+    fetch('/api/pyq-results')
+      .then((r) => r.json())
+      .then((d) => { if (!d.error) setPyqData(d); })
       .catch(() => {});
   }
 
@@ -94,6 +99,7 @@ export default function StatsPage() {
           <Link href="/" className="btn-link">&larr; Chapters</Link>
           <Link href="/study" className="btn-link">Study</Link>
           <Link href="/mock" className="btn-link">Mock</Link>
+          <Link href="/pyq" className="btn-link">PYQ</Link>
         </div>
       </div>
 
@@ -120,6 +126,9 @@ export default function StatsPage() {
 
             <h2 className="section-heading">Mock Performance</h2>
             <MockStats mockData={mockData} />
+
+            <h2 className="section-heading">GATE PYQ Papers</h2>
+            <PyqStats pyqData={pyqData} />
 
             <h2 className="section-heading">Chapter Strength</h2>
             <ChapterStrength data={data} />
@@ -392,6 +401,94 @@ function MockStats({ mockData }) {
                 <span style={{ color: 'var(--green)' }}>+{Number(row.positive_marks).toFixed(2)}</span>
                 {' '}<span style={{ color: 'var(--red)' }}>−{Number(row.negative_marks).toFixed(2)}</span>
                 {' '}= <b>{Number(row.total_marks).toFixed(2)}/50</b>
+              </span>
+              <span className="mock-history-bar-wrap">
+                <div className="mock-history-bar" style={{ width: pct + '%', background: pct >= 60 ? 'var(--green)' : pct >= 35 ? 'var(--yellow)' : 'var(--red)' }} />
+              </span>
+              <span className="mock-history-time">{fmtTime(row.time_seconds)}</span>
+              <span className="mock-history-date">{when}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function PyqStats({ pyqData }) {
+  if (!pyqData) return <div className="empty-state">Loading PYQ stats…</div>;
+  const overall = pyqData.overall || {};
+  const recent = pyqData.recent || [];
+  const perPaper = pyqData.perPaper || [];
+
+  if (!overall.total_attempts) {
+    return (
+      <div className="empty-state">
+        No GATE papers attempted yet.{' '}
+        <a href="/pyq" style={{ color: 'var(--text-link)' }}>Attempt a paper →</a>
+      </div>
+    );
+  }
+
+  function fmtTime(s) {
+    if (!s) return '—';
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+  }
+
+  return (
+    <div>
+      <div className="stats-grid" style={{ marginBottom: 20 }}>
+        <div className="stat-card accent">
+          <p className="stat-value">{overall.total_attempts}</p>
+          <p className="stat-label">Papers Attempted</p>
+        </div>
+        <div className="stat-card green">
+          <p className="stat-value">{Number(overall.best_score).toFixed(1)}</p>
+          <p className="stat-label">Best Score /100</p>
+        </div>
+        <div className="stat-card yellow">
+          <p className="stat-value">{Number(overall.avg_total).toFixed(1)}</p>
+          <p className="stat-label">Avg Score /100</p>
+        </div>
+        <div className="stat-card accent">
+          <p className="stat-value">{fmtTime(overall.avg_time)}</p>
+          <p className="stat-label">Avg Time</p>
+        </div>
+      </div>
+
+      {perPaper.length > 0 && (
+        <div className="pyq-stats-papers">
+          {perPaper.map((p) => (
+            <div className="pyq-stats-paper" key={p.paper_id}>
+              <div className="pyq-stats-paper-title">GATE {p.paper_id}</div>
+              <div className="pyq-stats-sec-row">
+                <span className="pyq-stats-sec"><b>GA</b> {Number(p.avg_ga).toFixed(1)}/15</span>
+                <span className="pyq-stats-sec"><b>XH-B1</b> {Number(p.avg_b1).toFixed(1)}/25</span>
+                <span className="pyq-stats-sec"><b>XH-C5</b> {Number(p.avg_c5).toFixed(1)}/60</span>
+              </div>
+              <div className="pyq-stats-paper-meta">
+                Best {Number(p.best_score).toFixed(1)} · Avg {Number(p.avg_total).toFixed(1)} · {p.attempts} attempt{p.attempts !== 1 ? 's' : ''}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <NormalDistChart score={Number(overall.avg_total)} label="Your Avg" total={100} mu={35} sigma={13} pop={10000} />
+
+      <div>
+        {recent.map((row, i) => {
+          const pct = Math.round((Number(row.total_marks) / 100) * 100);
+          const when = new Date(row.created_at).toLocaleDateString();
+          return (
+            <div className="mock-history-row" key={i}>
+              <span className="mock-history-label">GATE {row.paper_id}</span>
+              <span className="mock-history-score">
+                <span style={{ color: 'var(--green)' }}>+{Number(row.positive_marks).toFixed(2)}</span>
+                {' '}<span style={{ color: 'var(--red)' }}>−{Number(row.negative_marks).toFixed(2)}</span>
+                {' '}= <b>{Number(row.total_marks).toFixed(2)}/100</b>
               </span>
               <span className="mock-history-bar-wrap">
                 <div className="mock-history-bar" style={{ width: pct + '%', background: pct >= 60 ? 'var(--green)' : pct >= 35 ? 'var(--yellow)' : 'var(--red)' }} />
