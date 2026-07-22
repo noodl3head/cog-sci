@@ -158,7 +158,9 @@ export default function PyqPage() {
     // MCQ / MSQ
     const isMsq = qq.type === 'MSQ';
     const selected = isMsq ? (Array.isArray(curAns) ? curAns : []) : (curAns ? [curAns] : []);
-    const correctSet = isMsq ? (qq.acceptedSets ? qq.acceptedSets[0] : qq.answers) : (qq.answer ? [qq.answer] : []);
+    const correctSet = isMsq
+      ? (qq.acceptedSets ? qq.acceptedSets[0] : qq.answers)
+      : (qq.answer ? [qq.answer] : []);
 
     return (
       <div className={'options' + (qq.imageOnly ? ' pyq-image-options' : '')}>
@@ -180,7 +182,7 @@ export default function PyqPage() {
               onClick={() => (isMsq ? toggleMsq(letter) : setMcq(letter))}
             >
               <span className="bubble">{letter}</span>
-              {label && <span>{label}</span>}
+              {label && <span dangerouslySetInnerHTML={{ __html: label }} />}
               {review && correctSet.includes(letter) && <span className="review-correct-tag">✓</span>}
               {review && isSel && !correctSet.includes(letter) && <span className="review-wrong-tag">✗</span>}
             </button>
@@ -207,7 +209,36 @@ export default function PyqPage() {
           <p className="pyq-msq-hint">Multiple Select — choose all correct options. No negative marking; all-or-nothing.</p>
         )}
 
-        {qq.stem && <p className="q-text pyq-stem">{qq.stem}</p>}
+        {qq.stem && <p className="q-text pyq-stem" dangerouslySetInnerHTML={{ __html: qq.stem }} />}
+        {qq.lines && (
+          <div className="pyq-lines">
+            {qq.lines.map((line, i) => (
+              <p key={i} className="pyq-line" dangerouslySetInnerHTML={{ __html: line }} />
+            ))}
+          </div>
+        )}
+        {qq.table && (
+          <div className="pyq-table-wrap">
+            <table className="pyq-table">
+              <thead>
+                <tr>
+                  {qq.table.headers.map((h, i) => (
+                    <th key={i} dangerouslySetInnerHTML={{ __html: h }} />
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {qq.table.rows.map((row, ri) => (
+                  <tr key={ri}>
+                    {row.map((cell, ci) => (
+                      <td key={ci} dangerouslySetInnerHTML={{ __html: cell }} />
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
         {qq.image && (
           <div className="pyq-figure">
             <img src={qq.image} alt={`Figure for question ${qq.num}`} />
