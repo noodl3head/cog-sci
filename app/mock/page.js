@@ -49,7 +49,7 @@ export default function MockListPage() {
           <div>
             <h2 className="mock-list-title">Mock Quizzes</h2>
             <p className="mock-list-sub">
-              35 questions &middot; 50 marks &middot; Section 1: 1mk (−⅓) &middot; Section 2: 2mk (−⅔) &middot; No instant feedback
+              35 questions &middot; 50 marks &middot; GATE-style MCQ/MSQ &middot; Four options &middot; Balanced XH-C5 syllabus &middot; No instant feedback
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function MockListPage() {
         <div className="mock-generate-block">
           <div className="mock-generate-info">
             <div className="mock-generate-title">+ Generate New Mock</div>
-            <div className="mock-generate-sub">Creates a fresh randomized quiz from all chapters. Result is saved to your history but doesn&apos;t appear as a fixed card.</div>
+            <div className="mock-generate-sub">Creates a fresh topic-balanced paper from the resource bank. Result is saved to your history but doesn&apos;t appear as a fixed card.</div>
           </div>
           <Link href="/mock/generated" className="btn mock-start-btn">Generate</Link>
         </div>

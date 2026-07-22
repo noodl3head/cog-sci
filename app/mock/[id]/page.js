@@ -17,8 +17,21 @@ function formatTime(s) {
 }
 
 function getQ(quiz, index) {
-  if (index < 20) return { ...quiz.section1[index], mark: 1, penalty: 1 / 3, section: 1 };
-  return { ...quiz.section2[index - 20], mark: 2, penalty: 2 / 3, section: 2 };
+  if (index < 20) return { ...quiz.section1[index], mark: 1, section: 1 };
+  return { ...quiz.section2[index - 20], mark: 2, section: 2 };
+}
+
+function isAnswered(q, answer) {
+  if (q.type === 'MSQ') return Array.isArray(answer) && answer.length > 0;
+  return typeof answer === 'string' && answer.length > 0;
+}
+
+function isCorrect(q, answer) {
+  if (!isAnswered(q, answer)) return false;
+  if (q.type === 'MCQ') return answer === q.answer;
+  const selected = [...answer].sort();
+  const correct = [...q.answers].sort();
+  return selected.length === correct.length && selected.every((letter, i) => letter === correct[i]);
 }
 
 function calcResult(quiz, answers) {
@@ -27,25 +40,33 @@ function calcResult(quiz, answers) {
   let s1c = 0, s1w = 0;
   section1.forEach((q, i) => {
     const a = answers[i];
-    if (a === undefined) return;
-    if (a === q.answer) s1c++; else s1w++;
+    if (!isAnswered(q, a)) return;
+    if (isCorrect(q, a)) s1c++; else s1w++;
   });
   const s1sk = 20 - s1c - s1w;
 
   let s2c = 0, s2w = 0;
   section2.forEach((q, i) => {
     const a = answers[20 + i];
-    if (a === undefined) return;
-    if (a === q.answer) s2c++; else s2w++;
+    if (!isAnswered(q, a)) return;
+    if (isCorrect(q, a)) s2c++; else s2w++;
   });
   const s2sk = 15 - s2c - s2w;
 
   const positive = s1c * 1 + s2c * 2;
-  const negative = s1w * (1 / 3) + s2w * (2 / 3);
+  const s1Negative = section1.reduce((sum, q, i) => {
+    const a = answers[i];
+    return sum + (isAnswered(q, a) && !isCorrect(q, a) && q.type === 'MCQ' ? 1 / 3 : 0);
+  }, 0);
+  const s2Negative = section2.reduce((sum, q, i) => {
+    const a = answers[20 + i];
+    return sum + (isAnswered(q, a) && !isCorrect(q, a) && q.type === 'MCQ' ? 2 / 3 : 0);
+  }, 0);
+  const negative = s1Negative + s2Negative;
   return {
     s1Correct: s1c, s1Wrong: s1w, s1Skipped: s1sk,
     s2Correct: s2c, s2Wrong: s2w, s2Skipped: s2sk,
-    positive, negative, total: positive - negative,
+    s1Negative, s2Negative, positive, negative, total: positive - negative,
   };
 }
 
@@ -102,7 +123,14 @@ export default function MockQuizPage() {
   const selectedAnswer = answers[currentIndex];
 
   function selectOption(letter) {
-    setAnswers((prev) => ({ ...prev, [currentIndex]: letter }));
+    setAnswers((prev) => {
+      if (q.type === 'MCQ') return { ...prev, [currentIndex]: letter };
+      const current = Array.isArray(prev[currentIndex]) ? prev[currentIndex] : [];
+      const next = current.includes(letter)
+        ? current.filter((selected) => selected !== letter)
+        : [...current, letter];
+      return { ...prev, [currentIndex]: next };
+    });
   }
 
   function clearAnswer() {
@@ -126,7 +154,8 @@ export default function MockQuizPage() {
   function prev() { if (currentIndex > 0) setCurrentIndex((i) => i - 1); }
   function next() { if (currentIndex < totalQ - 1) setCurrentIndex((i) => i + 1); }
 
-  const answeredCount = Object.keys(answers).length;
+  const allQuestions = [...quiz.section1, ...quiz.section2];
+  const answeredCount = allQuestions.filter((question, i) => isAnswered(question, answers[i])).length;
   const unanswered = totalQ - answeredCount;
 
   function submitMock() {
@@ -177,8 +206,10 @@ export default function MockQuizPage() {
     if (phase === 'review') {
       const rq = getQ(quiz, reviewIndex);
       const rAnswered = answers[reviewIndex];
-      const isCorrect = rAnswered === rq.answer;
-      const isSkipped = rAnswered === undefined;
+      const answerIsCorrect = isCorrect(rq, rAnswered);
+      const isSkipped = !isAnswered(rq, rAnswered);
+      const selectedSet = rq.type === 'MSQ' ? (Array.isArray(rAnswered) ? rAnswered : []) : [rAnswered];
+      const correctSet = rq.type === 'MSQ' ? rq.answers : [rq.answer];
 
       return (
         <div className="app">
@@ -189,8 +220,8 @@ export default function MockQuizPage() {
               <span className="mock-review-counter">
                 Q{reviewIndex + 1} / {totalQ}
                 {reviewIndex < 20
-                  ? <span className="mock-mark-badge s1">S1 · 1mk</span>
-                  : <span className="mock-mark-badge s2">S2 · 2mk</span>
+                  ? <span className="mock-mark-badge s1">{rq.type} · 1mk</span>
+                  : <span className="mock-mark-badge s2">{rq.type} · 2mk</span>
                 }
               </span>
               <div style={{ display: 'flex', gap: 8 }}>
@@ -207,15 +238,15 @@ export default function MockQuizPage() {
               <div className="options">
                 {Object.keys(rq.options).map((letter) => {
                   let cls = 'option';
-                  if (letter === rq.answer) cls += ' correct';
-                  else if (letter === rAnswered && !isCorrect) cls += ' incorrect selected';
+                  if (correctSet.includes(letter)) cls += ' correct';
+                  else if (selectedSet.includes(letter) && !answerIsCorrect) cls += ' incorrect selected';
                   else cls += ' fade';
                   return (
                     <button key={letter} className={cls} disabled>
                       <span className="bubble">{letter}</span>
                       <span>{rq.options[letter]}</span>
-                      {letter === rq.answer && <span className="review-correct-tag">✓ correct</span>}
-                      {letter === rAnswered && !isCorrect && <span className="review-wrong-tag">✗ your answer</span>}
+                      {correctSet.includes(letter) && <span className="review-correct-tag">✓ correct</span>}
+                      {selectedSet.includes(letter) && !correctSet.includes(letter) && <span className="review-wrong-tag">✗ your answer</span>}
                     </button>
                   );
                 })}
@@ -228,8 +259,8 @@ export default function MockQuizPage() {
                 </div>
               )}
               {!isSkipped && (
-                <div className={'feedback show' + (!isCorrect ? ' wrong' : '')}>
-                  <p className="feedback-label">{isCorrect ? 'Correct' : `Incorrect — answer was ${rq.answer}`}</p>
+                <div className={'feedback show' + (!answerIsCorrect ? ' wrong' : '')}>
+                  <p className="feedback-label">{answerIsCorrect ? 'Correct' : `Incorrect — answer was ${correctSet.join(', ')}`}</p>
                   <p className="feedback-text">{rq.explanation}</p>
                 </div>
               )}
@@ -242,7 +273,7 @@ export default function MockQuizPage() {
                 <div className="mock-palette-chips">
                   {quiz.section1.map((sq, i) => {
                     const a = answers[i];
-                    const status = a === undefined ? 'skip' : a === sq.answer ? 'correct' : 'wrong';
+                    const status = !isAnswered(sq, a) ? 'skip' : isCorrect(sq, a) ? 'correct' : 'wrong';
                     return (
                       <button
                         key={i}
@@ -259,7 +290,7 @@ export default function MockQuizPage() {
                   {quiz.section2.map((sq, i) => {
                     const gi = 20 + i;
                     const a = answers[gi];
-                    const status = a === undefined ? 'skip' : a === sq.answer ? 'correct' : 'wrong';
+                    const status = !isAnswered(sq, a) ? 'skip' : isCorrect(sq, a) ? 'correct' : 'wrong';
                     return (
                       <button
                         key={i}
@@ -303,23 +334,23 @@ export default function MockQuizPage() {
             {/* Section breakdown */}
             <div className="mock-result-sections">
               <div className="mock-result-sec">
-                <div className="mock-result-sec-title">Section 1 <span className="mock-mark-badge s1">1 mk · −⅓</span></div>
+                <div className="mock-result-sec-title">Section 1 <span className="mock-mark-badge s1">1 mk · MCQ/MSQ</span></div>
                 <div className="mock-result-row"><span>Correct</span><span className="mock-result-green">+{result.s1Correct}</span></div>
                 <div className="mock-result-row"><span>Wrong</span><span className="mock-result-red">−{result.s1Wrong}</span></div>
                 <div className="mock-result-row"><span>Skipped</span><span>{result.s1Skipped}</span></div>
                 <div className="mock-result-row marks">
                   <span>+{result.s1Correct.toFixed(0)}</span>
-                  <span className="mock-result-red">−{(result.s1Wrong / 3).toFixed(2)}</span>
+                  <span className="mock-result-red">−{result.s1Negative.toFixed(2)}</span>
                 </div>
               </div>
               <div className="mock-result-sec">
-                <div className="mock-result-sec-title">Section 2 <span className="mock-mark-badge s2">2 mk · −⅔</span></div>
+                <div className="mock-result-sec-title">Section 2 <span className="mock-mark-badge s2">2 mk · MCQ/MSQ</span></div>
                 <div className="mock-result-row"><span>Correct</span><span className="mock-result-green">+{result.s2Correct}</span></div>
                 <div className="mock-result-row"><span>Wrong</span><span className="mock-result-red">−{result.s2Wrong}</span></div>
                 <div className="mock-result-row"><span>Skipped</span><span>{result.s2Skipped}</span></div>
                 <div className="mock-result-row marks">
                   <span>+{(result.s2Correct * 2).toFixed(0)}</span>
-                  <span className="mock-result-red">−{(result.s2Wrong * 2 / 3).toFixed(2)}</span>
+                  <span className="mock-result-red">−{result.s2Negative.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -411,7 +442,7 @@ export default function MockQuizPage() {
         {/* Section 2 transition banner */}
         {isSection2Start && (
           <div className="mock-section-banner">
-            Section 2 — 2 Marks per question &middot; Penalty: −⅔ per wrong answer
+            Section 2 — 2 Marks per question &middot; MCQ: −⅔ for a wrong answer &middot; MSQ: no negative marking
           </div>
         )}
 
@@ -420,17 +451,18 @@ export default function MockQuizPage() {
           <div className="mock-q-header">
             <p className="q-number">Question {currentIndex + 1} of {totalQ}</p>
             <span className={'mock-mark-badge ' + (q.section === 1 ? 's1' : 's2')}>
-              {q.mark} mk · −{q.section === 1 ? '⅓' : '⅔'} wrong
+              {q.type} · {q.mark} mk · {q.type === 'MSQ' ? 'no negative' : `−${q.section === 1 ? '⅓' : '⅔'} wrong`}
             </span>
           </div>
           <p className="q-chapter-tag">{q.chapterTitle}</p>
+          {q.type === 'MSQ' && <p className="pyq-msq-hint">Multiple Select — choose all correct options.</p>}
           <p className="q-text">{q.question}</p>
 
           <div className="options">
             {Object.keys(q.options).map((letter) => (
               <button
                 key={letter}
-                className={'option mock-option' + (selectedAnswer === letter ? ' mock-selected' : '')}
+                className={'option mock-option' + ((q.type === 'MSQ' ? (selectedAnswer || []).includes(letter) : selectedAnswer === letter) ? ' mock-selected' : '')}
                 onClick={() => selectOption(letter)}
               >
                 <span className="bubble">{letter}</span>
@@ -450,7 +482,7 @@ export default function MockQuizPage() {
             </button>
             <div className="mock-nav-btns">
               <button className="btn btn-secondary" onClick={prev} disabled={currentIndex === 0}>← Prev</button>
-              <button className="btn btn-secondary" onClick={clearAnswer} disabled={selectedAnswer === undefined}>Clear</button>
+              <button className="btn btn-secondary" onClick={clearAnswer} disabled={!isAnswered(q, selectedAnswer)}>Clear</button>
               <button className="btn" onClick={next} disabled={currentIndex === totalQ - 1}>Next →</button>
             </div>
           </div>
@@ -466,8 +498,8 @@ export default function MockQuizPage() {
           <div className="mock-palette-section-row">
             <span className="mock-palette-label">S1</span>
             <div className="mock-palette-chips">
-              {quiz.section1.map((_, i) => {
-                const answered = answers[i] !== undefined;
+              {quiz.section1.map((question, i) => {
+                const answered = isAnswered(question, answers[i]);
                 const flag = flagged.has(i);
                 let cls = 'mock-chip';
                 if (i === currentIndex) cls += ' current';
@@ -482,9 +514,9 @@ export default function MockQuizPage() {
           <div className="mock-palette-section-row">
             <span className="mock-palette-label">S2</span>
             <div className="mock-palette-chips">
-              {quiz.section2.map((_, i) => {
+              {quiz.section2.map((question, i) => {
                 const gi = 20 + i;
-                const answered = answers[gi] !== undefined;
+                const answered = isAnswered(question, answers[gi]);
                 const flag = flagged.has(gi);
                 let cls = 'mock-chip';
                 if (gi === currentIndex) cls += ' current';
