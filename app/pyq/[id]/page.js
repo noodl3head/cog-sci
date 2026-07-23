@@ -8,7 +8,7 @@ import { calcPyqResult, gradeQuestion, isAnswered } from '../../../lib/pyqScorin
 import { NormalDistChart } from '../../components/NormalDistChart';
 
 // Population model for the 100-mark GATE paper distribution chart.
-const PYQ_MU = 35, PYQ_SIGMA = 13, PYQ_POP = 10000;
+const PYQ_MU = 34.5, PYQ_SIGMA = 15, PYQ_POP = 4500;
 
 function formatTime(s) {
   const h = Math.floor(s / 3600);
