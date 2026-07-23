@@ -1,7 +1,7 @@
 // Simulated exam population parameters
 export const ND_MU = 25;       // mean = 50% of 50 marks
 export const ND_SIGMA = 8;     // standard deviation
-export const ND_POP = 7000;    // simulated population
+export const ND_POP = 4500;    // simulated population
 
 // Abramowitz & Stegun approximation (max error 1.5×10⁻⁷)
 function erf(x) {

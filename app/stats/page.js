@@ -476,7 +476,7 @@ function PyqStats({ pyqData }) {
         </div>
       )}
 
-      <NormalDistChart score={Number(overall.avg_total)} label="Your Avg" total={100} mu={35} sigma={13} pop={10000} />
+      <NormalDistChart score={Number(overall.avg_total)} label="Your Avg" total={100} mu={34.5} sigma={15} pop={4500} />
 
       <div>
         {recent.map((row, i) => {
