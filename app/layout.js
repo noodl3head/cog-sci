@@ -9,6 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{document.documentElement.dataset.theme=localStorage.getItem('gate-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}` }} />
+      </head>
       <body>
         <div className="site-frame">
           <AppNavigation />

@@ -59,8 +59,19 @@ function isActive(pathname, href) {
 export default function AppNavigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setTheme(document.documentElement.dataset.theme || 'dark');
+  }, []);
+
+  function toggleTheme() {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    window.localStorage.setItem('gate-theme', next);
+  }
 
   return (
     <>
@@ -69,10 +80,15 @@ export default function AppNavigation() {
           <span className="brand-mark">Ψ</span>
           <span>GATE Psychology</span>
         </Link>
-        <button className="mobile-menu-button" onClick={() => setOpen((value) => !value)} aria-label="Toggle navigation" aria-expanded={open}>
-          <span />
-          <span />
-        </button>
+        <div className="mobile-actions">
+          <button className="mobile-theme-button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
+            {theme === 'dark' ? '☀' : '☾'}
+          </button>
+          <button className="mobile-menu-button" onClick={() => setOpen((value) => !value)} aria-label="Toggle navigation" aria-expanded={open}>
+            <span />
+            <span />
+          </button>
+        </div>
       </header>
 
       {open && <button className="nav-scrim" aria-label="Close navigation" onClick={() => setOpen(false)} />}
@@ -102,6 +118,11 @@ export default function AppNavigation() {
             </div>
           ))}
         </nav>
+
+        <button className="theme-toggle" onClick={toggleTheme}>
+          <span>{theme === 'dark' ? '☀' : '☾'}</span>
+          {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+        </button>
 
         <div className="exam-card">
           <span className="exam-card-kicker">Target exam</span>

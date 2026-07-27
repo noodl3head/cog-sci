@@ -49,7 +49,11 @@ export default function MockHistoryPage() {
         </div>
 
         {!selected ? (
-          <div className="empty-state">Complete a mock to start your private comparison history.</div>
+          <div className="empty-state history-empty-state">
+            <b>No detailed mock attempts on this browser yet.</b>
+            <span>Complete a mock here to start the comparison timeline. Older Neon summary rows cannot reconstruct topic-level detail.</span>
+            <Link href="/mock" className="btn">Start a mock</Link>
+          </div>
         ) : (
           <>
             <section className="history-metrics">
