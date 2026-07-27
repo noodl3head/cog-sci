@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { generatePresetMock, generateRandomMock } from '../../../lib/mockGenerator';
+import { useParams, useSearchParams } from 'next/navigation';
+import { generatePresetMock, generateRandomMock, generateTopicMock } from '../../../lib/mockGenerator';
 import { NormalDistChart } from '../../components/NormalDistChart';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -74,14 +74,19 @@ function calcResult(quiz, answers) {
 
 export default function MockQuizPage() {
   const { id } = useParams();
+  const searchParams = useSearchParams();
+  const selectedTopicKey = searchParams.get('topics') || '';
 
   // Generate quiz once per mount
   const quiz = useMemo(() => {
-    if (id === 'generated') return generateRandomMock();
+    if (id === 'generated') {
+      const selectedTopics = selectedTopicKey.split(',').filter(Boolean);
+      return selectedTopics.length ? generateTopicMock(selectedTopics) : generateRandomMock();
+    }
     const n = parseInt(id, 10);
     if (n >= 1 && n <= 5) return generatePresetMock(n - 1);
     return null;
-  }, [id]);
+  }, [id, selectedTopicKey]);
 
   // Quiz state
   const [phase, setPhase] = useState('quiz'); // 'quiz' | 'confirm' | 'results' | 'review'
