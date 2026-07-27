@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "audit:questions": "node --no-warnings --experimental-vm-modules scripts/questionQualityAudit.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.1",

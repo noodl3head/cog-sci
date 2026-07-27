@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'AP Psych Quizzer',
-  description: 'Chapter-based AP Psychology quiz app with stats tracking',
+  title: 'GATE Psych Quizzer',
+  description: 'GATE Psychology chapter practice, mocks and syllabus coverage tracking',
 };
 
 export default function RootLayout({ children }) {

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { QUIZ_DATA } from '../lib/quizData';
-import { totalQuestionCount, totalChapterCount } from '../lib/quizHelpers';
+import { getChapterQuestionCount, totalQuestionCount, totalChapterCount } from '../lib/quizHelpers';
 
 export default function HomePage() {
   const [chapterStats, setChapterStats] = useState({});
@@ -31,7 +31,7 @@ export default function HomePage() {
     <div className="app">
       <div className="masthead">
         <h1>
-          AP <span className="accent">Psych</span> Quizzer
+          GATE <span className="accent">Psych</span> Quizzer
         </h1>
         <div className="nav-links">
           <span className="tag">
@@ -39,14 +39,17 @@ export default function HomePage() {
           </span>
           <Link href="/study" className="btn-link">Study</Link>
           <Link href="/mock" className="btn-link">Mock</Link>
+          <Link href="/mock/history" className="btn-link">History</Link>
+          <Link href="/revision" className="btn-link">Revision</Link>
           <Link href="/pyq" className="btn-link">PYQ</Link>
+          <Link href="/coverage" className="btn-link">Coverage</Link>
           <Link href="/stats" className="btn-link">Stats</Link>
         </div>
       </div>
 
       <div className="screen active">
         {QUIZ_DATA.books.map((book) => {
-          const totalQ = book.chapters.reduce((a, c) => a + c.questions.filter((q) => !q.imageRequired).length, 0);
+          const totalQ = book.chapters.reduce((sum, chapter) => sum + getChapterQuestionCount(book.id, chapter.id), 0);
           return (
             <div className="book-section" key={book.id}>
               <h2 className="book-title">
@@ -58,10 +61,11 @@ export default function HomePage() {
               <div className="chapter-grid">
                 {book.chapters.map((ch) => {
                   const key = `${book.id}::${ch.id}`;
+                  const questionCount = getChapterQuestionCount(book.id, ch.id);
                   const stat = chapterStats[key];
                   const pct =
-                    stat && ch.questions.length > 0
-                      ? Math.round((stat.latestCorrect / ch.questions.length) * 100)
+                    stat && questionCount > 0
+                      ? Math.round((stat.latestCorrect / questionCount) * 100)
                       : null;
                   const missedCount = stat?.missedNumbers?.length ?? 0;
                   const missedParam =
@@ -75,7 +79,7 @@ export default function HomePage() {
                         data-num={String(ch.number).padStart(2, '0')}
                       >
                         <p className="ch-title">{ch.title}</p>
-                        <p className="ch-meta">{ch.questions.filter((q) => !q.imageRequired).length} Questions</p>
+                        <p className="ch-meta">{questionCount} Questions</p>
                         {!loading && pct !== null && (
                           <div className="ch-progress">
                             <div

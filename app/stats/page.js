@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { QUIZ_DATA } from '../../lib/quizData';
-import { buildQuestionIndex, getChapter } from '../../lib/quizHelpers';
+import { buildQuestionIndex, getChapter, getChapterQuestionCount } from '../../lib/quizHelpers';
 import { NormalDistChart } from '../components/NormalDistChart';
 
 function computeStreak(activeDays) {
@@ -37,7 +37,7 @@ function computeChapterProgress(latestByChapter) {
 
   for (const book of QUIZ_DATA.books) {
     for (const ch of book.chapters) {
-      const total = ch.questions.filter((q) => !q.imageRequired).length;
+      const total = getChapterQuestionCount(book.id, ch.id);
       const seen = seenMap[`${book.id}::${ch.id}`] || 0;
       const coverage = total > 0 ? seen / total : 0;
       const status = coverage >= 0.6 ? 'finished' : seen > 0 ? 'inprogress' : 'notstarted';
@@ -94,12 +94,13 @@ export default function StatsPage() {
   return (
     <div className="app">
       <div className="masthead">
-        <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
         <div className="nav-links">
           <Link href="/" className="btn-link">&larr; Chapters</Link>
           <Link href="/study" className="btn-link">Study</Link>
           <Link href="/mock" className="btn-link">Mock</Link>
           <Link href="/pyq" className="btn-link">PYQ</Link>
+          <Link href="/coverage" className="btn-link">Coverage</Link>
         </div>
       </div>
 
@@ -277,7 +278,7 @@ function ChapterStrength({ data }) {
         const pct = row.attempts > 0 ? Math.round((row.correct / row.attempts) * 100) : 0;
         const chapter = getChapter(row.book_id, row.chapter_id);
         const title = chapter ? chapter.title : `${row.book_id} / ${row.chapter_id}`;
-        const totalQ = chapter ? chapter.questions.filter((q) => !q.imageRequired).length : null;
+        const totalQ = chapter ? getChapterQuestionCount(row.book_id, row.chapter_id) : null;
         const seen = seenMap[`${row.book_id}::${row.chapter_id}`] || row.distinct_questions;
         const isFinished = totalQ && seen / totalQ >= 0.6;
 

@@ -53,7 +53,7 @@ export default function PyqPage() {
   if (!paper) {
     return (
       <div className="app">
-        <div className="masthead"><h1>AP <span className="accent">Psych</span> Quizzer</h1></div>
+        <div className="masthead"><h1>GATE <span className="accent">Psych</span> Quizzer</h1></div>
         <div className="screen active"><div className="empty-state">Unknown paper.</div></div>
       </div>
     );
@@ -119,7 +119,7 @@ export default function PyqPage() {
 
   const masthead = (
     <div className="masthead">
-      <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+      <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
       <div className="nav-links">
         <span className="mock-timer-chip"><span className="mock-timer-icon">⏱</span>{formatTime(timeElapsed)}</span>
         <Link href="/pyq" className="btn-link">← Papers</Link>

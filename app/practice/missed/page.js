@@ -47,7 +47,7 @@ export default function PracticeMissedPage() {
 
   const masthead = (
     <div className="masthead">
-      <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+      <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
       <Link href="/stats" className="btn-link">&larr; My Stats</Link>
     </div>
   );
@@ -211,6 +211,12 @@ export default function PracticeMissedPage() {
         <div className="answer-sheet">
           <p className="q-number">Question {index + 1} of {questions.length}</p>
           <p className="q-chapter-tag">{q.chapterTitle}</p>
+          {q.context && (
+            <div className="question-context">
+              <div className="question-context-title">{q.context.title}</div>
+              <div className="question-context-body">{q.context.body}</div>
+            </div>
+          )}
           <p className="q-text">{q.question}</p>
 
           <div className="options">

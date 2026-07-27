@@ -3,7 +3,7 @@
 import { useMemo, useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { getChapter } from '../../../../lib/quizHelpers';
+import { getChapter, getChapterQuestions } from '../../../../lib/quizHelpers';
 
 function saveKey(bookId, chapterId) {
   return `quiz_progress_${bookId}_${chapterId}`;
@@ -19,16 +19,17 @@ export default function QuizPage() {
   const { bookId, chapterId } = params;
 
   const chapter = useMemo(() => getChapter(bookId, chapterId), [bookId, chapterId]);
+  const chapterQuestions = useMemo(() => getChapterQuestions(bookId, chapterId), [bookId, chapterId]);
   const isMissedMode = !!searchParams.get('missed');
 
   const initialQuestions = useMemo(() => {
     if (!chapter) return [];
     const missedParam = searchParams.get('missed');
-    const base = chapter.questions.filter((q) => !q.imageRequired);
+    const base = chapterQuestions;
     if (!missedParam) return base;
     const nums = new Set(missedParam.split(',').map(Number));
-    return base.filter((_, i) => nums.has(i + 1));
-  }, [chapter, searchParams]);
+    return base.filter((question) => nums.has(question.questionNumber));
+  }, [chapter, chapterQuestions, searchParams]);
 
   const [questions, setQuestions] = useState(initialQuestions);
   const [index, setIndex] = useState(0);
@@ -50,7 +51,7 @@ export default function QuizPage() {
       const raw = localStorage.getItem(saveKey(bookId, chapterId));
       if (!raw) { setSavedProgress(null); return; }
       const data = JSON.parse(raw);
-      if (data && data.index > 0 && data.total === chapter.questions.length) {
+      if (data && data.index > 0 && data.total === initialQuestions.length) {
         setSavedProgress(data);
       } else {
         setSavedProgress(null);
@@ -64,7 +65,7 @@ export default function QuizPage() {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
         </div>
         <div className="screen active">
           <div className="empty-state">Couldn&apos;t find that chapter.</div>
@@ -80,7 +81,7 @@ export default function QuizPage() {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
           <Link href="/" className="btn-link">&larr; All Chapters</Link>
         </div>
         <div className="screen active">
@@ -112,7 +113,7 @@ export default function QuizPage() {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
           <Link href="/" className="btn-link">&larr; All Chapters</Link>
         </div>
         <div className="screen active">
@@ -138,7 +139,7 @@ export default function QuizPage() {
   }
 
   const q = questions[index];
-  const questionNumber = chapter.questions.indexOf(q) + 1;
+  const questionNumber = q.questionNumber;
 
   function selectAnswer(letter) {
     if (answered) return;
@@ -221,7 +222,7 @@ export default function QuizPage() {
     return (
       <div className="app">
         <div className="masthead">
-          <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+          <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
           <Link href="/" className="btn-link">&larr; All Chapters</Link>
         </div>
         <div className="screen active">
@@ -284,7 +285,7 @@ export default function QuizPage() {
   return (
     <div className="app">
       <div className="masthead">
-        <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
         <Link href="/" className="btn-link">&larr; All Chapters</Link>
       </div>
 
@@ -305,6 +306,12 @@ export default function QuizPage() {
           <p className="q-number">
             Question {index + 1} of {questions.length}
           </p>
+          {q.context && (
+            <div className="question-context">
+              <div className="question-context-title">{q.context.title}</div>
+              <div className="question-context-body">{q.context.body}</div>
+            </div>
+          )}
           <p className="q-text">{q.question}</p>
 
           <div className="options">

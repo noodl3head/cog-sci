@@ -80,8 +80,8 @@ export function NormalDistChart({
   return (
     <div className="nd-wrap">
       <div className="nd-header-row">
-        <span className="nd-heading">Score Distribution</span>
-        <span className="nd-sub">~{pop.toLocaleString()} candidates · μ={mu} · σ={sigma}</span>
+        <span className="nd-heading">Projected Score Distribution</span>
+        <span className="nd-sub">modelled cohort of {pop.toLocaleString()} · μ={mu} · σ={sigma}</span>
       </div>
 
       <svg viewBox={`0 0 ${W} ${H}`} className="nd-svg">
@@ -123,15 +123,15 @@ export function NormalDistChart({
       <div className="nd-stats-row">
         <div className="nd-stat">
           <span className="nd-stat-val" style={{ color }}>{pct.toFixed(1)}th</span>
-          <span className="nd-stat-label">Percentile</span>
+          <span className="nd-stat-label">Projected percentile</span>
         </div>
         <div className="nd-stat">
           <span className="nd-stat-val" style={{ color }}>~{rank.toLocaleString()}</span>
-          <span className="nd-stat-label">Est. rank / {pop.toLocaleString()}</span>
+          <span className="nd-stat-label">Projected rank / {pop.toLocaleString()}</span>
         </div>
         <div className="nd-stat nd-stat-grow">
           <span className="nd-stat-val">
-            Scored better than <b style={{ color }}>{Math.floor(pct)}%</b> of candidates
+            Modelled above <b style={{ color }}>{Math.floor(pct)}%</b> of the projected cohort
           </span>
         </div>
       </div>

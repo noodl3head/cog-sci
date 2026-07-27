@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { GATE_2027_TOPICS, GATE_2027_TOPIC_IDS } from '../../lib/gateSyllabus';
+import { listMockProgress } from '../../lib/clientStudyStore';
 
 const MOCK_COUNT = 5;
 
@@ -19,8 +20,10 @@ export default function MockListPage() {
   const [mockStats, setMockStats] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedTopics, setSelectedTopics] = useState(() => new Set(GATE_2027_TOPIC_IDS));
+  const [savedProgress, setSavedProgress] = useState([]);
 
   useEffect(() => {
+    setSavedProgress(listMockProgress());
     fetch('/api/mock-results')
       .then((r) => r.json())
       .then((data) => {
@@ -52,11 +55,14 @@ export default function MockListPage() {
   return (
     <div className="app">
       <div className="masthead">
-        <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
         <div className="nav-links">
           <Link href="/" className="btn-link">Chapters</Link>
           <Link href="/study" className="btn-link">Study</Link>
           <Link href="/pyq" className="btn-link">PYQ</Link>
+          <Link href="/mock/history" className="btn-link">History</Link>
+          <Link href="/revision" className="btn-link">Revision</Link>
+          <Link href="/coverage" className="btn-link">Coverage</Link>
           <Link href="/stats" className="btn-link">Stats</Link>
         </div>
       </div>
@@ -66,7 +72,7 @@ export default function MockListPage() {
           <div>
             <h2 className="mock-list-title">Mock Quizzes</h2>
             <p className="mock-list-sub">
-              35 questions &middot; 50 marks &middot; GATE-style MCQ/MSQ &middot; Four options &middot; Complete GATE 2027 XH5 coverage &middot; No instant feedback
+              35 questions &middot; 50 marks &middot; GATE-style MCQ, MSQ and NAT &middot; Complete GATE 2027 XH5 coverage &middot; No instant feedback
             </p>
           </div>
         </div>
@@ -75,6 +81,7 @@ export default function MockListPage() {
           {Array.from({ length: MOCK_COUNT }, (_, i) => {
             const id = String(i + 1);
             const stat = mockStats[id];
+            const resumable = savedProgress.find((progress) => progress.mockId === id);
             return (
               <div className="mock-card" key={id}>
                 <div className="mock-card-num">Mock {i + 1}</div>
@@ -98,11 +105,25 @@ export default function MockListPage() {
                     {loading ? <span className="mock-card-empty-text">…</span> : <span className="mock-card-empty-text">Not attempted yet</span>}
                   </div>
                 )}
-                <Link href={`/mock/${id}`} className="btn mock-start-btn">Start</Link>
+                <Link href={`/mock/${id}`} className="btn mock-start-btn">{resumable ? 'Resume' : 'Start'}</Link>
               </div>
             );
           })}
         </div>
+
+        {savedProgress.some((progress) => progress.mockId === 'generated') && (
+          <div className="mock-resume-list">
+            <div>
+              <b>Generated mock in progress</b>
+              <span>Your exact questions, answers and timer are saved locally.</span>
+            </div>
+            {savedProgress.filter((progress) => progress.mockId === 'generated').slice(0, 2).map((progress) => (
+              <Link key={progress.key} className="btn btn-secondary" href={`/mock/generated?topics=${encodeURIComponent(progress.topicKey || '')}`}>
+                Resume {progress.title}
+              </Link>
+            ))}
+          </div>
+        )}
 
         <div className="mock-generate-block">
           <div className="mock-generate-info">

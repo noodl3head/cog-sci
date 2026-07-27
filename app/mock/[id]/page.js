@@ -2,9 +2,19 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { generatePresetMock, generateRandomMock, generateTopicMock } from '../../../lib/mockGenerator';
 import { NormalDistChart } from '../../components/NormalDistChart';
+import { GATE_2027_LEAF_BY_ID, GATE_2027_TOPIC_BY_ID } from '../../../lib/gateSyllabus';
+import {
+  buildAttemptRecord, correctAnswerKeys, formatQuestionAnswer,
+  isQuestionAnswered as isAnswered, isQuestionCorrect as isCorrect,
+  revisionItemFromQuestion,
+} from '../../../lib/mockAnalytics';
+import {
+  addMockHistory, addRevisionItem, clearMockProgress, getRevisionList,
+  loadMockProgress, saveMockProgress, setLatestRevisionSheet,
+} from '../../../lib/clientStudyStore';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -19,19 +29,6 @@ function formatTime(s) {
 function getQ(quiz, index) {
   if (index < 20) return { ...quiz.section1[index], mark: 1, section: 1 };
   return { ...quiz.section2[index - 20], mark: 2, section: 2 };
-}
-
-function isAnswered(q, answer) {
-  if (q.type === 'MSQ') return Array.isArray(answer) && answer.length > 0;
-  return typeof answer === 'string' && answer.length > 0;
-}
-
-function isCorrect(q, answer) {
-  if (!isAnswered(q, answer)) return false;
-  if (q.type === 'MCQ') return answer === q.answer;
-  const selected = [...answer].sort();
-  const correct = [...q.answers].sort();
-  return selected.length === correct.length && selected.every((letter, i) => letter === correct[i]);
 }
 
 function calcResult(quiz, answers) {
@@ -74,11 +71,12 @@ function calcResult(quiz, answers) {
 
 export default function MockQuizPage() {
   const { id } = useParams();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const selectedTopicKey = searchParams.get('topics') || '';
 
   // Generate quiz once per mount
-  const quiz = useMemo(() => {
+  const initialQuiz = useMemo(() => {
     if (id === 'generated') {
       const selectedTopics = selectedTopicKey.split(',').filter(Boolean);
       return selectedTopics.length ? generateTopicMock(selectedTopics) : generateRandomMock();
@@ -87,17 +85,41 @@ export default function MockQuizPage() {
     if (n >= 1 && n <= 5) return generatePresetMock(n - 1);
     return null;
   }, [id, selectedTopicKey]);
+  const [quiz, setQuiz] = useState(initialQuiz);
 
   // Quiz state
   const [phase, setPhase] = useState('quiz'); // 'quiz' | 'confirm' | 'results' | 'review'
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [answerHistory, setAnswerHistory] = useState({});
   const [flagged, setFlagged] = useState(new Set());
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [savedToDb, setSavedToDb] = useState(false);
   const [saveError, setSaveError] = useState(null);
   const [reviewIndex, setReviewIndex] = useState(0);
+  const [attemptRecord, setAttemptRecord] = useState(null);
+  const [progressReady, setProgressReady] = useState(false);
+  const [resumeNotice, setResumeNotice] = useState(false);
+  const [revisionIds, setRevisionIds] = useState(new Set());
   const timerRef = useRef(null);
+  const attemptSavedRef = useRef(false);
+
+  useEffect(() => {
+    const saved = loadMockProgress(id, selectedTopicKey);
+    if (saved?.quiz?.section1?.length === 20 && saved?.quiz?.section2?.length === 15) {
+      setQuiz(saved.quiz);
+      setAnswers(saved.answers || {});
+      setAnswerHistory(saved.answerHistory || {});
+      setFlagged(new Set(saved.flagged || []));
+      setCurrentIndex(Math.min(34, Math.max(0, saved.currentIndex || 0)));
+      setTimeElapsed(saved.timeElapsed || 0);
+      setResumeNotice(true);
+    } else {
+      setQuiz(initialQuiz);
+    }
+    setRevisionIds(new Set(getRevisionList().map((item) => item.questionId)));
+    setProgressReady(true);
+  }, [id, initialQuiz, selectedTopicKey]);
 
   // Timer — runs only during active quiz
   useEffect(() => {
@@ -109,10 +131,26 @@ export default function MockQuizPage() {
     return () => clearInterval(timerRef.current);
   }, [phase]);
 
+  useEffect(() => {
+    if (!progressReady || phase !== 'quiz' || !quiz) return;
+    saveMockProgress(id, selectedTopicKey, {
+      mockId: id,
+      title: id === 'generated' ? 'Generated Mock' : `Mock Quiz ${id}`,
+      topicKey: selectedTopicKey,
+      quiz,
+      answers,
+      answerHistory,
+      flagged: [...flagged],
+      currentIndex,
+      timeElapsed,
+      savedAt: new Date().toISOString(),
+    });
+  }, [answerHistory, answers, currentIndex, flagged, id, phase, progressReady, quiz, selectedTopicKey, timeElapsed]);
+
   if (!quiz) {
     return (
       <div className="app">
-        <div className="masthead"><h1>AP <span className="accent">Psych</span> Quizzer</h1></div>
+        <div className="masthead"><h1>GATE <span className="accent">Psych</span> Quizzer</h1></div>
         <div className="screen active"><div className="empty-state">Invalid mock ID.</div></div>
       </div>
     );
@@ -128,14 +166,17 @@ export default function MockQuizPage() {
   const selectedAnswer = answers[currentIndex];
 
   function selectOption(letter) {
-    setAnswers((prev) => {
-      if (q.type === 'MCQ') return { ...prev, [currentIndex]: letter };
-      const current = Array.isArray(prev[currentIndex]) ? prev[currentIndex] : [];
-      const next = current.includes(letter)
-        ? current.filter((selected) => selected !== letter)
-        : [...current, letter];
-      return { ...prev, [currentIndex]: next };
-    });
+    const current = q.type === 'MSQ' && Array.isArray(selectedAnswer) ? selectedAnswer : [];
+    const nextAnswer = q.type === 'MCQ'
+      ? letter
+      : current.includes(letter) ? current.filter((selected) => selected !== letter) : [...current, letter];
+    setAnswers((prev) => ({ ...prev, [currentIndex]: nextAnswer }));
+    setAnswerHistory((prev) => ({ ...prev, [currentIndex]: [...(prev[currentIndex] || []), nextAnswer] }));
+  }
+
+  function setNumericAnswer(value) {
+    setAnswers((prev) => ({ ...prev, [currentIndex]: value }));
+    setAnswerHistory((prev) => ({ ...prev, [currentIndex]: [...(prev[currentIndex] || []), value] }));
   }
 
   function clearAnswer() {
@@ -159,12 +200,42 @@ export default function MockQuizPage() {
   function prev() { if (currentIndex > 0) setCurrentIndex((i) => i - 1); }
   function next() { if (currentIndex < totalQ - 1) setCurrentIndex((i) => i + 1); }
 
+  function restartMock() {
+    clearMockProgress(id, selectedTopicKey);
+    window.location.reload();
+  }
+
+  function addQuestionToRevision(question, answer) {
+    const nextRevision = addRevisionItem(revisionItemFromQuestion(question, answer, mockTitle));
+    setRevisionIds(new Set(nextRevision.map((item) => item.questionId)));
+  }
+
+  function findSimilarQuestion(question, fromIndex) {
+    const questions = [...quiz.section1, ...quiz.section2];
+    const sameLeaf = questions.findIndex((candidate, index) =>
+      index !== fromIndex && candidate.syllabusLeaf && candidate.syllabusLeaf === question.syllabusLeaf
+    );
+    if (sameLeaf >= 0) return sameLeaf;
+    return questions.findIndex((candidate, index) => index !== fromIndex && candidate.topic === question.topic);
+  }
+
   const allQuestions = [...quiz.section1, ...quiz.section2];
   const answeredCount = allQuestions.filter((question, i) => isAnswered(question, answers[i])).length;
   const unanswered = totalQ - answeredCount;
 
   function submitMock() {
     const result = calcResult(quiz, answers);
+    const record = buildAttemptRecord({
+      quiz, answers, answerHistory, result, mockId: id,
+      title: mockTitle, timeSeconds: timeElapsed,
+    });
+    if (!attemptSavedRef.current) {
+      attemptSavedRef.current = true;
+      addMockHistory(record);
+      setLatestRevisionSheet(record.incorrectQuestions, `${mockTitle} - incorrect questions`);
+      clearMockProgress(id, selectedTopicKey);
+      setAttemptRecord(record);
+    }
     setPhase('results');
     if (!savedToDb) {
       setSavedToDb(true);
@@ -190,12 +261,14 @@ export default function MockQuizPage() {
   // ── Masthead ────────────────────────────────────────────────────────────────
   const masthead = (
     <div className="masthead">
-      <h1>AP <span className="accent">Psych</span> Quizzer</h1>
+      <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
       <div className="nav-links">
         <span className="mock-timer-chip">
           <span className="mock-timer-icon">⏱</span>
           {formatTime(timeElapsed)}
         </span>
+        <Link href="/mock/history" className="btn-link">History</Link>
+        <Link href="/revision" className="btn-link">Revision</Link>
         <Link href="/mock" className="btn-link">← Mocks</Link>
       </div>
     </div>
@@ -214,7 +287,14 @@ export default function MockQuizPage() {
       const answerIsCorrect = isCorrect(rq, rAnswered);
       const isSkipped = !isAnswered(rq, rAnswered);
       const selectedSet = rq.type === 'MSQ' ? (Array.isArray(rAnswered) ? rAnswered : []) : [rAnswered];
-      const correctSet = rq.type === 'MSQ' ? rq.answers : [rq.answer];
+      const correctSet = correctAnswerKeys(rq);
+      const topic = GATE_2027_TOPIC_BY_ID[rq.topic];
+      const leaf = GATE_2027_LEAF_BY_ID[rq.syllabusLeaf];
+      const conceptLabel = rq.syllabusLeafSource === 'topic-fallback'
+        ? (rq.originalChapterTitle || rq.chapterTitle)
+        : (leaf?.label || rq.originalChapterTitle || rq.chapterTitle);
+      const takeaway = String(rq.explanation || '').split(/(?<=[.!?])\s+/)[0];
+      const similarIndex = findSimilarQuestion(rq, reviewIndex);
 
       return (
         <div className="app">
@@ -238,10 +318,22 @@ export default function MockQuizPage() {
             <div className="answer-sheet" style={{ marginTop: 16 }}>
               <p className="q-number">Question {reviewIndex + 1} of {totalQ}</p>
               <p className="q-chapter-tag">{rq.chapterTitle}</p>
+              {rq.context && (
+                <div className="question-context">
+                  <div className="question-context-title">{rq.context.title}</div>
+                  <div className="question-context-body">{rq.context.body}</div>
+                </div>
+              )}
               <p className="q-text">{rq.question}</p>
 
-              <div className="options">
-                {Object.keys(rq.options).map((letter) => {
+              {rq.type === 'NAT' ? (
+                <div className="mock-nat-review">
+                  <span>Your answer: <b>{isSkipped ? 'Not answered' : rAnswered}</b></span>
+                  <span>Correct answer: <b>{rq.answer}</b></span>
+                </div>
+              ) : (
+                <div className="options">
+                  {Object.keys(rq.options).map((letter) => {
                   let cls = 'option';
                   if (correctSet.includes(letter)) cls += ' correct';
                   else if (selectedSet.includes(letter) && !answerIsCorrect) cls += ' incorrect selected';
@@ -254,19 +346,46 @@ export default function MockQuizPage() {
                       {selectedSet.includes(letter) && !correctSet.includes(letter) && <span className="review-wrong-tag">✗ your answer</span>}
                     </button>
                   );
-                })}
-              </div>
-
-              {isSkipped && (
-                <div className="feedback show">
-                  <p className="feedback-label">Skipped — no marks deducted</p>
-                  <p className="feedback-text">{rq.explanation}</p>
+                  })}
                 </div>
               )}
-              {!isSkipped && (
-                <div className={'feedback show' + (!answerIsCorrect ? ' wrong' : '')}>
-                  <p className="feedback-label">{answerIsCorrect ? 'Correct' : `Incorrect — answer was ${correctSet.join(', ')}`}</p>
+
+              {answerIsCorrect ? (
+                <div className="feedback show">
+                  <p className="feedback-label">Correct</p>
                   <p className="feedback-text">{rq.explanation}</p>
+                </div>
+              ) : (
+                <div className="mistake-review-card">
+                  <div className="mistake-review-title">{isSkipped ? 'Skipped question' : 'Turn this mistake into a revision point'}</div>
+                  <div className="mistake-answer-grid">
+                    <div><span>Your answer</span><b>{formatQuestionAnswer(rq, rAnswered)}</b></div>
+                    <div><span>Correct answer</span><b>{formatQuestionAnswer(rq, rq.type === 'MSQ' ? rq.answers : String(rq.answer))}</b></div>
+                  </div>
+                  <div className="mistake-learning-row">
+                    <span>Why this was wrong</span>
+                    <p>{isSkipped ? 'No answer was submitted, so the underlying relationship was not applied.' : rq.explanation}</p>
+                  </div>
+                  <div className="mistake-learning-row">
+                    <span>Underlying concept</span>
+                    <p><b>{conceptLabel}</b></p>
+                  </div>
+                  <div className="mistake-takeaway">
+                    <span>Remember this</span>
+                    <p>{takeaway || 'Review the keyed relationship, then apply it to a fresh example.'}</p>
+                  </div>
+                  <div className="mistake-source">
+                    <span>Source: <b>{rq.sourceName}</b></span>
+                    <span>Syllabus: <b>{topic?.section} {topic?.label}</b></span>
+                  </div>
+                  <div className="mistake-actions">
+                    <button className="btn btn-secondary" disabled={similarIndex < 0} onClick={() => setReviewIndex(similarIndex)}>
+                      Try similar question
+                    </button>
+                    <button className="btn" onClick={() => addQuestionToRevision(rq, rAnswered)}>
+                      {revisionIds.has(rq.id) ? 'Added to revision list' : 'Add to revision list'}
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
@@ -336,10 +455,19 @@ export default function MockQuizPage() {
               <span className="mock-timer-icon">⏱</span> Time taken: <b>{formatTime(timeElapsed)}</b>
             </div>
 
+            {attemptRecord && (
+              <div className="mock-learning-summary">
+                <div><span>Accuracy</span><b>{attemptRecord.accuracy}%</b></div>
+                <div><span>Speed</span><b>{formatTime(attemptRecord.secondsPerAnswered)} / answered</b></div>
+                <div><span>Negative marks lost</span><b>−{attemptRecord.negativeMarks.toFixed(2)}</b></div>
+                <div><span>Correct → incorrect</span><b>{attemptRecord.changedCorrectToIncorrect}</b></div>
+              </div>
+            )}
+
             {/* Section breakdown */}
             <div className="mock-result-sections">
               <div className="mock-result-sec">
-                <div className="mock-result-sec-title">Section 1 <span className="mock-mark-badge s1">1 mk · MCQ/MSQ</span></div>
+                <div className="mock-result-sec-title">Section 1 <span className="mock-mark-badge s1">1 mk · MCQ/MSQ/NAT</span></div>
                 <div className="mock-result-row"><span>Correct</span><span className="mock-result-green">+{result.s1Correct}</span></div>
                 <div className="mock-result-row"><span>Wrong</span><span className="mock-result-red">−{result.s1Wrong}</span></div>
                 <div className="mock-result-row"><span>Skipped</span><span>{result.s1Skipped}</span></div>
@@ -349,7 +477,7 @@ export default function MockQuizPage() {
                 </div>
               </div>
               <div className="mock-result-sec">
-                <div className="mock-result-sec-title">Section 2 <span className="mock-mark-badge s2">2 mk · MCQ/MSQ</span></div>
+                <div className="mock-result-sec-title">Section 2 <span className="mock-mark-badge s2">2 mk · MCQ/MSQ/NAT</span></div>
                 <div className="mock-result-row"><span>Correct</span><span className="mock-result-green">+{result.s2Correct}</span></div>
                 <div className="mock-result-row"><span>Wrong</span><span className="mock-result-red">−{result.s2Wrong}</span></div>
                 <div className="mock-result-row"><span>Skipped</span><span>{result.s2Skipped}</span></div>
@@ -386,9 +514,17 @@ export default function MockQuizPage() {
             )}
 
             <div className="summary-actions">
-              <button className="btn" onClick={() => { setReviewIndex(0); setPhase('review'); }}>
-                View Answer Key
+              <button className="btn" onClick={() => {
+                const firstMistake = allQuestions.findIndex((question, index) => !isCorrect(question, answers[index]));
+                setReviewIndex(firstMistake >= 0 ? firstMistake : 0);
+                setPhase('review');
+              }}>
+                Review Mistakes
               </button>
+              <button className="btn btn-secondary" disabled={!attemptRecord?.incorrectQuestions.length} onClick={() => router.push('/revision?view=latest')}>
+                Export Incorrect Questions
+              </button>
+              <Link href="/mock/history" className="btn btn-secondary">Compare Attempts</Link>
               <Link href="/mock" className="btn btn-secondary">Back to Mocks</Link>
             </div>
           </div>
@@ -435,6 +571,13 @@ export default function MockQuizPage() {
       {masthead}
       <div className="screen active">
 
+        {resumeNotice && (
+          <div className="mock-resume-banner">
+            <span><b>Mock resumed.</b> Your answers, flags, position and timer were restored.</span>
+            <button type="button" onClick={restartMock}>Restart this mock</button>
+          </div>
+        )}
+
         {/* Section + progress header */}
         <div className="mock-section-bar">
           <span className="mock-section-label">{sectionLabel}</span>
@@ -447,7 +590,7 @@ export default function MockQuizPage() {
         {/* Section 2 transition banner */}
         {isSection2Start && (
           <div className="mock-section-banner">
-            Section 2 — 2 Marks per question &middot; MCQ: −⅔ for a wrong answer &middot; MSQ: no negative marking
+            Section 2 — 2 Marks per question &middot; MCQ: −⅔ for a wrong answer &middot; MSQ/NAT: no negative marking
           </div>
         )}
 
@@ -456,15 +599,36 @@ export default function MockQuizPage() {
           <div className="mock-q-header">
             <p className="q-number">Question {currentIndex + 1} of {totalQ}</p>
             <span className={'mock-mark-badge ' + (q.section === 1 ? 's1' : 's2')}>
-              {q.type} · {q.mark} mk · {q.type === 'MSQ' ? 'no negative' : `−${q.section === 1 ? '⅓' : '⅔'} wrong`}
+              {q.type} · {q.mark} mk · {q.type === 'MCQ' ? `−${q.section === 1 ? '⅓' : '⅔'} wrong` : 'no negative'}
             </span>
           </div>
           <p className="q-chapter-tag">{q.chapterTitle}</p>
+          {q.context && (
+            <div className="question-context">
+              <div className="question-context-title">{q.context.title}</div>
+              <div className="question-context-body">{q.context.body}</div>
+            </div>
+          )}
           {q.type === 'MSQ' && <p className="pyq-msq-hint">Multiple Select — choose all correct options.</p>}
           <p className="q-text">{q.question}</p>
 
-          <div className="options">
-            {Object.keys(q.options).map((letter) => (
+          {q.type === 'NAT' ? (
+            <div className="pyq-nat-block">
+              <label className="pyq-nat-label" htmlFor="mock-nat-answer">Numerical answer</label>
+              <input
+                id="mock-nat-answer"
+                className="pyq-nat-input"
+                type="text"
+                inputMode="decimal"
+                autoComplete="off"
+                value={selectedAnswer || ''}
+                onChange={(event) => setNumericAnswer(event.target.value)}
+                placeholder="Enter a number"
+              />
+            </div>
+          ) : (
+            <div className="options">
+              {Object.keys(q.options).map((letter) => (
               <button
                 key={letter}
                 className={'option mock-option' + ((q.type === 'MSQ' ? (selectedAnswer || []).includes(letter) : selectedAnswer === letter) ? ' mock-selected' : '')}
@@ -473,8 +637,9 @@ export default function MockQuizPage() {
                 <span className="bubble">{letter}</span>
                 <span>{q.options[letter]}</span>
               </button>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Navigation row */}
           <div className="mock-nav-row">
