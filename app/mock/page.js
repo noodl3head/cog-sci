@@ -54,19 +54,6 @@ export default function MockListPage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/" className="btn-link">Chapters</Link>
-          <Link href="/study" className="btn-link">Study</Link>
-          <Link href="/pyq" className="btn-link">PYQ</Link>
-          <Link href="/mock/history" className="btn-link">History</Link>
-          <Link href="/revision" className="btn-link">Revision</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-          <Link href="/stats" className="btn-link">Stats</Link>
-        </div>
-      </div>
-
       <div className="screen active">
         <div className="mock-list-header">
           <div>

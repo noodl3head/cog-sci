@@ -17,15 +17,6 @@ export default function CoveragePage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/" className="btn-link">Chapters</Link>
-          <Link href="/mock" className="btn-link">Mocks</Link>
-          <Link href="/stats" className="btn-link">Stats</Link>
-        </div>
-      </div>
-
       <main className="screen active coverage-page">
         <div className="coverage-hero">
           <div>

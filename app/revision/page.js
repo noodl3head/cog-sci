@@ -53,15 +53,6 @@ export default function RevisionPage({ searchParams }) {
 
   return (
     <div className="app revision-app">
-      <div className="masthead no-print">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/mock" className="btn-link">Mocks</Link>
-          <Link href="/mock/history" className="btn-link">History</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-        </div>
-      </div>
-
       <main className="screen active revision-page">
         <div className="revision-header">
           <div>

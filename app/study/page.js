@@ -20,15 +20,6 @@ export default function StudyPage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/" className="btn-link">Chapters</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-          <Link href="/stats" className="btn-link">Stats</Link>
-        </div>
-      </div>
-
       <div className="study-layout">
         {/* Mobile chapter toggle */}
         <button

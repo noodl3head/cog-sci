@@ -29,17 +29,6 @@ export default function PyqListPage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/" className="btn-link">Chapters</Link>
-          <Link href="/study" className="btn-link">Study</Link>
-          <Link href="/mock" className="btn-link">Mock</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-          <Link href="/stats" className="btn-link">Stats</Link>
-        </div>
-      </div>
-
       <div className="screen active">
         <div className="mock-list-header">
           <div>

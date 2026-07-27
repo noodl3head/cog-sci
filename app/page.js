@@ -29,25 +29,31 @@ export default function HomePage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>
-          GATE <span className="accent">Psych</span> Quizzer
-        </h1>
-        <div className="nav-links">
-          <span className="tag">
-            {totalQuestionCount()} Questions &middot; {totalChapterCount()} Chapters
-          </span>
-          <Link href="/study" className="btn-link">Study</Link>
-          <Link href="/mock" className="btn-link">Mock</Link>
-          <Link href="/mock/history" className="btn-link">History</Link>
-          <Link href="/revision" className="btn-link">Revision</Link>
-          <Link href="/pyq" className="btn-link">PYQ</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-          <Link href="/stats" className="btn-link">Stats</Link>
+      <section className="home-hero">
+        <div className="home-hero-copy">
+          <p className="page-eyebrow">Your GATE 2027 workspace</p>
+          <h1>Turn the syllabus into<br /><em>exam confidence.</em></h1>
+          <p className="home-hero-sub">Study by chapter, test under pressure, and bring every mistake back into your revision loop.</p>
+          <div className="home-hero-actions">
+            <Link href="/mock" className="btn">Start a mock</Link>
+            <Link href="/study" className="btn btn-secondary">Open study notes</Link>
+          </div>
         </div>
-      </div>
+        <div className="home-hero-stats" aria-label="Question bank summary">
+          <div><strong>{totalQuestionCount()}</strong><span>Mapped questions</span></div>
+          <div><strong>{totalChapterCount()}</strong><span>Study chapters</span></div>
+          <div><strong>XH5</strong><span>Official syllabus</span></div>
+        </div>
+      </section>
 
       <div className="screen active">
+        <div className="section-heading">
+          <div>
+            <p className="page-eyebrow">Question bank</p>
+            <h2>Choose a chapter</h2>
+          </div>
+          <Link href="/coverage" className="text-action">View syllabus coverage →</Link>
+        </div>
         {QUIZ_DATA.books.map((book) => {
           const totalQ = book.chapters.reduce((sum, chapter) => sum + getChapterQuestionCount(book.id, chapter.id), 0);
           return (

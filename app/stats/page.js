@@ -93,17 +93,6 @@ export default function StatsPage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/" className="btn-link">&larr; Chapters</Link>
-          <Link href="/study" className="btn-link">Study</Link>
-          <Link href="/mock" className="btn-link">Mock</Link>
-          <Link href="/pyq" className="btn-link">PYQ</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-        </div>
-      </div>
-
       <div className="screen active">
         {loading && <p className="loading-text">Loading your stats…</p>}
 

@@ -34,15 +34,6 @@ export default function MockHistoryPage() {
 
   return (
     <div className="app">
-      <div className="masthead">
-        <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
-        <div className="nav-links">
-          <Link href="/mock" className="btn-link">Mocks</Link>
-          <Link href="/revision" className="btn-link">Revision</Link>
-          <Link href="/coverage" className="btn-link">Coverage</Link>
-        </div>
-      </div>
-
       <main className="screen active history-page">
         <div className="history-header">
           <div>
