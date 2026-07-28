@@ -13,7 +13,8 @@ import {
 } from '../../../lib/mockAnalytics';
 import {
   addMockHistory, addRevisionItem, clearMockProgress, getRevisionList,
-  loadMockProgress, saveMockProgress, setLatestRevisionSheet,
+  getRecentlyUsedMockQuestionIds, loadMockProgress, rememberGeneratedMockQuestions,
+  saveMockProgress, setLatestRevisionSheet,
 } from '../../../lib/clientStudyStore';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -79,7 +80,10 @@ export default function MockQuizPage() {
   const initialQuiz = useMemo(() => {
     if (id === 'generated') {
       const selectedTopics = selectedTopicKey.split(',').filter(Boolean);
-      return selectedTopics.length ? generateTopicMock(selectedTopics) : generateRandomMock();
+      const recentlyUsedIds = getRecentlyUsedMockQuestionIds();
+      return selectedTopics.length
+        ? generateTopicMock(selectedTopics, recentlyUsedIds)
+        : generateRandomMock(recentlyUsedIds);
     }
     const n = parseInt(id, 10);
     if (n >= 1 && n <= 5) return generatePresetMock(n - 1);
@@ -146,6 +150,12 @@ export default function MockQuizPage() {
       savedAt: new Date().toISOString(),
     });
   }, [answerHistory, answers, currentIndex, flagged, id, phase, progressReady, quiz, selectedTopicKey, timeElapsed]);
+
+  useEffect(() => {
+    if (id === 'generated' && progressReady && quiz) {
+      rememberGeneratedMockQuestions(quiz, selectedTopicKey);
+    }
+  }, [id, progressReady, quiz, selectedTopicKey]);
 
   if (!quiz) {
     return (

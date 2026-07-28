@@ -68,8 +68,17 @@ function validateMock(mock, label) {
 }
 
 for (let index = 0; index < 5; index += 1) validateMock(mockModule.namespace.generatePresetMock(index), `Preset mock ${index + 1}`);
-validateMock(mockModule.namespace.generateRandomMock(), 'Generated mock');
+const recentGeneratedIds = [];
+for (let index = 0; index < 6; index += 1) {
+  const excludedIds = recentGeneratedIds.slice(-5).flat();
+  const generatedMock = mockModule.namespace.generateRandomMock(excludedIds);
+  validateMock(generatedMock, `Generated mock ${index + 1}`);
+  const generatedIds = [...generatedMock.section1, ...generatedMock.section2].map((question) => question.id);
+  const repeatedIds = generatedIds.filter((questionId) => excludedIds.includes(questionId));
+  if (repeatedIds.length) throw new Error(`Generated mock ${index + 1} repeated ${repeatedIds.length} recently used questions`);
+  recentGeneratedIds.push(generatedIds);
+}
 for (const topicId of syllabusModule.namespace.GATE_2027_TOPIC_IDS) {
   validateMock(mockModule.namespace.generateTopicMock([topicId]), `Topic mock: ${topicId}`);
 }
-console.log('  Mock validation:     5 presets, 1 full and 11 topic-only mocks passed');
+console.log('  Mock validation:     5 presets, 6 full (0 recent repeats) and 11 topic-only mocks passed');
