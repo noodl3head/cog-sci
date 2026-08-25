@@ -2677,6 +2677,7 @@ body{
 .theme-toggle:hover{ background:var(--bg-modifier-hover) !important; color:var(--text-bright) !important; }
 
 .app{ padding:40px var(--pad-page) 96px; }
+.app:has(.study-layout){ max-width:none; }
 
 /* Kill every card shadow / big radius globally */
 *{ box-shadow:none !important; }
@@ -2695,24 +2696,44 @@ body{
 html[data-theme="light"] .btn{ background:var(--text-bright); }
 .btn-secondary{ background:var(--bg-primary); }
 
-/* ── Study notes: editorial reading layout ── */
+/* ── Study notes: desktop-first, chapter panel far left, big flashcards ── */
 .study-layout{
-  max-width:1180px; gap:0; padding:0;
+  display:flex;
+  align-items:flex-start;
+  gap:0;
+  max-width:none;          /* fill the whole content area */
+  width:100%;
+  padding:0;
 }
 .study-sidebar{
-  flex-basis:230px;
-  background:transparent; border:0; border-right:1px solid var(--divider);
-  border-radius:0; padding:6px 22px 6px 0;
+  flex:0 0 250px;
+  position:sticky; top:0;
+  align-self:flex-start;
+  background:transparent;
+  border:0; border-right:1px solid var(--divider);
+  border-radius:0;
+  padding:4px 20px 20px 0;
+  margin-left:calc(-1 * var(--pad-page));   /* pull flush to the left edge */
+  min-height:calc(100vh - 140px);
+  max-height:calc(100vh - 120px);
+  overflow-y:auto;
 }
 .study-nav-item{
-  border-radius:3px; font-size:13.5px; padding:8px 10px;
-  color:var(--text-muted);
+  border-radius:3px; font-size:13.5px; padding:9px 12px;
+  color:var(--text-muted); text-align:left;
 }
 .study-nav-item:hover{ background:var(--bg-modifier-hover); color:var(--text-bright); }
 .study-nav-item.active{
   background:var(--text-bright); color:var(--bg-primary); font-weight:600;
 }
-.study-main{ padding-left:38px; }
+
+.study-main{
+  flex:1 1 auto;
+  min-width:0;
+  padding-left:36px;
+  /* use the full width of the content column */
+  max-width:none;
+}
 .study-chapter-title{
   font-family:var(--font-display);
   font-size:clamp(26px,3vw,34px);
@@ -2728,36 +2749,61 @@ html[data-theme="light"] .btn{ background:var(--text-bright); }
 .study-tab.active{ color:var(--text-bright); border-bottom-color:var(--text-bright); }
 .study-tab:hover{ color:var(--text-bright); }
 
-/* Key terms as a two-column definition grid — no flip cards by default */
-.flashcard-grid{ display:block; column-gap:48px; columns:2; }
-@media (max-width:900px){ .flashcard-grid{ columns:1; } }
+/* Key Terms — large tap-to-reveal flashcards, 2-up on laptop */
+.flashcard-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:14px;
+}
+@media (min-width:1500px){ .flashcard-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+@media (max-width:860px){ .flashcard-grid{ grid-template-columns:1fr; } }
 .flashcard{
-  height:auto; perspective:none; break-inside:avoid;
-  border-bottom:1px solid var(--divider-light);
-  padding:13px 2px 15px;
+  height:auto; min-height:170px;
+  perspective:1000px;
+  break-inside:avoid;
 }
-.flashcard-inner{ position:static; width:auto; height:auto; transform:none !important; display:block; }
-.flashcard-front,.flashcard-back{
-  position:static; inset:auto; backface-visibility:visible; padding:0; display:block;
+.flashcard-inner{
+  position:relative; width:100%; height:100%;
+  transform-style:preserve-3d;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
 }
+.flashcard.flipped .flashcard-inner{ transform:rotateY(180deg); }
+.flashcard-front,
 .flashcard-back{
-  display:none; transform:none; background:transparent; color:inherit;
+  position:absolute; inset:0;
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  border-radius:4px;
+  padding:22px 24px;
+  display:flex; flex-direction:column;
+  justify-content:flex-start;
 }
-.flashcard.flipped .flashcard-back{ display:block; margin-top:7px; }
-.flashcard.flipped .flashcard-front .fc-tap-hint{ visibility:hidden; }
+.flashcard-front{
+  background:var(--bg-secondary);
+  border:1px solid var(--divider);
+  gap:10px; cursor:pointer;
+}
+.flashcard-front:hover{ border-color:var(--text-faint); }
+.flashcard-back{
+  background:var(--text-bright);
+  color:var(--bg-primary);
+  transform:rotateY(180deg);
+}
 .fc-term{
-  font-size:14.5px; font-weight:650; color:var(--text-bright);
-  letter-spacing:-.005em;
+  font-size:16.5px; font-weight:650; line-height:1.35;
+  color:var(--text-bright); letter-spacing:-.01em;
 }
-.fc-term::before{
-  content:"·"; color:var(--text-faint); margin-right:8px; font-weight:700;
+html[data-theme="dark"] .fc-term{ color:var(--text-bright); }
+.fc-tap-hint{
+  font-size:10px; color:var(--text-faint);
+  letter-spacing:.09em; text-transform:uppercase;
+  margin-top:auto;
 }
-.fc-tap-hint{ display:inline-block; margin:0; float:right; font-size:10px; color:var(--text-faint); }
 .fc-def{
-  font-size:14px; line-height:1.65; color:var(--text-muted); letter-spacing:0;
+  font-size:15px; line-height:1.7; letter-spacing:-.005em;
+  color:inherit; opacity:.92;
 }
 
-/* Summary: numbered editorial blocks separated by hairlines */
+/* Summary */
 .summary-list{ gap:0; }
 .summary-block{
   background:transparent !important; border:0 !important;
@@ -2782,7 +2828,7 @@ html[data-theme="light"] .btn{ background:var(--text-bright); }
   letter-spacing:0; margin:6px 0 0;
 }
 
-/* Must-know: tight numbered list with hanging numerals */
+/* Must-know / gate focus */
 .mustknow-list{ gap:0; counter-reset:mk; }
 .mustknow-item{
   background:transparent !important; border:0 !important; border-bottom:1px solid var(--divider-light);
@@ -2796,27 +2842,30 @@ html[data-theme="light"] .btn{ background:var(--text-bright); }
 }
 .mustknow-bullet{ display:none; }
 
-/* Mnemonics: quiet list, accent left rule only */
+/* Mnemonics */
 .mnemonic-list{ gap:0; }
 .mnemonic-card{
   background:transparent !important;
   border:0 !important; border-left:2px solid var(--yellow);
   border-radius:0 !important; padding:12px 0 12px 16px; margin-bottom:4px;
 }
-.mnemonic-label{
-  color:var(--yellow); font-size:11px; letter-spacing:.09em; margin-bottom:5px;
-}
-.mnemonic-text{
-  font-size:14px; line-height:1.7; color:var(--text-muted);
-  white-space:pre-wrap;
-}
+.mnemonic-label{ color:var(--yellow); font-size:11px; letter-spacing:.09em; margin-bottom:5px; }
+.mnemonic-text{ font-size:14px; line-height:1.7; color:var(--text-muted); white-space:pre-wrap; }
 
-/* All view section headings */
-.study-section-heading{
-  font-size:11px; letter-spacing:.12em; margin:30px 0 4px;
-}
+/* Section headings + All view */
+.study-section-heading{ font-size:11px; letter-spacing:.12em; margin:30px 0 4px; }
 .term-def-list dt{ font-size:14.5px; font-weight:650; color:var(--text-bright); margin-top:14px; }
 .term-def-list dd{ font-size:14px; line-height:1.65; }
+
+@media (max-width:700px){
+  .study-layout{ display:block; }
+  .study-main{ padding-left:0; }
+  .study-sidebar{
+    position:static; min-height:0; max-height:none;
+    border-right:0; border-bottom:1px solid var(--divider);
+    padding:0 0 12px; margin-left:0; margin-bottom:14px; width:100%;
+  }
+}
 
 /* Home chapter rows: slightly taller, cleaner */
 .chapter-row{ padding:12px 8px; font-size:14.5px; }
