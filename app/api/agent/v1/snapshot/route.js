@@ -89,8 +89,7 @@ export async function GET(request) {
     return Response.json({
       generatedAt: new Date().toISOString(),
       chapterPractice: {
-        ...overall,
-        accuracy,
+        summary: { ...overall, accuracy },
         weaknesses,
         attempts,
         attemptsReturned: attempts.length,
