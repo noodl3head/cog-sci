@@ -3,9 +3,23 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { STUDY_DATA } from '../../lib/studyData';
+import { STUDY_EXTENSIONS } from '../../lib/studyExtensions';
 import { QUIZ_DATA } from '../../lib/quizData';
 
-const TABS = ['Key Terms', 'Summary', 'Must-Know', 'Mnemonics', 'All'];
+const TABS = ['Key Terms', 'Summary', 'Must-Know', 'Mnemonics', 'Gate Focus', 'Pitfalls', 'All'];
+
+// Merge base study data with per-chapter GATE-focused extensions.
+function chapterWithExtensions(id) {
+  const base = STUDY_DATA.find((c) => c.id === id);
+  const ext = STUDY_EXTENSIONS[id] || {};
+  return {
+    ...base,
+    keyTerms: [...(base.keyTerms || []), ...(ext.extendedTerms || [])],
+    mustKnow: [...(base.mustKnow || []), ...(ext.gateFocus || []), ...(ext.pitfalls || [])],
+    gateFocus: ext.gateFocus || [],
+    pitfalls: ext.pitfalls || [],
+  };
+}
 
 // Map study chapters to quiz chapters so each notes page links to its practice.
 function quizLinkFor(studyId) {
@@ -23,7 +37,10 @@ export default function StudyPage() {
   const [flipped, setFlipped] = useState({});
   const [revealAll, setRevealAll] = useState(false);
 
-  const chapter = STUDY_DATA.find((c) => c.id === activeChapter);
+  const chapter = useMemo(
+    () => chapterWithExtensions(activeChapter),
+    [activeChapter]
+  );
   const link = quizLinkFor(activeChapter);
 
   useEffect(() => {
@@ -186,6 +203,12 @@ export default function StudyPage() {
             {activeTab === 'Mnemonics' && (
               <MnemonicsTab items={filtered.mnemonics} />
             )}
+            {activeTab === 'Gate Focus' && (
+              <MustKnowTab items={filtered.gateFocus} />
+            )}
+            {activeTab === 'Pitfalls' && (
+              <PitfallsTab items={filtered.pitfalls} />
+            )}
             {activeTab === 'All' && <AllView chapter={filtered} />}
           </div>
         </main>
@@ -253,10 +276,26 @@ function MnemonicsTab({ items }) {
       {items.map((item, i) => (
         <div key={i} className="mnemonic-card">
           <div className="mnemonic-label">{item.label}</div>
-          <pre className="mnemonic-text">{item.text}</pre>
+          <pre className="mnemonic-text">{item.text.replace(/\*\*/g, '')}</pre>
         </div>
       ))}
     </div>
+  );
+}
+
+function PitfallsTab({ items }) {
+  if (!items.length) {
+    return <p className="term-count-note">No pitfalls recorded for this chapter.</p>;
+  }
+  return (
+    <ul className="mustknow-list pitfalls-list">
+      {items.map((item, i) => (
+        <li key={i} className="mustknow-item">
+          <span className="mustknow-bullet" style={{ color: 'var(--red)' }}>⚠</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -280,6 +319,18 @@ function AllView({ chapter }) {
         <>
           <p className="study-section-heading">Mnemonics</p>
           <MnemonicsTab items={chapter.mnemonics} />
+        </>
+      )}
+      {chapter.pitfalls?.length > 0 && (
+        <>
+          <p className="study-section-heading">Common pitfalls</p>
+          <PitfallsTab items={chapter.pitfalls} />
+        </>
+      )}
+      {chapter.gateFocus?.length > 0 && (
+        <>
+          <p className="study-section-heading">GATE exam focus</p>
+          <MustKnowTab items={chapter.gateFocus} />
         </>
       )}
       {chapter.keyTerms?.length > 0 && (
