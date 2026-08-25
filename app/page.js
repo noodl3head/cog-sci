@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { QUIZ_DATA } from '../lib/quizData';
 import { getChapterQuestionCount } from '../lib/quizHelpers';
+import { dueCount, dueItems } from '../lib/srs';
 
 function computeStreak(activeDays) {
   if (!activeDays || activeDays.length === 0) return 0;
@@ -24,6 +25,12 @@ export default function HomePage() {
   const [stats, setStats] = useState(null);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
+  const [due, setDue] = useState({ count: 0, items: [] });
+
+  useEffect(() => {
+    // SRS queue lives in localStorage — read after mount to avoid hydration mismatch.
+    try { setDue({ count: dueCount(), items: dueItems().slice(0, 5) }); } catch {}
+  }, []);
 
   useEffect(() => {
     fetch('/api/stats')
@@ -78,6 +85,37 @@ export default function HomePage() {
             </Link>
           </span>
         </div>
+
+        {due.count > 0 && (
+          <div style={{ marginBottom: 18 }}>
+            <p className="book-divider" style={{ marginTop: 0, paddingTop: 0, borderTop: 'none' }}>
+              Due for review — {due.count} question{due.count !== 1 ? 's' : ''}
+            </p>
+            <div className="chapter-list">
+              {due.items.map(({ key }) => {
+                const [bookId, chapterId, num] = key.split('::');
+                const book = QUIZ_DATA.books.find((b) => b.id === bookId);
+                const ch = book?.chapters.find((c) => c.id === chapterId);
+                return (
+                  <Link
+                    key={key}
+                    href={`/quiz/${bookId}/${chapterId}?missed=${num}`}
+                    className="chapter-row"
+                  >
+                    <span className="cr-num">↻</span>
+                    <span className="cr-title">{ch ? ch.title : key}</span>
+                    <span className="cr-meta">Q{num}</span>
+                  </Link>
+                );
+              })}
+              {due.count > due.items.length && (
+                <div className="chapter-row" style={{ color: 'var(--text-faint)' }}>
+                  <span className="cr-title">+{due.count - due.items.length} more due later today</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         <input
           className="chapter-search"

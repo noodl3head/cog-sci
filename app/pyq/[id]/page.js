@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getPaper } from '../../../lib/pyqData';
 import { calcPyqResult, gradeQuestion, isAnswered } from '../../../lib/pyqScoring';
+import { applyOverrides, loadOverrides, getOverride, setOverride } from '../../../lib/pyqKeyOverrides';
 import { NormalDistChart } from '../../components/NormalDistChart';
 
 // Population model for the 100-mark GATE paper distribution chart.
@@ -16,6 +17,82 @@ function formatTime(s) {
   const sec = s % 60;
   if (h > 0) return `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
   return `${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+}
+
+// Small component to dispute/correct the stored key during review.
+function KeyOverrideControls({ paperId, qq }) {
+  const [override, setOvr] = useState(() => getOverride(paperId, qq.num));
+  const isMcq = qq.type === 'MCQ';
+  const storedKey = isMcq ? qq.answer : (qq.acceptedSets ? qq.acceptedSets[0] : qq.answers);
+
+  function pick(letter) {
+    const next = { answer: letter };
+    setOverride(paperId, qq.num, next);
+    setOvr(next);
+  }
+  function toggleMsq(letter) {
+    const cur = Array.isArray(override?.answers) ? [...override.answers] : (Array.isArray(storedKey) ? [...storedKey] : []);
+    const next = { answers: cur.includes(letter) ? cur.filter((l) => l !== letter) : [...cur, letter] };
+    if (next.answers.length === 0) { setOverride(paperId, qq.num, null); setOvr(null); return; }
+    setOverride(paperId, qq.num, next);
+    setOvr(next);
+  }
+
+  return (
+    <div className="key-override-block">
+      <p className="key-override-label">
+        Official key: <b>{isMcq ? String(storedKey ?? '—') : (Array.isArray(storedKey) ? storedKey.join(', ') : '—')}</b>
+        {qq.mta && ' · marks-to-all'}
+        {' — '}think it&apos;s wrong? Correct it:
+      </p>
+      <div className="key-override-row">
+        {(qq.type === 'NAT'
+          ? null
+          : ['A', 'B', 'C', 'D'].map((letter) => (
+              <button
+                key={letter}
+                className={
+                  'key-override-btn' +
+                  (isMcq && override?.answer === letter ? ' active' : '') +
+                  (!isMcq && Array.isArray(override?.answers) && override.answers.includes(letter) ? ' active' : '')
+                }
+                onClick={() => (isMcq ? pick(letter) : toggleMsq(letter))}
+              >
+                {letter}
+              </button>
+            ))
+        )}
+        {qq.type === 'NAT' && (
+          <>
+            <input
+              type="text" inputMode="decimal" className="study-search" style={{ maxWidth: 120 }}
+              placeholder="e.g. 10 or 10-12"
+              defaultValue={override?.range ? override.range.join('-') : ''}
+              onKeyDown={(e) => {
+                if (e.key !== 'Enter') return;
+                const t = e.target.value.trim();
+                if (!t) return;
+                const parts = t.split(/[-–]/).map((x) => parseFloat(x)).filter((x) => !Number.isNaN(x));
+                if (parts.length === 0) return;
+                const range = parts.length === 1 ? [parts[0], parts[0]] : [parts[0], parts[1]];
+                setOverride(paperId, qq.num, { range });
+                setOvr({ range });
+              }}
+            />
+            <span className="term-count-note">type value + Enter</span>
+          </>
+        )}
+        {override && (
+          <button
+            className="btn-link"
+            onClick={() => { setOverride(paperId, qq.num, null); setOvr(null); }}
+          >
+            Reset to official key
+          </button>
+        )}
+      </div>
+    </div>
+  );
 }
 
 function sectionMeta(paper, code) {
@@ -252,13 +329,19 @@ export default function PyqPage() {
 
   // ── Phase: results / review ───────────────────────────────────────────────
   if (phase === 'results' || phase === 'review') {
-    const result = calcPyqResult(paper, answers);
+    // Grade against YOUR corrected key (overrides), not the raw transcription.
+    const effectiveQuestions = useMemo(
+      () => applyOverrides(questions, paper.id),
+      [questions, paper.id, phase]
+    );
+    const result = calcPyqResult({ ...paper, questions: effectiveQuestions }, answers);
+    const overriddenCount = effectiveQuestions.filter((x) => x.overridden).length;
     const pct = Math.round((result.total / result.maxMarks) * 100);
     const circumference = 2 * Math.PI * 65;
     const dash = Math.max(0, result.total / result.maxMarks) * circumference;
 
     if (phase === 'review') {
-      const rq = questions[reviewIndex];
+      const rq = effectiveQuestions[reviewIndex];
       return (
         <div className="app">
           {masthead}
@@ -273,6 +356,8 @@ export default function PyqPage() {
             </div>
 
             <div style={{ marginTop: 16 }}>{questionCard(rq, null, { review: true })}</div>
+
+            <KeyOverrideControls paperId={paper.id} qq={rq} />
 
             <div className="mock-palette-block" style={{ marginTop: 24 }}>
               {paper.sections.map((s) => (
@@ -341,6 +426,12 @@ export default function PyqPage() {
             <NormalDistChart score={result.total} total={result.maxMarks} mu={PYQ_MU} sigma={PYQ_SIGMA} pop={PYQ_POP} />
 
             {saveError && <div className="mock-save-error">⚠ Result not saved: {saveError}</div>}
+
+            {overriddenCount > 0 && (
+              <p className="term-count-note" style={{ marginTop: 12 }}>
+                Graded with {overriddenCount} corrected key{overriddenCount !== 1 ? 's' : ''} — see Answer Key review to manage them.
+              </p>
+            )}
 
             <div className="summary-actions">
               <button className="btn" onClick={() => { setReviewIndex(0); setPhase('review'); }}>View Answer Key</button>

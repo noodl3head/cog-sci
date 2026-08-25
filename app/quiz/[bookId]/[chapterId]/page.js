@@ -4,6 +4,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getChapter, getChapterQuestions } from '../../../../lib/quizHelpers';
+import { review as srsReview } from '../../../../lib/srs';
 
 function saveKey(bookId, chapterId) {
   return `quiz_progress_${bookId}_${chapterId}`;
@@ -178,6 +179,9 @@ export default function QuizPage() {
         isCorrect,
       }),
     }).catch(() => {});
+
+    // Spaced repetition: wrong = due now; right = push out to the next interval.
+    try { srsReview(bookId, chapterId, questionNumber, !isCorrect); } catch {}
   }
 
   function next() {
