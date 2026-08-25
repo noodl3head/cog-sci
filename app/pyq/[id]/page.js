@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getPaper } from '../../../lib/pyqData';
+import { serializePyqResponses } from '../../../lib/agentData';
 import { calcPyqResult, gradeQuestion, isAnswered } from '../../../lib/pyqScoring';
 import { applyOverrides, loadOverrides, getOverride, setOverride } from '../../../lib/pyqKeyOverrides';
 import { NormalDistChart } from '../../components/NormalDistChart';
@@ -186,6 +187,7 @@ export default function PyqPage() {
           timeSeconds: timeElapsed,
           gaNet: byCode('GA'), b1Net: byCode('XH-B1'), c5Net: byCode('XH-C5'),
           sections: result.sections,
+          responses: serializePyqResponses(paper, answers),
         }),
       })
         .then((r) => r.json())

@@ -56,3 +56,17 @@ CREATE TABLE IF NOT EXISTS pyq_results (
 
 CREATE INDEX IF NOT EXISTS idx_pyq_results_paper_id ON pyq_results (paper_id);
 CREATE INDEX IF NOT EXISTS idx_pyq_results_created_at ON pyq_results (created_at);
+
+-- Rich response payloads used by the live Hermes analytics endpoint.
+-- Existing rows remain valid with NULL responses.
+ALTER TABLE mock_results ADD COLUMN IF NOT EXISTS responses JSONB;
+ALTER TABLE pyq_results ADD COLUMN IF NOT EXISTS responses JSONB;
+
+-- Cloud mirror for browser-local study state (SRS, revisions, key overrides,
+-- generated-mock history and resumable progress). One personal app = one namespace.
+CREATE TABLE IF NOT EXISTS app_state (
+  key        TEXT PRIMARY KEY,
+  value      JSONB,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS idx_app_state_updated_at ON app_state (updated_at);

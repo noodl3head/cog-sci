@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { generatePresetMock, generateRandomMock, generateTopicMock } from '../../../lib/mockGenerator';
+import { serializeMockResponses } from '../../../lib/agentData';
 import { NormalDistChart } from '../../components/NormalDistChart';
 import { GATE_2027_LEAF_BY_ID, GATE_2027_TOPIC_BY_ID } from '../../../lib/gateSyllabus';
 import {
@@ -260,6 +261,7 @@ export default function MockQuizPage() {
           timeSeconds: timeElapsed,
           s1Correct: result.s1Correct, s1Wrong: result.s1Wrong, s1Skipped: result.s1Skipped,
           s2Correct: result.s2Correct, s2Wrong: result.s2Wrong, s2Skipped: result.s2Skipped,
+          responses: serializeMockResponses(quiz, answers, answerHistory),
         }),
       })
         .then((r) => r.json())

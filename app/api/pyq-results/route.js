@@ -52,16 +52,18 @@ export async function POST(req) {
     const sql = getSql();
     const {
       paperId, positiveMarks, negativeMarks, totalMarks, timeSeconds,
-      gaNet, b1Net, c5Net, sections,
+      gaNet, b1Net, c5Net, sections, responses = null,
     } = await req.json();
 
+    await sql`ALTER TABLE pyq_results ADD COLUMN IF NOT EXISTS responses JSONB`;
     await sql`
       INSERT INTO pyq_results
         (paper_id, positive_marks, negative_marks, total_marks, time_seconds,
-         ga_net, b1_net, c5_net, sections)
+         ga_net, b1_net, c5_net, sections, responses)
       VALUES
         (${paperId}, ${positiveMarks}, ${negativeMarks}, ${totalMarks}, ${timeSeconds},
-         ${gaNet}, ${b1Net}, ${c5Net}, ${JSON.stringify(sections)})
+         ${gaNet}, ${b1Net}, ${c5Net}, ${JSON.stringify(sections)},
+         ${responses == null ? null : JSON.stringify(responses)})
     `;
 
     return Response.json({ ok: true });

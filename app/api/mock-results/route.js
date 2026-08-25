@@ -51,15 +51,18 @@ export async function POST(req) {
     const {
       mockId, positiveMarks, negativeMarks, totalMarks, timeSeconds,
       s1Correct, s1Wrong, s1Skipped, s2Correct, s2Wrong, s2Skipped,
+      responses = null,
     } = await req.json();
 
+    await sql`ALTER TABLE mock_results ADD COLUMN IF NOT EXISTS responses JSONB`;
     await sql`
       INSERT INTO mock_results
         (mock_id, positive_marks, negative_marks, total_marks, time_seconds,
-         s1_correct, s1_wrong, s1_skipped, s2_correct, s2_wrong, s2_skipped)
+         s1_correct, s1_wrong, s1_skipped, s2_correct, s2_wrong, s2_skipped, responses)
       VALUES
         (${mockId}, ${positiveMarks}, ${negativeMarks}, ${totalMarks}, ${timeSeconds},
-         ${s1Correct}, ${s1Wrong}, ${s1Skipped}, ${s2Correct}, ${s2Wrong}, ${s2Skipped})
+         ${s1Correct}, ${s1Wrong}, ${s1Skipped}, ${s2Correct}, ${s2Wrong}, ${s2Skipped},
+         ${responses == null ? null : JSON.stringify(responses)})
     `;
 
     return Response.json({ ok: true });
