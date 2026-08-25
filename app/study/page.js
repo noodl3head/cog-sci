@@ -1,22 +1,70 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { STUDY_DATA } from '../../lib/studyData';
+import { QUIZ_DATA } from '../../lib/quizData';
 
-const TABS = ['Key Terms', 'Summary', 'Must-Know', 'Mnemonics'];
+const TABS = ['Key Terms', 'Summary', 'Must-Know', 'Mnemonics', 'All'];
+
+// Map study chapters to quiz chapters so each notes page links to its practice.
+function quizLinkFor(studyId) {
+  const book = QUIZ_DATA.books.find((b) => b.id === 'kaplan');
+  if (!book) return null;
+  const ch = book.chapters.find((c) => c.id === studyId);
+  return ch ? `/quiz/kaplan/${studyId}` : null;
+}
 
 export default function StudyPage() {
   const [activeChapter, setActiveChapter] = useState(STUDY_DATA[0].id);
   const [activeTab, setActiveTab] = useState('Key Terms');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const [flipped, setFlipped] = useState({});
+  const [revealAll, setRevealAll] = useState(false);
 
   const chapter = STUDY_DATA.find((c) => c.id === activeChapter);
+  const link = quizLinkFor(activeChapter);
+
+  useEffect(() => {
+    setFlipped({});
+    setQuery('');
+  }, [activeChapter, activeTab]);
 
   function selectChapter(id) {
     setActiveChapter(id);
     setSidebarOpen(false);
   }
+
+  function toggle(i) {
+    setFlipped((f) => ({ ...f, [i]: !f[i] }));
+  }
+
+  // Filtered data based on the query (searches every tab's content).
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return chapter;
+    return {
+      ...chapter,
+      keyTerms: chapter.keyTerms.filter(
+        (t) =>
+          t.term.toLowerCase().includes(q) || t.def.toLowerCase().includes(q)
+      ),
+      summary: chapter.summary.filter(
+        (s) =>
+          s.heading.toLowerCase().includes(q) ||
+          s.body.toLowerCase().includes(q)
+      ),
+      mustKnow: chapter.mustKnow.filter((m) => m.toLowerCase().includes(q)),
+      mnemonics: chapter.mnemonics.filter(
+        (m) =>
+          m.label.toLowerCase().includes(q) ||
+          m.text.toLowerCase().includes(q)
+      ),
+    };
+  }, [chapter, query]);
+
+  const totalTerms = STUDY_DATA.reduce((a, c) => a + c.keyTerms.length, 0);
 
   return (
     <div className="app">
@@ -31,7 +79,9 @@ export default function StudyPage() {
 
         {/* Sidebar */}
         <aside className={'study-sidebar' + (sidebarOpen ? ' open' : '')}>
-          <div className="study-sidebar-label">Kaplan Chapters</div>
+          <div className="study-sidebar-label">
+            Chapters · {STUDY_DATA.length} · {totalTerms} terms
+          </div>
           {STUDY_DATA.map((ch) => (
             <button
               key={ch.id}
@@ -39,6 +89,16 @@ export default function StudyPage() {
               onClick={() => selectChapter(ch.id)}
             >
               {ch.title}
+              <span
+                style={{
+                  float: 'right',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 11,
+                  color: 'var(--text-faint)',
+                }}
+              >
+                {ch.keyTerms.length}
+              </span>
             </button>
           ))}
         </aside>
@@ -47,25 +107,86 @@ export default function StudyPage() {
         <main className="study-main">
           <h2 className="study-chapter-title">{chapter.title}</h2>
 
-          {/* Tab bar */}
-          <div className="study-tabs">
-            {TABS.map((tab) => (
-              <button
-                key={tab}
-                className={'study-tab' + (tab === activeTab ? ' active' : '')}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
+          {/* Toolbar: tabs + search + reveal toggle */}
+          <div className="study-toolbar">
+            <div className="study-tabs" style={{ marginBottom: 0 }}>
+              {TABS.map((tab) => (
+                <button
+                  key={tab}
+                  className={'study-tab' + (tab === activeTab ? ' active' : '')}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+            {activeTab === 'Key Terms' && (
+              <>
+                <input
+                  className="study-search"
+                  type="search"
+                  placeholder="Filter terms & definitions…"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <button
+                  className="btn-link"
+                  onClick={() => {
+                    if (revealAll) {
+                      setFlipped({});
+                    } else {
+                      const all = {};
+                      filtered.keyTerms.forEach((_, i) => (all[i] = true));
+                      setFlipped(all);
+                    }
+                    setRevealAll((v) => !v);
+                  }}
+                >
+                  {revealAll ? 'Hide all' : 'Reveal all'}
+                </button>
+              </>
+            )}
+            {(activeTab === 'Summary' ||
+              activeTab === 'Must-Know' ||
+              activeTab === 'Mnemonics') &&
+              query === '' && (
+                <input
+                  className="study-search"
+                  type="search"
+                  placeholder="Search this tab…"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              )}
+            {link && (
+              <Link href={link} style={{ marginLeft: 'auto' }}>
+                <span
+                  className="missed-practice-link"
+                  style={{ fontSize: 13 }}
+                >
+                  → Practice this chapter
+                </span>
+              </Link>
+            )}
           </div>
 
           {/* Tab content */}
           <div className="study-tab-content">
-            {activeTab === 'Key Terms' && <KeyTermsTab terms={chapter.keyTerms} />}
-            {activeTab === 'Summary' && <SummaryTab items={chapter.summary} />}
-            {activeTab === 'Must-Know' && <MustKnowTab items={chapter.mustKnow} />}
-            {activeTab === 'Mnemonics' && <MnemonicsTab items={chapter.mnemonics} />}
+            {activeTab === 'Key Terms' && (
+              <KeyTermsTab
+                terms={filtered.keyTerms}
+                flipped={flipped}
+                onToggle={toggle}
+              />
+            )}
+            {activeTab === 'Summary' && <SummaryTab items={filtered.summary} />}
+            {activeTab === 'Must-Know' && (
+              <MustKnowTab items={filtered.mustKnow} />
+            )}
+            {activeTab === 'Mnemonics' && (
+              <MnemonicsTab items={filtered.mnemonics} />
+            )}
+            {activeTab === 'All' && <AllView chapter={filtered} />}
           </div>
         </main>
       </div>
@@ -73,22 +194,16 @@ export default function StudyPage() {
   );
 }
 
-function KeyTermsTab({ terms }) {
-  const [flipped, setFlipped] = useState({});
-
-  function toggle(i) {
-    setFlipped((f) => ({ ...f, [i]: !f[i] }));
-  }
-
+function KeyTermsTab({ terms, flipped, onToggle }) {
   return (
     <div>
-      <p className="study-hint">{terms.length} terms — tap a card to reveal the definition.</p>
+      <p className="term-count-note">{terms.length} terms</p>
       <div className="flashcard-grid">
         {terms.map((t, i) => (
           <div
             key={i}
             className={'flashcard' + (flipped[i] ? ' flipped' : '')}
-            onClick={() => toggle(i)}
+            onClick={() => onToggle(i)}
           >
             <div className="flashcard-inner">
               <div className="flashcard-front">
@@ -141,6 +256,47 @@ function MnemonicsTab({ items }) {
           <pre className="mnemonic-text">{item.text}</pre>
         </div>
       ))}
+    </div>
+  );
+}
+
+/* Flat single-page view of everything in the chapter — good for a final read-through. */
+function AllView({ chapter }) {
+  return (
+    <div className="study-all-view">
+      {chapter.summary?.length > 0 && (
+        <>
+          <p className="study-section-heading">Summary</p>
+          <SummaryTab items={chapter.summary} />
+        </>
+      )}
+      {chapter.mustKnow?.length > 0 && (
+        <>
+          <p className="study-section-heading">Must-know</p>
+          <MustKnowTab items={chapter.mustKnow} />
+        </>
+      )}
+      {chapter.mnemonics?.length > 0 && (
+        <>
+          <p className="study-section-heading">Mnemonics</p>
+          <MnemonicsTab items={chapter.mnemonics} />
+        </>
+      )}
+      {chapter.keyTerms?.length > 0 && (
+        <>
+          <p className="study-section-heading">
+            Key terms ({chapter.keyTerms.length})
+          </p>
+          <dl className="term-def-list">
+            {chapter.keyTerms.map((t, i) => (
+              <div key={i}>
+                <dt>{t.term}</dt>
+                <dd>{t.def}</dd>
+              </div>
+            ))}
+          </dl>
+        </>
+      )}
     </div>
   );
 }

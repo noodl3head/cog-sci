@@ -1,12 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { QUIZ_DATA } from '../lib/quizData';
-import { getChapterQuestionCount, totalQuestionCount, totalChapterCount } from '../lib/quizHelpers';
+import { getChapterQuestionCount } from '../lib/quizHelpers';
+
+function computeStreak(activeDays) {
+  if (!activeDays || activeDays.length === 0) return 0;
+  const days = new Set(activeDays.map((d) => new Date(d).toDateString()));
+  let streak = 0;
+  const cursor = new Date();
+  // allow today OR yesterday to anchor the streak
+  if (!days.has(cursor.toDateString())) cursor.setDate(cursor.getDate() - 1);
+  while (days.has(cursor.toDateString())) {
+    streak++;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return streak;
+}
 
 export default function HomePage() {
   const [chapterStats, setChapterStats] = useState({});
+  const [stats, setStats] = useState(null);
+  const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,56 +32,70 @@ export default function HomePage() {
         const map = {};
         (data.latestByChapter || []).forEach((row) => {
           map[`${row.book_id}::${row.chapter_id}`] = {
-            questionsSeeen: row.questions_seen,
+            questionsSeen: row.questions_seen,
             latestCorrect: row.latest_correct,
             missedNumbers: row.missed_numbers || [],
           };
         });
         setChapterStats(map);
+        setStats(data);
       })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
+  const streak = useMemo(() => computeStreak(stats?.activeDays), [stats]);
+
+  const rows = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return QUIZ_DATA.books.map((book) => ({
+      book,
+      chapters: book.chapters.filter(
+        (ch) => !q || ch.title.toLowerCase().includes(q)
+      ),
+    }));
+  }, [query]);
+
+  const totalAttempts = stats?.totalAttempts ?? 0;
+  const totalCorrect = stats?.totalCorrect ?? 0;
+  const accuracy = totalAttempts ? Math.round((totalCorrect / totalAttempts) * 100) : null;
+
   return (
     <div className="app">
-      <section className="home-hero">
-        <div className="home-hero-copy">
-          <p className="page-eyebrow">Your GATE 2027 workspace</p>
-          <h1>Turn the syllabus into<br /><em>exam confidence.</em></h1>
-          <p className="home-hero-sub">Study by chapter, test under pressure, and bring every mistake back into your revision loop.</p>
-          <div className="home-hero-actions">
-            <Link href="/mock" className="btn">Start a mock</Link>
-            <Link href="/study" className="btn btn-secondary">Open study notes</Link>
-          </div>
-        </div>
-        <div className="home-hero-stats" aria-label="Question bank summary">
-          <div><strong>{totalQuestionCount()}</strong><span>Mapped questions</span></div>
-          <div><strong>{totalChapterCount()}</strong><span>Study chapters</span></div>
-          <div><strong>XH5</strong><span>Official syllabus</span></div>
-        </div>
-      </section>
-
       <div className="screen active">
-        <div className="section-heading">
-          <div>
-            <p className="page-eyebrow">Question bank</p>
-            <h2>Choose a chapter</h2>
-          </div>
-          <Link href="/coverage" className="text-action">View syllabus coverage →</Link>
+        <div className="home-stats-line">
+          <span>streak <b>{streak}d</b></span>
+          <span>answered <b>{totalAttempts}</b></span>
+          {accuracy !== null && <span>accuracy <b>{accuracy}%</b></span>}
+          <span>
+            <Link href="/practice/missed" style={{ color: 'var(--text-link)' }}>
+              review mistakes →
+            </Link>
+          </span>
+          <span>
+            <Link href="/mock" style={{ color: 'var(--text-link)' }}>
+              start mock →
+            </Link>
+          </span>
         </div>
-        {QUIZ_DATA.books.map((book) => {
-          const totalQ = book.chapters.reduce((sum, chapter) => sum + getChapterQuestionCount(book.id, chapter.id), 0);
-          return (
-            <div className="book-section" key={book.id}>
-              <h2 className="book-title">
-                {book.name}{' '}
-                <span className="count">
-                  {book.chapters.length} chapters &middot; {totalQ} questions
-                </span>
-              </h2>
-              <div className="chapter-grid">
-                {book.chapters.map((ch) => {
+
+        <input
+          className="chapter-search"
+          type="search"
+          placeholder="Search chapters…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          autoFocus
+        />
+
+        {rows.map(({ book, chapters }) =>
+          chapters.length === 0 ? null : (
+            <div key={book.id}>
+              <p className="book-divider">
+                {book.name} — {chapters.length} chapters
+              </p>
+              <div className="chapter-list">
+                {chapters.map((ch) => {
                   const key = `${book.id}::${ch.id}`;
                   const questionCount = getChapterQuestionCount(book.id, ch.id);
                   const stat = chapterStats[key];
@@ -74,24 +104,27 @@ export default function HomePage() {
                       ? Math.round((stat.latestCorrect / questionCount) * 100)
                       : null;
                   const missedCount = stat?.missedNumbers?.length ?? 0;
-                  const missedParam =
-                    missedCount > 0 ? stat.missedNumbers.join(',') : null;
-
                   return (
-                    <div className="chapter-card-wrap" key={ch.id}>
+                    <div
+                      key={ch.id}
+                      style={{ display: 'flex', alignItems: 'center', gap: 8 }}
+                    >
                       <Link
                         href={`/quiz/${book.id}/${ch.id}`}
-                        className="chapter-card"
-                        data-num={String(ch.number).padStart(2, '0')}
+                        className="chapter-row"
+                        style={{ flex: '1 1 auto' }}
                       >
-                        <p className="ch-title">{ch.title}</p>
-                        <p className="ch-meta">{questionCount} Questions</p>
+                        <span className="cr-num">
+                          {String(ch.number).padStart(2, '0')}
+                        </span>
+                        <span className="cr-title">{ch.title}</span>
                         {!loading && pct !== null && (
-                          <div className="ch-progress">
-                            <div
-                              className="ch-progress-fill"
+                          <span className="cr-progress">
+                            <span
+                              className="cr-progress-fill"
                               style={{
                                 width: pct + '%',
+                                display: 'block',
                                 background:
                                   pct >= 80
                                     ? 'var(--green)'
@@ -100,15 +133,19 @@ export default function HomePage() {
                                     : 'var(--red)',
                               }}
                             />
-                          </div>
+                          </span>
                         )}
+                        <span className="cr-meta">
+                          {questionCount}q{missedCount > 0 ? ` · ${missedCount}✗` : ''}
+                        </span>
                       </Link>
-                      {!loading && missedParam && (
+                      {!loading && missedCount > 0 && (
                         <Link
-                          href={`/quiz/${book.id}/${ch.id}?missed=${missedParam}`}
+                          href={`/quiz/${book.id}/${ch.id}?missed=${stat.missedNumbers.join(',')}`}
                           className="missed-practice-link"
+                          title={`Practice ${missedCount} missed`}
                         >
-                          ↺ Practice {missedCount} missed
+                          ↺
                         </Link>
                       )}
                     </div>
@@ -116,11 +153,9 @@ export default function HomePage() {
                 })}
               </div>
             </div>
-          );
-        })}
+          )
+        )}
       </div>
-
-      <footer className="note">Tracking your stats across every session &middot; for personal study use</footer>
     </div>
   );
 }
