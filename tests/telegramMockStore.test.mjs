@@ -56,7 +56,7 @@ test('toggleTelegramMockSelection updates the JSON array atomically at the expec
   };
   const row = await toggleTelegramMockSelection(sql, 'session-1', 2, 'C');
   assert.deepEqual(row.selected, ['A', 'C']);
-  assert.match(calls[0].text, /selected \?/);
+  assert.match(calls[0].text, /selected \? \?::text/);
   assert.match(calls[0].text, /AND current_index =/);
   assert.equal(calls[0].values.includes('C'), true);
 });
