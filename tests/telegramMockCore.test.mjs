@@ -40,9 +40,9 @@ test('buildQuestionKeyboard makes MSQ options toggleable before submission', () 
     { sessionId: 'mock-1', questionIndex: 2, selected: ['B', 'D'] },
   );
   assert.deepEqual(keyboard.inline_keyboard, [
-    [{ text: 'A', callback_data: 'tm:q:mock-1:2:A' }, { text: '✓ B', callback_data: 'tm:q:mock-1:2:B' }],
-    [{ text: 'C', callback_data: 'tm:q:mock-1:2:C' }, { text: '✓ D', callback_data: 'tm:q:mock-1:2:D' }],
-    [{ text: 'Submit selections', callback_data: 'tm:submit:mock-1:2' }, { text: 'Skip', callback_data: 'tm:skip:mock-1:2' }],
+    [{ text: 'A', callback_data: 'tm:q:mock-1:2:A' }, { text: '✅ B', callback_data: 'tm:q:mock-1:2:B' }],
+    [{ text: 'C', callback_data: 'tm:q:mock-1:2:C' }, { text: '✅ D', callback_data: 'tm:q:mock-1:2:D' }],
+    [{ text: 'Submit selections (2 selected)', callback_data: 'tm:submit:mock-1:2' }, { text: 'Skip', callback_data: 'tm:skip:mock-1:2' }],
   ]);
   assert.deepEqual(buildQuestionKeyboard(
     { type: 'NAT' },

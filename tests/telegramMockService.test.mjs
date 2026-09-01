@@ -6,6 +6,7 @@ import {
   isAuthorizedPrivateSubscriber,
   parseNatResponse,
   shouldRecoverMissingQuestion,
+  startMockDisposition,
 } from '../lib/telegramMockService.js';
 
 test('isAuthorizedPrivateSubscriber rejects stale users and non-private chat IDs', () => {
@@ -35,6 +36,15 @@ test('shouldRecoverMissingQuestion retries only an undelivered advanced question
   assert.equal(shouldRecoverMissingQuestion({ status: 'in_progress', current_index: 3, last_question_index: 2, questions }, 2), true);
   assert.equal(shouldRecoverMissingQuestion({ status: 'in_progress', current_index: 3, last_question_index: 3, questions }, 2), false);
   assert.equal(shouldRecoverMissingQuestion({ status: 'completed', current_index: 3, last_question_index: 2, questions }, 2), false);
+});
+
+test('startMockDisposition does not resend an already delivered active question', () => {
+  const questions = [{ id: 'q1' }];
+  assert.equal(startMockDisposition(null), 'create');
+  assert.equal(startMockDisposition({ status: 'completed', questions }), 'completed');
+  assert.equal(startMockDisposition({ status: 'finishing', questions }), 'finishing');
+  assert.equal(startMockDisposition({ status: 'in_progress', current_index: 0, last_question_index: 0, questions }), 'already-active');
+  assert.equal(startMockDisposition({ status: 'in_progress', current_index: 0, last_question_index: null, questions }), 'recover-question');
 });
 
 test('buildTelegramResultMessages creates one summary followed by ordered answer reviews', () => {
