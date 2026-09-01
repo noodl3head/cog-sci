@@ -79,6 +79,43 @@ npm run dev
 
 Then open http://localhost:3000.
 
+## Daily Telegram Psychology mock
+
+The app can run a private Telegram bot that sends a mock invitation every day at
+**12:00 PM IST**. The mock is delivered one question at a time with Telegram inline
+buttons. MCQs lock on one tap; MSQs use toggleable checkmarks plus a Submit button;
+NAT answers are entered as a normal numeric reply. GATE negative marking applies only
+to MCQs. Scores and explanations appear after the final question, and resumable result
+delivery state is persisted in Neon.
+
+The generator uses only topics mapped from chapters with at least one recorded attempt,
+and weights weaker chapter performance more heavily. Served question IDs are excluded
+from later mocks while unseen questions remain available.
+
+### One-time setup
+
+1. In Telegram, open **@BotFather**, run `/newbot`, and create a dedicated bot.
+2. In the existing Hermes Telegram chat, run `/whoami` (or use a trusted Telegram ID
+   helper) to get your numeric Telegram user ID.
+3. Add every variable documented in `.env.example` to the Vercel project's Production
+   environment. Generate three different random secrets for the webhook, setup route,
+   and cron route. Do not paste the BotFather token into chat or commit it to Git.
+4. Deploy the project. `vercel.json` schedules `/api/telegram/mock/cron` at `06:30 UTC`,
+   which is `12:00 PM Asia/Kolkata` year-round.
+5. Register the webhook once with an authenticated POST:
+
+   ```bash
+   curl -X POST \
+     -H "x-setup-secret: $TELEGRAM_MOCK_SETUP_SECRET" \
+     https://YOUR_DOMAIN/api/telegram/mock/setup
+   ```
+
+6. Open the new bot in Telegram and send `/start`. This registers your chat for the
+   daily invitation. Send `/stop` at any time to pause; `/start` resumes delivery.
+
+The webhook rejects updates without Telegram's secret-token header and the bot rejects
+every Telegram account except `TELEGRAM_MOCK_ALLOWED_USER_ID`.
+
 ## Notes
 
 - This app has no login — it's built for a single person's use, and all visitors
