@@ -1902,6 +1902,7 @@
   min-width:64px;
   justify-content:center;
 }
+.pyq-letter-option:not(:disabled){ cursor:pointer; }
 
 /* NAT input */
 .pyq-nat-block{ margin-top:10px; }

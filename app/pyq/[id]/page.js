@@ -7,6 +7,7 @@ import { getPaper } from '../../../lib/pyqData';
 import { serializePyqResponses } from '../../../lib/agentData';
 import { calcPyqResult, gradeQuestion, isAnswered } from '../../../lib/pyqScoring';
 import { applyOverrides, loadOverrides, getOverride, setOverride } from '../../../lib/pyqKeyOverrides';
+import { getPyqOptionClassName } from '../../../lib/pyqOptionState';
 import { NormalDistChart } from '../../components/NormalDistChart';
 
 // Population model for the 100-mark GATE paper distribution chart.
@@ -128,6 +129,11 @@ export default function PyqPage() {
     return () => clearInterval(timerRef.current);
   }, [phase]);
 
+  const effectiveQuestions = useMemo(
+    () => (paper ? applyOverrides(paper.questions, paper.id) : []),
+    [paper, phase]
+  );
+
   if (!paper) {
     return (
       <div className="app">
@@ -246,15 +252,12 @@ export default function PyqPage() {
         {OPTS.map((letter) => {
           const label = qq.options?.[letter] ?? '';
           const isSel = selected.includes(letter);
-          let cls = 'option ' + (qq.imageOnly ? 'pyq-letter-option' : 'mock-option');
-          if (review) {
-            const isCorrectOpt = correctSet.includes(letter);
-            if (isCorrectOpt) cls += ' correct';
-            else if (isSel) cls += ' incorrect selected';
-            else cls += ' fade';
-          } else if (isSel) {
-            cls += ' mock-selected';
-          }
+          const cls = getPyqOptionClassName({
+            imageOnly: Boolean(qq.imageOnly),
+            selected: isSel,
+            review,
+            correct: correctSet.includes(letter),
+          });
           return (
             <button
               key={letter} className={cls} disabled={review}
@@ -332,10 +335,6 @@ export default function PyqPage() {
   // ── Phase: results / review ───────────────────────────────────────────────
   if (phase === 'results' || phase === 'review') {
     // Grade against YOUR corrected key (overrides), not the raw transcription.
-    const effectiveQuestions = useMemo(
-      () => applyOverrides(questions, paper.id),
-      [questions, paper.id, phase]
-    );
     const result = calcPyqResult({ ...paper, questions: effectiveQuestions }, answers);
     const overriddenCount = effectiveQuestions.filter((x) => x.overridden).length;
     const pct = Math.round((result.total / result.maxMarks) * 100);
