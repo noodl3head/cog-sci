@@ -33,7 +33,7 @@ export async function GET() {
     `;
 
     const recent = await sql`
-      SELECT paper_id, positive_marks, negative_marks, total_marks, time_seconds,
+      SELECT id, paper_id, positive_marks, negative_marks, total_marks, time_seconds,
              ga_net, b1_net, c5_net, created_at
       FROM pyq_results
       ORDER BY created_at DESC

@@ -38,6 +38,7 @@ export default function PyqListPage() {
               MCQ (−⅓ / −⅔) · MSQ &amp; NAT (no negative)
             </p>
           </div>
+          <Link href="/pyq/history" className="btn btn-secondary">Past results</Link>
         </div>
 
         <div className="mock-card-grid">

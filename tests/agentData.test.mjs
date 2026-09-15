@@ -6,6 +6,7 @@ import {
   rankWeaknesses,
   collectSyncEntries,
 } from '../lib/agentData.js';
+import { gradeQuestion } from '../lib/pyqScoring.js';
 
 test('serializeMockResponses preserves every selected and correct answer', () => {
   const quiz = {
@@ -38,6 +39,37 @@ test('serializePyqResponses supports MCQ MSQ NAT and skipped answers', () => {
   assert.equal(rows[1].status, 'correct');
   assert.deepEqual(rows[2].correctAnswer, [4, 5]);
   assert.equal(rows[2].status, 'skipped');
+});
+
+test('serializePyqResponses preserves alternate keys and marks-to-all semantics', () => {
+  const paper = { id: '2025', questions: [
+    { num: 1, section: 'GA', type: 'MCQ', marks: 1, answer: 'A', acceptedAnswers: ['A', 'D'] },
+    { num: 2, section: 'XH-C5', type: 'MSQ', marks: 2, answers: ['A', 'B'], acceptedSets: [['A', 'B'], ['C', 'D']] },
+    { num: 3, section: 'XH-C5', type: 'MCQ', marks: 2, answer: null, mta: true },
+    { num: 4, section: 'XH-C5', type: 'MCQ', marks: 1, answer: null, mta: true },
+  ] };
+  const rows = serializePyqResponses(paper, { 1: 'D', 2: ['D', 'C'], 3: 'B' });
+
+  assert.deepEqual(rows[0].acceptedAnswers, ['A', 'D']);
+  assert.deepEqual(rows[1].acceptedSets, [['A', 'B'], ['C', 'D']]);
+  assert.equal(rows[2].marksToAll, true);
+  assert.equal(rows[3].answered, false);
+  assert.equal(rows[3].isCorrect, true);
+  assert.equal(rows[3].status, 'correct');
+  assert.equal(rows.every((row) => row.status === 'correct'), true);
+});
+
+test('serialized NAT status matches live grading for malformed and boundary inputs', () => {
+  const question = { num: 1, section: 'XH-C5', type: 'NAT', marks: 2, range: [1, 1] };
+  const paper = { id: '2026', questions: [question] };
+
+  for (const selectedAnswer of ['1abc', '1.0000000005', '1']) {
+    const saved = serializePyqResponses(paper, { 1: selectedAnswer })[0];
+    assert.equal(saved.status, gradeQuestion(question, selectedAnswer).status);
+  }
+
+  assert.equal(serializePyqResponses(paper, { 1: '1abc' })[0].status, 'wrong');
+  assert.equal(serializePyqResponses(paper, { 1: '1.0000000005' })[0].status, 'correct');
 });
 
 test('collectSyncEntries includes study state and excludes unrelated local storage', () => {
