@@ -1,4 +1,5 @@
 import { getSql } from '../../../../../lib/db.js';
+import { getTelegramMockBotIdentity } from '../../../../../lib/telegramMockApi.js';
 import { hasBearerSecret } from '../../../../../lib/telegramMockAuth.js';
 import { indiaDate, sendDailyTelegramMockInvites } from '../../../../../lib/telegramMockService.js';
 
@@ -13,7 +14,11 @@ export async function GET(request) {
 
   try {
     const mockDate = indiaDate();
-    const deliveries = await sendDailyTelegramMockInvites(getSql(), mockDate);
+    const [bot, deliveries] = await Promise.all([
+      getTelegramMockBotIdentity(),
+      sendDailyTelegramMockInvites(getSql(), mockDate),
+    ]);
+    console.info('Telegram mock bot identity', { username: bot.username || null });
     console.info('Telegram mock cron delivery summary', {
       attempted: deliveries.length,
       delivered: deliveries.filter((delivery) => delivery.delivered).length,
