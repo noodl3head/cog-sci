@@ -14,6 +14,11 @@ export async function GET(request) {
   try {
     const mockDate = indiaDate();
     const deliveries = await sendDailyTelegramMockInvites(getSql(), mockDate);
+    console.info('Telegram mock cron delivery summary', {
+      attempted: deliveries.length,
+      delivered: deliveries.filter((delivery) => delivery.delivered).length,
+      failed: deliveries.filter((delivery) => !delivery.delivered).length,
+    });
     return Response.json({ ok: true, mockDate, deliveries });
   } catch (error) {
     console.error('Telegram mock cron failed:', error);
