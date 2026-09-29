@@ -10,6 +10,9 @@ import {
   releaseTelegramMockResultClaim,
   releaseTelegramMockUpdate,
   submitTelegramMockSelection,
+  findTelegramMockSessionByWebToken,
+  saveTelegramMockWebProgress,
+  submitTelegramMockWebSession,
   toggleTelegramMockSelection,
 } from '../lib/telegramMockStore.js';
 
@@ -134,4 +137,26 @@ test('completeTelegramMockSession requires the final delivery checkpoint', async
   assert.match(calls[0].text, /status = 'finishing'/);
   assert.match(calls[0].text, /result_delivery_index =/);
   assert.equal(calls[0].values.includes(10), true);
+});
+
+test('web progress is token-scoped and only updates in-progress sessions', async () => {
+  const calls = [];
+  const sql = async (strings, ...values) => { calls.push({ text: strings.join('?'), values }); return [{ status: 'in_progress' }]; };
+  await findTelegramMockSessionByWebToken(sql, 'opaque');
+  await saveTelegramMockWebProgress(sql, 'opaque', { responses: { 0: ['A'] }, reasoning: { 0: { A: 'because' } }, currentIndex: 0 });
+  assert.match(calls[0].text, /web_token/);
+  assert.match(calls[1].text, /WHERE web_token = \?/);
+  assert.match(calls[1].text, /status = 'in_progress'/);
+  assert.doesNotMatch(calls[1].text, /web_result|answers/);
+});
+
+test('web submission atomically completes an in-progress token-scoped session', async () => {
+  const calls = [];
+  const sql = async (strings, ...values) => { calls.push({ text: strings.join('?'), values }); return [{ status: 'completed' }]; };
+  await submitTelegramMockWebSession(sql, 'opaque', { responses: {}, reasoning: {}, result: { score: 2, maxMarks: 2 } });
+  assert.match(calls[0].text, /status = 'completed'/);
+  assert.match(calls[0].text, /web_result/);
+  assert.match(calls[0].text, /completed_at = now/);
+  assert.match(calls[0].text, /WHERE web_token = \?/);
+  assert.match(calls[0].text, /status = 'in_progress'/);
 });

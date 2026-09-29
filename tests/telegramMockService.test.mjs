@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildTelegramResultMessages,
+  dailyInviteDisposition,
   hasUndeliveredCurrentQuestion,
   isAuthorizedPrivateSubscriber,
   parseNatResponse,
@@ -22,6 +23,13 @@ test('parseNatResponse rejects empty and non-numeric messages while accepting ze
   assert.equal(parseNatResponse('0'), '0');
   assert.equal(parseNatResponse('1,250.5'), '1,250.5');
   assert.equal(parseNatResponse('1e2'), '1e2');
+});
+
+test('daily invitation disposition never creates a second same-day session', () => {
+  assert.equal(dailyInviteDisposition(null), 'create');
+  assert.equal(dailyInviteDisposition({ status: 'completed', web_token: 'done' }), 'skip');
+  assert.equal(dailyInviteDisposition({ status: 'in_progress', web_token: 'active-link' }), 'resend-web-link');
+  assert.equal(dailyInviteDisposition({ status: 'in_progress', web_token: null }), 'skip');
 });
 
 test('hasUndeliveredCurrentQuestion detects a failed next-question send for any answer type', () => {

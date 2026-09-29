@@ -2958,3 +2958,48 @@ html[data-theme="dark"] .fc-term{ color:var(--text-bright); }
   .pyq-past-section{ border-right:0; border-bottom:1px solid var(--divider-light); }
   .pyq-past-section:last-child{ border-bottom:0; }
 }
+
+/* ---------- Telegram web MSQ runner ---------- */
+.web-msq-page{ max-width:980px; margin:0 auto; padding:28px 20px 72px; }
+.web-msq-header{ display:flex; align-items:flex-start; justify-content:space-between; gap:20px; padding-bottom:16px; border-bottom:1px solid var(--divider); }
+.web-msq-header h1{ margin:3px 0 0; color:var(--text-bright); font-size:clamp(22px,4vw,30px); }
+.web-msq-kicker,.web-msq-meta{ margin:0; color:var(--text-muted); font:700 11px/1.4 var(--font-mono); letter-spacing:.06em; text-transform:uppercase; }
+.web-msq-save{ color:var(--text-muted); font:600 12px/1.4 var(--font-mono); white-space:nowrap; }
+.web-msq-palette{ display:flex; flex-wrap:wrap; gap:6px; margin:20px 0 10px; }
+.web-msq-palette-button{ min-width:36px; padding:7px 8px; border:1px solid var(--divider); background:var(--bg-secondary); color:var(--text-muted); font:700 12px/1 var(--font-mono); cursor:pointer; }
+.web-msq-palette-button:hover,.web-msq-palette-button--current{ border-color:var(--brand); color:var(--text-bright); background:var(--bg-modifier-hover); }
+.web-msq-status{ margin-bottom:22px; color:var(--text-muted); font-size:12px; }
+.web-msq-question{ border-top:1px solid var(--divider); padding-top:22px; }
+.web-msq-question h2{ max-width:820px; margin:10px 0 12px; color:var(--text-bright); font-size:clamp(18px,2.6vw,23px); line-height:1.5; }
+.web-msq-instruction{ margin:0 0 18px; color:var(--text-muted); font-size:13px; line-height:1.55; }
+.web-msq-options{ display:grid; gap:10px; }
+.web-msq-option{ border:1px solid var(--divider); background:var(--bg-tertiary); padding:13px; }
+.web-msq-option--active{ border-color:var(--brand); }
+.web-msq-option-header{ display:grid; grid-template-columns:18px minmax(0,1fr); align-items:start; gap:11px; line-height:1.5; }
+.web-msq-option-header label{ cursor:pointer; color:var(--text-normal); }
+.web-msq-option-eyebrow{ color:var(--text-muted); font:700 11px/1.3 var(--font-mono); letter-spacing:.06em; text-transform:uppercase; }
+.web-msq-checkbox{ inline-size:18px; block-size:18px; margin:2px 0 0; accent-color:var(--brand); cursor:pointer; }
+.web-msq-reasoning-label{ display:block; margin-top:12px; color:var(--text-muted); font:600 11px/1.3 var(--font-mono); letter-spacing:.035em; }
+.web-msq-reasoning-label>span{ display:block; margin-bottom:6px; }
+.web-msq-reasoning{ width:100%; min-height:88px; resize:vertical; padding:10px; border:1px solid var(--divider); border-radius:0; outline:0; background:var(--bg-secondary); color:var(--text-normal); font:14px/1.5 var(--font-body); }
+.web-msq-reasoning:focus,.web-msq-checkbox:focus-visible,.web-msq-palette-button:focus-visible,.web-msq-actions button:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; border-color:var(--brand); }
+.web-msq-actions{ display:flex; align-items:flex-start; gap:8px; margin-top:22px; padding-top:16px; border-top:1px solid var(--divider); }
+.web-msq-actions button{ border:1px solid var(--divider); border-radius:0; background:var(--bg-secondary); color:var(--text-normal); padding:9px 12px; font:600 13px/1 var(--font-body); cursor:pointer; }
+.web-msq-actions button:disabled{ cursor:not-allowed; opacity:.45; }
+.web-msq-actions .primary{ background:var(--brand); border-color:var(--brand); color:#fff; }
+.web-msq-submit-area{ margin-left:auto; text-align:right; }
+.web-msq-submit-area p{ max-width:320px; margin:0 0 8px; color:var(--text-muted); font-size:12px; line-height:1.4; }
+.web-msq-error{ color:var(--red) !important; }
+.web-msq-results{ margin-top:24px; }
+.web-msq-review{ border-top:1px solid var(--divider); padding:12px 0; }
+.web-msq-review summary{ cursor:pointer; color:var(--text-bright); font-weight:700; }
+.web-msq-review-option{ margin-top:12px; padding-top:10px; border-top:1px solid var(--divider-light); }
+.web-msq-review-option p,.web-msq-review>p{ color:var(--text-muted); font-size:13px; line-height:1.55; }
+
+@media (max-width:640px){
+  .web-msq-page{ padding:20px 14px 56px; }
+  .web-msq-header,.web-msq-actions{ flex-wrap:wrap; }
+  .web-msq-submit-area{ width:100%; margin-left:0; text-align:left; }
+  .web-msq-option{ padding:12px 10px; }
+  .web-msq-reasoning{ min-height:108px; font-size:16px; }
+}

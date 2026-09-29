@@ -1,0 +1,1257 @@
+{
+  "profile": {
+    "total": 103,
+    "correctOptionCounts": {
+      "1": 6,
+      "2": 56,
+      "3": 40,
+      "4": 1
+    },
+    "byYear": {
+      "2021": 18,
+      "2022": 21,
+      "2023": 15,
+      "2024": 19,
+      "2025": 15,
+      "2026": 15
+    }
+  },
+  "questions": [
+    {
+      "year": 2021,
+      "num": 45,
+      "marks": 1,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Logical-Mathematical intelligence",
+        "B": "Linguistic intelligence",
+        "C": "Spatial intelligence",
+        "D": "Insight"
+      }
+    },
+    {
+      "year": 2021,
+      "num": 49,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "The rate of learning on earlier trials is more than that on later trials.",
+        "B": "The learning curve is negatively accelerated.",
+        "C": "The rate of learning in later trials will be more than that on earlier trials.",
+        "D": "The rate of learning is proportionally increasing with increasing number of trials."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 50,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Avoidance-Avoidance conflict, he will keep vacillating between telling his parents and continuing to study science.",
+        "B": "Avoidance-Avoidance conflict, he may contemplate running away from his home.",
+        "C": "Approach-Avoidance conflict, he will experience some emotional turmoil.",
+        "D": "Multiple Approach-Avoidance conflict, he will be guided by internal values."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 51,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "High n-achievement individuals like to work on situations where they have control and can get feedback.",
+        "B": "High n-achievement individuals persistently work on tasks they perceive as, either reflecting their personal characteristics like intelligence or are career-related.",
+        "C": "High n-achievement individuals prefer working on extremely challenging tasks for bigger gains.",
+        "D": "High n-achievement individuals avoid changing their aspiration levels."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 52,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Human growth as an active process of “becoming”.",
+        "B": "Personality cannot be fully understood by examining each trait separately, though some system of conceptual schemata are essential for personality study and a trait must be related to the total pattern of personality.",
+        "C": "Personality is organized in a topographical model.",
+        "D": "All human events are determined by powerful instinctual forces."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 53,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Task-oriented role (the activities of an individual that involve helping the group reach the goal).",
+        "B": "Socio-emotional role (the activities of an individual that involve being supportive and nurturing of other group members).",
+        "C": "Prescriptive norms (expectations within groups regarding what has to be done).",
+        "D": "Monitoring (observing work performance)."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 54,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Deficit needs.",
+        "B": "Metaneeds.",
+        "C": "Self-actualization needs.",
+        "D": "Need-achievement."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 55,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "2 &times; 2 ANOVA.",
+        "B": "4 &times; 3 ANOVA.",
+        "C": "3 &times; 2 &times; 2 ANOVA.",
+        "D": "One-way ANOVA."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 56,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "It is silent and invisible.",
+        "B": "It is a geographic component of interpersonal relations.",
+        "C": "Invasions of personal space are a matter of degree.",
+        "D": "There are no across culture variations."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 57,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Mean = 55, Standard Deviation = 4",
+        "B": "Mean = 60, Standard Deviation = 3",
+        "C": "Mean = 65, Standard Deviation = 5",
+        "D": "Mean = 50, Standard Deviation = 10"
+      }
+    },
+    {
+      "year": 2021,
+      "num": 58,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "He would not steal the drug, as everyone will see him as a thief, and his wife would not approve of his stealing or accept the stolen drug.",
+        "B": "No matter what, he would obey the law because stealing is a crime.",
+        "C": "The man would not steal the drug, as he may get caught and go to jail.",
+        "D": "The man would steal the drug to cure his wife and then tell the authorities what he has done. He may have to pay a penalty, but at least he would have saved a human life."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 59,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Identity diffusion",
+        "B": "Identity moratorium",
+        "C": "Identity foreclosure",
+        "D": "Identity perception"
+      }
+    },
+    {
+      "year": 2021,
+      "num": 60,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Cells can divide to a maximum of about 75 to 80 times and that as people age, cells become less capable of dividing.",
+        "B": "People age because when cells metabolize energy, the by-products include unstable oxygen molecules known as free radicals.",
+        "C": "Aging is due to the decay of mitochondria.",
+        "D": "Cell division increases as people age."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 61,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Inhibited salivation",
+        "B": "Increased heart rate",
+        "C": "Inhibited digestion",
+        "D": "Constricted pupils"
+      }
+    },
+    {
+      "year": 2021,
+      "num": 62,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Using twin studies",
+        "B": "Using family history studies",
+        "C": "Using adoption studies",
+        "D": "Using psychodynamic studies"
+      }
+    },
+    {
+      "year": 2021,
+      "num": 63,
+      "marks": 2,
+      "correctOptionCount": 1,
+      "options": {
+        "A": "The smaller the incentive, the greater will be the attitude change.",
+        "B": "All the students will change their attitudes towards water purifiers.",
+        "C": "All the students will continue to feel favourably about water purifiers.",
+        "D": "The larger the incentive, the greater will be the attitude change."
+      }
+    },
+    {
+      "year": 2021,
+      "num": 64,
+      "marks": 2,
+      "correctOptionCount": 1,
+      "options": {
+        "A": "Resistant attachment",
+        "B": "Avoidant attachment",
+        "C": "Secure attachment",
+        "D": "Disorganized attachment"
+      }
+    },
+    {
+      "year": 2021,
+      "num": 65,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      }
+    },
+    {
+      "year": 2024,
+      "num": 45,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Alternate Hypothesis",
+        "B": "Null Hypothesis",
+        "C": "Phi-Hypothesis",
+        "D": "Nil Hypothesis"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 46,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Explanatory variable",
+        "B": "Explainable variable",
+        "C": "Exogenous variable",
+        "D": "Explicit variable"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 47,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Data fabrication",
+        "B": "Salami slicing",
+        "C": "Data collection",
+        "D": "Statistical analysis"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 48,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Observational",
+        "B": "Experimental",
+        "C": "Correlational",
+        "D": "Descriptive"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 49,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Pearson correlation",
+        "B": "Spearman’s rho",
+        "C": "Kruskal-Wallis H test",
+        "D": "Analysis of variance"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 50,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Leptin",
+        "B": "Insulin",
+        "C": "Ghrelin",
+        "D": "Melanocortin"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 51,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Somatic Nervous System",
+        "B": "Central Nervous System",
+        "C": "Automatic Nervous System",
+        "D": "Autonomic Nervous System"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 52,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Neuman-Keuls test",
+        "B": "t-test",
+        "C": "Duncan Multiple Range test",
+        "D": "Tukey test"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 53,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Axon",
+        "B": "Myelin sheath",
+        "C": "Soma",
+        "D": "Cortisol"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 54,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Variance",
+        "B": "ANOVA",
+        "C": "Correlation",
+        "D": "Range"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 55,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Having her crayons taken away was a form of punishment by removal.",
+        "B": "Having her crayons taken away was a form of negative reinforcement.",
+        "C": "Being made to wash off the drawing was a form of punishment by application.",
+        "D": "Being made to wash off the drawing was a form of punishment by removal."
+      }
+    },
+    {
+      "year": 2024,
+      "num": 56,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Visual sensory memory last for a fraction of a second.",
+        "B": "Selective attention moves the information from short-term memory to long-term memory.",
+        "C": "In short-term memory, the information is held for a brief period of time while being used.",
+        "D": "Echoic memory capacity is limited to two seconds but smaller than the capacity of iconic memory."
+      }
+    },
+    {
+      "year": 2024,
+      "num": 57,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Infants develop a sense of object permanence.",
+        "B": "Tendency of a child to focus only on one feature of an object, while ignoring other relevant features.",
+        "C": "The inability of the young child to mentally reverse an action.",
+        "D": "The child can conserve, reverse their thinking and classifying objects in terms of various characteristics."
+      }
+    },
+    {
+      "year": 2024,
+      "num": 58,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "It talks about how items should function based on the knowledge of an ability or trait.",
+        "B": "It compares responses to items to determine how well the items function.",
+        "C": "It is based on the assumption that many latent traits underlie test performance.",
+        "D": "It is a logistic function having, one, two or three parameters."
+      }
+    },
+    {
+      "year": 2024,
+      "num": 59,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "There is excessive optimism and risk taking.",
+        "B": "Silence is interpreted as consent.",
+        "C": "Members reduce their efforts and performance levels while acting as a part of the group.",
+        "D": "People do not know what they are supposed to be doing."
+      }
+    },
+    {
+      "year": 2024,
+      "num": 60,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Leader-member relationship",
+        "B": "Leader’s position power",
+        "C": "Leader’s personal power",
+        "D": "Individual consideration"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 61,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Ravens Progressive Matrices",
+        "B": "Dynamic Progressive Matrices",
+        "C": "Advanced Progressive Matrices",
+        "D": "Millennium Progressive Matrices"
+      }
+    },
+    {
+      "year": 2024,
+      "num": 62,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "A test is administered to same set of people in two different occasions.",
+        "B": "A test administered once is scored by two or more than two evaluators.",
+        "C": "A test administered once is scored by splitting it into two equal-halves.",
+        "D": "A test measures what it intends to measure."
+      }
+    },
+    {
+      "year": 2024,
+      "num": 63,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Projection",
+        "B": "Frustration",
+        "C": "Introspection",
+        "D": "Rationalization"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 40,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Surveys",
+        "B": "Depth Interview",
+        "C": "Correlational Research",
+        "D": "Case Study"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 41,
+      "marks": 1,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Intrinsic motivation",
+        "B": "Homeostasis",
+        "C": "Instincts",
+        "D": "Drive"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 42,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Thoughts about what to do in a stressful situation",
+        "B": "Thoughts about whether an event is generally threatening",
+        "C": "Evaluation of an event’s relevance, threat and stressfulness",
+        "D": "Evaluation of coping resources and options for dealing with a stressful event"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 43,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Analytic",
+        "B": "Experiential/creative",
+        "C": "Crystallization",
+        "D": "Synthesis"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 44,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Falsifying the data",
+        "B": "Temporary withholding of information about the study from the participants",
+        "C": "Not taking informed consent",
+        "D": "Use of confederates"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 54,
+      "marks": 2,
+      "correctOptionCount": 1,
+      "options": {
+        "A": "Psychodynamic and Humanistic",
+        "B": "Behavioural and Humanistic",
+        "C": "Humanistic and Cognitive",
+        "D": "Cognitive and Gestalt"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 55,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "The ability to distinguish speech from non-speech sound is likely to develop before the age of three months.",
+        "B": "The ability to distinguish between words, without understanding their meaning, is likely to develop before the age of seven months.",
+        "C": "Babbling is not likely to develop before the age of six months.",
+        "D": "The ability to use single words is not likely to begin before the age of ten months."
+      }
+    },
+    {
+      "year": 2025,
+      "num": 56,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Humanistic theorists",
+        "B": "Cognitive theorists",
+        "C": "Trait theorists",
+        "D": "Psychodynamic theorists"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 57,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Ambitious",
+        "B": "Competitive",
+        "C": "Time conscious",
+        "D": "Laid back"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 58,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Reactivity carryover true change over time",
+        "B": "Making incorrect predictions or decisions about individuals",
+        "C": "Inconsistency of test content non parallel halves",
+        "D": "Consistency of test content"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 59,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Schizophrenia",
+        "B": "Mild depression",
+        "C": "Paranoia",
+        "D": "Childhood abuse"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 60,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Evaluate the effects of an unknown, uncontrolled set of experiences",
+        "B": "Rely heavily on content validation procedure",
+        "C": "Evaluate the potential to profit from training",
+        "D": "Evaluate the outcome of training"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 61,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Erroneous perceptions",
+        "B": "Schemas",
+        "C": "Perceptual constancies",
+        "D": "Incorrect perceptual hypothesis"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 62,
+      "marks": 2,
+      "correctOptionCount": 1,
+      "options": {
+        "A": "The mean of Section A is different from that of Section B",
+        "B": "The standard deviation of Section A is similar to that of Section B",
+        "C": "The mean and the standard deviation of Section A is the same",
+        "D": "The mean of Section A and Section B are the same, the standard deviation is different"
+      }
+    },
+    {
+      "year": 2025,
+      "num": 63,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Size influences conformity only up to a certain level",
+        "B": "Size always influences conformity",
+        "C": "Group unanimity influences conformity",
+        "D": "Status does not have any influence on conformity"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 37,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Conscientiousness",
+        "B": "Optimism",
+        "C": "Humility",
+        "D": "Extraversion"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 38,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "They are not very good at mental imagery",
+        "B": "They are not afraid to be different",
+        "C": "They do not value their independence",
+        "D": "They are unconventional in their work"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 39,
+      "marks": 1,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Selective breeding studies",
+        "B": "Family studies",
+        "C": "Twin studies",
+        "D": "Adoption studies"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 40,
+      "marks": 1,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "It can be internal and/or external",
+        "B": "It is associated with self-esteem",
+        "C": "Internal locus of control is positively correlated with success",
+        "D": "Regret has no association with locus of control"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 41,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "It is often called distribution free statitstics",
+        "B": "It is used to analyze interval data",
+        "C": "It is used to analyze ordinal data",
+        "D": "It compares groups in terms of means"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 42,
+      "marks": 1,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "There is a negative relationship between stress and functional immune measures",
+        "B": "There is no measurable impact of stress on functional immune measures",
+        "C": "Loneliness impacts the relationship between stress and functional immune measures",
+        "D": "There is a positive relationship between long term stressors and functional immune measures"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 43,
+      "marks": 1,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Prenatal factors",
+        "B": "Early childhood experiences",
+        "C": "Socialization",
+        "D": "Attention Deficit Hyperactivity Disorder"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 57,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Systematic desensitization",
+        "B": "Aversion therapy",
+        "C": "Cognitive behaviour therapy",
+        "D": "Rational emotive behaviour therapy"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 58,
+      "marks": 2,
+      "correctOptionCount": 4,
+      "options": {
+        "A": "Inability to comprehend spoken words",
+        "B": "Inability to understand the meaning of words",
+        "C": "Inability to speak grammatically correct language",
+        "D": "Inability to write and understand the symbols that represent speech sounds"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 59,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Understanding that people can have false beliefs",
+        "B": "Distinguishing faces and smells",
+        "C": "Recognizing that others have mental states",
+        "D": "Having a vast vocabulary to express one’s thoughts"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 60,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "The leader being impartial to all ideas no matter what they are",
+        "B": "The leader reminding the team that everyone will be held responsible for the decision of the group",
+        "C": "The leader taking all decisions on behalf of the group",
+        "D": "The leader arriving at a consensus quickly"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 61,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "It is the standard deviation of the sampling distribution of the mean",
+        "B": "It reflects the accuracy with which sample means estimate the population mean",
+        "C": "It is the difference between mean and standard deviation of a distribution",
+        "D": "It is the standard deviation of a stratified sample"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 62,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "A strong desire to remain a member of the organization",
+        "B": "Willingness to exert high level of effort on behalf of the organization",
+        "C": "A definite belief in and acceptance of values and goals of the organization",
+        "D": "High turnover intention of the employees of the organization"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 63,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "The way we think about others",
+        "B": "The way we assign meaning to others behaviour",
+        "C": "By following intellectual pursuits",
+        "D": "By working towards a common goal"
+      }
+    },
+    {
+      "year": 2023,
+      "num": 64,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "The fear must be persistent",
+        "B": "The fear must be a source of significant distress",
+        "C": "The fear is rational",
+        "D": "The fear is usually perceived as unwarranted"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 51,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "It was developed using the univariate approach.",
+        "B": "It was developed using the multivariate approach.",
+        "C": "Two facets of creativity were intellectual style and personality among others in the theory.",
+        "D": "According to the theory, creativity is a single trait or ability."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 52,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "A substance produced by the body",
+        "B": "A synthetic substance",
+        "C": "Involved in perception of pain reduction",
+        "D": "Involved in increasing the feeling of pain"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 53,
+      "marks": 2,
+      "correctOptionCount": 1,
+      "options": {
+        "A": "Spontaneous recovery",
+        "B": "Response substitution",
+        "C": "Stimulus generalization",
+        "D": "Information and expectation"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 54,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "The probability of wrong rejection of the Null-Hypothesis is still there, but relatively very low.",
+        "B": "Wrong rejection of the Null-Hypothesis is absolutely not possible.",
+        "C": "Level of significance (α) must be less than or equal to 0.05.",
+        "D": "Level of significance (α) may be greater than or equal to 0.01."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 55,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Meaning structures of a culture-sharing group",
+        "B": "Clifford Geertz",
+        "C": "Sigmund Freud",
+        "D": "Co-construction of meanings during research interactions"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 56,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Sample means may or may not be normally distributed.",
+        "B": "Both Type-I and Type-II errors must be low.",
+        "C": "Relative frequency of sample means that are closer to the population mean is higher.",
+        "D": "Relative frequency of the sample means that are farther from the population mean is lower."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 57,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "It is calculated by analyzing all possible simple bivariate regression co-efficients based on the data set.",
+        "B": "It is calculated by analyzing all possible simple univariate co-efficients based on the data set.",
+        "C": "Effects of other predictor variables are partialled out from a specific predictor variable while calculating its regression co-efficient.",
+        "D": "Both standardized and unstandardized co-efficients can be calculated."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 58,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "In terms of relationship among the independent variables (IVs) and the dependent variable (DV), it is the same as multiple regression.",
+        "B": "Experimental Groups must include different participants.",
+        "C": "Control and Experimental Groups must include unmatched participants.",
+        "D": "Both Main Effects and Interaction Effects may be calculated."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 59,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Compulsions",
+        "B": "Arbitrary inference",
+        "C": "Dichotomization",
+        "D": "Maximization and minimization"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 60,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Majority influence generates a comparison process (focus on relationship between source and target).",
+        "B": "Conflict is resolved by overt compliance to majority position in public.",
+        "C": "Triggers validation process (closer attention to the issue).",
+        "D": "Target is unlikely to agree with minority in public, for fear of being labelled “deviant”."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 61,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Processing motivation",
+        "B": "Processing ability",
+        "C": "Processing error",
+        "D": "Processing validity"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 62,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Self-construal",
+        "B": "Group presence",
+        "C": "Ecological conditions",
+        "D": "Shared norms"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 63,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "It has acquaintance potential.",
+        "B": "It takes place under the conditions of equal status.",
+        "C": "It involves co-operation towards a common goal.",
+        "D": "It involves simply bringing people from different groups together."
+      }
+    },
+    {
+      "year": 2026,
+      "num": 64,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Leon Festinger",
+        "B": "Rom Harre",
+        "C": "Paul Ekman",
+        "D": "E. B. Titchener"
+      }
+    },
+    {
+      "year": 2026,
+      "num": 65,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Philip Pinel",
+        "B": "Sigmund Freud",
+        "C": "Community mental health",
+        "D": "Cognitive behaviour therapy"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 45,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Tests the mean difference of more than two groups on one dependent variable.",
+        "B": "Tests the mean difference of more than two groups across several dependent variables.",
+        "C": "The independent variable is measured on a nominal scale and dependent variable on an interval or ratio scale.",
+        "D": "The dependent variable is measured on nominal scale and independent variable on an interval or ratio scale."
+      }
+    },
+    {
+      "year": 2022,
+      "num": 46,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Remembering the steps to perform a task",
+        "B": "A person in a dinner wants to know how to use the utensils by watching others",
+        "C": "A person uses chocolate to motivate his son to perform the task",
+        "D": "A person is capable of reproducing the action after viewing it"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 47,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "The same test is administered to the same people at two points in time",
+        "B": "Give the test once and have it scored by two scorers or by two methods",
+        "C": "Give the test in one administration and then split the test into two halves for scoring",
+        "D": "The extent to which people score on a measure are correlated with other variables"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 48,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Frequency distribution are graphs to help us understand the distribution of test scores",
+        "B": "Normal probability distribution is a theoretical distribution to help us understand the distribution of test scores",
+        "C": "Central tendency measures are numerical tools to help us locate the middle of a distribution of a test score",
+        "D": "Measurement of variability are numerical tools to help us understand the spread of a distribution of a test score"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 49,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Auditory hallucination, persecution, and disorganized thinking",
+        "B": "Lack of effect in situation, poor motivation, and social withdrawal",
+        "C": "Loss of interest in day-to-day activities, lack of will, and difficulty in expressing emotions",
+        "D": "Visual hallucination, delusions of grandeur, and delusion of control"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 50,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "They have deficit in brain related executive function",
+        "B": "They have difficulty to control voluntary movements, verbal expression and problem solving due to frontal lobes",
+        "C": "Cerebellum (an area of the brain) does not work properly, which coordinates muscular activity",
+        "D": "It is also known as hypokinetic disorder"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 51,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Focusses on procedural justice",
+        "B": "Motivation is influenced by relative and absolute rewards",
+        "C": "Referent is the other-inside",
+        "D": "Achieving balance between input-output"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 52,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "It starts with development of one’s basic self-concept",
+        "B": "Behaviour is a source of knowledge",
+        "C": "It is related to attitude formation",
+        "D": "It suggests that people change their attitude because of their behaviour"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 53,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "How individuals interpret, analyze, remember and use information about the social world",
+        "B": "How people create mental structure to organise knowledge about the social world",
+        "C": "How people think about themselves and the social world",
+        "D": "It does not allow interaction between people and the environment"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 54,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Motivation-Hygiene Theory",
+        "B": "Expectancy Theory",
+        "C": "Trait Theory",
+        "D": "ERG Theory"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 55,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Numerical Ability",
+        "B": "Word Fluency",
+        "C": "Analytical Ability",
+        "D": "Short-Term Memory"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 56,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Deciding how to help a person in need",
+        "B": "Deciding how to avoid a person at the time of his/her distress",
+        "C": "Deciding to standby with a person at the time of his/her emergency",
+        "D": "Too busy to help"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 57,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Release of hormones",
+        "B": "Converts food we eat into fuel for the body cells",
+        "C": "It regulates the level of glucose in the blood",
+        "D": "It damages digestive system"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 58,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Sigmund Freud",
+        "B": "B. F. Skinner",
+        "C": "William James",
+        "D": "J. B. Watson"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 59,
+      "marks": 2,
+      "correctOptionCount": 1,
+      "options": {
+        "A": "Schachter & Singer’s Theory",
+        "B": "Hertzberg’s Theory",
+        "C": "Cannon-Bard’s Theory",
+        "D": "Maslow’s Theory"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 60,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "David Mayer",
+        "B": "Sigmund Freud",
+        "C": "William James",
+        "D": "Robert R. Baron"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 61,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Rorschach Inkblot Test",
+        "B": "16 PF",
+        "C": "TAT",
+        "D": "WAT"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 62,
+      "marks": 2,
+      "correctOptionCount": 2,
+      "options": {
+        "A": "Dyslexia",
+        "B": "Dystopia",
+        "C": "Dysgraphia",
+        "D": "Dystonia"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 63,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "Imprinting",
+        "B": "Attachment",
+        "C": "Schemas",
+        "D": "Zone of Proximal Development"
+      }
+    },
+    {
+      "year": 2022,
+      "num": 64,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "It helps to reduce large number of variables into few numbers of factors.",
+        "B": "It helps researchers to investigate concepts that cannot easily be measured directly.",
+        "C": "It extracts maximum common variance from all variables and put them into a common score.",
+        "D": "A technique used to verify the factor structure of a set of observed variables."
+      }
+    },
+    {
+      "year": 2022,
+      "num": 65,
+      "marks": 2,
+      "correctOptionCount": 3,
+      "options": {
+        "A": "F-test",
+        "B": "t-test",
+        "C": "Pearson Product moment correlation",
+        "D": "Chi-square"
+      }
+    }
+  ]
+}
