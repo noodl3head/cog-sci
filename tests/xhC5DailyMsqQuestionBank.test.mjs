@@ -15,7 +15,12 @@ test('daily XH-C5 bank is entirely valid all-or-nothing MSQs', () => {
     assert.equal(q.answers.every((letter) => Object.hasOwn(q.options, letter)), true);
     assert.match(q.question, /\S/);
     assert.match(q.explanation, /\S/);
-    assert.doesNotMatch(`${q.question} ${Object.values(q.options).join(' ')}`, /all of the above|none of the above/i);
+    assert.doesNotMatch(q.question, /which of the following statements|select (?:all )?(?:the )?(?:correct|true) statements|which[^?]*(?:correct|true)/i);
+    assert.doesNotMatch(
+      `${q.question} ${Object.values(q.options).join(' ')}`,
+      /all of the above|none of the above|permits a causal conclusion whenever|expert recognizes the label|guarantees that a finding will generalize/i,
+    );
+    assert.equal(q.question.length >= 70, true, `context-free stem: ${q.id}`);
   }
 });
 
