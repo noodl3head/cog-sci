@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { deriveTopicWeights, generateDailyTelegramMock } from '../lib/telegramMockGenerator.js';
+import {
+  deriveTopicWeights,
+  generateDailyTelegramMock,
+  XH_C5_DAILY_MSQ_BANK_VERSION,
+} from '../lib/telegramMockGenerator.js';
 
 
 test('deriveTopicWeights includes only attempted chapters and weights weaker performance higher', () => {
@@ -38,4 +42,5 @@ test('generateDailyTelegramMock builds ten fresh PYQ-profiled XH-C5 MSQs only', 
   assert.equal(mock.every((question) => question.type === 'MSQ'), true);
   assert.equal(mock.every((question) => [1, 2].includes(question.marks)), true);
   assert.equal(mock.every((question) => question.answers.length >= 1 && question.answers.length <= 4), true);
+  assert.equal(mock.every((question) => question.bankVersion === XH_C5_DAILY_MSQ_BANK_VERSION), true);
 });

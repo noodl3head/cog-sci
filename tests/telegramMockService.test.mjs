@@ -28,7 +28,12 @@ test('parseNatResponse rejects empty and non-numeric messages while accepting ze
 test('daily invitation disposition never creates a second same-day session', () => {
   assert.equal(dailyInviteDisposition(null), 'create');
   assert.equal(dailyInviteDisposition({ status: 'completed', web_token: 'done' }), 'skip');
-  assert.equal(dailyInviteDisposition({ status: 'in_progress', web_token: 'active-link' }), 'resend-web-link');
+  assert.equal(dailyInviteDisposition({
+    status: 'in_progress', web_token: 'active-link', questions: [{ bankVersion: 2 }],
+  }), 'resend-web-link');
+  assert.equal(dailyInviteDisposition({
+    status: 'in_progress', web_token: 'stale-link', questions: [{ id: 'legacy-question' }],
+  }), 'refresh-web-link');
   assert.equal(dailyInviteDisposition({ status: 'in_progress', web_token: null }), 'skip');
 });
 
