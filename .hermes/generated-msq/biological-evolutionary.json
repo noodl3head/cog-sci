@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-biological-evolutionary-001",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 1,
+    "question": "A neuroscientist injects just enough current to bring an axon's initial segment to threshold. In a second trial, a stronger current reaches the same threshold earlier. The axon and extracellular conditions are otherwise unchanged. Which predictions are consistent with action-potential physiology?",
+    "options": {
+      "A": "Once threshold is reached, voltage-gated sodium channels open rapidly and the membrane depolarizes in an all-or-none event.",
+      "B": "The stronger current should produce an action potential with twice the peak voltage because action-potential amplitude scales with stimulus strength.",
+      "C": "During the absolute refractory period, an even stronger stimulus can immediately produce a second full action potential at the same membrane segment.",
+      "D": "The stronger current may increase firing frequency across time even though individual action potentials remain approximately constant in amplitude."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — regenerative opening of voltage-gated sodium channels follows threshold crossing and produces the rapid rising phase. B: Incorrect — above threshold, stimulus intensity is chiefly encoded by firing rate, not proportionally larger spike amplitude. C: Incorrect — sodium-channel inactivation prevents another action potential during the absolute refractory period. D: Correct — stronger sustained input can shorten intervals between spikes while preserving the all-or-none size of each spike.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-002",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "At an excitatory chemical synapse, an action potential reaches the presynaptic terminal, but a drug blocks voltage-gated calcium channels there. Recordings are made from both cells. Which outcomes are expected?",
+    "options": {
+      "A": "The arriving presynaptic action potential must disappear because calcium entry is required for the spike to travel down the axon.",
+      "B": "Reduced calcium entry should reduce synaptic-vesicle fusion and neurotransmitter release from the terminal.",
+      "C": "The postsynaptic excitatory potential should become smaller or absent even though the presynaptic spike reaches the terminal.",
+      "D": "The drug should force neurotransmitter molecules already in the cleft to move back into vesicles by reversing diffusion."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — axonal propagation primarily depends on voltage-gated sodium and potassium conductances; terminal calcium is crucial for transmitter release. B: Correct — calcium influx triggers the vesicle-fusion machinery at chemical synapses. C: Correct — less transmitter activation of postsynaptic receptors produces a reduced postsynaptic response. D: Incorrect — blocking calcium entry does not reverse diffusion or directly reload released transmitter into vesicles.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-003",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "An animal receives a small lesion centered on a hypothalamic region involved in energy balance. Afterward it eats excessively, gains weight, and shows altered autonomic responses, while basic visual discrimination remains intact. Which interpretations are defensible?",
+    "options": {
+      "A": "The feeding and autonomic changes are consistent with disruption of hypothalamic regulation of motivated behavior and homeostasis.",
+      "B": "Preserved visual discrimination does not rule out the lesion's behavioral importance because primary visual analysis is not the hypothalamus's principal function.",
+      "C": "The weight gain proves that the hypothalamus stores all learned food memories in that single damaged site.",
+      "D": "The lesion may disturb neural and endocrine coordination, so altered behavior need not reflect a simple loss of conscious hunger alone."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — hypothalamic circuits integrate bodily signals and regulate feeding, autonomic activity, and homeostatic responses. B: Correct — intact performance on a visual task is compatible with a selective hypothalamic impairment. C: Incorrect — weight gain does not localize all food memories or show that one site stores them. D: Correct — hypothalamic effects can arise through interacting neural, autonomic, and hormonal pathways.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-004",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 1,
+    "question": "Following bilateral hippocampal damage, a patient can hold a short conversation and improves across days on a mirror-tracing task, but later cannot recall the practice sessions or learn the layout of a new building. Which inferences fit this pattern?",
+    "options": {
+      "A": "The pattern indicates severe difficulty forming new declarative memories despite preserved short-term conversation and procedural learning.",
+      "B": "Improved mirror tracing shows that the damaged hippocampus is unnecessary for every stage of every kind of memory.",
+      "C": "Failure to learn the building layout is consistent with impaired formation of new relational or spatial memories.",
+      "D": "Because old vocabulary remains available, the lesion cannot have affected memory systems."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — preserved immediate conversation and skill learning alongside profound new-event amnesia is characteristic of impaired declarative-memory formation. B: Incorrect — the skill improvement shows relative preservation of a nondeclarative system, not that hippocampal processing is irrelevant to all memory operations. C: Correct — hippocampal damage commonly disrupts new spatial and relational learning. D: Incorrect — remote semantic knowledge can remain despite a major deficit in acquiring new declarative memories.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-005",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "During fear conditioning, a tone is repeatedly followed by a mild shock. One group later receives an intervention that disrupts amygdala function before the tone is presented alone; a control group receives a sham procedure. Which predictions or interpretations are reasonable?",
+    "options": {
+      "A": "The intervention group may show reduced conditioned autonomic fear responses to the tone.",
+      "B": "If participants can verbally report that the tone predicted shock, this proves that their conditioned fear response must be normal.",
+      "C": "A dissociation between explicit contingency knowledge and diminished physiological fear would support partially distinct neural contributions to these outcomes.",
+      "D": "The result would be compatible with an amygdala role in acquiring or expressing emotional significance rather than storing every factual detail of the episode."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — amygdala disruption can attenuate learned defensive and autonomic responses to a conditioned cue. B: Incorrect — declarative knowledge of the contingency can dissociate from conditioned physiological responding. C: Correct — the split pattern indicates that explicit report and emotional expression need not depend on identical systems. D: Correct — the amygdala is central to emotional learning and response expression but is not a unitary store for all episodic facts.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-006",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "A participant anticipates a difficult public speech. Cortisol rises before the speech and normally declines afterward. In a second session, a drug blocks glucocorticoid feedback receptors, and cortisol remains elevated longer. Which interpretations fit the HPA-axis account?",
+    "options": {
+      "A": "The initial response begins when the adrenal cortex directly detects the audience and releases hypothalamic hormones.",
+      "B": "The stressor can activate a sequence involving hypothalamic CRH, pituitary ACTH, and adrenal-cortical cortisol release.",
+      "C": "Prolonged cortisol after feedback blockade shows that negative feedback normally amplifies continued HPA activation.",
+      "D": "The delayed decline is consistent with impaired negative feedback that would ordinarily help terminate the response."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — psychological appraisal engages brain pathways; the adrenal cortex does not detect an audience or release hypothalamic hormones. B: Correct — CRH-to-ACTH-to-cortisol describes the core HPA cascade. C: Incorrect — negative feedback restrains rather than amplifies continued axis activity. D: Correct — blocking glucocorticoid feedback can prolong upstream signaling and cortisol elevation.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-007",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 1,
+    "question": "In a drought, finches with deeper beaks crack the remaining hard seeds more efficiently and leave more surviving offspring. Beak depth is partly heritable. Across several generations of similar drought, mean beak depth increases. Which statements follow from natural-selection reasoning?",
+    "options": {
+      "A": "Differential reproductive success associated with heritable beak variation can change the population distribution across generations.",
+      "B": "The adaptive shift occurs in the population over generations, not because individual finches intentionally deepen their beaks when seeds become hard.",
+      "C": "Every deep-beaked finch must survive and every shallow-beaked finch must fail for selection to occur.",
+      "D": "Once deeper beaks become common, they are permanently optimal under every future environment."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A: Correct — heritable variation linked to reproductive success is the basis for evolutionary change by selection. B: Correct — selection changes trait frequencies across generations; it is not goal-directed modification by individuals. C: Incorrect — selection requires average differences in reproductive success, not perfect sorting of every organism. D: Incorrect — fitness is environment dependent, and a future change in food resources can alter the selective advantage.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-008",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "Researchers study a genetic variant and childhood adversity in relation to adult depressive symptoms. Among participants with low adversity, mean symptoms are similar across genotypes. Under high adversity, carriers of one variant show much higher symptoms than noncarriers. Which interpretations or analyses are appropriate?",
+    "options": {
+      "A": "The pattern is consistent with a gene–environment interaction because the association between genotype and symptoms changes with adversity exposure.",
+      "B": "The data show that the variant inevitably causes depression in every carrier, regardless of experience.",
+      "C": "A factorial model should include and test the genotype × adversity term rather than relying only on separate main effects.",
+      "D": "Potential gene–environment correlation and population stratification should still be considered before making a causal claim."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — the genotype difference emerges under one environmental condition but not the other. B: Incorrect — the observed pattern is probabilistic and explicitly depends on exposure. C: Correct — the interaction term tests whether the effect of one predictor varies across levels of the other. D: Correct — nonrandom exposure and ancestry-related structure can create alternative explanations for an observed moderation pattern.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-009",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 1,
+    "question": "A night-shift worker sleeps from 9 a.m. to 4 p.m. on workdays but returns to a daytime schedule every weekend. Despite having seven hours available for sleep, the worker reports insomnia after each switch and sleepiness during early shifts. Which explanation is best supported?",
+    "options": {
+      "A": "Seven hours in bed rules out any biological contribution, so the symptoms must be entirely motivational.",
+      "B": "The worker's circadian clock instantly resets whenever the planned sleep time changes.",
+      "C": "Repeated shifts between light–dark schedules can misalign the endogenous circadian phase with required sleep and wake times.",
+      "D": "The symptoms show that homeostatic sleep pressure no longer operates in night-shift workers."
+    },
+    "answers": ["C"],
+    "explanation": "A: Incorrect — sleep opportunity does not guarantee sleep at a biologically favorable circadian phase. B: Incorrect — circadian adjustment usually takes time and is shaped strongly by timed light exposure. C: Correct — recurrent schedule switching can maintain circadian misalignment, producing insomnia and sleepiness at inappropriate clock phases. D: Incorrect — homeostatic sleep pressure still operates; the problem reflects conflict between that process, circadian timing, and imposed schedules.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-010",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "After a left-hemisphere motor stroke, a pianist initially cannot perform familiar right-hand sequences. Over months of structured practice, performance partly returns, and imaging shows altered recruitment in surviving regions of both hemispheres. Which interpretations are defensible?",
+    "options": {
+      "A": "Recovery proves that the destroyed neurons regenerated with their original connections in every case.",
+      "B": "Practice-dependent changes in surviving networks can contribute to functional recovery through neuroplasticity.",
+      "C": "Recruitment of additional regions means the original lesion had no causal role in the initial impairment.",
+      "D": "The extent of reorganization may depend on lesion size, time since injury, training, and the capacities of remaining tissue."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — functional improvement can occur through reorganization and compensation without restoration of all destroyed neurons. B: Correct — repeated skilled practice can modify the efficiency and organization of surviving neural circuits. C: Incorrect — later compensation is compatible with the lesion causing the initial deficit. D: Correct — plastic recovery is constrained and facilitated by multiple biological and experiential conditions.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-biological-evolutionary-011",
+    "type": "MSQ",
+    "topic": "biological-evolutionary",
+    "marks": 2,
+    "question": "A split-brain participant fixates centrally. The word RING is flashed briefly to the left visual field and the word KEY to the right visual field. Without moving the eyes, the participant is asked to say what was seen and then to select the corresponding object with each hand from behind a screen. Which predictions follow from the standard lateralization account?",
+    "options": {
+      "A": "The participant is likely to say 'KEY' because right-field input initially reaches the language-dominant left hemisphere.",
+      "B": "The left hand can select a ring because left-field input reaches the right hemisphere, which controls the left hand.",
+      "C": "The right hand can select a key because the left hemisphere receives the right-field word and controls the right hand.",
+      "D": "Difficulty verbally naming RING can coexist with accurate left-hand selection, revealing limited interhemispheric transfer rather than absence of perception."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — in the usual organization, the left hemisphere receives right-visual-field information and supports speech production. B: Correct — the right hemisphere receives RING and guides the contralateral left hand. C: Correct — the left hemisphere both receives KEY and controls the contralateral right hand. D: Correct — nonverbal selection can demonstrate processing in the right hemisphere even when callosal disconnection prevents that information from reaching left-hemisphere language systems.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

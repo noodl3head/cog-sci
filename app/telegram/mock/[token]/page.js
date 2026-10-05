@@ -163,11 +163,25 @@ export default function TelegramWebMockPage({ params }) {
         <p>{result?.correctCount ?? 0} of {questions.length} questions earned full marks.</p>
         {(result?.rows || []).map((row, index) => <details className="web-msq-review" key={row.questionId}>
           <summary>Question {index + 1} · {row.marksAwarded} marks</summary>
-          {LETTERS.map((letter) => <div className="web-msq-review-option" key={letter}>
-            <strong>{letter} · {row.correct.includes(letter) ? 'True/correct' : 'False/incorrect'}</strong>
-            <p>{questions[index]?.options?.[letter]}</p>
-            <p><b>Your reasoning:</b> {row.reasoning?.[letter] || 'No rationale saved.'}</p>
-          </div>)}
+          {LETTERS.map((letter) => {
+            const selectedIsTrue = row.selected.includes(letter);
+            const correctIsTrue = row.correct.includes(letter);
+            const optionIsCorrect = selectedIsTrue === correctIsTrue;
+            return <div className="web-msq-review-option" key={letter}>
+              <div className="web-msq-review-option-header">
+                <strong>{letter}</strong>
+                <span className={`web-msq-review-verdict web-msq-review-verdict--${optionIsCorrect ? 'correct' : 'incorrect'}`}>
+                  {optionIsCorrect ? '✓ Correct' : '✕ Incorrect'}
+                </span>
+              </div>
+              <div className="web-msq-review-answer-grid">
+                <div><span>Your answer:</span><b>{selectedIsTrue ? 'True' : 'False'}</b></div>
+                <div><span>Correct answer:</span><b>{correctIsTrue ? 'True' : 'False'}</b></div>
+              </div>
+              <p className="web-msq-review-statement">{questions[index]?.options?.[letter]}</p>
+              <p><b>Your reasoning:</b> {row.reasoning?.[letter] || 'No rationale saved.'}</p>
+            </div>;
+          })}
           <p><b>Explanation:</b> {row.explanation}</p>
         </details>)}
       </section>

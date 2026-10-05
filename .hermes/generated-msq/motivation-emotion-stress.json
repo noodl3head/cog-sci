@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-001",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 1,
+    "question": "A student who once painted only for enjoyment begins receiving a cash payment for every completed canvas. After the payments stop, she paints less often than she did before they began. Which interpretations are consistent with this pattern?",
+    "options": {
+      "A": "The decline shows that painting never had intrinsic value for her.",
+      "B": "The contingent payments may have shifted her perceived reason for painting from interest to reward.",
+      "C": "Any external reward necessarily produces a permanent loss of interest.",
+      "D": "Rewards framed as controlling are more likely to undermine later voluntary engagement than rewards experienced as informational."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — reduced post-reward activity does not establish that prior enjoyment was absent. B: Correct — a salient contingent reward can replace an internal attribution with an external one. C: Incorrect — the effect depends on factors such as contingency, perceived control, and feedback; it is not inevitable or necessarily permanent. D: Correct — controlling rewards can reduce autonomy, whereas informational feedback may support competence without the same motivational cost.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-002",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "A hospital wants junior nurses to adopt a new handover protocol. One unit permits nurses to choose among approved formats, provides coached practice, and encourages peer discussion; another unit mandates one format and publicly ranks errors. Which outcomes are predicted by self-determination theory?",
+    "options": {
+      "A": "Choice within meaningful limits can support autonomy in the first unit.",
+      "B": "Public ranking should satisfy relatedness by making performance visible.",
+      "C": "Coached practice can support competence when feedback is specific and non-controlling.",
+      "D": "Mandating a format guarantees internalization because compliance and autonomous motivation are equivalent."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — bounded choice can preserve a sense of volition. B: Incorrect — public ranking may threaten belonging and does not by itself satisfy relatedness. C: Correct — structured practice with informative feedback can strengthen perceived competence. D: Incorrect — behavioral compliance can occur without identified or integrated regulation, so a mandate does not guarantee internalization.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-003",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "Participants perform either a simple key-press task or a complex air-traffic simulation after receiving a low, moderate, or high arousal manipulation. Assuming the manipulation has no direct motor effects, which result patterns would fit the Yerkes–Dodson relation?",
+    "options": {
+      "A": "Performance on the complex simulation peaks at a lower arousal level than performance on the simple task.",
+      "B": "Both tasks improve linearly from low through high arousal with no downturn.",
+      "C": "Very low arousal may impair performance on both tasks relative to an appropriate intermediate level.",
+      "D": "High arousal can disrupt the complex task even when it remains adequate for the simple task."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — difficult tasks are generally expected to have a lower optimal arousal level. B: Incorrect — an unbroken linear gain omits the predicted impairment beyond the optimal level. C: Correct — insufficient activation can produce underperformance before arousal reaches an effective range. D: Correct — the same high arousal may exceed the optimum for a complex task but not for a simple, well-learned response.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-004",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 1,
+    "question": "A doctoral candidate is distressed because data collection is repeatedly delayed by low participant recruitment. Which responses primarily constitute problem-focused coping in this situation?",
+    "options": {
+      "A": "Practising slow breathing before opening recruitment emails.",
+      "B": "Adding an approved recruitment site after consulting the ethics committee.",
+      "C": "Revising the recruitment schedule and reallocating the project budget.",
+      "D": "Reframing the delay as an opportunity to become more patient."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — breathing chiefly regulates the emotional response rather than the recruitment problem. B: Correct — expanding recruitment through an approved site changes the stress-producing circumstances. C: Correct — planning and reallocating resources directly address the controllable demands. D: Incorrect — positive reappraisal changes the meaning of the situation and is primarily emotion-focused.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-005",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "After learning that a grant decision cannot be appealed, a researcher feels persistent anger and rumination. Which responses are defensible emotion-focused strategies for this uncontrollable event?",
+    "options": {
+      "A": "Using cognitive reappraisal to distinguish the rejected proposal from personal worth.",
+      "B": "Seeking supportive conversation to process disappointment.",
+      "C": "Submitting altered financial records to force reconsideration.",
+      "D": "Using a brief relaxation exercise to reduce physiological tension before planning the next application."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — reappraisal modifies the emotional meaning assigned to the rejection. B: Correct — supportive disclosure can help regulate distress when the decision itself cannot be changed. C: Incorrect — falsifying records is unethical and is not a defensible coping strategy. D: Correct — relaxation targets arousal and may restore capacity for later action without pretending to reverse the decision.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-006",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "Employees in a call centre face unpredictable shifts, chronic noise, and repeated customer hostility for several years. Compared with employees exposed to a single demanding week, which observations would support an account based on allostatic load?",
+    "options": {
+      "A": "The chronically exposed group shows cumulative dysregulation across several physiological systems.",
+      "B": "Only the employees' conscious ratings of stress are relevant; biological indicators cannot contribute evidence.",
+      "C": "Full recovery between repeated stressors would necessarily increase cumulative wear.",
+      "D": "Repeated activation without adequate recovery can produce health costs even when each episode is manageable in isolation."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — allostatic load concerns accumulated multisystem wear from repeated adaptation. B: Incorrect — evidence may include cardiovascular, endocrine, metabolic, or immune indicators as well as self-report. C: Incorrect — adequate recovery generally limits rather than increases cumulative burden. D: Correct — frequent activation and incomplete shutdown can make individually tolerable episodes biologically costly over time.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-007",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 1,
+    "question": "In a laboratory task, participants hold a pen in a way that either facilitates or inhibits smiling while rating mildly amusing cartoons. If facial muscular feedback contributes to emotion, which outcomes are plausible?",
+    "options": {
+      "A": "The manipulation must create amusement even when participants view a distressing event.",
+      "B": "The smile-facilitating posture may produce a small increase in amusement ratings under suitable conditions.",
+      "C": "Blocking the relevant facial configuration may attenuate, rather than abolish, the reported emotional response.",
+      "D": "Any rating difference proves that cognitive appraisal has no role in emotion."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — facial feedback can modulate emotion but need not override the meaning of powerful stimuli. B: Correct — feedback from a facilitated expression may modestly bias experience or evaluation. C: Correct — facial input is one contributor, so interference may reduce an effect without eliminating emotion. D: Incorrect — a facial-feedback effect is compatible with concurrent appraisal and other emotional processes.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-008",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "After climbing several flights of stairs, participants meet either a friendly or an irritating interviewer and then rate their emotional reaction. A control group meets the interviewer after resting. Which findings or design choices bear on misattribution of arousal?",
+    "options": {
+      "A": "Recently exercised participants may interpret residual arousal in line with the interviewer's behavior.",
+      "B": "Telling participants that their elevated heartbeat is due to exercise should reduce attribution of that arousal to the interviewer.",
+      "C": "If exercise changes reactions, the study proves that physiological arousal uniquely determines which emotion occurs.",
+      "D": "The rested group helps estimate reactions to the interviewer when residual exercise arousal is absent."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — ambiguous residual activation can be labeled using salient situational cues. B: Correct — making the actual source salient should reduce the opportunity for misattribution. C: Incorrect — context and appraisal help determine the emotional label, and the design does not establish physiological uniqueness. D: Correct — the control condition provides a comparison for the interviewer's effect without induced residual arousal.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-009",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 1,
+    "question": "A manager is considering a promotion that offers higher pay and status but requires relocation away from a valued support network. As the decision deadline approaches, which pattern most specifically reflects an approach–avoidance conflict?",
+    "options": {
+      "A": "The manager chooses between two equally attractive promotions in different cities.",
+      "B": "The manager chooses between accepting a pay cut and losing a job.",
+      "C": "The same promotion becomes attractive when pay is considered and aversive when relocation is considered.",
+      "D": "The manager dislikes every feature of the promotion but accepts it without hesitation."
+    },
+    "answers": ["C"],
+    "explanation": "A: Incorrect — choosing between two desirable alternatives is approach–approach conflict. B: Incorrect — choosing between two aversive alternatives is avoidance–avoidance conflict. C: Correct — one goal simultaneously contains positive and negative incentives. D: Incorrect — an option perceived only as aversive does not instantiate approach–avoidance conflict.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-010",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "Two groups first attempt an unsolvable puzzle. Group 1 can terminate the aversive noise accompanying each failed attempt; Group 2 receives the same noise but cannot control it. Both groups later receive a new solvable puzzle with no noise. Which results would support learned helplessness?",
+    "options": {
+      "A": "Group 2 solves the new puzzle faster because uncontrollability necessarily heightens persistence.",
+      "B": "Group 2 is slower to initiate effective responses on the new puzzle despite its solvability.",
+      "C": "Both groups perform identically, proving that perceived control never affects later learning.",
+      "D": "Giving Group 2 experience with successful control before the new puzzle could reduce the later deficit."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — uncontrollability is predicted to impair rather than necessarily enhance later responding. B: Correct — exposure to uncontrollable outcomes can produce motivational and learning deficits in a new setting. C: Incorrect — a null difference in one study would not prove that control is universally irrelevant. D: Correct — learning that responses can control outcomes can counter the generalized expectation of noncontingency.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-motivation-emotion-stress-011",
+    "type": "MSQ",
+    "topic": "motivation-emotion-stress",
+    "marks": 2,
+    "question": "A counsellor who has managed an excessive caseload for months reports feeling drained, detached from clients, and doubtful that the work helps anyone. Which observations or organizational responses fit a burnout formulation?",
+    "options": {
+      "A": "Persistent emotional exhaustion is relevant to the formulation.",
+      "B": "Cynical or depersonalized attitudes toward clients are relevant to the formulation.",
+      "C": "Reduced professional efficacy can accompany the other symptoms.",
+      "D": "Reducing chronic workload and increasing meaningful job resources may address contributing conditions rather than merely asking the counsellor to be more resilient."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — exhaustion is a central burnout dimension. B: Correct — detachment or cynicism toward recipients of one's work is another characteristic dimension. C: Correct — diminished accomplishment or efficacy can be part of the syndrome. D: Correct — workload and resource imbalance are organizational contributors, so structural changes can be appropriate preventive or corrective responses.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

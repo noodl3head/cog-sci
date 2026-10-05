@@ -1,0 +1,215 @@
+[
+  {
+    "id": "xh-c5-msq-cognition-001",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 1,
+    "question": "After seeing several widely reported battery fires, a commuter estimates that electric buses are more likely to catch fire than diesel buses. The commuter has not examined base rates, and the transport authority’s records show the opposite pattern. Which interpretations are supported?",
+    "options": {
+      "A": "Ease of retrieving vivid fire reports may be inflating the commuter’s frequency estimate.",
+      "B": "The authority’s base-rate data are relevant for correcting a judgement dominated by memorable instances.",
+      "C": "The commuter is applying deductive logic correctly because a vivid example guarantees the general conclusion.",
+      "D": "If media coverage made diesel-bus fires equally easy to recall, the original judgement could change even without any change in actual incidence."
+    },
+    "answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "A: Correct — Availability-based judgements substitute ease of recall for actual frequency. B: Correct — Population incidence data directly address the neglected base rate. C: Incorrect — An accessible example does not deductively entail a population risk comparison. D: Incorrect — Changing retrieval fluency can change availability judgements independently of objective rates.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-002",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 2,
+    "question": "A manager believes remote employees are less committed. While reviewing weekly reports, she highlights two delayed replies from remote staff, treats prompt replies as exceptional, and does not compare delays among office staff. Which actions would most directly reduce the bias in her evaluation?",
+    "options": {
+      "A": "Ask only supervisors who already agree that remote work reduces commitment.",
+      "B": "Predefine the same behavioural indicators of commitment for remote and office employees before reviewing cases.",
+      "C": "Collect additional anecdotes about remote employees without recording counterexamples.",
+      "D": "Actively search for delayed and prompt replies in both groups and compare their frequencies."
+    },
+    "answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "A: Incorrect — Seeking agreeing informants would reinforce selective evidence gathering. B: Correct — Common, advance criteria restrict reinterpretation of evidence to protect the prior belief. C: Incorrect — More one-sided anecdotes preserve the confirmatory search strategy. D: Correct — Symmetric evidence collection tests both confirming and disconfirming possibilities.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-003",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 2,
+    "question": "Participants must mount a candle on a wall using a candle, matches, and a box filled with drawing pins. One group first sees the box used only as a container; another sees the empty box separately. The second group solves the task more often. Which conclusions are warranted?",
+    "options": {
+      "A": "Prior representation of the box as merely a container can restrict noticing its possible use as a platform.",
+      "B": "Presenting the box separately may make an alternative function more accessible.",
+      "C": "The failure of the first group proves that its members lacked knowledge that boxes can support objects.",
+      "D": "A redesign that displays the pins beside, rather than inside, the box should reduce the representational constraint for some participants."
+    },
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "A: Correct — A familiar use can dominate representation and block a novel use, illustrating functional fixedness. B: Correct — Separating box and pins weakens the cue that the box is only a container. C: Incorrect — Failure to retrieve an alternative use does not prove absence of the underlying knowledge. D: Correct — Changing presentation can loosen the fixed function and facilitate restructuring.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-004",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 1,
+    "question": "An analyst argues: ‘If a contract is valid, it bears the registrar’s seal. This document bears the registrar’s seal. Therefore, the contract is valid.’ A colleague notes that forged documents can bear the seal. Which assessments are correct?",
+    "options": {
+      "A": "The conclusion follows by modus ponens from the two stated premises.",
+      "B": "The reasoning affirms the consequent and is deductively invalid.",
+      "C": "Evidence that forged documents may bear the seal exposes why the conclusion is not guaranteed.",
+      "D": "The argument becomes valid merely because most sealed documents happen to be genuine."
+    },
+    "answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "A: Incorrect — Modus ponens would require “valid contract” as the antecedent actually established; here the consequent is affirmed. B: Correct — From P→Q and Q, P does not necessarily follow. C: Correct — A forged sealed document is a counterexample in which both premises can be accepted while the conclusion is false. D: Incorrect — High empirical probability can make an inference strong inductively but does not repair deductive form.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-005",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 2,
+    "question": "A clinic observes that 18 of 20 patients who joined a new support programme improved. The director infers that the programme is generally effective, but learns that participants self-selected and many also began medication. Which evaluations of the director’s inference are warranted?",
+    "options": {
+      "A": "The move from observed cases to a broader claim is inductive rather than deductively conclusive.",
+      "B": "A high proportion of improvement makes alternative explanations logically impossible.",
+      "C": "Self-selection and concurrent medication weaken the inference that the programme caused the improvement.",
+      "D": "A comparison group with similar patients who did not receive the programme would strengthen causal assessment."
+    },
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Correct — Generalizing from a sample and observed regularity yields a probabilistic conclusion. B: Incorrect — Even a large observed proportion does not exclude confounding or selection. C: Correct — Both factors provide plausible rival accounts of improvement. D: Correct — An appropriate comparison helps estimate what would have happened without the programme.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-006",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 2,
+    "question": "In a continuous task, participants monitor a sequence of letters and must report whether the current letter matches the one shown two trials earlier. Accuracy declines sharply when they simultaneously reorder three digits mentally, but declines little when they merely repeat one digit. Which claims fit the pattern?",
+    "options": {
+      "A": "The task requires continual replacement of no-longer-relevant items with newer items in active memory.",
+      "B": "Mental reordering competes more strongly than simple repetition with the executive operations needed for the letter task.",
+      "C": "The decline proves that participants lost all long-term knowledge of letters.",
+      "D": "Because both secondary tasks involve digits, they must impair performance equally."
+    },
+    "answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "A: Correct — Two-back performance depends on monitoring and updating the currently relevant sequence positions. B: Correct — Reordering imposes greater manipulation and executive demand than maintaining a single repeated item. C: Incorrect — The deficit concerns online maintenance and updating, not stored letter knowledge. D: Incorrect — Tasks sharing a stimulus category can differ greatly in processing demand.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-007",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 1,
+    "question": "Experienced accountants are given a spreadsheet error that resembles a familiar tax-rounding problem but actually results from dates being stored as text. Many repeatedly adjust rounding formulas. Novices, after checking cell formats, solve it sooner. Which interpretations are defensible?",
+    "options": {
+      "A": "The experts’ persistence demonstrates that greater domain experience always prevents problem-solving errors.",
+      "B": "A previously successful procedure may be controlling search even though the current problem has a different structure.",
+      "C": "Prompting experts to list observations inconsistent with a rounding fault could help them abandon the habitual approach.",
+      "D": "The novices’ success proves they possess a more elaborate tax-calculation schema than the experts."
+    },
+    "answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "A: Incorrect — Experience can produce a rigid mental set when familiar procedures are overapplied. B: Correct — Repeated rounding adjustments show transfer of an old solution strategy despite mismatching evidence. C: Correct — Explicit anomaly checking can encourage restructuring and exploration of alternatives. D: Incorrect — Their advantage arose from avoiding the misleading set, not necessarily from deeper tax expertise.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-008",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 2,
+    "question": "People judge whether unfamiliar animals belong to the category ‘bird’. A robin-like animal is classified quickly, a penguin-like animal more slowly, and a feathered animal that nurses its young is often rejected after further inspection. Which conclusions are compatible with prototype-based categorization?",
+    "options": {
+      "A": "Similarity to a central or typical representation can speed category decisions.",
+      "B": "Every category member must possess all features of the prototype to be classified correctly.",
+      "C": "Atypical members may take longer to classify even when they are genuine members.",
+      "D": "Prototype similarity can guide an initial judgement that is later revised when strongly conflicting features are considered."
+    },
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Correct — Robin-like feature overlap with a typical bird representation supports rapid matching. B: Incorrect — A prototype is an average or best example, not a list of necessary features that every member must share. C: Correct — Lower similarity predicts slower or less confident decisions for atypical members such as penguins. D: Correct — Prototype matching is a heuristic process and can be overridden by diagnostic information.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-009",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 1,
+    "question": "An infant hears a stream in which /ba/ and /pa/ tokens vary gradually in voice-onset time. Looking time rises mainly when successive tokens cross a particular boundary, not when they differ by an equal amount within either side of the boundary. Which interpretation best follows?",
+    "options": {
+      "A": "The infant is responding only to the overall loudness of each token.",
+      "B": "The infant is treating the continuum as discrete speech-sound categories around a phonemic boundary.",
+      "C": "The result shows that every acoustic difference is consciously labelled with a written letter.",
+      "D": "The pattern demonstrates understanding of the words in which the sounds might later occur."
+    },
+    "answers": [
+      "B"
+    ],
+    "explanation": "A: Incorrect — Equal physical changes produce different responses depending on whether a category boundary is crossed, which loudness alone does not explain. B: Correct — Greater discrimination across than within a boundary is categorical perception of phonemic contrasts. C: Incorrect — Phoneme discrimination does not require literacy or explicit letter labels. D: Incorrect — Sensitivity to a speech-sound contrast does not establish lexical-semantic understanding.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-010",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 1,
+    "question": "Students predict they will remember a chapter well because it feels fluent after rereading. One group then takes a closed-book practice test and revises topics it cannot retrieve; another group rereads again. A week later, the testing group performs better despite initially lower confidence. Which conclusions follow?",
+    "options": {
+      "A": "The practice test gives information about actual retrieval failures that subjective fluency concealed.",
+      "B": "The rereading group’s high confidence guarantees accurate monitoring because familiarity and recall are identical.",
+      "C": "Using test performance to redirect study is an example of metacognitive control informed by monitoring.",
+      "D": "The finding implies that confidence should never be used under any circumstances when planning study."
+    },
+    "answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "A: Correct — Attempted retrieval exposes gaps that smooth rereading can mask. B: Incorrect — Familiarity with text can inflate confidence without ensuring unaided recall. C: Correct — Learners monitor performance and then allocate study based on the diagnostic result. D: Incorrect — Confidence can be informative, but it should be calibrated against objective retrieval evidence.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-cognition-011",
+    "type": "MSQ",
+    "topic": "cognition",
+    "marks": 2,
+    "question": "Before a public speech, one participant interprets a racing heart as evidence of impending humiliation; another interprets the same arousal as the body preparing to meet a challenge. The second participant reports less distress and persists longer after making an early mistake. Which statements are consistent with this contrast?",
+    "options": {
+      "A": "Changing the meaning assigned to arousal can alter the emotional response even when the initial bodily activation is similar.",
+      "B": "Viewing the speech as a challenge may support continued goal-directed behaviour after an error.",
+      "C": "The contrast is compatible with appraisal influencing emotion rather than emotion being fixed solely by physiological arousal.",
+      "D": "The first participant could potentially reduce distress by construing the sensations as useful preparation rather than proof of failure."
+    },
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Correct — Reappraisal changes interpretation of the situation or bodily state and thereby changes emotion. B: Correct — A challenge appraisal can reduce avoidance and facilitate persistence. C: Correct — Different emotions following similar arousal indicate a role for cognitive appraisal. D: Correct — Reframing the sensations is a plausible antecedent-focused regulation strategy.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

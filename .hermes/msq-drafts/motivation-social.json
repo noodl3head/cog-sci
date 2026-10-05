@@ -1,0 +1,288 @@
+[
+  {
+    "concept": "intrinsic motivation",
+    "topic": "motivation-emotion-stress",
+    "question": "A school lets students choose any local environmental problem for a month-long investigation. Maya spends extra lunch periods testing stream water even after learning that the optional project will not affect her grade. Which observations most strongly support the inference that Maya's behavior is intrinsically motivated? Select all that apply.",
+    "options": {
+      "A": "She continues because she finds the investigation itself absorbing.",
+      "B": "Her teacher promises a recommendation letter if her report wins a prize.",
+      "C": "She keeps refining her method after the graded requirement has been removed.",
+      "D": "Her parents pay her for every hour she records in the laboratory."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Intrinsic motivation comes from interest or satisfaction inherent in the activity. Maya's enjoyment and persistence without a graded requirement support it (A, C). Recommendation letters and payment are external incentives (B, D)."
+  },
+  {
+    "concept": "self-determination",
+    "topic": "motivation-emotion-stress",
+    "question": "A rehabilitation clinic redesigns an exercise program for patients recovering from knee surgery. Under self-determination theory, which changes are most likely to strengthen high-quality, self-endorsed motivation? Select all that apply.",
+    "options": {
+      "A": "Rank patients publicly by how many repetitions they complete each day.",
+      "B": "Offer meaningful choices among exercises that serve the same therapeutic goal.",
+      "C": "Warn that missed targets will disappoint the medical team.",
+      "D": "Provide progress feedback and pair each patient with a supportive training partner."
+    },
+    "answers": ["B", "D"],
+    "explanation": "Meaningful choice supports autonomy (B), while progress feedback supports competence and a supportive partner supports relatedness (D). Public ranking and guilt-based pressure are controlling rather than autonomy-supportive (A, C)."
+  },
+  {
+    "concept": "Yerkes-Dodson relation",
+    "topic": "motivation-emotion-stress",
+    "question": "A researcher varies pre-performance arousal before participants complete either a simple reaction-time task or a difficult working-memory task. Which findings would be consistent with the Yerkes-Dodson relation? Select all that apply.",
+    "options": {
+      "A": "Moderate arousal produces better working-memory performance than either very low or very high arousal.",
+      "B": "The simple reaction-time task reaches peak performance at a higher arousal level than the difficult task.",
+      "C": "Performance on both tasks must increase continuously as arousal rises.",
+      "D": "Very high arousal disrupts the difficult task more than it disrupts the simple task."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "The relation predicts an inverted-U pattern and a lower optimal arousal level for difficult tasks (A, B). Consequently, excessive arousal is especially disruptive when a task is complex (D). Continuous improvement with rising arousal contradicts the model (C)."
+  },
+  {
+    "concept": "problem-focused coping",
+    "topic": "motivation-emotion-stress",
+    "question": "After discovering that repeated scheduling errors are threatening her course completion, Leena uses several responses. Which responses are examples of problem-focused coping in this controllable situation? Select all that apply.",
+    "options": {
+      "A": "She meets the registrar with a documented list of the errors and requests a corrected schedule.",
+      "B": "She watches comedy clips to reduce her anxiety before thinking about the problem.",
+      "C": "She tells herself that scheduling problems happen to everyone.",
+      "D": "She develops a backup timetable and asks instructors to approve substitute sections."
+    },
+    "answers": ["A", "D"],
+    "explanation": "Problem-focused coping attempts to alter the stressor through planning or direct action (A, D). Distraction and reassuring reinterpretation primarily regulate emotional distress rather than change the scheduling problem (B, C)."
+  },
+  {
+    "concept": "emotion-focused coping",
+    "topic": "motivation-emotion-stress",
+    "question": "A family is waiting through a week-long rescue operation after an earthquake; they cannot directly influence the search. Which responses primarily represent emotion-focused coping? Select all that apply.",
+    "options": {
+      "A": "A relative enters the restricted site to direct the professional rescue team.",
+      "B": "Family members use paced breathing when panic begins to interfere with sleep.",
+      "C": "They seek comfort from one another and a community counselor.",
+      "D": "They reframe waiting as preserving their energy for decisions they may later need to make."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "Breathing, emotional support, and cognitive reappraisal regulate distress when the stressor is not directly controllable (B, C, D). Entering the site is an unsafe attempt to change the external problem, not primarily emotion-focused coping (A)."
+  },
+  {
+    "concept": "allostatic load",
+    "topic": "motivation-emotion-stress",
+    "question": "Two employees report equally demanding work this month. One has also spent years alternating between night shifts, caregiving emergencies, and housing insecurity. Which observations fit the concept of allostatic load? Select all that apply.",
+    "options": {
+      "A": "Repeated activation of stress-response systems can produce cumulative physiological wear even when no single crisis is decisive.",
+      "B": "The employee with prolonged stress exposure may show elevated resting blood pressure and impaired immune regulation.",
+      "C": "Allostatic load refers only to the conscious feeling that a current task is difficult.",
+      "D": "Once a person reports feeling calm, prior stress exposure can no longer contribute to health risk."
+    },
+    "answers": ["A", "B"],
+    "explanation": "Allostatic load is cumulative biological wear from repeated or poorly regulated adaptation to stress (A), which can appear in cardiovascular, metabolic, and immune indicators (B). It is not limited to conscious current strain and does not disappear immediately with a calm mood (C, D)."
+  },
+  {
+    "concept": "facial feedback",
+    "topic": "motivation-emotion-stress",
+    "question": "In a carefully controlled study, participants hold a posture that activates smile-related facial muscles or a neutral posture while viewing mildly amusing cartoons. Which outcomes would provide the clearest support for a facial-feedback effect rather than demand characteristics? Select all that apply.",
+    "options": {
+      "A": "Participants are told that smiling should make every cartoon seem funnier, and they report exactly that.",
+      "B": "Only participants who correctly guess the hypothesis show higher amusement ratings.",
+      "C": "Participants kept unaware of the hypothesis rate the cartoons as slightly more amusing in the smile-muscle condition.",
+      "D": "Physiological or behavioral indicators of positive affect shift with facial-muscle condition even after suspected guessers are excluded."
+    },
+    "answers": ["C", "D"],
+    "explanation": "Facial-feedback accounts predict that facial-muscle configurations can modestly influence emotional experience. Effects among hypothesis-blind participants and on non-self-report indicators support that mechanism (C, D); explicit expectations or effects confined to guessers are compatible with demand characteristics (A, B)."
+  },
+  {
+    "concept": "misattribution of arousal",
+    "topic": "motivation-emotion-stress",
+    "question": "Participants cross either a stable low bridge or a swaying high bridge and then meet the same attractive interviewer. Those from the high bridge later report greater attraction. Which conditions or observations strengthen a misattribution-of-arousal interpretation? Select all that apply.",
+    "options": {
+      "A": "The interviewer is encountered while residual physiological arousal from the bridge is still present.",
+      "B": "Participants have no salient, certain explanation that leads them to label all their arousal as bridge-induced fear.",
+      "C": "The attraction difference shrinks when high-bridge participants are explicitly told that the bridge will elevate their heart rate.",
+      "D": "High-bridge participants had already rated the interviewer as more attractive several days before crossing either bridge."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "Misattribution requires residual arousal (A), an ambiguous or misidentified source (B), and should weaken when the actual source is made salient (C). A pre-existing attraction difference would be a confound rather than support for misattribution (D)."
+  },
+  {
+    "concept": "approach-avoidance conflict",
+    "topic": "motivation-emotion-stress",
+    "question": "Ravi is offered one overseas fellowship that closely matches his research interests but would require leaving a partner who cannot relocate. As the acceptance deadline approaches, he alternates between excitement and reluctance about that same fellowship. Which interpretation best fits this pattern? Select all that apply.",
+    "options": {
+      "A": "It is an approach-approach conflict because two equally attractive fellowships are available.",
+      "B": "It is an approach-avoidance conflict because one goal has both rewarding and costly features.",
+      "C": "It is an avoidance-avoidance conflict because every available outcome is undesirable.",
+      "D": "It demonstrates learned helplessness because Ravi has stopped perceiving any contingency between action and outcome."
+    },
+    "answers": ["B"],
+    "explanation": "The same fellowship attracts Ravi through research opportunity and repels him through separation, making it an approach-avoidance conflict (B). The case does not describe two positive alternatives, two wholly negative alternatives, or perceived uncontrollability (A, C, D)."
+  },
+  {
+    "concept": "learned helplessness",
+    "topic": "motivation-emotion-stress",
+    "question": "In an initial phase, one group of participants can stop an unpleasant noise by pressing a button, while another group receives the same noise but no response can stop it. Later, everyone enters a new setting where moving a lever reliably ends the noise. Which results support learned helplessness? Select all that apply.",
+    "options": {
+      "A": "Participants previously exposed to uncontrollable noise are slower to discover the effective lever response.",
+      "B": "All participants immediately use the lever at the same rate after seeing a demonstration.",
+      "C": "Some participants from the uncontrollable condition remain passive even though escape is now possible.",
+      "D": "Participants from the controllable condition stop responding because they accurately learn that the lever has no effect."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Learned helplessness is shown when prior uncontrollability produces delayed escape learning or passivity in a later controllable situation (A, C). Equal immediate responding would show no such carryover (B), and D contradicts the stated effective contingency."
+  },
+  {
+    "concept": "burnout",
+    "topic": "motivation-emotion-stress",
+    "question": "After two years in an understaffed emergency department, a physician reports chronic depletion, emotional distance from patients, and a growing belief that her work accomplishes little. Which statements appropriately apply the construct of burnout to this case? Select all that apply.",
+    "options": {
+      "A": "Her persistent exhaustion is one component of burnout.",
+      "B": "Her detached, cynical response to patients is consistent with depersonalization or mental distance.",
+      "C": "Her reduced sense of professional efficacy fits a commonly measured burnout dimension.",
+      "D": "The organizational context, including sustained workload and inadequate resources, can contribute to the syndrome."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "The case includes the major burnout features of exhaustion (A), cynicism or mental distance (B), and reduced efficacy (C). Chronic job demands and insufficient resources are relevant contributors rather than burnout being solely an individual weakness (D)."
+  },
+  {
+    "concept": "conformity",
+    "topic": "social",
+    "question": "In a line-judgment study, a participant privately sees that line X matches the standard. Before answering aloud, she hears four unanimous confederates choose line Y. Which changes would be expected to increase conformity to the incorrect group judgment? Select all that apply.",
+    "options": {
+      "A": "Require the participant to announce her answer publicly to the group.",
+      "B": "Have one confederate break unanimity by choosing line X.",
+      "C": "Make the task sufficiently ambiguous that the participant doubts her own visual judgment.",
+      "D": "Allow the participant to record an anonymous answer after the others leave."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Public responding increases normative pressure (A), and ambiguity increases informational influence (C). A dissenter weakens unanimity (B), while anonymous private responding reduces normative pressure (D)."
+  },
+  {
+    "concept": "obedience",
+    "topic": "social",
+    "question": "A hospital researcher adapts the logic of classic obedience studies: nurses receive an unsafe medication instruction from an unfamiliar physician by telephone. Which changes would most likely reduce obedience to the instruction? Select all that apply.",
+    "options": {
+      "A": "Place the physician in the room wearing formal medical credentials.",
+      "B": "Have another nurse openly refuse the same instruction before the participant decides.",
+      "C": "Emphasize that the hospital administration fully endorses the physician's authority.",
+      "D": "Move the study to a temporary office with no clear institutional affiliation and make the physician's legitimacy uncertain."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A disobedient peer supplies social support for resistance (B), and reduced prestige or questionable legitimacy weakens authority (D). Physical presence, credentials, and institutional endorsement would generally strengthen obedience (A, C)."
+  },
+  {
+    "concept": "fundamental attribution error",
+    "topic": "social",
+    "question": "Observers watch a student deliver a nervous, poorly organized speech after being assigned the topic with only two minutes of preparation. Which observer judgments illustrate or promote the fundamental attribution error? Select all that apply.",
+    "options": {
+      "A": "Concluding that the student is generally incompetent while underweighting the severe time constraint.",
+      "B": "Inferring a stable lack of confidence from the visible nervousness despite the forced situation.",
+      "C": "Explaining the performance mainly by the unusually short preparation period.",
+      "D": "Focusing attention on the speaker as the salient cause and neglecting less visible situational pressures."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "The fundamental attribution error is the tendency to overemphasize dispositional causes for others' behavior and underemphasize situations (A, B). Perceptual salience of the actor can promote this bias (D). Giving primary weight to the time constraint is a situational attribution (C)."
+  },
+  {
+    "concept": "self-serving bias",
+    "topic": "social",
+    "question": "Two project teams receive detailed feedback after a competition. Which responses most clearly demonstrate self-serving bias? Select all that apply.",
+    "options": {
+      "A": "A winning team credits its creativity and disciplined preparation for the result.",
+      "B": "A winning team attributes its victory mainly to unusually weak opponents and favorable timing.",
+      "C": "A losing team identifies flaws in its own planning and revises its procedures.",
+      "D": "A losing team blames inconsistent judging while dismissing evidence of its missed deadlines."
+    },
+    "answers": ["A", "D"],
+    "explanation": "Self-serving bias attributes success internally (A) and failure externally (D), especially when contrary evidence is discounted. External credit for success (B) and internal responsibility for failure (C) run against the usual bias."
+  },
+  {
+    "concept": "group polarization",
+    "topic": "social",
+    "question": "Members of an investment club begin with a mild preference for high-risk technology stocks. After discussing only with one another, the club adopts a much riskier portfolio. Which mechanisms or comparisons are consistent with group polarization? Select all that apply.",
+    "options": {
+      "A": "The final decision must result from one member reducing effort because responsibility is shared.",
+      "B": "Members hear additional arguments favoring risk that they had not considered individually.",
+      "C": "Members compare themselves with the group's norm and shift slightly further in the valued direction.",
+      "D": "A club containing mildly risk-averse members could become more cautious after like-minded discussion."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "Persuasive arguments (B) and social comparison (C) can amplify an initial group tendency. Polarization strengthens the prevailing direction, so a risk-averse group may become more cautious (D). Reduced individual effort describes social loafing, not this attitude shift (A)."
+  },
+  {
+    "concept": "social loafing",
+    "topic": "social",
+    "question": "Students pull on a rope first alone and then in groups while the instructor measures individual force. Which conditions would make social loafing more likely? Select all that apply.",
+    "options": {
+      "A": "Each student's contribution is hidden within the group's total force.",
+      "B": "Students believe several capable teammates can compensate for reduced personal effort.",
+      "C": "Each student's force is displayed by name and determines an individual score.",
+      "D": "The task is personally meaningful and the group is small and cohesive."
+    },
+    "answers": ["A", "B"],
+    "explanation": "Low identifiability (A) and the belief that others will carry the task (B) reduce individual accountability and can foster social loafing. Individually evaluated output (C), meaningful work, and cohesion (D) generally reduce it."
+  },
+  {
+    "concept": "bystander effect",
+    "topic": "social",
+    "question": "During an online class, a student posts a message suggesting a medical emergency. Twenty classmates can see it, but no one responds for several minutes. Which interventions directly target processes underlying the bystander effect? Select all that apply.",
+    "options": {
+      "A": "Increase the visible number of recipients so everyone knows that many others received the message.",
+      "B": "Tell recipients that emergencies are often ambiguous and should usually be ignored until consensus forms.",
+      "C": "Assign one named student to contact emergency services, reducing diffusion of responsibility.",
+      "D": "Train students to interpret uncertain warning signs as possible emergencies and to act before checking whether others appear concerned."
+    },
+    "answers": ["C", "D"],
+    "explanation": "Naming a specific helper counters diffusion of responsibility (C), while training people to act despite ambiguity counters pluralistic ignorance and delayed interpretation (D). More observers and reliance on others' inaction can intensify the bystander effect (A, B)."
+  },
+  {
+    "concept": "prejudice",
+    "topic": "social",
+    "question": "A company audit examines responses to applicants from a stigmatized ethnic group. Which findings concern prejudice as an attitude or an intervention likely to reduce it? Select all that apply.",
+    "options": {
+      "A": "Interviewers privately report generalized dislike and negative evaluations of the group.",
+      "B": "Employees from different groups cooperate with equal status on a shared project whose success requires interdependence.",
+      "C": "Managers publicly support norms of inclusion, making biased expressions less socially acceptable.",
+      "D": "The hiring software rejects identical résumés from the group at a higher rate; this outcome by itself is the affective attitude component of prejudice."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "Prejudice refers to negative attitudes, including generalized negative affect or evaluation (A). Equal-status cooperative contact toward common goals (B) and inclusive norms (C) can reduce prejudice. Unequal rejection is evidence of discrimination; it does not by itself establish the affective attitude component (D)."
+  },
+  {
+    "concept": "cognitive dissonance",
+    "topic": "social",
+    "question": "Participants perform a dull task and are then paid either a very small or a large amount to tell the next participant that it was enjoyable. Later, which group is most likely to report genuinely more favorable attitudes toward the task under the insufficient-justification account? Select all that apply.",
+    "options": {
+      "A": "The large-payment group, because a strong external justification forces an internal attitude change.",
+      "B": "The small-payment group, because weak external justification leaves more dissonance to reduce by changing attitude.",
+      "C": "Both groups equally, because payment size is irrelevant whenever behavior is public.",
+      "D": "Neither group, because dissonance can be reduced only by reversing the original behavior."
+    },
+    "answers": ["B"],
+    "explanation": "A small payment provides insufficient external justification for making the false statement, so participants can reduce dissonance by deciding the task was more enjoyable (B). A large payment supplies an obvious external reason and therefore less need for attitude change (A); C and D misstate the theory."
+  },
+  {
+    "concept": "persuasion",
+    "topic": "social",
+    "question": "A public-health team designs messages encouraging university students to receive a booster vaccination. Which strategies are most consistent with established persuasion principles in the stated contexts? Select all that apply.",
+    "options": {
+      "A": "For highly involved students willing to evaluate evidence, present strong arguments with transparent data and sources.",
+      "B": "For skeptical students, begin with an extreme demand so that the recommended action appears equally extreme by contrast.",
+      "C": "For low-involvement audiences, use a credible communicator and a memorable cue while keeping the recommendation clear.",
+      "D": "Rely on repeated unsupported claims because repetition guarantees durable central-route attitude change."
+    },
+    "answers": ["A", "C"],
+    "explanation": "High motivation and ability favor central-route persuasion through strong evidence (A). When involvement is low, source credibility and salient cues can operate through the peripheral route (C). An extreme opening can trigger rejection rather than make the target equally extreme (B), and repetition alone does not guarantee durable central processing (D)."
+  },
+  {
+    "concept": "social identity",
+    "topic": "social",
+    "question": "Students are randomly assigned to 'Orion' or 'Lyra' teams for a one-day problem-solving contest, although the labels have no prior meaning. Which outcomes can be explained using social identity processes? Select all that apply.",
+    "options": {
+      "A": "Students begin describing their assigned team with 'we' and incorporate membership into their momentary self-concept.",
+      "B": "Some students allocate slightly more bonus points to their own team even when assignment was arbitrary.",
+      "C": "A threat to the team's status lowers members' collective self-esteem and motivates favorable comparisons with the other team.",
+      "D": "Changing which team membership is salient changes how the same student categorizes self and others."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "Social identity theory holds that group memberships can become part of the self-concept (A), produce minimal-group ingroup favoritism (B), link group status to collective self-evaluation (C), and vary with the category made salient by context (D)."
+  }
+]

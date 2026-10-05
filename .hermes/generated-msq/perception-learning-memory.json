@@ -1,0 +1,215 @@
+[
+  {
+    "id": "xh-c5-msq-perception-learning-memory-001",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 1,
+    "question": "A child initially shows no fear of a white toy rabbit. After repeatedly seeing the rabbit immediately before a sudden metallic clang, the child cries on seeing the rabbit alone and also becomes uneasy near a white fur coat. Later, repeated presentations of the rabbit without the clang reduce the crying. Which interpretations follow from this pattern?",
+    "options": {
+      "A": "The rabbit acquired the capacity to elicit fear because it reliably preceded the clang.",
+      "B": "Uneasiness near the fur coat indicates stimulus discrimination between the rabbit and similar objects.",
+      "C": "The decline in crying during rabbit-alone trials is consistent with extinction rather than erasure of the original learning.",
+      "D": "The metallic clang functioned as a conditioned stimulus from the outset."
+    },
+    "answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "A: Correct — Pairing the initially neutral rabbit with the aversive clang can make the rabbit a conditioned stimulus. B: Incorrect — Responding to the similar fur coat is stimulus generalization, not discrimination. C: Correct — Extinction reflects new learning that the rabbit no longer predicts the clang; spontaneous recovery can remain possible. D: Incorrect — The clang naturally elicited distress and therefore served as the unconditioned stimulus.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-002",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 2,
+    "question": "A hospital introduces a hand-hygiene programme. Nurses earn a preferred shift token after five verified sanitizing episodes, while the counter resets after every fifth response regardless of time. During equipment shortages, complaints also increase because a supervisor sometimes removes an unpleasant extra duty after a complaint. Which conclusions are warranted?",
+    "options": {
+      "A": "The token programme uses a variable-ratio schedule because the required number of responses changes unpredictably.",
+      "B": "The token programme should tend to produce a high response rate with a brief pause after each token.",
+      "C": "Removal of the extra duty is punishment because an aversive event is taken away.",
+      "D": "If removal of extra duty makes future complaints more likely, the complaints have been negatively reinforced."
+    },
+    "answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "A: Incorrect — A token after every fifth response is a fixed-ratio schedule. B: Correct — Fixed-ratio schedules commonly yield rapid responding followed by a post-reinforcement pause. C: Incorrect — Removing an aversive condition after behaviour is not punishment when it strengthens that behaviour. D: Correct — The contingency removes an unpleasant duty and increases complaining, which is negative reinforcement.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-003",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 2,
+    "question": "A teacher wants students to begin submitting practice essays before the deadline. In one section, late-submitters are excused from a disliked oral quiz whenever they submit an essay on time. On-time submission rises, but some students also begin submitting superficial drafts merely to avoid the quiz. Which analyses are warranted by the observed response pattern?",
+    "options": {
+      "A": "For students whose timely submission increases, escape from the oral quiz is functioning as negative reinforcement.",
+      "B": "The rise in superficial drafts shows that a contingency can strengthen the measured response without producing the broader quality the teacher intended.",
+      "C": "Because something is removed, the intervention must reduce on-time submission.",
+      "D": "If the oral-quiz exemption is discontinued and timely submission declines, that pattern would support a functional relation between the exemption and submission."
+    },
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "A: Correct — The response increases because it removes an aversive event. B: Correct — Reinforcement acts on the response defined by the contingency; it need not improve unreinforced dimensions such as essay quality. C: Incorrect — Removal defines negative reinforcement only when the behaviour increases, as it does here. D: Correct — A decline after withdrawal would be consistent with the exemption having maintained the behaviour, though strong causal claims still depend on design control.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-004",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 1,
+    "question": "Novice technicians watch an expert troubleshoot a device. One group sees the expert praised for checking the power supply before replacing parts; another sees the same action ignored. Both groups later reproduce the checking sequence when a reward is offered, although the praised-model group begins using it sooner without an incentive. Which inferences are supported?",
+    "options": {
+      "A": "Both groups may have acquired the sequence observationally even though their initial performance differed.",
+      "B": "The ignored-model group could not have learned the sequence because it did not display it immediately.",
+      "C": "The result proves that direct reinforcement is necessary for observational acquisition.",
+      "D": "The model’s observed consequence plausibly affected spontaneous performance more than the basic capacity to reproduce the sequence."
+    },
+    "answers": [
+      "A",
+      "D"
+    ],
+    "explanation": "A: Correct — Later reproduction indicates that attention and retention occurred in both groups despite different initial enactment. B: Incorrect — Learning and performance can be dissociated; delayed performance can reveal earlier acquisition. C: Incorrect — The observers were not directly reinforced during acquisition, and both later reproduced the action. D: Correct — Vicarious reinforcement can alter whether an acquired act is performed when no direct incentive is present.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-005",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 2,
+    "question": "At a radiology unit, two clinicians view equally faint images. Clinician P reports a tumour whenever evidence is even slightly suspicious; clinician Q reports one only when evidence is strong. P records more hits but also more false alarms. After the hospital increases the cost of missed tumours, Q becomes more willing to report a tumour, with image quality unchanged. Which conclusions fit the observations?",
+    "options": {
+      "A": "P’s higher hit rate alone establishes greater perceptual sensitivity.",
+      "B": "The clinicians initially differed in decision criterion.",
+      "C": "The policy change can shift Q’s criterion without changing Q’s ability to discriminate signal from noise.",
+      "D": "Under the new cost structure, an increase in both Q’s hits and false alarms would be expected if the criterion becomes more liberal."
+    },
+    "answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Incorrect — A liberal criterion can raise hits and false alarms even when sensitivity is unchanged. B: Correct — Their different willingness to say “tumour present” indicates different response criteria. C: Correct — Changing payoff or cost changes response bias; sensitivity depends on the underlying signal-noise separation. D: Correct — A liberal shift classifies more observations as signal, increasing both correct detections and false alarms.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-006",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 2,
+    "question": "During a simulated air-traffic task, participants monitor a central stream of flight codes while unexpected aircraft icons sometimes appear near the edge of the display. Detection of the icons falls sharply when the code task becomes difficult. Yet a red icon bearing the participant’s own call sign is detected more often than an equally bright novel icon. Which interpretations are justified?",
+    "options": {
+      "A": "The missed peripheral icons are consistent with limited attentional capacity being concentrated on the central task.",
+      "B": "The advantage for one’s own call sign suggests that personally significant input can sometimes capture attention despite competing demands.",
+      "C": "Failure to report an icon proves that its visual features were not registered anywhere in the perceptual system.",
+      "D": "Because the icons are visible, increasing central-task difficulty should have no effect on their detection."
+    },
+    "answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "A: Correct — Greater central load leaves fewer resources for unexpected peripheral events, producing inattentional blindness. B: Correct — Highly salient or meaningful stimuli can gain priority under limited attention. C: Incorrect — Non-report does not establish absence of all early processing; it shows failure to reach reportable awareness. D: Incorrect — Visibility alone does not eliminate capacity limits, as the observed load effect demonstrates.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-007",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 1,
+    "question": "A participant must remember the sequence 7–K–2–M while deciding whether each of several sentences is meaningful. In a second condition, the participant groups the symbols as two familiar card combinations and rehearses them during pauses. Recall improves, but drops again when a concurrent task prevents rehearsal. Which claims follow?",
+    "options": {
+      "A": "The sentence judgements and sequence maintenance necessarily use completely independent systems, so interference should not occur.",
+      "B": "Grouping the symbols can reduce the number of functional units that must be actively maintained.",
+      "C": "The decline under the concurrent task is consistent with limited working-memory resources.",
+      "D": "The findings show that the sequence entered permanent long-term storage as soon as it was chunked."
+    },
+    "answers": [
+      "B",
+      "C"
+    ],
+    "explanation": "A: Incorrect — Concurrent processing and maintenance can compete for executive and modality-specific resources. B: Correct — Chunking reorganizes separate elements into fewer meaningful units. C: Correct — Preventing rehearsal while imposing another task strains active maintenance and updating. D: Incorrect — Improved immediate recall does not by itself demonstrate durable long-term storage.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-008",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 2,
+    "question": "Divers study a list of repair procedures either underwater or on shore and are later tested in one of those settings. Recall is best when learning and test settings match. A separate recognition test supplies all procedure names and largely removes the match advantage. Which interpretations are defensible?",
+    "options": {
+      "A": "Environmental cues present at encoding can become part of the retrieval conditions for free recall.",
+      "B": "A mismatch between study and test context must have destroyed the stored procedures.",
+      "C": "Supplying procedure names can reduce reliance on self-generated contextual retrieval cues.",
+      "D": "The pattern is compatible with retrieval being cue-dependent rather than memory strength being determined solely by the study location."
+    },
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Correct — Context reinstatement provides cues that overlap with those encoded during learning. B: Incorrect — Successful recognition after a mismatch indicates that the information was not necessarily destroyed. C: Correct — Recognition offers item cues directly, decreasing the advantage of matching environmental context. D: Correct — Different test formats producing different context effects points to accessibility and cue overlap, not simply storage loss.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-009",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 1,
+    "question": "Before learning a new login code, employees have used the same old code for years. Immediately after training, most errors consist of entering the old code. After several days of exclusive use of the new code, these intrusions decline. Which single interpretation is supported by the direction of interference?",
+    "options": {
+      "A": "The new code is retroactively disrupting memory for the old code.",
+      "B": "The well-learned old code is proactively interfering with retrieval of the new code.",
+      "C": "Both codes have vanished because decay affects them at the same rate.",
+      "D": "The errors demonstrate a failure of sensory memory rather than competition between learned responses."
+    },
+    "answers": [
+      "B"
+    ],
+    "explanation": "A: Incorrect — Retroactive interference would involve new learning impairing retrieval of older material, the reverse direction. B: Correct — Earlier learning intrudes on performance of newly learned information, which defines proactive interference. C: Incorrect — Systematic old-code intrusions and their decline with new practice are not explained by equal decay. D: Incorrect — The competing codes are long-learned response patterns, not fleeting sensory traces.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-010",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 1,
+    "question": "Two groups receive six hours to learn foreign-language pairs. Group M studies all six hours on one evening. Group S studies one hour on each of six evenings and is tested a week later. Group S recalls more pairs and more accurately rejects recombined lures. Which explanations are consistent with the result?",
+    "options": {
+      "A": "Intervals between sessions allow retrieval and partial forgetting to make later practice more effortful and diagnostic.",
+      "B": "Because total study time is equal, any recall difference must be due only to random sampling error.",
+      "C": "Repeated study across varying internal and external contexts can provide a richer set of later retrieval routes.",
+      "D": "The result requires assuming that massed practice produced no learning during the study evening."
+    },
+    "answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "A: Correct — Spaced retrieval after some forgetting can strengthen access more than immediate restudy. B: Incorrect — Equal duration does not equate the temporal distribution of practice, which is the manipulated factor. C: Correct — Distributed sessions can encode the material with multiple contextual cues. D: Incorrect — Massed practice can produce short-term gains; the claim concerns poorer delayed retention, not zero acquisition.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-perception-learning-memory-011",
+    "type": "MSQ",
+    "topic": "perception-learning-memory",
+    "marks": 2,
+    "question": "An amnesic patient cannot recall prior practice sessions on a mirror-tracing task, yet tracing becomes faster and more accurate over several days. When asked to describe the rule for reversing movements, the patient gives no better account than on day one. Which conclusions fit this dissociation?",
+    "options": {
+      "A": "Improved tracing can reflect preserved procedural learning despite impaired conscious recollection of practice.",
+      "B": "The absence of episodic recall does not prevent performance from changing through repeated sensorimotor practice.",
+      "C": "The patient’s inability to state the rule does not show that no task-relevant memory was formed.",
+      "D": "The dissociation indicates that memory is not a single unitary system measured equally by verbal report and skilled performance."
+    },
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Correct — Skill improvement without recollection is a standard procedural-declarative dissociation. B: Correct — Procedural acquisition can influence action independently of episodic remembering. C: Correct — Nondeclarative memory can be expressed in performance without an explicit account. D: Correct — Divergent outcomes on recall and skill measures support multiple memory systems.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

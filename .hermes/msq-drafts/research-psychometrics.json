@@ -1,0 +1,288 @@
+[
+  {
+    "concept": "random assignment",
+    "topic": "research-methods-statistics",
+    "question": "A sleep researcher recruits 120 university students, then uses a random-number generator to place each student in either a four-hour-sleep condition or an eight-hour-sleep condition before a vigilance test. Which conclusions or procedures fit this design?",
+    "options": {
+      "A": "Treating preexisting student characteristics as roughly balanced across the two sleep groups is reasonable because condition placement was randomized.",
+      "B": "Generalizing the result to all working adults is warranted because random assignment makes the student sample representative of that population.",
+      "C": "A difference in vigilance can be interpreted more causally than it could if students had chosen their own sleep condition.",
+      "D": "The researcher should replace random assignment with matching only after seeing each student's vigilance score, because posttest matching removes expectancy effects."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is justified because random assignment tends to distribute participant differences across conditions. B is not justified: population generalizability depends mainly on sampling, not assignment. C is justified because random assignment strengthens causal inference by reducing systematic selection differences. D is inappropriate because matching on an outcome after treatment can distort the comparison and does not remove expectancy effects."
+  },
+  {
+    "concept": "construct validity",
+    "topic": "research-methods-statistics",
+    "question": "Investigators claim to study academic motivation, but operationalize it only as the number of optional practice questions completed during a session in which students receive one dollar for every completed item. Which interpretations or revisions address the study's construct validity?",
+    "options": {
+      "A": "The payment manipulation guarantees that practice-question count isolates intrinsic academic motivation rather than reward seeking.",
+      "B": "The count may partly measure sensitivity to payment, so the operational measure may not represent the intended motivation construct well.",
+      "C": "Increasing the sample size would by itself establish that the task is measuring academic motivation rather than reward responsiveness.",
+      "D": "Adding convergent measures, such as persistence on an unrewarded task and a validated motivation scale, would strengthen the interpretation."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A is false because payment introduces an alternative motive. B correctly identifies a mismatch between the operationalization and the intended construct. C is false because a larger sample improves precision but cannot repair a poor operational definition. D is appropriate because agreement among theoretically related measures supplies evidence that the intended construct is being captured."
+  },
+  {
+    "concept": "confounding",
+    "topic": "research-methods-statistics",
+    "question": "A clinic compares a new group-based anxiety program offered in the evening with its usual individual therapy offered in the morning. The evening group improves more after six weeks. Which features complicate or improve the causal interpretation?",
+    "options": {
+      "A": "Therapy format is confounded with time of day because every group session occurs in the evening and every individual session occurs in the morning.",
+      "B": "Differences between the therapists could be another confound if one clinician delivers all new-program sessions and another delivers all usual-care sessions.",
+      "C": "The larger improvement proves that the group format caused the change because both conditions lasted six weeks.",
+      "D": "Running both therapy formats at both times of day with therapists distributed across conditions would help separate the treatment effect from these alternatives."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A is correct because treatment and time are inseparable in the observed design. B is correct because therapist differences could covary with treatment. C is incorrect: equal duration does not rule out the time and therapist alternatives. D is correct because crossing format with time and balancing therapists prevents those variables from changing only with treatment."
+  },
+  {
+    "concept": "interaction effect",
+    "topic": "research-methods-statistics",
+    "question": "In a memory experiment, quiet study yields mean recall scores of 18 for low-anxiety students and 17 for high-anxiety students, whereas background noise yields scores of 16 for low-anxiety students and 9 for high-anxiety students. Which interpretations are supported by this pattern?",
+    "options": {
+      "A": "The effect of background noise depends on anxiety level because the quiet-to-noise decline is much larger among high-anxiety students.",
+      "B": "Only a main effect of study setting is possible because both anxiety groups recall fewer words under noise.",
+      "C": "The pattern shows that anxiety has exactly the same association with recall in quiet and noisy settings.",
+      "D": "A factorial analysis should test the setting-by-anxiety interaction rather than relying only on the two overall main effects."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A is correct: noise changes recall by 2 points for low-anxiety students but by 8 points for high-anxiety students, indicating a nonparallel effect. B is incorrect because a main effect and an interaction can coexist. C is contradicted by the 1-point anxiety difference in quiet versus the 7-point difference in noise. D is correct because the factorial interaction directly tests whether the setting effect varies by anxiety."
+  },
+  {
+    "concept": "median",
+    "topic": "research-methods-statistics",
+    "question": "A psychologist records weekly panic-attack counts for nine clients as 0, 1, 1, 2, 2, 3, 3, 4, and 25; the final value reflects one unusually severe case. Which reporting decisions or interpretations are appropriate?",
+    "options": {
+      "A": "Reporting only the mean is ideal because the value 25 cannot influence an arithmetic average.",
+      "B": "The median is 2 attacks because 2 is the fifth value in the ordered set of nine observations.",
+      "C": "The median better represents the typical client here than the mean because it is resistant to the extreme value of 25.",
+      "D": "Reporting the median together with the range or another spread measure would communicate both the center and the unusual upper value."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A is incorrect because the outlier strongly raises the mean. B is correct: with nine ordered values, the fifth value is the median, which is 2. C is correct because the resistant median is more representative of the clustered observations. D is correct because a center alone would conceal the substantial spread and the extreme case."
+  },
+  {
+    "concept": "sampling error",
+    "topic": "research-methods-statistics",
+    "question": "From the same school district, two independent simple random samples of 80 adolescents produce mean sleep estimates of 6.7 and 7.2 hours even though both teams follow the same protocol. Which explanations or next steps are statistically sound?",
+    "options": {
+      "A": "The difference can arise from sampling error because randomly selected samples need not contain identical mixes of students.",
+      "B": "Using larger random samples would generally reduce the expected sample-to-sample fluctuation in the estimated mean.",
+      "C": "The two estimates prove that at least one research team fabricated data because random sampling must reproduce the population mean exactly.",
+      "D": "Replacing random selection with volunteers would eliminate sampling error and guarantee an unbiased district estimate."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A is correct because random samples naturally differ in composition and therefore in their estimates. B is correct because larger samples usually have smaller standard errors. C is incorrect: random estimates fluctuate around the population value rather than equaling it every time. D is incorrect because volunteer sampling can add selection bias and does not eliminate random fluctuation."
+  },
+  {
+    "concept": "longitudinal design",
+    "topic": "research-methods-statistics",
+    "question": "Researchers measure emotion regulation in the same 300 children at ages 6, 10, 14, and 18 to examine developmental trajectories, but families with the greatest early stress are most likely to leave the project. Which interpretations are appropriate?",
+    "options": {
+      "A": "Because four age groups appear in the dataset, the project is cross-sectional rather than longitudinal.",
+      "B": "Following the same participants guarantees that historical events and repeated testing cannot influence later scores.",
+      "C": "The design permits analysis of within-person change because each child's later scores can be compared with that child's earlier scores.",
+      "D": "Selective attrition may bias the estimated trajectory if the retained adolescents systematically experienced less early stress than those who left."
+    },
+    "answers": ["C", "D"],
+    "explanation": "A is incorrect because the same cohort is followed repeatedly, which defines a longitudinal design. B is incorrect because history and repeated measurement remain possible threats. C is correct because repeated observations reveal individual developmental change. D is correct because nonrandom dropout can make the remaining sample unrepresentative of the original cohort and distort the trajectory."
+  },
+  {
+    "concept": "within-subject design",
+    "topic": "research-methods-statistics",
+    "question": "Each participant completes a sustained-attention task after placebo, 100 mg caffeine, and 200 mg caffeine on three laboratory visits; the researcher counterbalances condition order. Which consequences or analyses fit this within-subject design?",
+    "options": {
+      "A": "Each participant serves as a personal comparison, reducing noise from stable individual differences in baseline attention.",
+      "B": "The analysis must account for the dependence among the three scores contributed by the same participant.",
+      "C": "Counterbalancing helps distribute practice and fatigue effects across caffeine conditions instead of tying them to one dose.",
+      "D": "The design eliminates every possible carryover effect merely because the visits occur on different days."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "A is correct because repeated measurement controls stable between-person variation. B is correct because observations from one participant are correlated and require a repeated-measures approach. C is correct because counterbalancing reduces systematic order confounding. D is incorrect because caffeine, expectations, or learned strategies could carry over unless washout and other controls are adequate."
+  },
+  {
+    "concept": "effect size",
+    "topic": "research-methods-statistics",
+    "question": "A mindfulness trial with 8,000 participants reports a statistically significant reduction in stress, p < .001, but the treatment and control means differ by only 0.08 standard deviations. Which interpretation best uses the reported effect size?",
+    "options": {
+      "A": "The very small p value establishes that the intervention produced a large improvement for a typical participant.",
+      "B": "The 0.08-standard-deviation difference indicates a small average effect even though the large sample made it statistically detectable.",
+      "C": "The effect size shows that exactly 8% of treated participants became completely stress-free.",
+      "D": "Statistical significance makes the magnitude estimate unnecessary when deciding whether the program has practical value."
+    },
+    "answers": ["B"],
+    "explanation": "A is incorrect because a small p value concerns incompatibility with the null, not effect magnitude. B is correct: a standardized mean difference of 0.08 is small, and a very large sample can detect such a difference. C misreads standardized mean difference as a participant percentage. D is incorrect because practical importance requires attention to magnitude, uncertainty, costs, and context."
+  },
+  {
+    "concept": "Type I error",
+    "topic": "research-methods-statistics",
+    "question": "A research team tests 25 unrelated hypotheses about music and cognition at alpha = .05, reports the one significant result, and makes no correction for multiple testing. Which concerns or remedies directly address Type I error?",
+    "options": {
+      "A": "The chance of obtaining at least one false-positive result across the set is greater than .05 when many null hypotheses are tested independently.",
+      "B": "A Type I error here would mean failing to detect a genuine effect of music on cognition.",
+      "C": "Preregistering a primary hypothesis or applying a multiple-comparison adjustment would reduce opportunities to present chance significance as confirmation.",
+      "D": "Increasing measurement reliability necessarily makes the familywise false-positive probability exactly zero."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because repeated testing inflates the probability of at least one rejection when the relevant nulls are true. B describes a Type II error, not a Type I error. C is correct because prespecification and adjusted thresholds limit false-positive searching. D is incorrect because better reliability may improve measurement but does not reduce the chosen rejection probability to zero."
+  },
+  {
+    "concept": "replication",
+    "topic": "research-methods-statistics",
+    "question": "After one laboratory reports that holding a warm mug increases ratings of a stranger's friendliness, several teams plan follow-up studies using new samples, preregistered analyses, and both similar and culturally adapted procedures. Which projects contribute useful replication evidence?",
+    "options": {
+      "A": "A new team repeats the original materials and analysis with a fresh sample to test whether the finding recurs under closely matched conditions.",
+      "B": "Another team tests the predicted warmth effect with a different but defensible friendliness measure to examine whether it generalizes across operationalizations.",
+      "C": "A multicountry project examines whether the effect recurs across cultural settings while documenting procedural differences that might moderate it.",
+      "D": "Publishing well-powered null replications alongside successful ones helps estimate whether the original effect is robust rather than selectively visible."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A is a direct replication that tests reproducibility under similar conditions. B is a conceptual replication that tests the same theoretical prediction with a changed measure. C adds systematic evidence about generalizability and potential moderators. D is essential because including null as well as positive outcomes reduces publication bias and supports a more accurate estimate of robustness."
+  },
+  {
+    "concept": "reliability",
+    "topic": "psychometrics",
+    "question": "A newly developed 20-item loneliness scale gives highly similar total scores across two equivalent halves of the items, but its scores correlate weakly with interviews about loneliness. Which interpretations follow from these results?",
+    "options": {
+      "A": "The agreement between equivalent item halves supports the consistency, or reliability, of scores produced by the scale.",
+      "B": "High score consistency proves that the scale measures loneliness rather than a different but coherent construct such as social withdrawal.",
+      "C": "The weak interview correlation raises a validity concern even if the questionnaire scores themselves are internally consistent.",
+      "D": "Low agreement with interviews means the split-half consistency estimate must also be low by definition."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because agreement across equivalent item sets is evidence of internal consistency reliability. B is incorrect because consistent scores can still reflect the wrong construct. C is correct because correspondence with an external assessment bears on validity. D is incorrect because internal consistency and agreement with an external method are distinct properties and can differ."
+  },
+  {
+    "concept": "content validity",
+    "topic": "psychometrics",
+    "question": "A department claims its final examination represents an entire introductory psychology course, yet 38 of 40 questions cover neuroscience and two cover all remaining units. Which judgments or revisions concern the examination's content validity?",
+    "options": {
+      "A": "The exam has strong content validity because neuroscience questions can be scored objectively.",
+      "B": "The imbalance suggests inadequate sampling of the course domain if learning objectives also emphasize cognition, development, social psychology, and research methods.",
+      "C": "A high class average would by itself show that the exam adequately represents every unit in the syllabus.",
+      "D": "Building a test blueprint that allocates items to stated objectives before writing questions would improve domain coverage."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A is incorrect because objective scoring does not establish representative domain coverage. B is correct because most intended course content is nearly absent. C is incorrect because performance level does not show whether the intended content universe was sampled. D is correct because a blueprint links item allocation to objectives and supplies evidence of balanced representation."
+  },
+  {
+    "concept": "criterion validity",
+    "topic": "psychometrics",
+    "question": "A hospital develops a brief screening score for later medication nonadherence and compares it with pharmacy refill records collected six months after discharge. Which interpretations or design choices address criterion validity?",
+    "options": {
+      "A": "A strong association between discharge screening scores and later refill behavior would support predictive criterion validity.",
+      "B": "The refill record must be evaluated as a criterion because automatic refills may not perfectly represent whether patients actually took medication.",
+      "C": "High internal consistency alone would establish that the screening score predicts future adherence behavior accurately.",
+      "D": "Testing the screen against later behavior in a new patient sample would provide stronger evidence than choosing a cutoff that best fits the development sample only."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A is correct because the measure is being evaluated against a future behavioral criterion. B is correct because criterion contamination or imperfection limits the interpretation. C is incorrect because internal consistency does not demonstrate prediction of an external outcome. D is correct because out-of-sample validation tests whether the criterion relationship generalizes rather than reflecting overfitting."
+  },
+  {
+    "concept": "standard error of measurement",
+    "topic": "psychometrics",
+    "question": "A cognitive ability test reports an observed score of 108 and a standard error of measurement of 4 points for scores in this range. Which uses of this information are defensible when interpreting the examinee's result?",
+    "options": {
+      "A": "The reported score should be treated as an estimate with measurement uncertainty, not as a perfectly precise value of the examinee's standing.",
+      "B": "The examinee's true score is known to be exactly 104 because one standard error must be subtracted from every observed score.",
+      "C": "The standard error of measurement is the standard deviation of this examinee's answers across the individual test items.",
+      "D": "An approximate interval formed around 108 can communicate the range in which the examinee's score would likely vary across comparable measurements."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A is correct because observed scores contain measurement error. B is incorrect: the standard error describes uncertainty and is not a mandatory downward correction. C is incorrect because it concerns expected observed-score fluctuation around a true-score estimate, not the spread of item responses. D is correct because intervals based on the standard error express score precision, with the multiplier chosen for the desired confidence level."
+  },
+  {
+    "concept": "norm-referenced interpretation",
+    "topic": "psychometrics",
+    "question": "A child earns a raw score of 42 on a reading test and is reported at the 70th percentile relative to a national same-grade norm sample. Which interpretations or cautions are appropriate?",
+    "options": {
+      "A": "The percentile means the child answered exactly 70% of the reading items correctly.",
+      "B": "The result indicates that the child's score was at or above the scores of about 70% of students in the specified norm group.",
+      "C": "The interpretation depends on whether the norm sample is relevant and representative for the comparison being made.",
+      "D": "The percentile alone does not show which reading skills the child has mastered according to a fixed performance standard."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A is incorrect because percentile rank describes relative standing, not percent correct. B correctly states the norm-referenced comparison. C is correct because an outdated or mismatched norm group can make the comparison misleading. D is correct because relative rank does not provide a criterion-referenced judgment about mastery of particular skills."
+  },
+  {
+    "concept": "item difficulty",
+    "topic": "psychometrics",
+    "question": "On a four-option depression-literacy test, 82% of examinees answer Item 7 correctly and 28% answer Item 19 correctly. The developer defines item difficulty as the proportion answering correctly. Which conclusions follow?",
+    "options": {
+      "A": "Item 7 has a higher difficulty index under this convention because a larger proportion of examinees answered it correctly.",
+      "B": "Item 19 functioned as the harder item for this examinee group because fewer participants answered it correctly.",
+      "C": "The higher proportion correct for Item 7 establishes that it discriminates better between high- and low-performing examinees than Item 19 does.",
+      "D": "Because Item 7 is easier, it must be removed even if the test needs coverage of a basic concept."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A is correct because the stated convention uses proportion correct, so a higher index denotes an easier item despite the label. B is correct because only 28% solved Item 19. C is incorrect because proportion correct alone does not provide either item's discrimination index. D is incorrect because easy items can serve content coverage and measurement at lower ability levels."
+  },
+  {
+    "concept": "inter-rater agreement",
+    "topic": "psychometrics",
+    "question": "Two trained observers independently code whether children display cooperative behavior during 100 playground intervals; both code 'absent' in most intervals and agree in 92 intervals overall. Which evaluation is warranted?",
+    "options": {
+      "A": "The 92% raw agreement proves excellent rater consistency regardless of how often each category occurs by chance.",
+      "B": "The observers' agreement cannot be studied unless every interval contains cooperative behavior.",
+      "C": "A chance-corrected index such as Cohen's kappa would help determine how much agreement exceeds that expected from the observers' marginal rates.",
+      "D": "The researchers should inspect category-specific agreement because a high overall value may be driven mainly by mutual 'absent' ratings."
+    },
+    "answers": ["C", "D"],
+    "explanation": "A is incorrect because high agreement may be inflated by a very common 'absent' category. B is incorrect because variation across present and absent codes is precisely what can be assessed. C is correct because kappa adjusts observed agreement for chance agreement implied by marginal frequencies. D is correct because separate present/absent agreement can reveal poor detection of the rarer cooperative behavior."
+  },
+  {
+    "concept": "factor analysis",
+    "topic": "psychometrics",
+    "question": "Researchers administer 30 coping items to 1,200 adults and find that items about planning, reframing, and problem solving cluster together, while avoidance and denial items form another cluster. Which conclusions or next steps fit factor analysis?",
+    "options": {
+      "A": "The covariance pattern can support a model with distinguishable problem-focused and avoidant coping dimensions.",
+      "B": "Factor loadings can help identify items that relate strongly to an inferred dimension and items that cross-load on multiple dimensions.",
+      "C": "The proposed structure should be checked in a separate sample with a confirmatory model rather than assumed universal from one exploratory analysis.",
+      "D": "The two clusters prove that exactly two biological coping mechanisms cause every response to the questionnaire."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "A is correct because factor analysis summarizes shared item covariance as latent dimensions. B is correct because loadings show item-dimension relations and reveal cross-loadings. C is correct because replication or confirmatory factor analysis tests whether the structure generalizes. D is incorrect because statistical factors do not by themselves establish biological entities, causal mechanisms, or an immutable number of constructs."
+  },
+  {
+    "concept": "test-retest reliability",
+    "topic": "psychometrics",
+    "question": "A stable-trait self-control questionnaire is administered to 200 adults on Monday and again on Wednesday, producing a correlation of .32 between total scores. Which interpretation best addresses test-retest reliability?",
+    "options": {
+      "A": "The .32 correlation demonstrates strong temporal stability because any positive association is sufficient.",
+      "B": "The low correlation raises concern that the questionnaire does not reproduce individuals' relative standing consistently over this short interval.",
+      "C": "The correlation proves that every participant's self-control truly changed during the two days.",
+      "D": "Temporal reliability cannot be evaluated unless the two administrations use entirely different items."
+    },
+    "answers": ["B"],
+    "explanation": "A is incorrect because .32 is weak for a measure intended to assess a stable trait over two days. B is correct because test-retest reliability concerns consistency of individuals' scores or rank ordering across occasions. C is unjustified because measurement error, transient state, or administration differences may explain instability. D is incorrect because using the same measure across occasions is the standard test-retest design, though memory effects should be considered."
+  },
+  {
+    "concept": "social desirability bias",
+    "topic": "psychometrics",
+    "question": "During face-to-face interviews conducted by school staff, adolescents report almost no bullying behavior, but anonymous computer surveys in the same schools yield much higher reports. Which interpretations or responses address social desirability bias?",
+    "options": {
+      "A": "Students may underreport bullying to present themselves favorably or avoid disapproval when an identifiable adult interviewer is present.",
+      "B": "The anonymous responses must be perfectly accurate because privacy eliminates every source of measurement error.",
+      "C": "Using confidential self-administration and indirect or neutrally worded items may reduce pressure to give socially approved answers.",
+      "D": "The mode difference proves that the true bullying rate equals the anonymous survey percentage with no uncertainty."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because sensitive behavior is especially vulnerable to favorable self-presentation in identifiable interviews. B is incorrect because anonymity reduces one bias but does not prevent misunderstanding, recall error, or careless responding. C is correct because greater privacy and nonjudgmental wording can reduce evaluation pressure. D is incorrect because a mode effect signals possible bias but does not identify an error-free true rate."
+  },
+  {
+    "concept": "measurement invariance",
+    "topic": "psychometrics",
+    "question": "A stress scale is used to compare mean scores across two language groups. Multigroup analysis shows the same broad factor pattern, but several item intercepts and loadings differ by language. Which conclusions or actions are justified?",
+    "options": {
+      "A": "A shared factor pattern provides some evidence that both groups organize the items around a similar latent construct.",
+      "B": "Different loadings indicate that some items relate to latent stress with different strengths across the language groups.",
+      "C": "Different item intercepts can make observed mean comparisons misleading because equal latent stress may not yield equal expected item scores.",
+      "D": "The researchers should investigate translation or differential item functioning and establish adequate invariance before treating group score differences as latent mean differences."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A is correct and corresponds to evidence for configural similarity. B is correct because loading differences violate metric invariance for affected items. C is correct because intercept differences violate scalar invariance and can bias group mean comparisons. D is correct because item review, partial-invariance modeling when defensible, or revised measurement is needed before strong latent-group comparisons are made."
+  }
+]

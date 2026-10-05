@@ -1,0 +1,215 @@
+[
+  {
+    "id": "xh-c5-msq-personality-001",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 1,
+    "question": "A longitudinal study finds that participants’ rank ordering on conscientiousness correlates strongly from age 30 to 40, although the group mean rises over the decade. Which interpretations can both be true?",
+    "options": {
+      "A": "Individuals can retain similar relative positions compared with peers while the average level changes.",
+      "B": "A rise in the group mean necessarily implies zero stability in individual differences.",
+      "C": "The pattern distinguishes rank-order stability from mean-level change.",
+      "D": "The correlation proves that every participant received exactly the same score at both ages."
+    },
+    "answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "A: Correct — Rank-order stability concerns relative standing, which can persist during a common upward shift. B: Incorrect — Mean change and preservation of relative differences are mathematically and conceptually compatible. C: Correct — The two statistics describe different forms of personality continuity and change. D: Incorrect — A strong correlation allows individual score changes; it does not imply identical scores.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-002",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 2,
+    "question": "In a design workshop, employees may choose either a proven template or develop an unconventional solution. Those scoring high on a broad trait are more likely to explore novel designs, tolerate ambiguity, and seek unfamiliar artistic influences. Which observations would support interpreting that trait as openness to experience?",
+    "options": {
+      "A": "They rigidly repeat the template whenever instructions leave room for choice.",
+      "B": "They generate solutions that combine ideas from previously unrelated domains.",
+      "C": "They avoid unfamiliar material because novelty is inherently distressing to them.",
+      "D": "They report curiosity about alternative approaches even when no immediate reward is offered."
+    },
+    "answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "A: Incorrect — Rigid preference for familiar routines is inconsistent with the described high-openness pattern. B: Correct — Imaginative recombination and intellectual exploration are characteristic expressions of openness. C: Incorrect — Systematic novelty avoidance points away from high openness. D: Correct — Intrinsic curiosity and receptivity to new ideas fit the trait interpretation.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-003",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 2,
+    "question": "Two sales trainees fail an initial certification test. Ravi says, ‘My preparation strategy was poor, so I will change it and practise.’ Meera says, ‘The examiners decide everything; nothing I do matters,’ and stops preparing. Which conclusions are supported?",
+    "options": {
+      "A": "Ravi’s explanation reflects a relatively internal and controllable attribution for this outcome.",
+      "B": "Meera’s response reflects an external orientation that may reduce effort when outcomes seem uncontrollable.",
+      "C": "An internal attribution is always beneficial, even when it consists of global self-blame for an uncontrollable event.",
+      "D": "If Meera later sees that systematic practice reliably improves her scores, her expectancy of control could change."
+    },
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "A: Correct — He locates the cause in his own strategy and treats it as changeable. B: Correct — She attributes outcomes to external agents and expects little contingency between effort and result. C: Incorrect — Internality alone is not uniformly adaptive; controllability and specificity matter. D: Correct — Evidence of response-outcome contingency can revise generalized control expectations.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-004",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 1,
+    "question": "Two equally skilled students face a difficult statistics assignment. Student P expects that sustained effort and help-seeking will enable completion, starts early, and persists after errors. Student Q expects failure and abandons the task quickly. Which inferences are warranted?",
+    "options": {
+      "A": "P’s task-specific efficacy belief can influence persistence even when current skill is held constant.",
+      "B": "Q’s early withdrawal may prevent experiences that could build mastery beliefs.",
+      "C": "Self-efficacy is simply an objective test score and cannot differ between equally skilled students.",
+      "D": "P’s confidence guarantees success regardless of task difficulty, strategy, or available knowledge."
+    },
+    "answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "A: Correct — Self-efficacy concerns perceived capability for a specific task and affects effort and persistence. B: Correct — Avoidance limits mastery experiences, potentially maintaining low efficacy. C: Incorrect — It is a belief about capability, not identical to measured ability. D: Incorrect — Efficacy supports action but does not eliminate real constraints or guarantee outcomes.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-005",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 2,
+    "question": "After angrily criticizing a colleague, an employee who sees herself as kind says, ‘I was only giving constructive feedback.’ She later accuses the colleague of being secretly hostile, despite little evidence, and channels her remaining tension into vigorous training for a charity race. Which interpretations fit the sequence?",
+    "options": {
+      "A": "Recasting the criticism as constructive may function as rationalization that protects a positive self-view.",
+      "B": "Attributing her own hostility to the colleague is consistent with projection.",
+      "C": "Training for the race can represent sublimation if aggressive energy is redirected into a socially valued activity.",
+      "D": "All three responses require the employee to be consciously aware of the defensive motive at the time."
+    },
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "A: Correct — The acceptable explanation can disguise a less acceptable motive and reduce self-threat. B: Correct — Projection locates one’s own unacceptable impulse in another person. C: Correct — Sublimation channels an impulse into a constructive, valued outlet. D: Incorrect — Defense mechanisms are typically described as operating without full conscious recognition of their protective function.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-006",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 2,
+    "question": "A therapist consistently listens to a client’s experiences without making acceptance conditional on achievement. Over time, the client becomes less concerned with presenting an idealized successful self and discusses failures more openly. Which statements align with a person-centred account?",
+    "options": {
+      "A": "A nonjudgmental therapeutic relationship may reduce the client’s need to distort experiences to preserve worth.",
+      "B": "Greater congruence may emerge as the client integrates previously denied experiences into the self-concept.",
+      "C": "The therapist’s acceptance works primarily by punishing disclosures that conflict with social standards.",
+      "D": "The approach requires the therapist to prescribe a fixed ideal personality that the client must adopt."
+    },
+    "answers": [
+      "A",
+      "B"
+    ],
+    "explanation": "A: Correct — Unconditional positive regard provides acceptance not contingent on meeting conditions of worth. B: Correct — Reduced defensiveness can allow closer alignment among experience, awareness, and self-concept. C: Incorrect — Punishment and imposed standards contradict the nonjudgmental therapeutic climate. D: Incorrect — Person-centred therapy emphasizes the client’s growth process rather than therapist-defined conformity.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-007",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 1,
+    "question": "A student who believes she is socially awkward avoids club meetings. Because she rarely speaks, peers stop inviting her; the reduced invitations strengthen her belief that she is unlikeable. After joining a supportive group and successfully leading a discussion, she begins attending more often. Which conclusions follow from a social-cognitive analysis?",
+    "options": {
+      "A": "Her initial belief alone determines behaviour, while peer responses and settings are irrelevant.",
+      "B": "Avoidance changes the social environment in a way that feeds back into the original belief.",
+      "C": "The successful discussion can affect later attendance only through the group setting, not by altering any personal expectation.",
+      "D": "The case illustrates reciprocal influence among personal factors, behaviour, and environment."
+    },
+    "answers": [
+      "B",
+      "D"
+    ],
+    "explanation": "A: Incorrect — The account specifically requires bidirectional effects rather than a one-way personality cause. B: Correct — Her behaviour elicits fewer invitations, making the environment part of the feedback loop. C: Incorrect — A mastery experience can revise self-efficacy, so later behaviour need not be explained only by environmental change. D: Correct — Beliefs, attendance behaviour, and peer responses mutually affect one another.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-008",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 2,
+    "question": "In a clinical assessment, respondents describe what is happening in ambiguous pictures. Two scorers using the same manual often infer different underlying motives, while a structured symptom inventory yields more consistent scores. Which conclusions are justified?",
+    "options": {
+      "A": "The ambiguous-picture task permits respondents to organize unclear material in ways that may be interpreted as reflecting personal themes.",
+      "B": "Low scorer agreement raises concern about the reliability of the inferences drawn from the responses.",
+      "C": "Ambiguity guarantees that the task measures hidden motives with greater validity than structured measures.",
+      "D": "Clearer scoring rules and evidence linking scores to external criteria would be needed to strengthen its assessment claims."
+    },
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "A: Correct — Projective methods use relatively unstructured stimuli to elicit personally organized responses. B: Correct — Different conclusions from the same response indicate weak inter-rater reliability. C: Incorrect — Ambiguity by itself does not establish construct or criterion validity. D: Correct — Standardization and criterion evidence address reliability and validity concerns respectively.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-009",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 1,
+    "question": "A researcher finds that extraversion predicts speaking time strongly at informal parties but barely predicts speaking time during tightly scripted safety briefings where each employee has a fixed turn. Which interpretation best fits the pattern?",
+    "options": {
+      "A": "The trait is unreal because it fails to predict identical behaviour in every situation.",
+      "B": "Situational strength can moderate how clearly a trait is expressed in observable behaviour.",
+      "C": "Speaking time at parties cannot contain any personality information because situations always determine behaviour completely.",
+      "D": "The briefing result proves that employees’ extraversion scores changed during the meeting."
+    },
+    "answers": [
+      "B"
+    ],
+    "explanation": "A: Incorrect — Traits are probabilistic dispositions whose expression can vary with contextual constraints. B: Correct — Strong rules restrict behavioural variation, while weak situations allow trait differences to emerge. C: Incorrect — The party finding shows systematic trait-related variation under less constrained conditions. D: Incorrect — Reduced behavioural expression does not imply immediate change in the underlying trait score.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-010",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 1,
+    "question": "After a career setback, one person revises her life story from ‘I have always failed’ to ‘early setbacks taught me to seek difficult goals and mentor others.’ The factual events remain the same, but their links and meaning change. Which observations support viewing this as a change in identity narrative?",
+    "options": {
+      "A": "She reorganizes remembered events into a more coherent account connecting past difficulty with present commitments.",
+      "B": "Because the events are unchanged, the revised account cannot affect present motivation or self-understanding.",
+      "C": "The new story gives the setback a redemptive role rather than treating it as proof of a fixed defective self.",
+      "D": "A narrative interpretation requires every autobiographical detail to be objectively complete and free of selection."
+    },
+    "answers": [
+      "A",
+      "C"
+    ],
+    "explanation": "A: Correct — Narrative identity links selected autobiographical episodes into a temporally coherent sense of self. B: Incorrect — Meaning assigned to events can guide goals and identity even when event facts remain stable. C: Correct — Transforming suffering into growth is a redemptive narrative sequence. D: Incorrect — Life stories are selective constructions; narrative significance does not require exhaustive recall.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-personality-011",
+    "type": "MSQ",
+    "topic": "personality",
+    "marks": 2,
+    "question": "Parents report that one infant is highly reactive to unfamiliar sounds, slow to approach new people, and difficult to soothe. Years later, the child shows less inhibition when caregivers introduce novelty gradually and respond calmly. Which conclusions are defensible?",
+    "options": {
+      "A": "Early differences in reactivity and regulation can provide a temperamental basis for later personality development.",
+      "B": "The later reduction in inhibition is compatible with temperament being modifiable in expression rather than an unchangeable destiny.",
+      "C": "Caregiver responses can interact with the child’s dispositions, amplifying or buffering behavioural outcomes.",
+      "D": "Continuity may be expressed in transformed ways across development, so the same underlying sensitivity need not look identical at every age."
+    },
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "A: Correct — Temperament refers to early-emerging individual differences in emotional and behavioural reactivity and regulation. B: Correct — Biologically influenced dispositions can be shaped by experience and self-regulation. C: Correct — Goodness of fit between caregiving and temperament affects developmental pathways. D: Correct — Heterotypic continuity allows an underlying disposition to appear through age-appropriate behaviours.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

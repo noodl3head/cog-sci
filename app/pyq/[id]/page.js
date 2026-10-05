@@ -179,7 +179,7 @@ export default function PyqPage() {
   function submitPaper() {
     const result = calcPyqResult(paper, answers);
     setPhase('results');
-    if (!savedToDb) {
+    if (!paper.isPractice && !savedToDb) {
       setSavedToDb(true);
       const byCode = (c) => result.sections.find((s) => s.code === c)?.net ?? 0;
       fetch('/api/pyq-results', {
@@ -277,15 +277,20 @@ export default function PyqPage() {
   function questionCard(qq, indexLabel, { review = false } = {}) {
     const sm = sectionMeta(paper, qq.section);
     const badge = typeBadge(qq);
-    const posInSec = qq.num - sm.from + 1;
-    const secSize = sm.to - sm.from + 1;
+    const sectionQuestions = questions.filter((question) => question.section === qq.section);
+    const posInSec = sectionQuestions.findIndex((question) => question.num === qq.num) + 1;
+    const secSize = sectionQuestions.length;
+    const questionIndex = questions.findIndex((question) => question.num === qq.num) + 1;
     return (
       <div className="answer-sheet">
         <div className="mock-q-header">
-          <p className="q-number">Question {qq.num} of {totalQ}</p>
+          <p className="q-number">Question {questionIndex} of {totalQ}</p>
           <span className={'mock-mark-badge ' + badge.cls}>{badge.text}</span>
         </div>
-        <p className="q-chapter-tag">{sm.code} · {sm.name} · Q{posInSec}/{secSize}</p>
+        <p className="q-chapter-tag">
+          {sm.code} · {sm.name} · Q{posInSec}/{secSize}
+          {qq.sourceYear && ` · GATE ${qq.sourceYear} Q${qq.sourceQuestionNum}`}
+        </p>
 
         {qq.type === 'MSQ' && !review && (
           <p className="pyq-msq-hint">Multiple Select — choose all correct options. No negative marking; all-or-nothing.</p>
@@ -424,7 +429,7 @@ export default function PyqPage() {
               <div className="mock-total-row net"><span>Net Score</span><span>{result.total.toFixed(2)} / {result.maxMarks}</span></div>
             </div>
 
-            <NormalDistChart score={result.total} total={result.maxMarks} mu={PYQ_MU} sigma={PYQ_SIGMA} pop={PYQ_POP} />
+            {!paper.isPractice && <NormalDistChart score={result.total} total={result.maxMarks} mu={PYQ_MU} sigma={PYQ_SIGMA} pop={PYQ_POP} />}
 
             {saveError && <div className="mock-save-error">⚠ Result not saved: {saveError}</div>}
 

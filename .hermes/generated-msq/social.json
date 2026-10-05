@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-social-001",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 1,
+    "question": "During a visual judgment task, seven confederates unanimously choose an obviously wrong comparison line before the participant responds aloud. Which changes are expected to reduce the participant's conformity?",
+    "options": {
+      "A": "Increasing the unanimous majority from seven to thirty always reduces conformity to zero.",
+      "B": "Allowing the participant to record the answer privately rather than announce it publicly.",
+      "C": "Making the lines more ambiguous while preserving unanimity.",
+      "D": "Having one confederate give the objectively correct answer before the participant responds."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — increasing majority size does not guarantee zero conformity and may initially increase pressure. B: Correct — private responding reduces normative pressure associated with public dissent. C: Incorrect — ambiguity generally increases reliance on others and can strengthen informational influence. D: Correct — a dissenting ally breaks unanimity and commonly reduces conformity.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-002",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "A technician is instructed by a senior investigator to continue a procedure after a participant protests. Which modifications would be expected to reduce obedience to the investigator's order?",
+    "options": {
+      "A": "Moving the investigator farther away and requiring instructions to be given remotely.",
+      "B": "Emphasizing that the investigator accepts full responsibility while remaining physically present.",
+      "C": "Having another technician openly refuse to continue.",
+      "D": "Increasing the prestige of the investigator's institution."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — reduced surveillance and proximity of authority can make disobedience easier. B: Incorrect — shifting responsibility toward the authority can facilitate rather than reduce obedience. C: Correct — a disobedient peer provides social support and demonstrates that refusal is possible. D: Incorrect — greater institutional prestige would be more likely to strengthen perceived legitimacy.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-003",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "A supervisor sees an employee arrive late once and concludes that the employee is irresponsible, without learning that a citywide transport failure caused the delay. Which judgments or later findings are consistent with the fundamental attribution error?",
+    "options": {
+      "A": "The supervisor has overemphasized a dispositional explanation relative to a salient situational constraint.",
+      "B": "The error concerns causal weighting, not whether irresponsibility can ever influence lateness.",
+      "C": "Learning that nearly all employees using the same route were late should strengthen the dispositional inference.",
+      "D": "If the supervisor had personally been delayed by the same failure, situational information might become more cognitively available."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — the inference discounts a strong external cause and overweights character. B: Correct — the bias is an imbalance in attribution, not a claim that dispositions never matter. C: Incorrect — high consensus under the same constraint supports a situational explanation. D: Correct — direct experience can make the constraint more salient and weaken an exclusively dispositional judgment.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-004",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 1,
+    "question": "After a team wins a case competition, a member credits her strategic ability. After the same team loses the next round, she blames an unfair judging panel. Which interpretations are warranted?",
+    "options": {
+      "A": "The contrasting explanations are compatible with a self-serving attributional pattern.",
+      "B": "The pattern proves that the judging panel was fair in both rounds.",
+      "C": "The pattern may help protect self-esteem after failure.",
+      "D": "The member is displaying the bystander effect."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — success is attributed internally while failure is attributed externally. B: Incorrect — the bias in explanation does not establish the panel's actual fairness. C: Correct — self-protective attribution is one function associated with the pattern. D: Incorrect — the bystander effect concerns reduced helping in the presence of others, not explanations of performance.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-005",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "Members of a neighbourhood committee initially lean mildly toward restricting late-night events. After discussing the issue only with one another, their preferred policy becomes substantially more restrictive. Which processes or boundary conditions fit group polarization?",
+    "options": {
+      "A": "Hearing several persuasive arguments favoring restriction can shift members further in their initial direction.",
+      "B": "Learning that respected in-group members support restriction can encourage members to adopt a somewhat more prototypical position.",
+      "C": "Polarization requires every member to hold an identical opinion before discussion.",
+      "D": "Exposure to strong counterarguments from credible dissenters could limit or reverse the shift."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — discussion can enlarge the pool of arguments supporting the initially favored direction. B: Correct — social comparison and conformity to perceived in-group norms can produce a more extreme position. C: Incorrect — a shared directional tendency is sufficient; perfect initial agreement is unnecessary. D: Correct — credible opposing information can interrupt the mechanisms that amplify the initial leaning.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-006",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "Students are asked to pull a rope as hard as possible either alone or in nominal eight-person teams where individual force is not identifiable. Which changes would be expected to reduce social loafing in the team condition?",
+    "options": {
+      "A": "Installing separate force sensors and telling students that individual output will be reported.",
+      "B": "Assigning each student a distinct, indispensable role in a meaningful team challenge.",
+      "C": "Increasing the team to thirty anonymous members while leaving the task unchanged.",
+      "D": "Making it impossible for members to know whether the group succeeds."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A: Correct — identifiability and evaluation reduce the opportunity to hide low effort in the group total. B: Correct — indispensability and task meaningfulness increase personal responsibility and motivation. C: Incorrect — greater anonymity in a larger group can increase diffusion of effort. D: Incorrect — removing outcome feedback does not create accountability and may further weaken motivation.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-007",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 1,
+    "question": "A passenger collapses on a crowded platform. Several commuters glance at one another, but nobody immediately approaches. Which interventions are likely to increase the probability of help?",
+    "options": {
+      "A": "Making the situation more ambiguous so that commuters must rely more heavily on others' reactions.",
+      "B": "Adding more passive witnesses without assigning responsibility.",
+      "C": "A witness clearly stating that the passenger may need medical assistance.",
+      "D": "Directly asking one identified commuter to call emergency services."
+    },
+    "answers": ["C", "D"],
+    "explanation": "A: Incorrect — ambiguity promotes pluralistic ignorance and can delay intervention. B: Incorrect — additional passive witnesses can increase diffusion of responsibility. C: Correct — labeling the event as an emergency reduces interpretive uncertainty. D: Correct — singling out a person concentrates responsibility and specifies an actionable response.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-008",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "A university creates mixed-group project teams to reduce hostility between two student communities. Which design features would make the intervention more consistent with conditions that can reduce prejudice through intergroup contact?",
+    "options": {
+      "A": "Members from both communities work with equal status within the project.",
+      "B": "The task requires cooperative interdependence toward a shared outcome.",
+      "C": "Faculty and university rules explicitly support respectful collaboration.",
+      "D": "One community is assigned routine work while the other makes all consequential decisions."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "A: Correct — equal status within the contact setting limits reinforcement of hierarchy. B: Correct — common goals and cooperation encourage cross-group coordination rather than competition. C: Correct — institutional support supplies norms that legitimize constructive contact. D: Incorrect — unequal roles reproduce status differences and can confirm rather than weaken stereotypes.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-009",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 1,
+    "question": "A health-conscious employee voluntarily agrees to promote a sugary drink for a token payment and later reports liking the drink more than before. Which condition most directly supports a cognitive-dissonance explanation for the attitude change?",
+    "options": {
+      "A": "The employee had no choice and was threatened with dismissal for refusing.",
+      "B": "The payment was so large that it fully justified the promotional behavior.",
+      "C": "The employee freely chose the promotion but had insufficient external justification for acting against the prior attitude.",
+      "D": "The employee never held an unfavorable attitude toward the drink."
+    },
+    "answers": ["C"],
+    "explanation": "A: Incorrect — severe coercion supplies external justification and weakens personal responsibility. B: Incorrect — a large reward can justify the behavior externally, reducing the need for attitude change. C: Correct — free choice plus inadequate external justification creates inconsistency that can be reduced by shifting the attitude. D: Incorrect — without an initially conflicting attitude, the described behavior need not create the relevant dissonance.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-010",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "A public-health agency must communicate a complex vaccination decision. Some recipients are highly involved and able to scrutinize evidence; others encounter the message briefly while distracted. Which communication choices follow from dual-process accounts of persuasion?",
+    "options": {
+      "A": "For highly involved recipients, strong evidence and transparent reasoning should matter more than an attractive spokesperson alone.",
+      "B": "For distracted recipients, credible or familiar source cues may influence attitudes when argument scrutiny is low.",
+      "C": "Attitudes formed through careful elaboration are necessarily weaker and less persistent than cue-based attitudes.",
+      "D": "The same superficial cue must have the same effect regardless of motivation, ability, and prior attitude."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A: Correct — motivation and ability favor effortful processing of argument quality. B: Correct — under low elaboration, source or familiarity cues can carry relatively more weight. C: Incorrect — elaborated attitudes are often more persistent and behaviorally predictive, not necessarily weaker. D: Incorrect — cue effects depend on the recipient and context and are not mechanically invariant.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-social-011",
+    "type": "MSQ",
+    "topic": "social",
+    "marks": 2,
+    "question": "Employees are randomly assigned to nominal 'North' and 'South' teams, given team badges, and asked to allocate small bonuses between anonymous in-group and out-group members. Which findings or manipulations are compatible with a social-identity account?",
+    "options": {
+      "A": "In-group favoritism can emerge even when the categories have little prior history or material meaning.",
+      "B": "Making team membership salient may increase the use of the category in allocation decisions.",
+      "C": "A shared superordinate identity that includes both teams may reduce the relevance of the original boundary.",
+      "D": "Changing the allocation rule so that team outcomes are interdependent may alter categorization and bias."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — minimal categorization can be sufficient for preferential in-group allocation. B: Correct — category salience increases the likelihood that group membership guides judgment. C: Correct — recategorization at a broader level can weaken the original us–them distinction. D: Correct — interdependence can change perceived group relations and encourage a more inclusive identity.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

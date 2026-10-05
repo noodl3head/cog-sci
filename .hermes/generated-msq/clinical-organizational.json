@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-clinical-organizational-001",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 1,
+    "question": "For the past three weeks, Neha has felt sad nearly every day, has stopped enjoying music, wakes much earlier than usual, and finds it difficult to concentrate at work. She reports no history of manic or hypomanic episodes. Which conclusions are warranted from this presentation?",
+    "options": {
+      "A": "Ordinary fluctuation in mood is the best interpretation because no single symptom is unique to depression.",
+      "B": "The duration and clustering of symptoms justify assessment for a major depressive episode.",
+      "C": "A bipolar diagnosis follows directly from the presence of sleep disturbance.",
+      "D": "Assessment should also examine impairment, medical causes, substance effects, and suicide risk."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — diagnostic reasoning uses the sustained cluster, not the non-specificity of each isolated symptom, and the cluster exceeds an ordinary brief mood fluctuation. B: Correct — depressed mood, anhedonia, sleep change, and concentration difficulty persisting beyond two weeks warrant assessment for a major depressive episode. C: Incorrect — sleep disturbance alone does not establish bipolar disorder; a manic or hypomanic history would be relevant. D: Correct — impairment, differential causes, and safety risk must be assessed before reaching a clinical conclusion.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-002",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 2,
+    "question": "Ravi has recurrent, abrupt surges of intense fear accompanied by palpitations and breathlessness. Several attacks have occurred unexpectedly, and for the following month he has avoided travelling alone because he fears another attack. Which interpretations fit the case?",
+    "options": {
+      "A": "The unexpected attacks and persistent concern are consistent with assessment for panic disorder.",
+      "B": "The episodes must be diagnosed as a specific phobia because avoidance is present.",
+      "C": "A clinician should consider medical or substance-related explanations for the physical symptoms.",
+      "D": "The diagnosis is established only if every attack occurs in the same feared situation."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — recurrent unexpected panic attacks followed by sustained worry or maladaptive avoidance fit the core pattern assessed in panic disorder. B: Incorrect — avoidance can follow panic attacks and does not by itself identify a specific phobia. C: Correct — cardiac, respiratory, endocrine, medication, and substance factors can mimic panic symptoms and belong in differential assessment. D: Incorrect — attacks tied exclusively to one cue would point away from the unexpected-attack pattern central to panic disorder.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-003",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 2,
+    "question": "A therapist treats a client who fears elevators. Together they construct a hierarchy, repeatedly enter elevators without escaping, and remain in the situation until fear becomes manageable. Which processes or decisions are consistent with this intervention?",
+    "options": {
+      "A": "Repeated safe contact can weaken the expectation that entering an elevator inevitably produces catastrophe.",
+      "B": "The therapist should end every exposure as soon as anxiety rises so that distress never occurs.",
+      "C": "Progressing from easier to harder steps can increase tolerability while preserving contact with the feared cue.",
+      "D": "Reducing reassurance and escape behaviours can prevent those behaviours from maintaining the fear."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — exposure permits new learning that the predicted catastrophe does not reliably occur and that anxiety can be tolerated. B: Incorrect — immediate escape whenever anxiety rises can negatively reinforce avoidance and block corrective learning. C: Correct — a graded hierarchy is a defensible way to sustain engagement while increasing task difficulty. D: Correct — safety behaviours can prevent disconfirmation of threat beliefs, so reducing them may strengthen exposure learning.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-004",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 1,
+    "question": "After one poor presentation, an employee concludes, “I fail at everything,” and begins declining all speaking opportunities. In a cognitive-behavioural formulation, which next steps directly address the cycle described?",
+    "options": {
+      "A": "Treat the employee's global conclusion as accurate because it was accompanied by strong emotion.",
+      "B": "Examine the evidence for the global conclusion and generate a more specific alternative appraisal.",
+      "C": "Plan a graded speaking task to test the prediction that every future presentation will fail.",
+      "D": "Avoid behavioural tasks until the employee can guarantee that anxiety will be absent."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — emotional intensity does not establish the accuracy of an overgeneralized belief. B: Correct — evaluating evidence and constructing a proportionate appraisal targets the cognitive component of the cycle. C: Correct — a graded behavioural experiment can test the prediction and reduce avoidance. D: Incorrect — requiring complete absence of anxiety would preserve avoidance rather than provide corrective evidence.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-005",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 2,
+    "question": "Two clinicians independently interview the same 40 clients using an unstructured format and agree on the primary diagnosis in only 22 cases. A clinic wants to improve the consistency of its decisions. Which responses are appropriate?",
+    "options": {
+      "A": "Use explicit diagnostic criteria and a structured or semi-structured interview protocol.",
+      "B": "Train clinicians with shared case examples and periodically calibrate their ratings.",
+      "C": "Infer that the diagnoses are valid because each clinician is internally confident.",
+      "D": "Quantify agreement beyond chance rather than reporting only the percentage of matching labels."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — standardized prompts and decision rules reduce idiosyncratic variation between raters. B: Correct — calibration helps clinicians apply criteria consistently across comparable cases. C: Incorrect — confidence does not demonstrate either inter-rater reliability or diagnostic validity. D: Correct — a chance-corrected agreement statistic provides more information than raw agreement when categories can coincide by chance.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-006",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 2,
+    "question": "A hospital is creating a selection system for emergency-department coordinators. Before choosing tests, analysts observe incumbents, interview supervisors, and review critical incidents from busy shifts. Which products should legitimately emerge from this job analysis?",
+    "options": {
+      "A": "A ranking of applicants before the requirements of the job have been specified.",
+      "B": "A description of recurring tasks, responsibilities, and working conditions.",
+      "C": "A guarantee that one selection test will predict performance equally well in every hospital.",
+      "D": "A defensible set of worker knowledge, skills, abilities, and other characteristics linked to those tasks."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — applicant ranking is a later selection decision; job analysis first establishes what the work requires. B: Correct — task and context information is a central job-analysis output. C: Incorrect — generalization of predictive validity requires evidence and cannot be guaranteed by job analysis. D: Correct — worker requirements should be derived from and linked to observed job activities.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-007",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 1,
+    "question": "A company survey finds that employees who feel emotionally attached to the organization are less likely to intend to leave, even after pay is statistically controlled. Which interpretations are defensible?",
+    "options": {
+      "A": "The attachment measure is capturing an affective component of organizational commitment.",
+      "B": "The result proves that increasing attachment will cause every employee to remain.",
+      "C": "Lower turnover intention is an outcome theoretically compatible with stronger commitment.",
+      "D": "Controlling pay rules out all alternative explanations for the association."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — emotional identification and attachment correspond to affective organizational commitment. B: Incorrect — an observational association, even with a control variable, does not prove a universal causal effect. C: Correct — intention to remain is a plausible correlate or consequence of stronger commitment. D: Incorrect — other individual and organizational variables may still account for part of the association.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-008",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 2,
+    "question": "A department head articulates a compelling future for the unit, encourages staff to question habitual procedures, and coaches each employee according to developmental needs. Which consequences or interpretations follow from a transformational-leadership account?",
+    "options": {
+      "A": "The approach is purely transactional because it depends only on exchanging rewards for specified output.",
+      "B": "The future-oriented message can provide inspirational motivation.",
+      "C": "Questioning habitual procedures reflects intellectual stimulation.",
+      "D": "Individual coaching reflects individualized consideration."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A: Incorrect — the described influence extends beyond contingent reward and includes several transformational behaviours. B: Correct — communicating an attractive shared future exemplifies inspirational motivation. C: Correct — inviting employees to reconsider assumptions and routines exemplifies intellectual stimulation. D: Correct — adapting support to individual developmental needs exemplifies individualized consideration.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-009",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 1,
+    "question": "A counsellor reports chronic emotional depletion, increasingly cynical comments about clients, and a reduced sense of effectiveness after months of excessive caseloads. Which organizational response most directly targets the syndrome rather than merely masking one symptom?",
+    "options": {
+      "A": "Require the counsellor to display greater enthusiasm during client meetings.",
+      "B": "Offer a one-time motivational speech while leaving workload and control unchanged.",
+      "C": "Review caseload demands, recovery time, role control, and access to supervisory support.",
+      "D": "Interpret the pattern as evidence that the counsellor lacks the personality for helping work."
+    },
+    "answers": ["C"],
+    "explanation": "A: Incorrect — enforced emotional display does not correct exhaustion, cynicism, or reduced efficacy and may add strain. B: Incorrect — a brief speech does not address persistent job demands and resources. C: Correct — workload, recovery, control, and support are modifiable organizational conditions relevant to burnout. D: Incorrect — attributing the pattern solely to personality ignores the prolonged excessive caseload and other work conditions in the case.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-010",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 1,
+    "question": "A firm introduces a work-sample test for technicians. Scores correlate with supervisor-rated performance six months later, but the validation sample contains only 28 employees from one unusually automated plant. Which judgments are appropriate?",
+    "options": {
+      "A": "The correlation provides evidence relevant to criterion-related selection validity.",
+      "B": "The correlation shows that the test measures every important aspect of technician performance.",
+      "C": "The small, specialized sample guarantees that the validity estimate will generalize to all plants.",
+      "D": "The firm should cross-validate the result in a larger, representative sample before broad deployment."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — association between selection scores and later job performance is predictive criterion-related evidence. B: Incorrect — a predictor-criterion correlation does not establish comprehensive content coverage. C: Incorrect — a small sample from an atypical plant creates uncertainty about sampling error and transportability. D: Correct — cross-validation tests whether the observed relation replicates in the population where the test will be used.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-clinical-organizational-011",
+    "type": "MSQ",
+    "topic": "clinical-organizational",
+    "marks": 2,
+    "question": "During project reviews, a team leader thanks members who identify errors, openly discusses her own mistaken forecast, asks junior staff for dissenting views, and responds to bad news by examining the process rather than humiliating the messenger. Which outcomes or decisions are consistent with psychological safety?",
+    "options": {
+      "A": "Members should become more willing to ask questions and admit uncertainty.",
+      "B": "Near-miss reporting is likely to improve because interpersonal punishment is less expected.",
+      "C": "The team can debate task-related ideas while maintaining respect for contributors.",
+      "D": "Managers should preserve these speaking-up norms while retaining clear standards for performance and accountability."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — psychological safety lowers interpersonal risk associated with acknowledging limits. B: Correct — non-punitive responses make disclosure of mistakes and near misses more likely. C: Correct — safety supports candid task conflict without requiring personal attack or artificial consensus. D: Correct — psychological safety concerns interpersonal permission to speak, not the removal of performance standards or accountability.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

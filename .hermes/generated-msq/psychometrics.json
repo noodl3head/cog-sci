@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-psychometrics-001",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 1,
+    "question": "A university introduces a 30-item anxiety scale. Students complete it twice within the same sitting using a split-form procedure, and the two half-scores correlate highly. Six weeks later, however, total scores correlate only moderately with the first administration. Which interpretations are warranted?",
+    "options": {
+      "A": "The high split-form association proves that the scale measures anxiety rather than general distress or response style.",
+      "B": "The half-score result supports internal consistency among items under the conditions of the first administration.",
+      "C": "The lower six-week association makes the first administration internally inconsistent by definition.",
+      "D": "The two results can differ because consistency among items and stability of scores across time are distinct reliability questions."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — reliability concerns score consistency; it does not by itself identify the construct being measured. B: Correct — agreement between comparable item subsets is evidence about internal consistency. C: Incorrect — temporal instability does not retroactively determine whether items cohered at one occasion. D: Correct — internal consistency and test–retest stability address different sources of measurement error.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-002",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "A licensing board develops an examination for entry-level school counsellors. A blueprint assigns 40% of items to assessment, 30% to intervention, 20% to ethics, and 10% to consultation, matching the documented job domain. Reviewers discover that nearly all intervention items concern only one therapeutic approach. Which actions would strengthen the intended content-validity argument?",
+    "options": {
+      "A": "Have qualified subject-matter experts judge whether the item set adequately samples each blueprint domain and its important subdomains.",
+      "B": "Retain the narrow intervention set if the examination has a high coefficient alpha, because internal consistency guarantees representative coverage.",
+      "C": "Revise or add intervention items so that the tested content reflects the breadth specified by the job analysis and blueprint.",
+      "D": "Replace the blueprint with whichever topics happen to yield the highest pass–fail discrimination in the current sample."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — expert judgment against a domain specification is central evidence that content is relevant and representative. B: Incorrect — highly homogeneous items may be reliable while underrepresenting the domain. C: Correct — repairing the mismatch between sampled items and the blueprint directly improves coverage. D: Incorrect — empirical discrimination alone cannot define the content domain and could omit essential professional competencies.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-003",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "A company validates a new selection test for customer-support staff. Test scores correlate .48 with supervisors' performance ratings obtained six months after hiring, and applicants who score above a proposed cutoff are more likely to meet a later objective service target. Which conclusions or design checks are appropriate?",
+    "options": {
+      "A": "The delayed associations provide predictive criterion-related validity evidence for uses aimed at forecasting later job performance.",
+      "B": "The correlation proves that the test causes employees to perform better after they are hired.",
+      "C": "The company should examine whether supervisors knew applicants' test scores, because such knowledge could contaminate the rating criterion.",
+      "D": "The cutoff comparison can inform decision accuracy, but its usefulness also depends on false-positive and false-negative consequences."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — a predictor measured before a later performance criterion supplies predictive validity evidence. B: Incorrect — prediction or correlation does not establish that taking or scoring high on the test causes performance. C: Correct — criterion contamination could inflate the test–rating relationship. D: Correct — a cutoff must be evaluated in terms of classification outcomes and their practical costs, not association alone.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-004",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 1,
+    "question": "On a cognitive scale with reliability .84 and an observed-score SD of 15, a candidate obtains 112. The reported standard error of measurement is 6 points. The assessor is deciding how to communicate the result. Which interpretations are defensible?",
+    "options": {
+      "A": "The candidate's true score is exactly 112 because the scale's reliability exceeds .80.",
+      "B": "Across comparable repeated measurements, observed scores would be expected to fluctuate around the candidate's standing because of measurement error.",
+      "C": "An approximate interval formed from 112 ± a chosen multiple of 6 can express uncertainty about the score rather than treating 112 as perfectly precise.",
+      "D": "The SEM means that 6% of this candidate's answers were scored incorrectly."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — reliability below 1 implies measurement error, and an observed score is not an error-free true score. B: Correct — the SEM describes expected score fluctuation due to measurement error under comparable conditions. C: Correct — SEM-based intervals communicate the imprecision surrounding an observed score. D: Incorrect — SEM is in score units and is not a percentage of incorrectly scored responses.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-005",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "A child scores 62 on a reading test. In the national age-based norm group, the score is at the 80th percentile; in a selective-school norm group, it is at the 45th percentile. The test report must explain what can and cannot be inferred. Which statements are appropriate?",
+    "options": {
+      "A": "The child's relative standing changes because the comparison group changes, even though the observed score remains 62.",
+      "B": "The national percentile indicates performance at or above that of about 80% of the relevant national norm group, subject to the test's percentile convention.",
+      "C": "Either percentile by itself establishes that the child has mastered 80% or 45% of the curriculum.",
+      "D": "The report should name the norm group used, because a norm-referenced interpretation is incomplete without its reference population."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — percentiles locate the same score within different reference distributions. B: Correct — the 80th percentile expresses relative rank in the national norm group, not item mastery. C: Incorrect — percentile rank is not the percentage of content mastered or items answered correctly. D: Correct — the selected normative population determines the meaning of the relative standing.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-006",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "In a pilot sample, 85% of examinees answer Item 12 correctly, whereas 28% answer Item 27 correctly. The test developer uses classical item difficulty, defined as the proportion answering correctly, and must decide how to revise the form. Which conclusions follow?",
+    "options": {
+      "A": "Item 27 has the larger difficulty index and is therefore easier under this definition.",
+      "B": "Item 12 is easier for this pilot sample because its proportion-correct value is higher.",
+      "C": "The two proportions alone show which item better discriminates high- and low-performing examinees.",
+      "D": "The indices may change in a population with different ability, so the pilot group's composition should be considered."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — with proportion correct as the index, .28 is lower and indicates a harder item than .85. B: Correct — more pilot examinees succeeded on Item 12. C: Incorrect — item discrimination requires an additional relation between item performance and overall ability or criterion performance. D: Correct — classical item statistics are sample dependent and can shift across ability distributions.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-007",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 1,
+    "question": "Two clinicians independently code 100 interview segments as showing or not showing avoidance. They agree on 90 segments, but avoidance is rare and both classify most segments as absent. The team is evaluating rater consistency. Which steps or interpretations are justified?",
+    "options": {
+      "A": "Report a chance-corrected agreement coefficient in addition to raw percentage agreement, because high agreement can arise partly from the dominant category.",
+      "B": "Conclude that the coding system is valid for diagnosing anxiety because the coders often agree.",
+      "C": "Inspect the disagreement matrix and category prevalences to understand where the coders differ.",
+      "D": "Replace independent coding with discussion before each rating, because consensus generated in advance is the strongest estimate of independent agreement."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — chance-corrected indices can reveal whether high raw agreement is driven by prevalence and expected agreement. B: Incorrect — inter-rater agreement is reliability evidence and does not by itself establish diagnostic validity. C: Correct — the cross-tabulation and prevalences clarify asymmetry and the source of agreement. D: Incorrect — prior consensus destroys the independence needed to estimate how consistently separate raters apply the coding rule.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-008",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "A 24-item workplace-climate questionnaire was written to assess autonomy, supervisor support, and workload. Exploratory factor analysis in a large sample yields three correlated clusters that broadly match those themes, but two reverse-worded items form a small fourth cluster. Which interpretations or follow-up decisions are appropriate?",
+    "options": {
+      "A": "The analysis proves that the three intended attributes are biologically distinct causes of all item responses.",
+      "B": "Loadings of the intended items on three coherent factors provide evidence about the questionnaire's internal structure.",
+      "C": "The reverse-worded cluster may reflect a wording-method effect and should be examined before declaring a new substantive construct.",
+      "D": "A confirmatory study in an independent sample can test whether the proposed factor pattern generalizes."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A: Incorrect — factor analysis describes covariance structure and does not establish biological entities or causal direction. B: Correct — alignment between item loadings and the proposed dimensions supports the intended structural interpretation. C: Correct — shared wording can create method covariance that mimics a factor. D: Correct — testing the structure on new data reduces capitalization on chance and evaluates replicability.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-009",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 1,
+    "question": "A trait questionnaire is administered to 300 adults in January and again two weeks later, with no intervention and no expected change in the trait. The correlation between occasion scores is .91. Which conclusion is best supported?",
+    "options": {
+      "A": "Scores show high short-interval temporal stability in this sample under the two administration conditions.",
+      "B": "The questionnaire necessarily measures the intended trait rather than mood or response style.",
+      "C": "Every respondent gave exactly the same answers at both administrations.",
+      "D": "The questionnaire will remain equally stable over ten years and in every population."
+    },
+    "answers": ["A"],
+    "explanation": "A: Correct — the high correlation is direct evidence of rank-order stability across the specified two-week interval and sample. B: Incorrect — stable scores can still reflect the wrong construct or a stable bias. C: Incorrect — a high correlation permits individual score changes and does not imply identical item responses. D: Incorrect — reliability evidence is conditional on population, interval, and testing conditions and cannot guarantee distant generalization.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-010",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "Employees anonymously complete a self-report measure of rule-breaking. Scores are much lower when questionnaires are handed to supervisors than when they are placed in sealed boxes, although observed disciplinary incidents are similar across the two departments. Which interpretations or design responses are reasonable?",
+    "options": {
+      "A": "Concern about appearing acceptable to supervisors could suppress admissions and create a social-desirability response bias.",
+      "B": "The supervisor-administered scores should be treated as more valid because employees had a stronger incentive to answer carefully.",
+      "C": "The equal incident counts prove that every employee in both departments engaged in identical rule-breaking.",
+      "D": "Using privacy assurances, indirect questioning, or a response-validity scale could help assess or reduce the context-sensitive bias."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — the audience and evaluation threat plausibly shift responses toward socially approved self-presentation. B: Incorrect — stronger evaluation pressure can reduce candour rather than improve validity. C: Incorrect — aggregate incident counts neither reveal unobserved behavior nor establish identical individual behavior. D: Correct — reducing identifiability and measuring response style are relevant remedies and diagnostic checks.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-psychometrics-011",
+    "type": "MSQ",
+    "topic": "psychometrics",
+    "marks": 2,
+    "question": "A depression scale is used to compare mean scores of speakers of two languages. A multigroup analysis shows similar overall factor structure, but several items have different intercepts and one factor loading differs across groups. The research team must decide what comparisons remain defensible. Which statements are appropriate?",
+    "options": {
+      "A": "A similar factor pattern supports configural invariance: broadly comparable constructs may organize the items in both groups.",
+      "B": "A loading difference challenges full metric invariance and can affect comparisons involving relations of the latent construct with other variables.",
+      "C": "Different item intercepts challenge scalar invariance and can bias direct latent-mean comparisons if ignored.",
+      "D": "The team may investigate partial invariance, revise problematic items, and report limits rather than assuming that translation alone guarantees equivalence."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — configural similarity concerns whether the same broad factor pattern holds. B: Correct — unequal loadings mean that units of the latent variable are not fully comparable across groups. C: Correct — intercept differences can create group score differences unrelated to latent mean differences. D: Correct — partial-invariance modeling and item revision are defensible responses, provided departures and comparison limits are transparent.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

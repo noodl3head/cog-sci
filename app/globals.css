@@ -2994,6 +2994,16 @@ html[data-theme="dark"] .fc-term{ color:var(--text-bright); }
 .web-msq-review{ border-top:1px solid var(--divider); padding:12px 0; }
 .web-msq-review summary{ cursor:pointer; color:var(--text-bright); font-weight:700; }
 .web-msq-review-option{ margin-top:12px; padding-top:10px; border-top:1px solid var(--divider-light); }
+.web-msq-review-option-header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.web-msq-review-option-header>strong{ color:var(--text-bright); font:700 14px/1.3 var(--font-mono); }
+.web-msq-review-verdict{ font:700 11px/1.3 var(--font-mono); letter-spacing:.035em; text-transform:uppercase; }
+.web-msq-review-verdict--correct{ color:var(--green); }
+.web-msq-review-verdict--incorrect{ color:var(--red); }
+.web-msq-review-answer-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,180px)); gap:8px 18px; margin-top:9px; }
+.web-msq-review-answer-grid>div{ display:grid; grid-template-columns:auto 1fr; gap:6px; align-items:baseline; }
+.web-msq-review-answer-grid span{ color:var(--text-muted); font:600 11px/1.4 var(--font-mono); }
+.web-msq-review-answer-grid b{ color:var(--text-bright); font:700 12px/1.4 var(--font-mono); }
+.web-msq-review-statement{ color:var(--text-normal) !important; }
 .web-msq-review-option p,.web-msq-review>p{ color:var(--text-muted); font-size:13px; line-height:1.55; }
 
 @media (max-width:640px){
@@ -3002,4 +3012,5 @@ html[data-theme="dark"] .fc-term{ color:var(--text-bright); }
   .web-msq-submit-area{ width:100%; margin-left:0; text-align:left; }
   .web-msq-option{ padding:12px 10px; }
   .web-msq-reasoning{ min-height:108px; font-size:16px; }
+  .web-msq-review-answer-grid{ grid-template-columns:1fr; gap:4px; }
 }

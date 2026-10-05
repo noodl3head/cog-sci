@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-development-001",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 1,
+    "question": "A 14-month-old uses a caregiver as a base for exploring an unfamiliar room, becomes upset when the caregiver leaves, and is readily comforted when the caregiver returns. Which interpretations are warranted?",
+    "options": {
+      "A": "Distress during separation by itself establishes an insecure-resistant pattern.",
+      "B": "Using the caregiver as a secure base is consistent with attachment security.",
+      "C": "Rapid comforting on reunion indicates that the infant has no attachment to the caregiver.",
+      "D": "The coordinated pattern across exploration, separation, and reunion is more informative than any single behavior."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — separation distress can occur in secure attachment; reunion behavior and the full pattern are also needed. B: Correct — secure attachment supports exploration in the caregiver's presence. C: Incorrect — effective soothing on reunion is consistent with the caregiver serving as a source of security. D: Correct — attachment classification depends on the organization of behavior across episodes rather than one isolated response.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-002",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "An infant repeatedly searches location A for a toy. After watching the toy being hidden at location B, the infant still reaches toward A. Which interpretations or task changes are defensible?",
+    "options": {
+      "A": "The error can reflect difficulty updating and inhibiting a previously rewarded reach, not simply absence of all object representation.",
+      "B": "The behavior proves that the infant believes the toy has permanently ceased to exist.",
+      "C": "Reducing the delay and prior repetitions at location A may reduce the error.",
+      "D": "Success on an easier looking-time task would be logically impossible if the infant failed this reaching task."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — the A-not-B response can involve memory, inhibitory control, and motor history as well as representation. B: Incorrect — reaching to A does not demonstrate a belief in permanent nonexistence. C: Correct — lowering memory and response-conflict demands can improve performance. D: Incorrect — looking and reaching tasks impose different performance demands, so dissociation is possible.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-003",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "Mina sees a marble moved from a blue box to a red box while Ravi is outside the room. When asked where Ravi will first search, Mina points to the red box. Which conclusions or follow-up findings are relevant to theory of mind?",
+    "options": {
+      "A": "Mina's answer may reflect difficulty representing Ravi's false belief separately from her own knowledge.",
+      "B": "If Mina can answer a matched memory question but fails the belief question, a general failure to remember the story becomes less adequate.",
+      "C": "Success is guaranteed once Mina can name both boxes, because vocabulary and belief representation are the same capacity.",
+      "D": "Reducing inhibitory demands could improve performance without implying that task demands are irrelevant to social understanding."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — false-belief tasks require distinguishing another person's representation from current reality. B: Correct — intact story memory narrows the explanation toward belief reasoning or its specific performance demands. C: Incorrect — labeling locations is not equivalent to representing another mind's mistaken belief. D: Correct — executive demands can mask competence, while success still requires using information about the agent's perspective.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-004",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 1,
+    "question": "A child agrees that two identical glasses contain equal amounts of juice. After juice from one glass is poured into a taller, narrower glass, the child says the taller glass has more. Which task modifications would directly help identify the reasoning behind the error?",
+    "options": {
+      "A": "Ask the child to explain the judgment and note whether height is considered without compensating for width.",
+      "B": "Replace juice with an unrelated vocabulary test.",
+      "C": "Pour the juice back into the original glass and ask whether the amount changed across the reversal.",
+      "D": "Assume the child lacks all numerical knowledge because conservation failed once."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — the explanation can reveal centration on height and failure to coordinate dimensions. B: Incorrect — vocabulary does not directly test the transformation reasoning at issue. C: Correct — reversal makes the invariant quantity and reversibility of the operation diagnostically relevant. D: Incorrect — failure on liquid conservation does not justify a global conclusion about numerical competence.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-005",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "A child cannot complete a block-pattern puzzle alone. An adult first demonstrates how to identify corner pieces, then gives prompts only when the child stalls, and gradually withdraws help. Which features make this an example of effective scaffolding?",
+    "options": {
+      "A": "The assistance targets a task the child can complete with support but not yet independently.",
+      "B": "The prompts are contingent on the child's current performance rather than fixed regardless of need.",
+      "C": "The adult completes every remaining step to prevent any error.",
+      "D": "Support is faded as the child gains control of the strategy."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — scaffolding operates within the learner's zone of proximal development. B: Correct — calibrated, contingent help responds to the learner's changing needs. C: Incorrect — taking over the task can prevent active learning and transfer of responsibility. D: Correct — gradual withdrawal is essential as competence becomes internalized.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-006",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "A 15-year-old refuses to give a class presentation after a small facial blemish appears, stating that everyone will notice it immediately and discuss it all day. Which interpretations are appropriate?",
+    "options": {
+      "A": "The expectation of intense peer attention is consistent with an imaginary-audience pattern.",
+      "B": "A heightened concern with others' evaluation may contribute to the student's prediction.",
+      "C": "The statement demonstrates mature probabilistic reasoning because peers necessarily monitor every detail.",
+      "D": "The statement primarily demonstrates object permanence."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A: Correct — the adolescent imagines being the sustained focus of others' attention. B: Correct — sensitivity to social evaluation can amplify the anticipated scrutiny. C: Incorrect — the certainty and magnitude of the prediction are not warranted by the available evidence. D: Incorrect — object permanence concerns continued existence of hidden objects, not perceived social observation.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-007",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 1,
+    "question": "Parents set a firm weekday screen-time limit, explain that sleep affects school functioning, invite their child to discuss exceptions for special assignments, and consistently enforce the agreed rule. Which features support an authoritative-parenting classification?",
+    "options": {
+      "A": "The child alone determines whether any rule applies.",
+      "B": "The parents use unexplained punishment and discourage all discussion.",
+      "C": "The rule combines behavioral control with explanation and responsiveness.",
+      "D": "The parents maintain expectations while allowing age-appropriate dialogue."
+    },
+    "answers": ["C", "D"],
+    "explanation": "A: Incorrect — complete child control is closer to permissiveness than authoritative guidance. B: Incorrect — low responsiveness and unilateral control are more characteristic of authoritarian practice. C: Correct — authoritative parenting combines demandingness with warmth, reasoning, and responsiveness. D: Correct — clear standards coexist with communication and developmentally appropriate autonomy.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-008",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "A longitudinal study finds that early-maturing girls report more body dissatisfaction, whereas early-maturing boys receive more athletic recognition but also spend more time with older peers. Which interpretations are justified?",
+    "options": {
+      "A": "The meaning of pubertal timing can differ by gender and social context.",
+      "B": "Older-peer affiliation could mediate some consequences of early maturation rather than maturation acting alone.",
+      "C": "Because maturation is biological, cultural expectations cannot alter its psychosocial effects.",
+      "D": "The mixed outcomes caution against treating early timing as uniformly beneficial or harmful."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — social norms and gendered expectations can make similar timing carry different implications. B: Correct — early maturation may change peer contexts that then influence behavior and adjustment. C: Incorrect — biological change occurs within a social environment that shapes interpretation and consequences. D: Correct — recognition, dissatisfaction, and exposure to older peers show that effects can vary across outcomes.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-009",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 1,
+    "question": "A preschooler says “goed” after previously using the memorized form “went.” Which interpretation best accounts for this change?",
+    "options": {
+      "A": "The child has lost the ability to represent past events.",
+      "B": "The child is only imitating an adult who consistently says “goed.”",
+      "C": "The child has induced a productive past-tense pattern and overapplied it to an irregular verb.",
+      "D": "The utterance proves that language develops without environmental input."
+    },
+    "answers": ["C"],
+    "explanation": "A: Incorrect — an inflection error does not indicate loss of temporal representation. B: Incorrect — the novel overregularization can occur despite hearing adults use the irregular form. C: Correct — applying the regular '-ed' pattern to an exception shows rule-like productivity rather than mere memorization. D: Incorrect — productive learning does not imply that linguistic input is unnecessary.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-010",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "A student says, “I should return the lost wallet because I could be punished if the camera recorded me.” Another says, “I should return it because a community works only when people uphold fair rules, even when no one is watching.” Which inferences fit stage-based accounts of moral reasoning?",
+    "options": {
+      "A": "The first justification is organized around external consequences and punishment avoidance.",
+      "B": "The second justification appeals to a broader social system rather than immediate personal gain.",
+      "C": "Different justifications necessarily prove that the students will behave differently in every real situation.",
+      "D": "The moral quality of an action can be classified solely from the action, making the stated reasons irrelevant."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A: Correct — the first student's reason centers on avoiding punishment. B: Correct — the second invokes maintaining fair social arrangements beyond surveillance or direct reward. C: Incorrect — reasoning level does not perfectly determine behavior across all contexts. D: Incorrect — stage classifications concern the structure of the justification, so reasons are essential evidence.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-development-011",
+    "type": "MSQ",
+    "topic": "development",
+    "marks": 2,
+    "question": "A 68-year-old who has never used digital design software begins a structured course. Progress is slower than that of younger classmates, but after months of practice the learner creates competent designs and adopts new problem-solving strategies. Which conclusions follow from a lifespan-plasticity perspective?",
+    "options": {
+      "A": "Meaningful cognitive and skill change remains possible in later adulthood.",
+      "B": "Plasticity can coexist with age-related differences in rate, limits, or required support.",
+      "C": "Practice and environmental resources can influence the developmental trajectory.",
+      "D": "Evidence of improvement does not imply unlimited malleability or the absence of biological constraints."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — later-life development includes capacity for learning and reorganization. B: Correct — plasticity is compatible with age-graded constraints and differing efficiency. C: Correct — training, opportunity, and support are contextual resources that shape change. D: Correct — lifespan plasticity is bounded; improvement does not mean every function can change without limit.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-research-methods-statistics-001",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 1,
+    "question": "A school recruits 120 volunteers for a study of a six-week attention-training program. After baseline testing, a computer assigns each volunteer by chance to training or an active-control activity. At post-test, the training group has a higher mean attention score. Which conclusions or design consequences are warranted?",
+    "options": {
+      "A": "Because assignment was random, the volunteers constitute a representative random sample of all students in the school.",
+      "B": "Random assignment makes baseline differences in both measured and unmeasured participant characteristics matters of chance rather than systematic allocation.",
+      "C": "A statistically significant group difference would prove that every trained student improved because of the program.",
+      "D": "If treatment fidelity and attrition are comparable across groups, the allocation procedure strengthens a causal interpretation of the mean difference."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — random assignment allocates recruited volunteers to conditions; it does not turn a volunteer sample into a representative probability sample. B: Correct — chance allocation is intended to prevent systematic pre-existing differences between conditions, though finite samples can still differ. C: Incorrect — a mean difference does not establish an effect for every individual, and significance is not universal proof. D: Correct — with comparable implementation and attrition, random assignment helps rule out participant characteristics as alternative causes.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-002",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "Researchers claim that a smartphone task measures everyday inhibitory control. Scores correlate with laboratory Stroop interference but not with teacher ratings of impulsive classroom behavior. The team must decide how to evaluate the claim before using the task in schools. Which decisions directly address the construct-validity problem revealed by this pattern?",
+    "options": {
+      "A": "Examine whether task scores converge with additional theoretically related inhibition measures and diverge from measures of unrelated abilities.",
+      "B": "Increase the sample until every correlation is statistically significant, treating significance as sufficient evidence that the intended construct was measured.",
+      "C": "Investigate whether the task's speed, reading demands, or phone familiarity explain why it relates to Stroop performance but not classroom behavior.",
+      "D": "Randomly assign students to complete the same task on different weekdays; random assignment alone would establish that the task represents everyday inhibition."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — convergent and discriminant evidence tests whether the score behaves as the proposed construct should. B: Incorrect — a large sample can make trivial or construct-irrelevant relations significant; it cannot substitute for validity evidence. C: Correct — identifying method demands or alternative constructs addresses what the score actually represents. D: Incorrect — randomizing a testing day may control day effects, but it does not establish that the operational measure captures everyday inhibition.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-003",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "A laboratory compares memory after caffeinated and decaffeinated drinks. All caffeinated sessions occur at 9 a.m., whereas all decaffeinated sessions occur at 7 p.m. Participants in the morning condition recall more words. Which responses are appropriate when interpreting or redesigning the study?",
+    "options": {
+      "A": "The observed difference cannot distinguish a caffeine effect from a time-of-day effect because drink and testing time vary together.",
+      "B": "Matching the two groups on their baseline vocabulary scores would by itself separate the caffeine effect from the time-of-day effect.",
+      "C": "Running both drink conditions at both times, with assignment balanced across the four cells, would permit the drink effect to be estimated apart from testing time.",
+      "D": "If the same caffeine advantage appears at 9 a.m. and 7 p.m., the confounding present in the original comparison would be reduced in the redesigned study."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — caffeine condition is perfectly confounded with time of testing in the original design. B: Incorrect — vocabulary matching controls one participant variable but leaves drink and time inseparable. C: Correct — crossing drink with time removes their perfect linkage and allows separate estimates. D: Correct — a replicated caffeine advantage across both times would no longer be attributable solely to morning versus evening testing.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-004",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 1,
+    "question": "A 2 × 2 study compares a brief therapy with a wait-list among employees with either low or adequate sleep. Distress falls by 10 points with therapy and by 1 point with wait-list in the low-sleep group; it falls by 2 points in both conditions in the adequate-sleep group. Which interpretations fit this result pattern?",
+    "options": {
+      "A": "The therapy effect is additive because the therapy–wait-list difference is identical at both sleep levels.",
+      "B": "The effect of therapy depends on sleep status, because its simple effect is large in one sleep group and absent in the other.",
+      "C": "The pattern is evidence of an interaction even if an overall main effect of sleep status is small or nonsignificant.",
+      "D": "The pattern shows only a main effect of therapy; examining separate therapy effects within sleep groups is unnecessary."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — the therapy contrast is 9 points in the low-sleep group and 0 in the adequate-sleep group, so the effects are not additive. B: Correct — unequal simple effects are the defining pattern of an interaction. C: Correct — an interaction concerns differences between effects and can occur without a clear main effect of a factor. D: Incorrect — collapsing across sleep groups would conceal the dependence of the therapy effect on sleep status.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-005",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "Response times (in seconds) for seven patients completing a planning task are 18, 19, 20, 20, 21, 22, and 95. The clinician wants one summary for a typical patient and is considering how the summary would change if the 95-second observation were corrected to 25 seconds. Which statements follow from these data?",
+    "options": {
+      "A": "The current median is 20 seconds, because it is the fourth ordered observation.",
+      "B": "Changing 95 to 25 leaves the median at 20 seconds as long as the ordering of the first four observations is unchanged.",
+      "C": "The current mean is less affected by the 95-second value than the median is.",
+      "D": "For describing a typical response in the presence of the extreme value, the median is more resistant than the mean."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — with seven ordered scores, the fourth value is the median, which is 20. B: Correct — replacing 95 with 25 yields 18, 19, 20, 20, 21, 22, 25, so the middle value remains 20. C: Incorrect — the mean is pulled strongly upward by 95, whereas the median is unchanged by its magnitude. D: Correct — resistance to an extreme score makes the median the more defensible typical-value summary here.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-006",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "An election researcher repeatedly draws independent simple random samples from the same stable voter population and computes the proportion supporting a proposal. The sample estimates differ from one draw to another. Which expectations are justified?",
+    "options": {
+      "A": "An unbiased sampling procedure requires every sample proportion to equal the population proportion.",
+      "B": "The variation among sample proportions is sampling error and can occur even when data collection has no systematic bias.",
+      "C": "Doubling the sample size necessarily halves the standard error of the estimated proportion.",
+      "D": "Other things equal, increasing sample size narrows the sampling distribution, with standard error decreasing approximately in proportion to 1/√n."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A: Incorrect — unbiasedness concerns the long-run center of the estimator, not exact equality in every sample. B: Correct — random sample-to-sample fluctuation is sampling error even under unbiased collection. C: Incorrect — because standard error scales with 1/√n, doubling n multiplies it by about 1/√2 rather than by 1/2. D: Correct — larger samples produce less variable estimates under otherwise comparable conditions.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-007",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 1,
+    "question": "A team tests the same cohort's autobiographical memory at ages 50, 60, and 70. Scores decline across waves, but participants with poorer health are increasingly likely to drop out. Which interpretations or design concerns are appropriate?",
+    "options": {
+      "A": "Because the same people are followed, the design can estimate within-person change rather than comparing only different age groups.",
+      "B": "The design automatically separates aging effects from all historical influences shared by this birth cohort.",
+      "C": "Selective loss of less healthy participants could make the observed decline smaller than the decline in the original cohort.",
+      "D": "Repeated exposure to similar memory tests cannot affect later scores because chronological age has changed."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — repeated observations of the same individuals support analysis of intraindividual change. B: Incorrect — age and time of measurement change together, and one cohort cannot fully disentangle aging from period or cohort-linked influences. C: Correct — attrition of participants likely to perform poorly can bias later-wave averages upward. D: Incorrect — practice, familiarity, and repeated-testing effects remain possible in longitudinal measurement.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-008",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "Each participant completes a vigilance task once in silence and once with office noise. Half receive silence first and half noise first. Performance is poorer in noise, but the researcher worries that fatigue from the first session persists into the second. Which statements bear on this design and result?",
+    "options": {
+      "A": "Using each participant in both conditions increases confounding by stable individual differences compared with independent groups.",
+      "B": "The paired structure permits the noise effect to be estimated from within-person score differences.",
+      "C": "Counterbalancing distributes a simple order effect across conditions rather than eliminating every possible carryover effect.",
+      "D": "Persistent fatigue that depends on the first condition could still complicate interpretation despite counterbalancing."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A: Incorrect — stable individual differences are controlled because each person serves as their own comparison. B: Correct — the treatment contrast is represented by each participant's noise-minus-silence difference. C: Correct — counterbalancing addresses systematic order placement but is not a universal cure for carryover. D: Correct — condition-specific or asymmetric persistence can contaminate the later measurement even in a counterbalanced design.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-009",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 1,
+    "question": "Two independent studies compare a memory intervention with control using the same outcome scale. Study P reports a standardized mean difference d = 0.60 with p = .08 from 24 participants; Study Q reports d = 0.12 with p < .001 from 2,400 participants. Which interpretation is warranted from the reported results?",
+    "options": {
+      "A": "Study P estimates the larger standardized effect, although its smaller sample yields less precise evidence against the null.",
+      "B": "Study Q must have the larger practical effect because its p-value is smaller.",
+      "C": "Study P's nonsignificant result shows that its population effect is exactly zero.",
+      "D": "The two studies have equal estimated effect magnitude because both compare an intervention with control."
+    },
+    "answers": ["A"],
+    "explanation": "A: Correct — d indexes standardized magnitude, and 0.60 exceeds 0.12; the small sample can nevertheless produce an imprecise, nonsignificant test. B: Incorrect — p-values depend on sample size and uncertainty as well as effect magnitude. C: Incorrect — failure to reject the null does not establish an exactly zero effect. D: Incorrect — a common design does not imply equal standardized differences.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-010",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "A clinical trial tests 20 independent symptom outcomes at α = .05 and highlights any significant result, without a preregistered primary outcome or multiplicity correction. All 20 null hypotheses are in fact true. Which statements correctly describe the error risk and suitable responses?",
+    "options": {
+      "A": "For any one correctly conducted test, α = .05 is the long-run probability of rejecting that null when it is true.",
+      "B": "Because every null is true, observing even one p < .05 is logically impossible unless the data were fabricated.",
+      "C": "The probability of at least one false positive across the family remains exactly .05 regardless of the number of tests.",
+      "D": "Prespecifying a primary outcome or applying a familywise-error procedure can reduce opportunistic false-positive claims."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — the test's Type I error rate is defined under a true null across repeated samples. B: Incorrect — false rejections are expected occasionally even when procedures and data are legitimate. C: Incorrect — with multiple tests the familywise chance of at least one false positive generally exceeds .05 unless controlled. D: Correct — outcome prespecification and multiplicity adjustments directly address the inflated opportunity for false discovery.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-research-methods-statistics-011",
+    "type": "MSQ",
+    "topic": "research-methods-statistics",
+    "marks": 2,
+    "question": "A multisite team attempts to reproduce a surprising finding that background music improves proofreading. They preregister the original analysis, use the original materials, add a no-headphones control requested by the original authors, and sample workplaces in three countries. The effect appears in two countries but reverses in the third. Which conclusions or next steps are defensible?",
+    "options": {
+      "A": "Using the original materials and analysis provides evidence from a close or direct replication of the central procedure.",
+      "B": "The added control can test whether wearing headphones, rather than music itself, contributed to the original contrast.",
+      "C": "The cross-country difference motivates tests of contextual moderators rather than a blanket claim that the effect either always exists or never exists.",
+      "D": "Reporting the reversal and the null or positive results together is necessary for the replication record to represent the observed pattern."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — procedural and analytic fidelity targets reproducibility of the original result. B: Correct — the extra condition isolates an alternative explanation embedded in the original setup. C: Correct — heterogeneous results suggest boundary conditions or moderators that can be tested explicitly. D: Correct — selective reporting would distort the evidence; all site outcomes are relevant to judging replicability and generalization.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "xh-c5-msq-applications-001",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 1,
+    "question": "Participants are invited to a stress experiment involving difficult arithmetic and continuous video recording. The investigator explains the tasks and foreseeable discomfort but says participation is compulsory because course credit is attached. Which changes are required for ethically adequate consent?",
+    "options": {
+      "A": "Provide a genuine option to decline or withdraw without losing an entitled benefit or facing penalty.",
+      "B": "Withhold the fact of video recording because revealing it might change participants' behaviour.",
+      "C": "Ask participants to sign immediately so that later questions do not disrupt the protocol.",
+      "D": "Explain how recordings will be stored, used, accessed, and eventually disposed of."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — consent must be voluntary, so course arrangements should not impose an unfair penalty for refusal or withdrawal. B: Incorrect — identifiable recording is material information for consent; methodological convenience does not by itself justify concealing it. C: Incorrect — consent is an informed process that permits questions and deliberation, not merely rapid signature collection. D: Correct — privacy, access, use, and retention of recordings are foreseeable conditions participants should understand.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-002",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 2,
+    "question": "A child frequently shouts during independent seatwork. Classroom observations show that the teacher then provides prolonged one-to-one assistance, after which shouting briefly stops. The school plans a behavioural intervention. Which steps are supported by the observation?",
+    "options": {
+      "A": "Assume the shouting reflects a stable trait and apply the same consequence in every setting.",
+      "B": "Test whether adult attention is maintaining the behaviour rather than inferring function from its form alone.",
+      "C": "Teach and reinforce an appropriate request for help while arranging attention so that shouting is not the efficient route to it.",
+      "D": "Judge effectiveness from one quiet lesson without collecting baseline or follow-up data."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — behavioural intervention should be linked to antecedents and consequences, and function may differ across settings. B: Correct — the observed consequence suggests an attention or assistance function that should be assessed systematically. C: Correct — function-based intervention can reinforce a communicative alternative while changing the contingency that maintains shouting. D: Incorrect — baseline and repeated outcome measurement are needed to distinguish intervention effects from ordinary fluctuation.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-003",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 2,
+    "question": "Nurses using an infusion pump sometimes enter a dose in the wrong unit because the unit label is small, the confirmation screen displays only the number, and two adjacent buttons have similar shapes. Which redesign decisions follow from a human-factors analysis?",
+    "options": {
+      "A": "Display the dose together with its unit at entry and confirmation stages.",
+      "B": "Differentiate high-consequence controls by position, shape, or guarded activation rather than relying on memory.",
+      "C": "Retain the interface and instruct users simply to be more careful, because trained operators adapt to any layout.",
+      "D": "Test prototypes with representative nurses performing realistic tasks under workload and interruption."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A: Correct — preserving unit information makes system state visible and supports error detection. B: Correct — perceptual and physical differentiation reduces slips between adjacent controls. C: Incorrect — attributing errors only to vigilance ignores predictable interactions between interface design, workload, and human limitations. D: Correct — realistic user testing can reveal errors that inspection in ideal conditions misses.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-004",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 1,
+    "question": "A clinic offers free hypertension screening, yet attendance remains low. Interviews indicate that residents feel healthy and doubt they are at risk, while those who intend to attend often cannot leave work during clinic hours. Which responses fit a health-belief-model analysis?",
+    "options": {
+      "A": "Communicate personal susceptibility and consequences using credible, non-alarmist examples.",
+      "B": "Conclude that attitudes alone explain non-attendance because the screening has no fee.",
+      "C": "Reduce practical barriers by adding evening sessions or mobile screening sites.",
+      "D": "Emphasize disease severity while concealing the availability and convenience of screening."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A: Correct — perceived susceptibility and severity influence readiness to take preventive action. B: Incorrect — time and access remain barriers even when monetary cost is absent. C: Correct — changing clinic access directly reduces a perceived and actual barrier to action. D: Incorrect — effective communication should also make benefits, access, and cues to action clear rather than relying on threat alone.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-005",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 2,
+    "question": "A municipal agency wants to reduce adolescent substance use in a neighbourhood. Its initial plan is written entirely by external specialists, although local youth groups and families have identified unsafe recreation spaces and school-exit periods as key concerns. Which revisions would strengthen community participation?",
+    "options": {
+      "A": "Retain all decision authority with specialists so local disagreement cannot alter implementation.",
+      "B": "Include youth and family representatives in defining priorities and selecting feasible strategies.",
+      "C": "Use local knowledge to adapt delivery sites and timing while preserving evaluation of the intervention's core aims.",
+      "D": "Share monitoring results with community partners and involve them in interpreting unexpected outcomes."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A: Incorrect — token consultation without decision influence fails to use participatory knowledge and may weaken ownership. B: Correct — participation includes joint problem definition and meaningful influence over choices. C: Correct — local input can improve contextual fit without abandoning clear intervention goals. D: Correct — collaborative interpretation supports accountability, learning, and continued community ownership.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-006",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 2,
+    "question": "A psychologist is asked by a court to assess whether a defendant currently understands the legal proceedings and can assist counsel. The defendant's lawyer also asks the psychologist to provide therapy during the assessment period. Which decisions are appropriate?",
+    "options": {
+      "A": "Clarify the legal question, limits of confidentiality, intended recipients, and consequences of the evaluation before proceeding.",
+      "B": "Accept the defendant's account as sufficient because forensic opinions should avoid collateral information.",
+      "C": "Use whichever clinical test is most familiar, even if it is unrelated to the legal capacity being evaluated.",
+      "D": "Avoid or carefully manage the proposed therapist–evaluator dual role because its obligations and boundaries may conflict."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — forensic assessment requires a clearly defined referral question and explicit explanation of its non-therapeutic confidentiality limits. B: Incorrect — records, behavioural observations, and other relevant collateral sources may be needed to evaluate response accuracy and functional capacity. C: Incorrect — methods must be relevant to the specific legal construct and interpreted within their evidential limits. D: Correct — combining treatment and evaluative roles can create conflicts concerning alliance, objectivity, confidentiality, and disclosure.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-007",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 1,
+    "question": "A teacher asks a school psychologist to “fix” a student's incomplete assignments. Records show that the student completes oral work but often misunderstands written multi-step instructions. Which consultation actions best fit the available evidence?",
+    "options": {
+      "A": "Diagnose a learning disorder immediately without observing instruction or testing alternative explanations.",
+      "B": "Define the problem jointly in observable terms and collect data on when incomplete work occurs.",
+      "C": "Collaborate on a trial of chunked written directions with comprehension checks, then monitor completion.",
+      "D": "Remove all independent work permanently so the student cannot fail to complete it."
+    },
+    "answers": ["B", "C"],
+    "explanation": "A: Incorrect — the referral concern and records do not by themselves establish a diagnosis; consultation should first clarify the problem and context. B: Correct — operational definition and context-specific data support collaborative problem solving. C: Correct — the proposed support follows from the discrepancy between oral performance and written multi-step instructions and can be evaluated with progress data. D: Incorrect — permanently removing the demand avoids testing a proportionate support and may unnecessarily restrict learning opportunities.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-008",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 2,
+    "question": "A university tests a new course-registration portal. Five students are told exactly which buttons to press while designers watch silently; all finish quickly, so the team declares the portal usable. Which changes would produce more informative usability evidence?",
+    "options": {
+      "A": "Give representative users realistic goals and observe how they choose to complete them without step-by-step instructions.",
+      "B": "Recruit only members of the design team because their familiarity reduces variation in performance.",
+      "C": "Record task success, errors, time, navigation paths, and users' explanations of confusing points.",
+      "D": "Test important cases such as prerequisite errors, full classes, mobile access, and recovery from an accidental choice."
+    },
+    "answers": ["A", "C", "D"],
+    "explanation": "A: Correct — realistic tasks reveal whether users can discover and execute the workflow rather than merely follow directions. B: Incorrect — designers are unrepresentative and their prior knowledge conceals learnability problems. C: Correct — converging behavioural and verbal evidence identifies both performance failures and their likely interface sources. D: Correct — consequential edge cases and error recovery are part of actual portal use and should be evaluated.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-009",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 1,
+    "question": "After trace contamination is detected in a town's water supply, officials know that current exposure is below the emergency threshold but that further tests are pending. Which public message best reflects sound risk communication?",
+    "options": {
+      "A": "There is absolutely no risk, and further details would only create unnecessary concern.",
+      "B": "State what is known and uncertain, explain the current level of concern, give concrete precautionary actions, and specify when the next update will occur.",
+      "C": "Release the laboratory number without comparison, units, recommended actions, or explanation of uncertainty.",
+      "D": "Delay all communication until every source of uncertainty has been eliminated."
+    },
+    "answers": ["B"],
+    "explanation": "A: Incorrect — unwarranted certainty can damage trust if later evidence changes and deprives residents of relevant information. B: Correct — transparent uncertainty, interpretable risk, actionable guidance, and a scheduled update support informed response. C: Incorrect — an isolated number is difficult to interpret and does not tell residents what to do. D: Incorrect — waiting for complete certainty can leave an information vacuum during a developing risk.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-010",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 1,
+    "question": "A job-training programme reports that 78% of attendees found the workshops useful. The funder asks whether the programme increased employment relative to what would otherwise have occurred. Which evaluation steps address that question?",
+    "options": {
+      "A": "Define employment outcomes and measurement timing before comparing programme participants with a credible counterfactual group.",
+      "B": "Use participant satisfaction as sufficient evidence that employment increased because both are positive outcomes.",
+      "C": "Count the number of workshops delivered and treat a larger count as proof of labour-market impact.",
+      "D": "Examine attrition, baseline differences, and alternative explanations when interpreting any group difference."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A: Correct — an impact question requires a specified outcome, time frame, and defensible estimate of what would have happened without the programme. B: Incorrect — satisfaction is a process or reaction measure and does not establish employment impact. C: Incorrect — delivery volume indicates implementation output, not whether employment changed because of the programme. D: Correct — differential dropout, initial group differences, and competing events can bias an estimated programme effect.",
+    "sourceName": "Original GATE-style MSQ bank"
+  },
+  {
+    "id": "xh-c5-msq-applications-011",
+    "type": "MSQ",
+    "topic": "applications",
+    "marks": 2,
+    "question": "A clinic adapts an evidence-based parenting programme for families who speak a minority language and often live in multigenerational households. Which decisions can improve cultural fit without abandoning evaluation of the programme?",
+    "options": {
+      "A": "Use translation and back-translation, then conduct cognitive interviews to check how families understand key terms.",
+      "B": "Consult community members about examples, family roles, delivery format, and barriers to participation.",
+      "C": "Distinguish core change mechanisms from surface features so adaptations do not inadvertently remove essential components.",
+      "D": "Document the adaptations and evaluate acceptability, engagement, and outcomes in the intended population."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A: Correct — linguistic equivalence requires checking meaning in use, not merely replacing words. B: Correct — community input can identify mismatches in examples, roles, logistics, and expectations that outsiders may miss. C: Correct — separating core mechanisms from adaptable delivery features helps balance fidelity and contextual fit. D: Correct — documenting and evaluating the adapted version is necessary because plausibility alone does not establish acceptability or effectiveness.",
+    "sourceName": "Original GATE-style MSQ bank"
+  }
+]

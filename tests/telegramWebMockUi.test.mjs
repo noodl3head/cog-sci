@@ -21,7 +21,17 @@ test('web MSQ runner uses checkboxes, rationale fields, autosave, and server sub
   assert.doesNotMatch(source, /question\.answers|question\.explanation|correct set/i);
 });
 
-test('web MSQ runner styles preserve checkbox and reasoning usability', async () => {
+test('completed review separates the selected truth value from the correct truth value', async () => {
+  const source = await readFile(pagePath, 'utf8');
+  assert.match(source, /Your answer:/);
+  assert.match(source, /Correct answer:/);
+  assert.match(source, /row\.selected\.includes\(letter\)/);
+  assert.match(source, /row\.correct\.includes\(letter\)/);
+  assert.match(source, /selectedIsTrue === correctIsTrue/);
+  assert.doesNotMatch(source, /True\/correct|False\/incorrect/);
+});
+
+test('web MSQ runner styles preserve checkbox, reasoning, and review usability', async () => {
   const css = await readFile(cssPath, 'utf8');
   for (const className of [
     'web-msq-option',
@@ -29,5 +39,8 @@ test('web MSQ runner styles preserve checkbox and reasoning usability', async ()
     'web-msq-option-eyebrow',
     'web-msq-reasoning',
     'web-msq-checkbox',
+    'web-msq-review-option-header',
+    'web-msq-review-answer-grid',
+    'web-msq-review-verdict',
   ]) assert.match(css, new RegExp(`\\.${className}\\b`));
 });

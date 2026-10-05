@@ -1,0 +1,288 @@
+[
+  {
+    "concept": "availability heuristic",
+    "topic": "cognition",
+    "question": "After seeing several widely shared reports of batteries catching fire, a commuter judges battery-powered buses to be more dangerous than diesel buses, despite fleet records showing fewer serious incidents. Which features of this judgment illustrate the availability heuristic?",
+    "options": {
+      "A": "The vivid, easily recalled fire reports receive more weight than the less memorable fleet statistics.",
+      "B": "The commuter has logically deduced the relative risk from premises that guarantee the conclusion.",
+      "C": "The commuter estimates frequency from how readily examples of battery fires come to mind.",
+      "D": "The judgment demonstrates that repeated media exposure necessarily changes the objective accident rate."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because vivid, retrievable cases can dominate judgment. B is incorrect because the conclusion is not deductively guaranteed by the reports. C is correct because ease of recall is being used as a cue to frequency or risk. D is incorrect because media accessibility can alter perceived risk without changing the actual rate."
+  },
+  {
+    "concept": "confirmation bias",
+    "topic": "cognition",
+    "question": "A student believes that studying with instrumental music improves her quiz scores. For a month she keeps informal notes while sometimes studying in silence, but she wants to evaluate whether her conclusion is being shaped by confirmation bias. Which observations would support that concern?",
+    "options": {
+      "A": "She calculates the average score for every music and silence session using the same rule.",
+      "B": "She vividly remembers high scores after music but dismisses low scores after music as unusually difficult quizzes.",
+      "C": "She preregisters what score difference would count as evidence before reviewing the month.",
+      "D": "She searches her notes mainly for music sessions that fit her belief and gives little attention to silence sessions that challenge it."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A is incorrect because applying the same summary rule to all sessions reduces selective evaluation. B is correct because belief-consistent outcomes are retained while inconsistent outcomes are discounted. C is incorrect because a prior decision rule constrains post hoc confirmation. D is correct because the search and weighting of evidence are selectively directed toward the existing belief."
+  },
+  {
+    "concept": "functional fixedness",
+    "topic": "cognition",
+    "question": "During a field workshop, participants must keep a loose window open using only a thick marker, binder clips, string, and a notebook. One group remains stuck because members treat each object only according to its familiar classroom use. Which changes would specifically help overcome functional fixedness in this situation?",
+    "options": {
+      "A": "Describe the marker by its physical properties, such as being rigid and cylindrical, rather than only as a writing tool.",
+      "B": "Remove the binder clips from their usual paper-holding role and consider them as clamps or attachment points.",
+      "C": "Repeat the first unsuccessful arrangement more quickly because familiarity guarantees eventual success.",
+      "D": "Ask what each object's parts can do in the window problem before recalling what the object is normally called."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A is correct because representing physical properties can reveal nonstandard uses. B is correct because reassigning a familiar object to a new function directly counters fixedness. C is incorrect because repeating the same failed representation preserves the constraint. D is correct because decomposing objects into usable features weakens the pull of conventional labels."
+  },
+  {
+    "concept": "deductive validity",
+    "topic": "cognition",
+    "question": "A reasoning instructor gives this argument: 'If a participant solved the hidden-rule task, then the participant received a completion code. Mira received no completion code. Therefore, Mira did not solve the task.' Which assessments of the argument's deductive validity are justified?",
+    "options": {
+      "A": "The conclusion follows by modus tollens if the two premises are accepted.",
+      "B": "The argument is invalid because a valid conclusion must also be factually true in the real study.",
+      "C": "The argument affirms the consequent by inferring task success from receipt of a code.",
+      "D": "Validity concerns whether the conclusion could be false while both stated premises are true, not whether the premises actually are true."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A is correct because the form is If P then Q; not Q; therefore not P. B is incorrect because validity concerns the relation between premises and conclusion, whereas factual truth bears on soundness. C is incorrect because the argument denies the consequent rather than affirming it. D is correct because a deductively valid form rules out true premises with a false conclusion."
+  },
+  {
+    "concept": "inductive reasoning",
+    "topic": "cognition",
+    "question": "A school psychologist notices that students in four observed classes participate more after teachers wait several seconds before calling on anyone. She proposes that longer wait time will generally increase participation across the school. Which features appropriately characterize this inference?",
+    "options": {
+      "A": "Because the four observations are consistent, the general conclusion is deductively certain.",
+      "B": "The inference extends from a limited set of cases to a broader population.",
+      "C": "Additional observations from varied subjects and grade levels could strengthen the inference.",
+      "D": "A plausible alternative, such as unusually supportive teachers in those classes, could weaken the inference without making the original observations false."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A is incorrect because consistent observations do not make a population generalization logically certain. B is correct because the psychologist generalizes beyond the sampled cases. C is correct because broader, representative evidence can increase inductive strength. D is correct because an alternative explanation can reduce support for the proposed generalization while leaving the observations intact."
+  },
+  {
+    "concept": "working-memory updating",
+    "topic": "cognition",
+    "question": "In a laboratory task, a participant hears a continuous list of digits and must report the three most recent odd digits whenever a tone sounds. The list includes both odd and even digits, and the required set changes as new items arrive. Which processes are central to successful working-memory updating here?",
+    "options": {
+      "A": "Replacing an older relevant digit when a new odd digit enters the current three-item set.",
+      "B": "Monitoring each incoming digit for relevance while preserving the order of the currently relevant digits.",
+      "C": "Transferring the entire digit stream into permanent autobiographical memory before responding.",
+      "D": "Maintaining the first three odd digits unchanged so that later input cannot interfere."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A is correct because updating requires removing no-longer-current content and incorporating new relevant content. B is correct because the participant must gate incoming information and maintain the ordered active set. C is incorrect because long-term autobiographical storage is not required by the task. D is incorrect because keeping the initial set unchanged would defeat the demand to track the most recent items."
+  },
+  {
+    "concept": "mental set",
+    "topic": "cognition",
+    "question": "An engineer has solved several valve problems by tightening a particular control screw. When a new valve remains closed because a safety latch is engaged, she repeatedly tightens the screw and delays inspecting other components. Which interpretations fit the role of mental set in her behavior?",
+    "options": {
+      "A": "Her persistence shows functional fixedness because she cannot imagine using the screw as a different physical object.",
+      "B": "Her prior success proves that the same procedure is normatively optimal for every valve failure.",
+      "C": "A previously effective solution strategy is biasing how she represents the new problem.",
+      "D": "Testing the latch or restating the fault without reference to earlier cases could help her escape the established solution pattern."
+    },
+    "answers": ["C", "D"],
+    "explanation": "A is incorrect because the difficulty concerns reuse of a familiar strategy, not failure to see a new function for an object. B is incorrect because prior success does not establish universal suitability. C is correct because an established approach is constraining search in a changed problem. D is correct because shifting representation and considering a new mechanism can break the mental set."
+  },
+  {
+    "concept": "prototype",
+    "topic": "cognition",
+    "question": "A child has formed a mental representation of 'bird' from frequent encounters with small flying songbirds. At a zoo, the child quickly classifies a sparrow as a bird but hesitates over an ostrich and a penguin. Which inferences are consistent with prototype-based categorization in this case?",
+    "options": {
+      "A": "The sparrow is classified quickly because it resembles the child's central or typical bird representation.",
+      "B": "The ostrich can remain a category member even though it has lower similarity to the prototype.",
+      "C": "The penguin's atypical features may slow classification without showing that the child lacks the bird category entirely.",
+      "D": "Prototype theory requires every category member to possess one identical set of defining features."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "A is correct because high similarity to a typical representation supports rapid categorization. B is correct because category membership need not disappear when an exemplar is atypical. C is correct because lower typicality can increase classification time. D is incorrect because a prototype account emphasizes graded similarity rather than a single necessary-and-sufficient feature list shared by all members."
+  },
+  {
+    "concept": "phoneme",
+    "topic": "cognition",
+    "question": "A language researcher changes the initial sound in the spoken English word 'bat' from /b/ to /p/, producing 'pat', while leaving the remaining sounds unchanged. Which description best identifies what the manipulation demonstrates?",
+    "options": {
+      "A": "It changes a morpheme that must independently carry grammatical meaning.",
+      "B": "It substitutes one phoneme for another, creating a contrast in word identity in English.",
+      "C": "It changes only the speaker's volume, so the listener should recover the same word.",
+      "D": "It proves that every acoustically different sound is a separate phoneme in every language."
+    },
+    "answers": ["B"],
+    "explanation": "A is incorrect because /b/ and /p/ are sound units, not independently meaningful grammatical units in this example. B is correct because replacing one contrastive sound unit changes the recognized English word. C is incorrect because the manipulation changes the segment, not merely loudness. D is incorrect because phonemic contrasts are language-specific and are not identical to every acoustic variation."
+  },
+  {
+    "concept": "metacognition",
+    "topic": "cognition",
+    "question": "While preparing for an exam, Ravi feels fluent when rereading a chapter but performs poorly on a closed-book quiz. He then changes his study routine. Which actions would count as metacognitive monitoring or control prompted by this mismatch?",
+    "options": {
+      "A": "He compares his confidence with retrieval-test performance to judge whether his feeling of mastery is reliable.",
+      "B": "He continues rereading only because perceptual familiarity guarantees durable recall.",
+      "C": "He allocates more practice to concepts he cannot explain without the book and schedules later self-tests.",
+      "D": "He treats every error as evidence that the chapter cannot be learned rather than revising his strategy."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because Ravi is monitoring the accuracy of his own learning judgment. B is incorrect because fluency does not guarantee later retrieval and the behavior ignores diagnostic evidence. C is correct because he regulates study based on assessed knowledge gaps. D is incorrect because a global conclusion about impossibility is not adaptive monitoring or strategic control."
+  },
+  {
+    "concept": "cognitive reappraisal",
+    "topic": "cognition",
+    "question": "Before presenting a thesis proposal, Leena notices a racing heart and interprets the committee's detailed questions as signs that she will fail. She deliberately reframes the situation before entering the room. Which responses exemplify cognitive reappraisal rather than avoidance or mere response suppression?",
+    "options": {
+      "A": "She interprets physiological arousal as energy that can support focused performance.",
+      "B": "She views detailed questions as opportunities to clarify the project rather than as certain rejection.",
+      "C": "She reminds herself that one difficult exchange can provide useful information without defining her overall competence.",
+      "D": "She changes the meaning she assigns to the situation before acting, even if some anxious arousal remains."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A is correct because the meaning of arousal is reframed. B is correct because the committee's questions receive a less threatening interpretation. C is correct because the event is placed in a broader, less catastrophic frame. D is correct because reappraisal changes appraisal rather than requiring elimination of emotion, escape from the event, or concealment of an unchanged interpretation."
+  },
+  {
+    "concept": "trait stability",
+    "topic": "personality",
+    "question": "A longitudinal study finds that adults' conscientiousness scores rise modestly on average from age 25 to 45, yet people who scored higher than their peers at 25 generally remain higher than those peers at 45. Which conclusions distinguish forms of trait stability in these results?",
+    "options": {
+      "A": "The preserved ordering among individuals indicates substantial rank-order stability.",
+      "B": "The mean increase proves that every individual changed by exactly the same amount.",
+      "C": "Mean-level change can occur at the same time as stability in people's relative positions.",
+      "D": "Any average change rules out the possibility that conscientiousness functions as a trait."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because rank-order stability concerns whether relative individual differences are maintained. B is incorrect because an average trajectory does not specify each person's change. C is correct because mean levels and relative ordering describe different aspects of development. D is incorrect because traits can show systematic mean-level change while retaining meaningful individual differences."
+  },
+  {
+    "concept": "Big Five openness",
+    "topic": "personality",
+    "question": "Two employees join a voluntary rotation outside their usual departments. Noor seeks unfamiliar ideas, enjoys discussing abstract possibilities, and experiments with new artistic tools; Dev prefers established routines and concrete procedures. Which observations most directly support describing Noor as higher in Big Five openness?",
+    "options": {
+      "A": "Noor always completes assigned work before its deadline.",
+      "B": "Noor is intellectually curious about perspectives that challenge familiar assumptions.",
+      "C": "Noor speaks more loudly than Dev during every team meeting.",
+      "D": "Noor is drawn to novelty, imagination, and varied aesthetic experiences."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A is incorrect because dependable task completion is more directly related to conscientiousness. B is correct because intellectual curiosity and receptivity to ideas are facets of openness. C is incorrect because speaking volume does not diagnose openness and may reflect many situational factors. D is correct because novelty, imagination, and aesthetic engagement are central manifestations of openness."
+  },
+  {
+    "concept": "locus of control",
+    "topic": "personality",
+    "question": "After receiving a low statistics grade, Maya says that changing her practice method and attending office hours could improve the next result. Arjun says grades are controlled entirely by luck and an instructor's mood, so his own actions cannot matter. Which interpretations follow from locus-of-control theory in this context?",
+    "options": {
+      "A": "Maya's explanation reflects a relatively internal locus because she links outcomes to controllable behavior.",
+      "B": "Arjun's explanation reflects a relatively external locus because he attributes outcomes to forces outside his control.",
+      "C": "Maya must have high self-esteem, because an internal locus and self-esteem are the same construct.",
+      "D": "Their statements concern generalized control expectancies, but actual grades may still depend on both personal action and external conditions."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "A is correct because Maya expects her actions to influence the outcome. B is correct because Arjun locates control in luck and another person's disposition. C is incorrect because locus of control and self-esteem are distinct constructs. D is correct because control beliefs describe expectancies and do not require denying genuine situational influences."
+  },
+  {
+    "concept": "self-efficacy",
+    "topic": "personality",
+    "question": "A novice counselor doubts she can conduct an intake interview. She then observes a slightly more experienced peer model the procedure, rehearses it successfully with feedback, and approaches the next interview with greater persistence. Which interpretations are consistent with self-efficacy theory?",
+    "options": {
+      "A": "Successful rehearsal can provide mastery evidence that strengthens her belief that she can perform this specific task.",
+      "B": "Her improved persistence proves that she possesses a fixed, situation-free level of global self-worth.",
+      "C": "Watching a comparable peer cannot affect efficacy beliefs because only direct rewards shape confidence.",
+      "D": "The combination of vicarious experience and constructive feedback can increase task-specific efficacy even before an independent interview succeeds."
+    },
+    "answers": ["A", "D"],
+    "explanation": "A is correct because successful performance is a strong source of efficacy information. B is incorrect because self-efficacy is a capability belief tied to tasks or domains, not identical to global self-worth. C is incorrect because observing a similar model can provide vicarious efficacy information. D is correct because modeling and credible feedback can alter efficacy expectations prior to full independent mastery."
+  },
+  {
+    "concept": "defense mechanisms",
+    "topic": "personality",
+    "question": "After being sharply criticized by a supervisor, an employee feels angry but says he is not upset. Later he accuses a colleague of being hostile, makes sarcastic remarks at home, and explains that the supervisor was 'only improving quality.' Which option-to-process interpretations are psychologically plausible defense mechanisms in this sequence?",
+    "options": {
+      "A": "His conscious decision to draft a formal complaint is repression because all planned coping is unconscious.",
+      "B": "Attributing his own unacknowledged hostility to the colleague is consistent with projection.",
+      "C": "Redirecting anger from the supervisor toward safer family targets is consistent with displacement.",
+      "D": "Offering a more acceptable quality-control explanation for a threatening experience may function as rationalization."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "A is incorrect because a deliberate complaint is conscious problem solving, whereas repression refers to unconscious exclusion of threatening material. B is correct because the employee locates disowned hostility in another person. C is correct because emotion is redirected from a risky source to safer targets. D is correct because an acceptable explanation may mask or soften a more threatening interpretation."
+  },
+  {
+    "concept": "unconditional positive regard",
+    "topic": "personality",
+    "question": "A teenager tells a counselor that she cheated on an assignment and expects to be treated as worthless. The counselor wants to communicate unconditional positive regard while still addressing the behavior responsibly. Which responses fit that goal?",
+    "options": {
+      "A": "The counselor conveys that the teenager remains worthy of respect even while examining the harm caused by cheating.",
+      "B": "The counselor distinguishes acceptance of the person from approval of every action she takes.",
+      "C": "The counselor threatens to withdraw warmth unless the teenager immediately adopts the counselor's preferred values.",
+      "D": "The counselor avoids all discussion of cheating because positive regard requires agreeing with the teenager."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A is correct because regard for the person's worth need not depend on flawless conduct. B is correct because accepting the client is compatible with exploring and challenging harmful behavior. C is incorrect because affection contingent on compliance exemplifies conditions of worth. D is incorrect because unconditional regard does not require approval, agreement, or avoidance of accountability."
+  },
+  {
+    "concept": "reciprocal determinism",
+    "topic": "personality",
+    "question": "A child who expects classmates to reject him avoids group activities. Classmates then stop inviting him, leaving him with fewer chances to practice social skills and strengthening his expectation of rejection. Which interpretations capture reciprocal determinism in this pattern?",
+    "options": {
+      "A": "The child's expectation is merely an aftereffect of the environment and cannot influence behavior.",
+      "B": "The classmates' reactions alone determine the outcome, so personal beliefs and actions are irrelevant.",
+      "C": "The expectation, avoidant behavior, and changing social environment influence one another over time.",
+      "D": "Changing one part of the cycle, such as supported participation, could alter both later beliefs and classmates' responses."
+    },
+    "answers": ["C", "D"],
+    "explanation": "A is incorrect because cognition can shape behavior within the reciprocal system. B is incorrect because the account does not reduce development to environmental control alone. C is correct because personal factors, behavior, and environment operate bidirectionally. D is correct because intervening in behavior can change environmental feedback and subsequent beliefs."
+  },
+  {
+    "concept": "projective test",
+    "topic": "personality",
+    "question": "A clinician shows a client ambiguous pictures and asks for stories, then considers whether recurring themes may reveal concerns the client does not state directly. Which cautions and interpretations appropriately apply to this projective assessment?",
+    "options": {
+      "A": "Ambiguous stimuli permit relatively open-ended responses that the clinician may interpret for underlying themes.",
+      "B": "Interpretation should use standardized procedures and corroborating evidence because scorer judgment can reduce reliability.",
+      "C": "The responses may generate hypotheses, but they do not by themselves establish a diagnosis or an unconscious conflict with certainty.",
+      "D": "The method is an objective inventory because every response has one transparent, automatically scored meaning."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "A is correct because projective methods use ambiguous material to elicit open-ended productions. B is correct because interpretive subjectivity creates reliability concerns that standardization and corroboration can address. C is correct because themes are better treated as hypotheses than definitive proof. D is incorrect because open-ended interpretation contrasts with the fixed items and scoring of objective inventories."
+  },
+  {
+    "concept": "person-situation interaction",
+    "topic": "personality",
+    "question": "Elena is highly talkative with close friends but quiet during formal meetings with senior staff. Across several months, the same contrast appears repeatedly in those two settings. Which interpretation best reflects a person-situation interaction account?",
+    "options": {
+      "A": "Her behavior proves that she has no stable personal characteristics of any kind.",
+      "B": "Her characteristic level of sociability is expressed differently depending on social familiarity and evaluation pressure.",
+      "C": "Only the immediate setting matters, so her repeated individual pattern across settings contains no personality information.",
+      "D": "A valid trait must produce identical behavior in every context, making the observations logically inconsistent."
+    },
+    "answers": ["B"],
+    "explanation": "A is incorrect because cross-situational variation does not eliminate stable dispositions. B is correct because behavior reflects the joint influence of Elena's tendencies and recurring situational features. C is incorrect because her consistent pattern of responding to different contexts can itself be personality-relevant. D is incorrect because traits describe tendencies, not rigid context-free behavioral uniformity."
+  },
+  {
+    "concept": "identity narrative",
+    "topic": "personality",
+    "question": "After changing careers, Sameer describes an earlier job loss as a turning point that revealed neglected values and led him toward meaningful community work. He revises this story as new experiences occur. Which features make the account an identity narrative?",
+    "options": {
+      "A": "He organizes separated life events into a story that supplies continuity and meaning to who he is.",
+      "B": "The story is valid only if it reproduces every past event with error-free historical detail.",
+      "C": "His interpretation of the job loss connects a remembered past with present values and an anticipated future.",
+      "D": "Revising the story shows that it cannot contribute to identity, because identity narratives must remain permanently fixed."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A is correct because narrative identity links events into a coherent account of the self. B is incorrect because psychological meaning and autobiographical construction are not the same as a complete objective archive. C is correct because the narrative integrates temporal perspectives around values and direction. D is incorrect because identity narratives can be reconstructed while continuing to organize self-understanding."
+  },
+  {
+    "concept": "temperament",
+    "topic": "personality",
+    "question": "From infancy, one child reacts intensely to unfamiliar sounds, takes longer to approach new people, and is soothed only gradually. Caregivers adapt by introducing novelty in small steps, and the child's later behavior becomes less avoidant. Which conclusions are consistent with contemporary views of temperament?",
+    "options": {
+      "A": "Early differences in emotional reactivity and regulation can represent temperament-related tendencies.",
+      "B": "Biological influences may contribute to the child's characteristic response pattern without making development immutable.",
+      "C": "Caregiver responses can interact with the child's temperament and influence how the tendency is expressed over time.",
+      "D": "Reduced avoidance later is compatible with continuity in an underlying disposition because expression can change with maturation and experience."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "A is correct because reactivity and self-regulation are central dimensions of temperament. B is correct because temperamental tendencies can have biological bases without being destiny. C is correct because goodness of fit and reciprocal experience shape expression. D is correct because developmental change in observed behavior does not require complete disappearance of an underlying temperamental tendency."
+  }
+]

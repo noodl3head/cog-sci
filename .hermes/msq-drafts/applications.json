@@ -1,0 +1,145 @@
+[
+  {
+    "concept": "informed consent",
+    "topic": "applications",
+    "question": "A hospital psychologist plans a study in which patients will complete a distress survey and may then be invited to a recorded interview about stigmatized experiences. Which consent procedures are appropriate for this specific study?",
+    "options": {
+      "A": "Explain before enrollment that interview recordings will be made, who may access them, and how they will be stored.",
+      "B": "Describe the survey as routine clinical screening so that concern about research does not reduce participation.",
+      "C": "Allow patients to decline the interview or withdraw from the study without affecting their treatment.",
+      "D": "Ask the treating physician to sign for competent adult patients because the physician understands the clinical risks better."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Valid consent requires clear disclosure of recording and data handling, plus voluntary participation and withdrawal without clinical penalty. Mislabeling research undermines informed choice, and competent adults ordinarily consent for themselves."
+  },
+  {
+    "concept": "behavioral intervention",
+    "topic": "applications",
+    "question": "A child in an after-school program shouts and throws worksheets mainly when difficult arithmetic begins; staff usually remove the worksheet and let the child sit in the reading corner. Which proposed changes best follow a behavioral intervention approach?",
+    "options": {
+      "A": "Tell the child that disruptive behavior reflects an uncooperative personality and require an apology after every episode.",
+      "B": "Collect antecedent-behavior-consequence observations to test whether escape from difficult work is maintaining the behavior.",
+      "C": "Continue removing all arithmetic immediately after shouting, because rapid relief will reduce the child's frustration over time.",
+      "D": "Teach an appropriate request for help or a brief break and reinforce its use while gradually building task completion."
+    },
+    "answers": ["B", "D"],
+    "explanation": "A behavioral plan should identify the function of the behavior and replace it with a reinforced, appropriate response. Automatically removing work after shouting may strengthen escape-maintained disruption, while personality labeling does not specify controllable contingencies."
+  },
+  {
+    "concept": "human factors",
+    "topic": "applications",
+    "question": "After several medication-selection errors, a hospital asks a human-factors psychologist to redesign an infusion-pump interface used during noisy, time-pressured shifts. Which design decisions are justified by human-factors principles?",
+    "options": {
+      "A": "Make high-risk drug selections visually distinct and require confirmation that displays both the drug name and dose.",
+      "B": "Test prototypes with nurses performing realistic interruption-heavy tasks rather than relying only on engineers' judgments.",
+      "C": "Place frequently used and rarely used commands in identical menus so experienced users must rely on memory consistently.",
+      "D": "Provide immediate, noticeable feedback when an entry falls outside a plausible dose range, while allowing an explained override."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "Human-factors design reduces predictable errors through discriminable controls, realistic user testing, and salient feedback with safe recovery paths. Identical menu treatment increases memory and search demands rather than fitting the interface to users' capabilities."
+  },
+  {
+    "concept": "health belief model",
+    "topic": "applications",
+    "question": "A community clinic finds that many adults at elevated risk for influenza acknowledge that vaccination works but still do not attend free vaccine sessions. Which follow-up actions most directly apply the Health Belief Model?",
+    "options": {
+      "A": "Ask whether residents feel personally susceptible and whether clinic hours, transport, or fear of side effects are perceived barriers.",
+      "B": "Measure broad personality traits and admit only highly conscientious residents to future vaccine sessions.",
+      "C": "Assume knowledge of vaccine effectiveness is sufficient and repeat the same factual leaflet without investigating nonattendance.",
+      "D": "Send a tailored reminder that links personal risk to a nearby evening clinic and explains how common side effects can be managed."
+    },
+    "answers": ["A", "D"],
+    "explanation": "The Health Belief Model focuses on perceived susceptibility and severity, perceived benefits and barriers, cues to action, and self-efficacy. Assessing barriers and providing a risk-linked, practical cue addresses these mechanisms more directly than personality screening or untailored repetition."
+  },
+  {
+    "concept": "community participation",
+    "topic": "applications",
+    "question": "A psychologist is helping a flood-prone settlement develop a mental-health preparedness program, but residents report that previous outside teams imposed services and left quickly. Which actions would meaningfully increase community participation?",
+    "options": {
+      "A": "Finalize the intervention manual before meeting residents so local preferences cannot weaken scientific consistency.",
+      "B": "Create a resident advisory group with authority over priorities, delivery formats, and acceptable indicators of success.",
+      "C": "Train and pay local volunteers to co-deliver activities and include their observations in iterative program changes.",
+      "D": "Share evaluation findings in accessible community meetings and jointly decide whether the program should continue or change."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "Community participation involves shared decision authority, local capacity building, reciprocal use of knowledge, and accountable feedback. A fully predetermined manual preserves outsider control and prevents genuine co-design."
+  },
+  {
+    "concept": "forensic assessment",
+    "topic": "applications",
+    "question": "A court appoints a psychologist to evaluate whether a defendant currently understands the proceedings and can work rationally with counsel. Which practices are appropriate for this forensic assessment?",
+    "options": {
+      "A": "Use multiple relevant sources, such as a competency-focused interview, records, behavioral observations, and collateral information.",
+      "B": "Explain the evaluator's court-appointed role, the limited confidentiality, and the likely recipients of the report before assessment.",
+      "C": "Promise that all disclosures will remain confidential so the defendant feels safe enough to speak openly.",
+      "D": "Base the legal opinion entirely on a general intelligence score because standardized scores are more objective than case records."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A defensible forensic assessment uses converging, legally relevant information and clearly explains role and confidentiality limits. It should not promise therapeutic confidentiality or reduce a functional legal question to one general test score."
+  },
+  {
+    "concept": "school consultation",
+    "topic": "applications",
+    "question": "A teacher asks a school psychologist to remove a quiet student from class because the student rarely begins independent work, although performance improves during brief one-to-one prompts. Which consultation responses are most appropriate initially?",
+    "options": {
+      "A": "Recommend immediate special-class placement because improvement with individual prompts confirms a permanent learning disorder.",
+      "B": "Begin weekly psychotherapy without discussing classroom conditions, since consultation should not alter a teacher's routine.",
+      "C": "Collaboratively define and measure task initiation across subjects, times, and types of instructions before selecting support.",
+      "D": "Help the teacher trial clear start cues and brief scheduled check-ins, then review data to see whether initiation improves."
+    },
+    "answers": ["C", "D"],
+    "explanation": "School consultation begins with collaborative problem definition, contextual data, a feasible classroom intervention, and progress monitoring. The available evidence does not justify immediate placement or an isolated treatment plan that ignores classroom contingencies."
+  },
+  {
+    "concept": "usability testing",
+    "topic": "applications",
+    "question": "A public clinic is testing a mobile appointment app intended for older adults with varied literacy and smartphone experience. Which procedures would produce useful evidence about the app's usability before launch?",
+    "options": {
+      "A": "Recruit representative users, including people with limited digital experience and relevant vision or motor constraints.",
+      "B": "Ask participants to complete realistic tasks while recording completion, errors, time, and points where assistance is needed.",
+      "C": "Combine observed performance with follow-up questions about confusion, confidence, and reasons for particular actions.",
+      "D": "Demonstrate every correct step immediately before each task so all participants achieve the highest possible completion rate."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "Usability testing needs representative users, realistic task performance, behavioral measures, and qualitative feedback that explains observed problems. Step-by-step rehearsal immediately before testing masks discoverability and learnability difficulties."
+  },
+  {
+    "concept": "risk communication",
+    "topic": "applications",
+    "question": "Residents near a chemical spill ask whether it is safe to drink tap water while laboratory testing is still incomplete. Which public message best applies sound psychological principles of risk communication under uncertainty?",
+    "options": {
+      "A": "There is no reason to worry; officials will announce any important development when the investigation is finished.",
+      "B": "Current tests have not confirmed contamination, but uncertainty remains; until results arrive tomorrow, use bottled water for drinking, and updates will be posted at 10 a.m. and 6 p.m.",
+      "C": "A toxicological hazard cannot be excluded at conventional confidence thresholds, so residents should calibrate behavior to their subjective utility functions.",
+      "D": "Because panic can be harmful, no precaution should be mentioned until experts can guarantee that the advice will not change."
+    },
+    "answers": ["B"],
+    "explanation": "Effective risk communication states what is known and unknown, gives a concrete precaution, and specifies when updates will occur. False reassurance, technical opacity, and withholding actionable uncertainty can reduce trust and impede protective behavior."
+  },
+  {
+    "concept": "program evaluation",
+    "topic": "applications",
+    "question": "A nonprofit reports that anxiety scores fell among employees who voluntarily completed its eight-week workplace resilience course and wants to claim that the course caused the improvement. Which evaluation steps would strengthen that conclusion?",
+    "options": {
+      "A": "Compare outcomes with a credible comparison group and assess whether pre-course differences or concurrent workplace changes explain the result.",
+      "B": "Use only favorable participant testimonials because they describe personal change more vividly than outcome data.",
+      "C": "Track implementation fidelity, attendance, attrition, and validated outcomes at baseline, post-course, and a later follow-up.",
+      "D": "Delete data from participants whose anxiety did not improve so the analysis reflects those who engaged successfully."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A stronger evaluation addresses alternative explanations with a comparison strategy and measures both implementation and outcomes over time. Selective testimonials or removal of unfavorable cases introduces bias and cannot support a causal claim."
+  },
+  {
+    "concept": "cultural adaptation",
+    "topic": "applications",
+    "question": "A clinic is adapting an evidence-based parenting program for refugee families whose language, caregiving roles, migration experiences, and help-seeking norms differ from those in the original trials. Which adaptation steps are defensible?",
+    "options": {
+      "A": "Use interviews or co-design sessions with families and community partners to identify relevant meanings, barriers, and preferred examples.",
+      "B": "Translate and back-translate materials, then test whether key psychological constructs and instructions are understood as intended.",
+      "C": "Preserve the intervention's identified core mechanisms while adapting surface features and delivery methods, documenting each change.",
+      "D": "Pilot the adapted version and examine acceptability, engagement, implementation, and outcomes before wider dissemination."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "Cultural adaptation should combine stakeholder input, careful linguistic and conceptual validation, protection of core change mechanisms, transparent documentation, and empirical piloting. Together these steps improve fit without assuming that translation alone or unrestricted modification is sufficient."
+  }
+]

@@ -1,0 +1,288 @@
+[
+  {
+    "concept": "action potential",
+    "topic": "biological-evolutionary",
+    "question": "In a cultured axon, a researcher first raises membrane voltage to threshold and then applies a drug that slows voltage-gated sodium-channel inactivation. Which recorded changes are expected relative to the untreated axon?",
+    "options": {
+      "A": "The depolarizing phase lasts longer because sodium conductance remains elevated.",
+      "B": "The action potential becomes graded in size according to stimulus intensity above threshold.",
+      "C": "The start of repolarization is delayed because potassium-mediated recovery must oppose persistent sodium entry.",
+      "D": "The resting membrane potential permanently becomes positive after one action potential."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Slower sodium-channel inactivation prolongs inward sodium current, extending depolarization and delaying effective repolarization. Action potentials remain all-or-none above threshold, and a single spike does not permanently reverse resting potential."
+  },
+  {
+    "concept": "synaptic transmission",
+    "topic": "biological-evolutionary",
+    "question": "At a neuromuscular synapse, calcium enters the presynaptic terminal normally, but a toxin prevents synaptic vesicles from fusing with the terminal membrane. Which findings should follow during stimulation?",
+    "options": {
+      "A": "Neurotransmitter accumulates in the synaptic cleft because reuptake alone is blocked.",
+      "B": "The postsynaptic end-plate potential is greatly reduced or absent despite presynaptic depolarization.",
+      "C": "The postsynaptic membrane releases transmitter backward into the presynaptic terminal.",
+      "D": "Neurotransmitter remains stored in presynaptic vesicles because exocytosis cannot occur."
+    },
+    "answers": ["B", "D"],
+    "explanation": "Vesicle fusion is required for exocytotic transmitter release. Blocking fusion leaves transmitter in vesicles and prevents the usual postsynaptic response, even though the presynaptic action potential and calcium influx occur."
+  },
+  {
+    "concept": "hypothalamus",
+    "topic": "biological-evolutionary",
+    "question": "After a focal hypothalamic lesion, a rat drinks excessively, fails to maintain body temperature in a cool chamber, yet performs a previously learned maze accurately. Which interpretations fit this pattern?",
+    "options": {
+      "A": "The lesion disrupted mechanisms that regulate fluid balance.",
+      "B": "The lesion impaired a central homeostatic control system involved in thermoregulation.",
+      "C": "The findings show that the hypothalamus is the primary storage site for learned maze routes.",
+      "D": "Preserved maze performance is compatible with memory systems outside the damaged hypothalamic region."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "The hypothalamus coordinates homeostatic functions including thirst and temperature regulation. Accurate retention of the maze is consistent with learned spatial information depending more strongly on other memory circuits."
+  },
+  {
+    "concept": "hippocampus",
+    "topic": "biological-evolutionary",
+    "question": "A patient with bilateral hippocampal damage can repeat a phone number while rehearsing it and improves across days on mirror tracing, but cannot recall meeting the examiner the previous morning. Which conclusions are supported?",
+    "options": {
+      "A": "The patient can retain some information briefly without normal hippocampal function.",
+      "B": "The improvement proves that episodic memory formation is fully intact.",
+      "C": "The hippocampus is required for executing every previously learned motor action.",
+      "D": "The case separates impaired new episodic learning from preserved skill learning."
+    },
+    "answers": ["A", "D"],
+    "explanation": "Brief maintenance through rehearsal and gradual motor-skill improvement can survive hippocampal damage. The inability to remember a recent encounter indicates impaired formation of new episodic memories, demonstrating partially distinct memory systems."
+  },
+  {
+    "concept": "amygdala",
+    "topic": "biological-evolutionary",
+    "question": "Participants view neutral geometric shapes, but one shape is repeatedly paired with an aversive noise. A patient with bilateral amygdala damage can state the pairing rule but shows little anticipatory skin conductance. Which claims fit the result?",
+    "options": {
+      "A": "The patient has lost all explicit knowledge of the experimental contingency.",
+      "B": "Amygdala damage can weaken conditioned autonomic responding to a threat cue.",
+      "C": "Explicit report and physiological fear conditioning can dissociate.",
+      "D": "The result is consistent with the amygdala contributing to emotional significance rather than basic visual identification."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "The patient's accurate verbal report shows preserved explicit contingency knowledge. Reduced anticipatory arousal supports the amygdala's role in conditioned emotional responding and illustrates a dissociation between declarative knowledge and physiological fear learning."
+  },
+  {
+    "concept": "HPA axis",
+    "topic": "biological-evolutionary",
+    "question": "Employees undergo a standardized public-speaking stressor. Compared with controls, a treatment group shows normal initial cortisol release but unusually prolonged cortisol elevation afterward. Which mechanisms could explain this profile?",
+    "options": {
+      "A": "Glucocorticoid negative feedback to the hypothalamus or pituitary may be less effective.",
+      "B": "ACTH-driven adrenal activity may persist longer than it does in controls.",
+      "C": "The prolonged cortisol response proves that sympathetic nerves never became active.",
+      "D": "Cortisol must have been secreted directly by the anterior pituitary."
+    },
+    "answers": ["A", "B"],
+    "explanation": "A prolonged response can arise if glucocorticoid feedback is weakened or if ACTH stimulation continues. The adrenal cortex, not the pituitary, secretes cortisol, and the cortisol profile alone does not rule out sympathetic activation."
+  },
+  {
+    "concept": "natural selection",
+    "topic": "biological-evolutionary",
+    "question": "On an island, birds vary heritably in beak depth. After several droughts leave mostly hard seeds, deeper-beaked birds obtain more food and produce more surviving offspring. Which projections follow from natural selection?",
+    "options": {
+      "A": "Each shallow-beaked adult will deepen its beak because it needs to crack hard seeds.",
+      "B": "All variation in beak depth will disappear after a single generation.",
+      "C": "Alleles associated with deeper beaks may become more common in later generations.",
+      "D": "The population mean can shift if beak depth affects reproductive success and is heritable."
+    },
+    "answers": ["C", "D"],
+    "explanation": "Natural selection changes population-level trait and allele frequencies when heritable variants differ in reproductive success. It does not require individuals to acquire adaptive anatomical changes through need, nor does it eliminate all variation immediately."
+  },
+  {
+    "concept": "gene-environment interaction",
+    "topic": "biological-evolutionary",
+    "question": "Two genotypes are studied under low- and high-stress childhood conditions. Genotype G1 predicts more adult anxiety only in the high-stress group, while G2 shows similar anxiety across environments. Which interpretations are warranted?",
+    "options": {
+      "A": "The effect of genotype on anxiety differs across the measured environments.",
+      "B": "The effect of childhood stress differs across the two genotypes.",
+      "C": "A statistical model should include a genotype-by-environment interaction term.",
+      "D": "The result establishes that either genes alone or environment alone completely determines anxiety."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "The nonparallel genotype responses indicate interaction: genetic association depends on environment, and environmental association depends on genotype. This supports including an interaction term, not deterministic claims about either influence acting alone."
+  },
+  {
+    "concept": "circadian rhythm",
+    "topic": "biological-evolutionary",
+    "question": "Volunteers live for three weeks without clocks or natural daylight, and their sleep onset shifts about forty minutes later each day despite fixed meal timing. Which inference is best supported by this result?",
+    "options": {
+      "A": "Meal timing has permanently eliminated their biological timing system.",
+      "B": "An endogenous rhythm is free-running at a period slightly longer than twenty-four hours.",
+      "C": "The shift proves that sleep timing is controlled only by conscious expectation.",
+      "D": "The daily delay demonstrates a memory deficit rather than rhythmic regulation."
+    },
+    "answers": ["B"],
+    "explanation": "A systematic drift under isolation from normal time cues indicates a free-running endogenous rhythm whose period exceeds twenty-four hours. The pattern does not show loss of biological timing, purely conscious control, or a memory disorder."
+  },
+  {
+    "concept": "neuroplasticity",
+    "topic": "biological-evolutionary",
+    "question": "After a small stroke affecting the motor cortex, patients receive intensive constraint-induced therapy. Weeks later, finger movement improves and cortical mapping shows expanded activation near the injured region. Which conclusions are justified?",
+    "options": {
+      "A": "Repeated practice can promote functional reorganization in surviving neural tissue.",
+      "B": "The expanded activation proves that every neuron destroyed by the stroke regenerated.",
+      "C": "Behavioral training may alter the representation of the practiced movement.",
+      "D": "The findings show that adult cortical organization is completely fixed after injury."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Improvement paired with altered cortical maps supports experience-dependent functional reorganization. Such plasticity need not involve replacement of every lost neuron, and it directly contradicts the claim that adult cortical organization is wholly fixed."
+  },
+  {
+    "concept": "split-brain research",
+    "topic": "biological-evolutionary",
+    "question": "A split-brain participant fixates centrally while a key is flashed to the left visual field and a coin to the right. The participant must respond verbally and also select each object by touch with either hand. Which outcomes are expected?",
+    "options": {
+      "A": "The participant can verbally report the coin because its image first reaches the left hemisphere.",
+      "B": "The left hand can select the key because left-field input reaches the right hemisphere controlling that hand.",
+      "C": "The right hand can select the coin because right-field input reaches the left hemisphere controlling that hand.",
+      "D": "Failure to name the key can coexist with accurate left-hand selection of it."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "Right visual-field information projects to the language-dominant left hemisphere, allowing naming of the coin and right-hand selection. Left-field information reaches the right hemisphere, enabling left-hand selection of the key even when verbal naming fails."
+  },
+  {
+    "concept": "classical conditioning",
+    "topic": "perception-learning-memory",
+    "question": "A child initially shows no fear of a clinic's lavender odor. After several injections occur in lavender-scented rooms, the odor alone elicits crying at a later visit. Which elements are correctly identified?",
+    "options": {
+      "A": "Before conditioning, the injection functions as an unconditioned stimulus.",
+      "B": "Before conditioning, crying to the injection is a conditioned response.",
+      "C": "After conditioning, the lavender odor functions as a conditioned stimulus.",
+      "D": "After conditioning, crying to lavender is an unconditioned response."
+    },
+    "answers": ["A", "C"],
+    "explanation": "The painful injection naturally elicits distress, making it the unconditioned stimulus. After pairing, lavender becomes the conditioned stimulus and odor-elicited crying is a conditioned, not unconditioned, response."
+  },
+  {
+    "concept": "operant conditioning",
+    "topic": "perception-learning-memory",
+    "question": "A laboratory rat receives a food pellet after every fifth lever press. Later, pellets are discontinued, but the rat continues pressing for many trials before stopping. Which interpretations match the procedure and result?",
+    "options": {
+      "A": "Food presentation is punishment because it follows lever pressing.",
+      "B": "The lever pressing was maintained by a fixed-ratio reinforcement schedule.",
+      "C": "Persistent responding after pellets stop is evidence of immediate stimulus generalization.",
+      "D": "The later decline in pressing illustrates extinction of an operantly conditioned response."
+    },
+    "answers": ["B", "D"],
+    "explanation": "Reinforcement after every fifth response defines a fixed-ratio schedule. When reinforcement is withheld, the learned operant gradually decreases through extinction; food delivery increased rather than punished pressing."
+  },
+  {
+    "concept": "negative reinforcement",
+    "topic": "perception-learning-memory",
+    "question": "A commuter begins fastening the seat belt immediately because doing so stops an irritating dashboard alarm. Across trips, fastening occurs sooner and more reliably. Which analyses of this behavioral change are correct?",
+    "options": {
+      "A": "Alarm removal follows the target behavior and increases its future frequency.",
+      "B": "The procedure is negative reinforcement because an aversive stimulus is removed.",
+      "C": "The alarm's removal is positive punishment because it makes fastening more likely.",
+      "D": "The increased fastening distinguishes reinforcement from punishment in this case."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "Fastening removes an aversive alarm, and the behavior subsequently increases; that pattern defines negative reinforcement. Punishment would reduce the behavior, while 'negative' refers to stimulus removal rather than an undesirable outcome."
+  },
+  {
+    "concept": "observational learning",
+    "topic": "perception-learning-memory",
+    "question": "Children watch a skilled peer solve a novel puzzle while naming each step. Those who attend closely later reproduce the sequence, especially when promised a badge for success. Which interpretations are supported?",
+    "options": {
+      "A": "The children's later performance can reflect learning acquired by observing a model.",
+      "B": "The result proves that direct reinforcement was necessary during initial observation.",
+      "C": "The badge shows that motivation can affect whether an observed behavior is performed.",
+      "D": "Attention to the model is relevant to successful observational learning."
+    },
+    "answers": ["A", "D"],
+    "explanation": "Observational learning requires attending to and retaining modeled actions, and later incentives may influence performance. The children need not receive direct reinforcement while watching for learning to occur."
+  },
+  {
+    "concept": "signal detection",
+    "topic": "perception-learning-memory",
+    "question": "Radiologists inspect equally ambiguous scans under two instructions: first, avoid unnecessary biopsies; later, miss no possible tumor. Sensory evidence is unchanged, but more scans are labeled positive in the second condition. Which conclusions follow?",
+    "options": {
+      "A": "The tumor images became physically clearer under the second instruction.",
+      "B": "The decision criterion shifted toward reporting that a tumor was present.",
+      "C": "Both hit rate and false-alarm rate may increase under the more liberal criterion.",
+      "D": "Response bias can change decisions even when sensory sensitivity is unchanged."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "An instruction emphasizing avoidance of misses encourages a liberal criterion, increasing positive responses, hits, and false alarms. Because image evidence is constant, the change can reflect response bias without improved sensitivity."
+  },
+  {
+    "concept": "selective attention",
+    "topic": "perception-learning-memory",
+    "question": "Drivers follow a lead car while either holding a demanding phone conversation or listening passively to the same recorded words. Conversation produces more missed brake lights despite identical visual displays. Which interpretations fit?",
+    "options": {
+      "A": "The conversation competes for limited attentional resources needed to monitor braking.",
+      "B": "Equal visual input does not guarantee equal processing when task demands differ.",
+      "C": "The result proves that the drivers' retinas stopped registering brake lights.",
+      "D": "The misses must be due solely to hearing loss caused by the phone."
+    },
+    "answers": ["A", "B"],
+    "explanation": "The active conversation imposes cognitive demands that compete with visual monitoring, so identical displays can be processed differently. The evidence concerns selective attention, not retinal failure or hearing damage."
+  },
+  {
+    "concept": "working memory",
+    "topic": "perception-learning-memory",
+    "question": "Participants mentally reorder a spoken list of letters while tracking a moving dot. Performance worsens when both tasks require continuous spatial updating, but not when the second task is simple word repetition. Which claims are supported?",
+    "options": {
+      "A": "All concurrent tasks must disrupt performance equally because working memory is unitary.",
+      "B": "The findings show that long-term procedural memory has been erased.",
+      "C": "Interference depends partly on whether tasks draw on overlapping working-memory resources.",
+      "D": "The larger dual-task cost for spatial updating supports functionally differentiated working-memory components."
+    },
+    "answers": ["C", "D"],
+    "explanation": "Selective dual-task interference suggests that working memory contains partly differentiated resources: tasks sharing spatial or executive demands interfere more than dissimilar tasks. Nothing in the result indicates erasure of long-term procedural memory."
+  },
+  {
+    "concept": "encoding specificity",
+    "topic": "perception-learning-memory",
+    "question": "Divers study a word list either underwater or on shore and later recall it in either setting. Recall is highest when the learning and testing environments match. Which interpretations are appropriate?",
+    "options": {
+      "A": "Environmental cues present during encoding can become useful retrieval cues.",
+      "B": "Matching context at test can improve access to stored information.",
+      "C": "The crossover pattern is consistent with encoding specificity rather than a universal advantage of one setting.",
+      "D": "The result proves that words learned underwater cannot be remembered anywhere else."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "Encoding specificity predicts better retrieval when test cues overlap with encoding conditions. A matching-context advantage in both directions supports cue-dependent access, not an absolute inability to recall in a different setting."
+  },
+  {
+    "concept": "proactive interference",
+    "topic": "perception-learning-memory",
+    "question": "After learning an old locker combination for a year, a student receives a new combination and repeatedly enters the old digits during the first week. Which account best explains these errors?",
+    "options": {
+      "A": "The new combination is disrupting recall of the older combination through retroactive interference.",
+      "B": "The older combination is interfering with retrieval of the newly learned combination.",
+      "C": "The errors demonstrate that the new digits were never perceived by the student.",
+      "D": "The mistakes are evidence that procedural memory has replaced declarative memory."
+    },
+    "answers": ["B"],
+    "explanation": "Previously learned information is intruding on recall of newer information, which defines proactive interference. Retroactive interference would involve the new combination impairing recall of the old one."
+  },
+  {
+    "concept": "spacing effect",
+    "topic": "perception-learning-memory",
+    "question": "Two groups spend the same total time studying vocabulary. One group uses a single evening session; the other studies in four shorter sessions across a week. A delayed test favors the second group. Which explanations fit?",
+    "options": {
+      "A": "Distributed sessions provide repeated retrieval or re-encoding opportunities across changing contexts.",
+      "B": "The result proves that total study time never matters for learning.",
+      "C": "Spacing can create more durable retention than massing when total time is held constant.",
+      "D": "The spaced group succeeded because it encountered every word only once."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Distributed practice can strengthen long-term retention by requiring renewed processing and retrieval across intervals. The comparison holds total time constant; it does not show that study time is irrelevant or that spaced items appeared only once."
+  },
+  {
+    "concept": "procedural memory",
+    "topic": "perception-learning-memory",
+    "question": "A patient with severe difficulty forming new episodic memories practices a novel keyboard sequence over five days. Speed improves steadily, although each day the patient denies having performed the task before. Which conclusions are supported?",
+    "options": {
+      "A": "Skill learning can improve despite impaired conscious recollection of prior practice.",
+      "B": "The performance gain indicates retention expressed through a learned procedure.",
+      "C": "The denial of prior sessions suggests episodic memory for the training remains impaired.",
+      "D": "The dissociation supports partially distinct systems for procedural and episodic memory."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "The patient retains and expresses a motor sequence through improved performance while lacking conscious memory of training episodes. This classic dissociation supports separable procedural and episodic memory systems."
+  }
+]

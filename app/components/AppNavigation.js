@@ -18,6 +18,7 @@ const groups = [
     items: [
       { href: '/mock', label: 'Mock tests', icon: 'timer' },
       { href: '/pyq', label: 'Previous papers', icon: 'paper' },
+      { href: '/pyq/msq', label: 'MSQ practice', icon: 'paper' },
     ],
   },
   {

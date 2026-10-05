@@ -1,0 +1,288 @@
+[
+  {
+    "concept": "attachment security",
+    "topic": "development",
+    "question": "In a Strange Situation assessment, 14-month-old Nia explores while her father is present, becomes upset when he leaves, and seeks contact and then resumes play when he returns. Which observations support classifying Nia's attachment as secure?",
+    "options": {
+      "A": "Nia uses her father as a secure base from which to explore the unfamiliar room.",
+      "B": "Nia's distress at separation by itself proves that her attachment is insecure.",
+      "C": "Nia is comforted by reunion and can return to exploration after contact is restored.",
+      "D": "Nia would be classified as secure only if she showed no reaction when her father left."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Securely attached infants typically use the caregiver as a secure base and are soothed on reunion, after which they can resume exploration. Separation distress alone does not establish insecurity, and complete indifference to departure and reunion is more consistent with avoidant behavior than with the defining secure pattern."
+  },
+  {
+    "concept": "object permanence",
+    "topic": "development",
+    "question": "A researcher shows 9-month-old Leo a toy duck, hides it under a cloth, and then secretly moves it beneath a box while Leo watches. Which findings would provide evidence that Leo represents the duck as continuing to exist when it is out of sight?",
+    "options": {
+      "A": "Leo loses interest as soon as the cloth covers the duck and makes no attempt to locate it.",
+      "B": "Leo lifts the cloth to search where he first saw the duck disappear.",
+      "C": "Leo smiles whenever the researcher squeaks a different visible toy beside the box.",
+      "D": "Leo reaches toward the box after watching the duck being transferred there."
+    },
+    "answers": ["B", "D"],
+    "explanation": "Searching beneath the cloth or at the observed new location indicates that Leo treats the hidden duck as still existing. Smiling at another visible toy does not test representation of the hidden object, while immediately abandoning the search provides no evidence of object permanence in this trial."
+  },
+  {
+    "concept": "theory of mind",
+    "topic": "development",
+    "question": "During a preschool study, Maya watches Sam place a sticker in a red drawer and leave; another child moves it to a blue drawer before Sam returns. Which responses would indicate that Maya is using theory of mind rather than merely reporting reality?",
+    "options": {
+      "A": "Maya predicts that Sam will first look in the red drawer because he did not see the move.",
+      "B": "Maya explains that she knows the sticker is blue-drawer location but Sam believes something different.",
+      "C": "Maya predicts that Sam will look in the blue drawer because that is where the sticker actually is.",
+      "D": "Maya says Sam may feel surprised after opening the red drawer and finding it empty."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "Theory of mind involves representing another person's knowledge, beliefs, and resulting emotions as distinct from one's own. Predicting a search in the original location, explicitly contrasting knowledge with Sam's false belief, and anticipating surprise all use Sam's mental state. Choosing the actual location ignores his informational perspective."
+  },
+  {
+    "concept": "conservation",
+    "topic": "development",
+    "question": "Seven-year-old Priya sees equal amounts of juice poured into identical cups; one serving is then poured into a taller, narrower glass. Which responses show that Priya understands Piagetian conservation in this situation?",
+    "options": {
+      "A": "Priya says the amount is unchanged because no juice was added or removed during the pour.",
+      "B": "Priya chooses the taller glass because its liquid level is higher and therefore must contain more.",
+      "C": "Priya decides the shorter glass has more because it is wider, without considering its height.",
+      "D": "Priya explains that pouring the juice back into the original cup would restore its earlier appearance."
+    },
+    "answers": ["A", "D"],
+    "explanation": "Conservation is shown by recognizing that quantity remains stable despite a change in appearance. Priya's identity reasoning (nothing added or removed) and reversibility reasoning (the transformation can be undone) both support conservation. Focusing on only height or only width reflects centration rather than conservation."
+  },
+  {
+    "concept": "scaffolding",
+    "topic": "development",
+    "question": "A teacher helps Jonah solve multistep fraction problems that he cannot yet complete alone but can manage with guidance. Which teacher actions exemplify effective scaffolding within Jonah's zone of proximal development?",
+    "options": {
+      "A": "The teacher completes every problem while Jonah watches, then assigns unrelated advanced algebra independently.",
+      "B": "The teacher models the first step and asks Jonah to explain and attempt the next step.",
+      "C": "The teacher gives targeted prompts when Jonah stalls rather than immediately supplying the answer.",
+      "D": "The teacher gradually removes hints as Jonah begins completing the sequence without assistance."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "Scaffolding provides contingent support for a task just beyond the learner's independent ability and fades that support as competence develops. Modeling, targeted prompts, and gradual withdrawal fit this process. Doing all the work and then assigning an unrelated task neither engages Jonah's emerging skill nor adjusts support to his performance."
+  },
+  {
+    "concept": "adolescent egocentrism",
+    "topic": "development",
+    "question": "After getting a small stain on her shirt before a school assembly, 15-year-old Elena insists that everyone in the auditorium will stare at it and remember it for weeks. Which interpretations fit adolescent egocentrism?",
+    "options": {
+      "A": "Elena is displaying an imaginary-audience belief that other people are intensely focused on her appearance.",
+      "B": "Elena is overestimating the degree to which her private concern is also central in other people's attention.",
+      "C": "Elena's reaction demonstrates object permanence because she remembers that the stain remains when covered.",
+      "D": "Elena's concern necessarily shows a secure attachment to peers because she values their approval."
+    },
+    "answers": ["A", "B"],
+    "explanation": "The imaginary audience is an aspect of adolescent egocentrism in which adolescents overestimate how much others notice and evaluate them. Elena projects her own intense focus on the stain onto the audience. The scenario does not assess object permanence or attachment classification."
+  },
+  {
+    "concept": "authoritative parenting",
+    "topic": "development",
+    "question": "When 13-year-old Amir misses curfew, his mother calmly asks what happened, restates the agreed rule, imposes a related loss of weekend privileges, and discusses how he can rebuild trust. Which features make her response authoritative?",
+    "options": {
+      "A": "She avoids setting any limit because preserving warmth requires complete adolescent freedom.",
+      "B": "She demands obedience without explanation and refuses to hear Amir's account of the evening.",
+      "C": "She combines a clear, enforced boundary with responsiveness to Amir's perspective.",
+      "D": "She uses reasoning and a proportionate consequence while maintaining a supportive relationship."
+    },
+    "answers": ["C", "D"],
+    "explanation": "Authoritative parenting combines high expectations and consistent limits with warmth, communication, and responsiveness. Hearing Amir's account, explaining the rule, and using a related consequence fit that pattern. No limits would be permissive, while unexplained inflexible control is characteristic of authoritarian parenting."
+  },
+  {
+    "concept": "puberty timing",
+    "topic": "development",
+    "question": "Researchers compare students who mature substantially earlier or later than same-age peers and find different adjustment patterns across sex and social context. Which conclusions are justified when interpreting puberty timing?",
+    "options": {
+      "A": "The psychological meaning of early or late maturation depends partly on peer norms and the adolescent's social environment.",
+      "B": "Being visibly out of step with peers can create stress even when the biological changes themselves are typical.",
+      "C": "Average associations between timing and adjustment do not imply that every early- or late-maturing adolescent will have the same outcome.",
+      "D": "Puberty timing determines adult personality completely, so later family and cultural influences can be ignored."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "Pubertal timing is relational: its effects depend on how an adolescent's development compares with peers and how that difference is interpreted in a particular social context. Being off-time can be stressful, but group-level patterns are probabilistic, not destiny. Development remains influenced by later relationships, culture, and experience."
+  },
+  {
+    "concept": "language acquisition",
+    "topic": "development",
+    "question": "Two toddlers hear the same number of adult words each day, but one experiences frequent back-and-forth exchanges while the other mainly hears television speech. Which result would best support the role of social interaction in language acquisition?",
+    "options": {
+      "A": "Both toddlers show identical vocabulary growth because only the total number of audible words can affect learning.",
+      "B": "The toddler in reciprocal exchanges shows faster vocabulary growth, especially for words adults contingently repeat and expand.",
+      "C": "The television-exposed toddler immediately masters grammar despite rarely directing attention to the speaker.",
+      "D": "Neither toddler learns any words until formal reading instruction begins in elementary school."
+    },
+    "answers": ["B"],
+    "explanation": "Stronger growth during contingent, reciprocal exchanges would support social-interaction accounts because shared attention, feedback, and adult expansions help children map and practice language. Equal word counts do not make passive and responsive exposure equivalent, and ordinary language learning begins well before formal reading instruction."
+  },
+  {
+    "concept": "moral reasoning",
+    "topic": "development",
+    "question": "In an interview, two students both reject cheating: Lila says she fears detention, while Marcus says cheating undermines rules that let classmates trust a shared evaluation system. Which interpretations follow from Kohlberg's framework?",
+    "options": {
+      "A": "Lila's punishment-focused explanation reflects preconventional reasoning even though her behavioral choice is socially approved.",
+      "B": "The identical decision not to cheat proves that Lila and Marcus are reasoning at the same moral level.",
+      "C": "Marcus's appeal to maintaining a trustworthy social system is more consistent with conventional reasoning.",
+      "D": "Kohlberg's approach classifies moral development solely by whether a person performs a good or bad act."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Kohlberg classified the reasoning used to justify a choice, not the choice alone. Avoiding punishment is preconventional, whereas emphasizing rules and social order is conventional. Thus two people can make the same decision for reasons associated with different stages; observed behavior by itself is insufficient for classification."
+  },
+  {
+    "concept": "lifespan plasticity",
+    "topic": "development",
+    "question": "After a stroke at age 68, Mr. Chen improves his speech through intensive practice, adapts conversations with communication aids, and draws on family support, although some word-finding difficulty remains. Which observations illustrate lifespan plasticity?",
+    "options": {
+      "A": "Improvement after structured practice shows that meaningful developmental change remains possible in later adulthood.",
+      "B": "Using communication aids shows that adaptation can involve compensating for loss rather than fully restoring the prior ability.",
+      "C": "The remaining difficulty shows that plasticity has limits and does not imply unlimited reversibility.",
+      "D": "Family support influencing recovery shows that plasticity reflects interaction between the person and the environment."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "Lifespan plasticity means development retains capacity for change while remaining constrained. Mr. Chen's practice-related gains, compensatory aids, persistent limits, and socially supported recovery all fit a contextual lifespan view. Plasticity includes improvement and adaptation; it does not mean that every loss can be completely reversed."
+  },
+  {
+    "concept": "major depressive episode",
+    "topic": "clinical-organizational",
+    "question": "For the past three weeks, Jordan has felt depressed nearly every day, has lost interest in basketball, sleeps poorly, struggles to concentrate, and is falling behind at work; no manic episode or substance cause is evident. Which conclusions are supported?",
+    "options": {
+      "A": "The combination of depressed mood or anhedonia with multiple persistent symptoms and impairment is consistent with a possible major depressive episode.",
+      "B": "Jordan cannot meet episode criteria because symptoms must continue without interruption for at least six months.",
+      "C": "A clinician should still assess severity, functional impact, medical or substance explanations, and suicide risk before finalizing diagnosis and care.",
+      "D": "Any three-week period of sadness automatically establishes major depressive disorder regardless of symptom pattern or history."
+    },
+    "answers": ["A", "C"],
+    "explanation": "A major depressive episode involves at least two weeks of depressed mood or loss of interest plus a sufficient cluster of symptoms causing distress or impairment. Jordan's presentation warrants evaluation, including risk and exclusion assessment. A six-month duration is not required, and an episode-like presentation does not automatically establish the full disorder without diagnostic context."
+  },
+  {
+    "concept": "panic disorder",
+    "topic": "clinical-organizational",
+    "question": "During the last two months, Asha has had several abrupt surges of intense fear with palpitations and breathlessness, including attacks that occurred without an obvious trigger; she now persistently worries about another attack and avoids commuting alone. Which features support panic disorder?",
+    "options": {
+      "A": "The diagnosis is established only if every attack occurs in the presence of one specific feared object.",
+      "B": "Recurrent unexpected panic attacks are central evidence for the disorder.",
+      "C": "A single surge of fear during an objectively dangerous event would be sufficient by itself.",
+      "D": "Her continuing worry and maladaptive avoidance after the attacks support the diagnosis."
+    },
+    "answers": ["B", "D"],
+    "explanation": "Panic disorder is characterized by recurrent unexpected panic attacks followed by persistent concern or maladaptive behavior related to further attacks. Attacks tied only to a specific cue may point toward another anxiety condition, and one fear response to actual danger is not enough to establish panic disorder."
+  },
+  {
+    "concept": "exposure therapy",
+    "topic": "clinical-organizational",
+    "question": "A client with a severe elevator fear works with a therapist to build a fear hierarchy, repeatedly approaches elevator-related situations, and remains in them long enough to learn that anxiety can decline without escape. Which procedures are consistent with exposure therapy?",
+    "options": {
+      "A": "The therapist and client begin with manageable steps and progress toward riding a crowded elevator.",
+      "B": "The client repeatedly enters safe elevator situations rather than relying on avoidance for immediate relief.",
+      "C": "The therapist teaches the client to leave at the first sign of anxiety so that fear is never experienced.",
+      "D": "The therapist reduces safety behaviors that would prevent the client from learning that the predicted catastrophe does not occur."
+    },
+    "answers": ["A", "B", "D"],
+    "explanation": "Exposure therapy involves systematic, repeated contact with feared but safe cues, often using a hierarchy, while limiting avoidance and safety behaviors that block corrective learning. Immediate escape can negatively reinforce avoidance and preserve the fear rather than allowing new learning about anxiety and expected harm."
+  },
+  {
+    "concept": "cognitive behavioral therapy",
+    "topic": "clinical-organizational",
+    "question": "After receiving mild criticism, Devon thinks, 'I failed once, so I am completely incompetent,' withdraws from colleagues, and feels worse. Which therapist actions are characteristic of cognitive behavioral therapy for this cycle?",
+    "options": {
+      "A": "The therapist helps Devon examine evidence for the all-or-nothing appraisal and generate a more balanced interpretation.",
+      "B": "The therapist treats the thought as unquestionably accurate because changing behavior alone is the only legitimate target.",
+      "C": "The therapist avoids structured goals or practice because CBT depends entirely on unrestricted free association.",
+      "D": "The therapist collaboratively plans a small behavioral experiment, such as seeking specific feedback and comparing the result with Devon's prediction."
+    },
+    "answers": ["A", "D"],
+    "explanation": "CBT links situations, cognitions, emotions, and behavior. Evaluating an overgeneralized thought and testing predictions through a behavioral experiment are core collaborative methods. CBT does not assume every automatic thought is accurate, and it commonly uses structure, goals, and between-session practice rather than relying solely on free association."
+  },
+  {
+    "concept": "inter-rater diagnosis",
+    "topic": "clinical-organizational",
+    "question": "Two clinicians independently interview the same 60 clients using a new diagnostic protocol. Their agreement is initially low, so the clinic adds operational criteria, structured prompts, and joint scoring practice. Which interpretations are appropriate?",
+    "options": {
+      "A": "High agreement after training would prove that every diagnosis is valid and identifies the true cause of each client's symptoms.",
+      "B": "The clinic can quantify inter-rater reliability by comparing how consistently the clinicians classify the same clients.",
+      "C": "Clear operational criteria and standardized prompts can reduce variation caused by clinicians interpreting ambiguous information differently.",
+      "D": "Training with practice cases and calibration feedback can improve consistent application of the protocol."
+    },
+    "answers": ["B", "C", "D"],
+    "explanation": "Inter-rater reliability concerns consistency across evaluators examining the same cases. Standardized criteria, structured interviews, and calibration can improve that consistency, which can be estimated with an appropriate agreement statistic. Reliability is necessary for useful assessment but does not by itself prove construct validity or causal accuracy."
+  },
+  {
+    "concept": "job analysis",
+    "topic": "clinical-organizational",
+    "question": "A hospital plans to hire emergency-department nurses and first observes shifts, interviews experienced nurses and supervisors, and catalogs critical incidents before designing selection tests. Which products of this job analysis are appropriate?",
+    "options": {
+      "A": "A defensible description of recurring tasks, responsibilities, and working conditions for the nursing role.",
+      "B": "Identification of job-relevant knowledge, skills, abilities, and other characteristics to target in selection.",
+      "C": "A list of personality traits favored by one manager even if they have no demonstrated connection to performance.",
+      "D": "A hiring cutoff chosen before the work is studied so that the later analysis can be adjusted to justify it."
+    },
+    "answers": ["A", "B"],
+    "explanation": "Job analysis systematically identifies what a job requires and the worker attributes linked to those requirements. Those findings can ground job descriptions and selection measures. An individual manager's unsupported preferences and a preselected cutoff retroactively justified by analysis are not defensible products of a job-focused procedure."
+  },
+  {
+    "concept": "organizational commitment",
+    "topic": "clinical-organizational",
+    "question": "A company surveys why employees remain. Rosa stays because she identifies with its mission, while Malik stays mainly because leaving would forfeit valuable benefits and disrupt his pension. Which interpretations of organizational commitment fit these cases?",
+    "options": {
+      "A": "Rosa's identification with the mission is primarily continuance commitment based on the economic cost of departure.",
+      "B": "Malik's concern about accumulated costs reflects affective commitment arising from emotional attachment.",
+      "C": "Rosa's desire to remain because she feels connected to the organization reflects affective commitment.",
+      "D": "Malik's calculation that leaving would be costly reflects continuance commitment."
+    },
+    "answers": ["C", "D"],
+    "explanation": "Affective commitment is an emotional attachment and desire to belong, illustrated by Rosa's identification with the mission. Continuance commitment reflects perceived costs of leaving, illustrated by Malik's benefits and pension concerns. The alternatives reverse these distinct bases for remaining with an organization."
+  },
+  {
+    "concept": "transformational leadership",
+    "topic": "clinical-organizational",
+    "question": "A department head explains a compelling vision for equitable service, models the values she asks employees to follow, challenges teams to redesign outdated procedures, and coaches staff according to individual needs. Which behaviors are transformational?",
+    "options": {
+      "A": "Connecting daily work to a motivating shared vision gives employees inspirational direction.",
+      "B": "Modeling the stated values can create idealized influence rather than relying only on formal authority.",
+      "C": "Encouraging teams to question assumptions and develop new procedures provides intellectual stimulation.",
+      "D": "Restricting leadership to exchanges of rewards for narrowly specified performance is the defining transformational behavior."
+    },
+    "answers": ["A", "B", "C"],
+    "explanation": "Transformational leaders motivate through vision, exemplary influence, intellectual stimulation, and individualized consideration. The head's vision, value modeling, redesign challenge, and coaching fit those elements. Reward-for-performance exchanges are more specifically associated with transactional leadership, although leaders may use both styles."
+  },
+  {
+    "concept": "burnout",
+    "topic": "clinical-organizational",
+    "question": "After months of excessive caseloads and little control over scheduling, a counselor feels emotionally depleted, has become cynical toward clients, and believes her work no longer makes a meaningful difference. Which interpretation best fits this pattern?",
+    "options": {
+      "A": "The pattern is ordinary short-term fatigue because burnout excludes changes in attitude or professional efficacy.",
+      "B": "The combination of exhaustion, cynicism or depersonalization, and reduced professional efficacy is characteristic of burnout.",
+      "C": "The counselor must have panic disorder because high workload always produces unexpected panic attacks.",
+      "D": "Burnout can be diagnosed solely from one difficult afternoon without considering duration or work context."
+    },
+    "answers": ["B"],
+    "explanation": "The scenario combines the major burnout dimensions: emotional exhaustion, cynical or depersonalized attitudes toward recipients of one's work, and diminished professional efficacy. Burnout is tied to chronic occupational stress rather than one hard day, and the information given does not establish recurrent unexpected panic attacks."
+  },
+  {
+    "concept": "selection validity",
+    "topic": "clinical-organizational",
+    "question": "A retailer pilots a structured hiring test with applicants and later compares test scores with independently rated job performance, while also checking whether the test samples tasks central to the role. Which evidence supports selection validity?",
+    "options": {
+      "A": "A meaningful relationship between applicants' test scores and their later performance provides criterion-related validity evidence.",
+      "B": "The test is valid merely because every applicant receives the same instructions and scoring procedure.",
+      "C": "Expert confirmation that test exercises represent important job tasks provides content-related validity evidence.",
+      "D": "A high inter-rater agreement score alone proves that the test predicts performance and covers the job domain."
+    },
+    "answers": ["A", "C"],
+    "explanation": "Selection validity concerns whether a measure supports job-relevant inferences. Prediction of later performance supplies criterion-related evidence, while representative sampling of job tasks supplies content-related evidence. Standardization and scorer agreement concern reliability and fairness of administration, but neither alone establishes predictive or content validity."
+  },
+  {
+    "concept": "psychological safety",
+    "topic": "clinical-organizational",
+    "question": "On a surgical team, the senior physician thanks a trainee for flagging a near miss, openly discusses her own recent error, invites dissent before decisions, and ensures that respectful questions do not trigger ridicule. Which observations indicate psychological safety?",
+    "options": {
+      "A": "The trainee can raise a possible mistake without expecting interpersonal punishment or humiliation.",
+      "B": "The leader's admission of fallibility signals that uncertainty and error can be discussed rather than concealed.",
+      "C": "Inviting dissent makes it safer for members to offer information that conflicts with the leader's initial view.",
+      "D": "Protecting respectful questions from ridicule supports interpersonal risk-taking, even though performance standards can remain high."
+    },
+    "answers": ["A", "B", "C", "D"],
+    "explanation": "Psychological safety is a shared belief that interpersonal risks such as asking questions, admitting errors, or disagreeing can be taken without humiliation or retaliation. Each behavior in the scenario supports that climate. It does not require low standards or freedom from accountability; candor and high performance expectations can coexist."
+  }
+]
