@@ -1,6 +1,8 @@
 import { getSql } from '../../../../../lib/db';
 import { QUIZ_DATA } from '../../../../../lib/quizData';
 import { rankWeaknesses } from '../../../../../lib/agentData';
+import { ensureTelegramMockSchema } from '../../../../../lib/telegramMockStore';
+import { summarizeTelegramMockSessions } from '../../../../../lib/telegramMockAnalytics';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,11 +31,12 @@ export async function GET(request) {
   try {
     const sql = getSql();
     await ensureAgentSchema(sql);
+    await ensureTelegramMockSchema(sql);
     const url = new URL(request.url);
     const rawLimit = Number(url.searchParams.get('attemptLimit') || 5000);
     const attemptLimit = Math.max(1, Math.min(10000, Number.isFinite(rawLimit) ? rawLimit : 5000));
 
-    const [attempts, chapterRows, overallRows, mockResults, pyqResults, stateRows, activeDays] = await Promise.all([
+    const [attempts, chapterRows, overallRows, mockResults, pyqResults, stateRows, activeDays, telegramSessions] = await Promise.all([
       sql`
         SELECT id, book_id, chapter_id, question_number, selected_letter,
                correct_letter, is_correct, created_at
@@ -68,6 +71,12 @@ export async function GET(request) {
       `,
       sql`SELECT key, value, updated_at FROM app_state ORDER BY key`,
       sql`SELECT DISTINCT DATE(created_at) AS day FROM attempts ORDER BY day DESC LIMIT 365`,
+      sql`
+        SELECT mock_date, status, score, max_marks, started_at, completed_at,
+               questions, result, web_result
+        FROM telegram_mock_sessions
+        ORDER BY mock_date DESC, started_at DESC
+      `,
     ]);
 
     const labels = chapterLabels();
@@ -97,6 +106,7 @@ export async function GET(request) {
       },
       mocks: mockResults,
       pyqs: pyqResults,
+      telegramMsq: summarizeTelegramMockSessions(telegramSessions),
       state: Object.fromEntries(stateRows.map((row) => [row.key, row.value])),
       stateUpdatedAt: Object.fromEntries(stateRows.map((row) => [row.key, row.updated_at])),
     }, { headers: { 'Cache-Control': 'no-store, max-age=0' } });
