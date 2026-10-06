@@ -61,9 +61,10 @@ test('summarizeTelegramMockSessions exposes safe performance aggregates without 
 });
 
 test('summarizeTelegramMockSessions treats missing results as ungraded and returns zero-safe metrics', () => {
-  const summary = summarizeTelegramMockSessions([{ mock_date: '2026-10-06', status: 'in_progress', questions: [] }]);
+  const summary = summarizeTelegramMockSessions([{ mock_date: new Date('2026-10-06T00:00:00.000Z'), status: 'in_progress', questions: [{ id: 'q1', type: 'MSQ', marks: 2, topic: 'memory' }] }]);
   assert.equal(summary.summary.completed, 0);
   assert.equal(summary.summary.scorePercentage, null);
   assert.equal(summary.summary.accuracy, null);
-  assert.deepEqual(summary.attempts[0].formatBreakdown, {});
+  assert.equal(summary.attempts[0].date, '2026-10-06');
+  assert.deepEqual(summary.attempts[0].formatBreakdown, { MSQ: { total: 1, correct: null, marks: null, maxMarks: 2 } });
 });
