@@ -9,6 +9,7 @@ import {
   shouldRecoverMissingQuestion,
   startMockDisposition,
 } from '../lib/telegramMockService.js';
+import { XH_C5_DAILY_MSQ_BANK_VERSION } from '../lib/telegramMockGenerator.js';
 
 test('isAuthorizedPrivateSubscriber rejects stale users and non-private chat IDs', () => {
   assert.equal(isAuthorizedPrivateSubscriber({ user_id: '123', chat_id: '123' }, '123'), true);
@@ -29,7 +30,7 @@ test('daily invitation disposition never creates a second same-day session', () 
   assert.equal(dailyInviteDisposition(null), 'create');
   assert.equal(dailyInviteDisposition({ status: 'completed', web_token: 'done' }), 'skip');
   assert.equal(dailyInviteDisposition({
-    status: 'in_progress', web_token: 'active-link', questions: [{ bankVersion: 2 }],
+    status: 'in_progress', web_token: 'active-link', questions: [{ bankVersion: XH_C5_DAILY_MSQ_BANK_VERSION }],
   }), 'resend-web-link');
   assert.equal(dailyInviteDisposition({
     status: 'in_progress', web_token: 'stale-link', questions: [{ id: 'legacy-question' }],

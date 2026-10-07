@@ -24,6 +24,21 @@ test('daily XH-C5 bank is entirely valid all-or-nothing MSQs', () => {
   }
 });
 
+test('bank includes a substantial authored GATE-hard tier with close distractors', () => {
+  const hard = XH_C5_DAILY_MSQ_QUESTIONS.filter((q) => q.challengeLevel === 'gate-hard-v1');
+  assert.equal(hard.length, 44);
+  assert.equal(new Set(hard.map((q) => q.id)).size, hard.length);
+  assert.equal(new Set(hard.map((q) => q.topic)).size, 11);
+  for (const q of hard) {
+    assert.equal([2, 3].includes(q.answers.length), true, q.id);
+    assert.doesNotMatch(
+      Object.values(q.options).join(' '),
+      /\b(always|never|all|only|automatically|proves?|guarantees?|impossible|must|cannot|none)\b/i,
+      q.id,
+    );
+  }
+});
+
 test('bank covers every active GATE XH-C5 topic and can supply every empirical cardinality', () => {
   const topics = new Set(XH_C5_DAILY_MSQ_QUESTIONS.map((q) => q.topic));
   for (const topic of [

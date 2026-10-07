@@ -11,10 +11,23 @@ import {
   releaseTelegramMockUpdate,
   submitTelegramMockSelection,
   findTelegramMockSessionByWebToken,
+  loadUsedQuestionIds,
   saveTelegramMockWebProgress,
   submitTelegramMockWebSession,
   toggleTelegramMockSelection,
 } from '../lib/telegramMockStore.js';
+
+test('loadUsedQuestionIds scopes exclusions to the current bank version', async () => {
+  const calls = [];
+  const sql = async (strings, ...values) => {
+    calls.push({ text: strings.join('?'), values });
+    return [{ id: 'q-current' }];
+  };
+  const ids = await loadUsedQuestionIds(sql, 'chat-1', 3);
+  assert.deepEqual(ids, ['q-current']);
+  assert.match(calls[0].text, /item->>'bankVersion'/);
+  assert.equal(calls[0].values.includes('3'), true);
+});
 
 test('advanceTelegramMockSession guards the update with the expected current index', async () => {
   const calls = [];
