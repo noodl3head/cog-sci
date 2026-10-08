@@ -14,7 +14,8 @@ import {
 } from '../../../lib/mockAnalytics';
 import {
   addMockHistory, addRevisionItem, clearMockProgress, getRevisionList,
-  getRecentlyUsedMockQuestionIds, loadMockProgress, rememberGeneratedMockQuestions,
+  getNextGeneratedMockMsqCycleIndex, getRecentlyUsedMockQuestionIds,
+  loadMockProgress, rememberGeneratedMockQuestions,
   saveMockProgress, setLatestRevisionSheet,
 } from '../../../lib/clientStudyStore';
 
@@ -79,12 +80,17 @@ export default function MockQuizPage() {
 
   // Generate quiz once per mount
   const initialQuiz = useMemo(() => {
+    const saved = loadMockProgress(id, selectedTopicKey);
+    if (saved?.quiz?.section1?.length === 20 && saved?.quiz?.section2?.length === 15) {
+      return saved.quiz;
+    }
     if (id === 'generated') {
       const selectedTopics = selectedTopicKey.split(',').filter(Boolean);
       const recentlyUsedIds = getRecentlyUsedMockQuestionIds();
+      const msqCycleIndex = getNextGeneratedMockMsqCycleIndex();
       return selectedTopics.length
-        ? generateTopicMock(selectedTopics, recentlyUsedIds)
-        : generateRandomMock(recentlyUsedIds);
+        ? generateTopicMock(selectedTopics, recentlyUsedIds, msqCycleIndex)
+        : generateRandomMock(recentlyUsedIds, msqCycleIndex);
     }
     const n = parseInt(id, 10);
     if (n >= 1 && n <= 5) return generatePresetMock(n - 1);

@@ -3,12 +3,12 @@ import assert from 'node:assert/strict';
 import { correctOptionCountFor, gateMsqChallengeScore, selectDailyXhC5Msqs } from '../lib/xhC5DailyMsqCore.js';
 
 const candidates = [
-  { id: 'one', type: 'MSQ', topic: 'memory', answers: ['A'] },
-  { id: 'two-a', type: 'MSQ', topic: 'memory', answers: ['A', 'B'] },
-  { id: 'two-b', type: 'MSQ', topic: 'learning', answers: ['A', 'C'] },
-  { id: 'three-a', type: 'MSQ', topic: 'memory', answers: ['A', 'B', 'C'] },
-  { id: 'three-b', type: 'MSQ', topic: 'learning', answers: ['B', 'C', 'D'] },
-  { id: 'four', type: 'MSQ', topic: 'memory', answers: ['A', 'B', 'C', 'D'] },
+  { id: 'one', type: 'MSQ', topic: 'memory', answers: ['A'], msqType: 'category-membership' },
+  { id: 'two-a', type: 'MSQ', topic: 'memory', answers: ['A', 'B'], msqType: 'category-membership' },
+  { id: 'two-b', type: 'MSQ', topic: 'learning', answers: ['A', 'C'], msqType: 'theory-audit' },
+  { id: 'three-a', type: 'MSQ', topic: 'memory', answers: ['A', 'B', 'C'], msqType: 'adjacent-construct' },
+  { id: 'three-b', type: 'MSQ', topic: 'learning', answers: ['B', 'C', 'D'], msqType: 'category-membership' },
+  { id: 'four', type: 'MSQ', topic: 'memory', answers: ['A', 'B', 'C', 'D'], msqType: 'theory-audit' },
 ];
 
 test('correctOptionCountFor uses the empirical 6/56/40/1 weight scale', () => {
@@ -42,7 +42,7 @@ test('gate challenge scoring penalizes giveaway wording and rewards parallel pla
 
 test('daily selector prefers the strongest challenge band before topic weighting', () => {
   const nuanced = {
-    id: 'nuanced', type: 'MSQ', topic: 'memory', answers: ['A', 'C'],
+    id: 'nuanced', type: 'MSQ', topic: 'memory', answers: ['A', 'C'], msqType: 'category-membership',
     options: {
       A: 'Performance may depend on the match between encoding operations and the final retrieval demand.',
       B: 'Performance may depend on initial item strength even when the retrieval demand is unchanged.',
@@ -51,7 +51,7 @@ test('daily selector prefers the strongest challenge band before topic weighting
     },
   };
   const giveaway = {
-    id: 'giveaway', type: 'MSQ', topic: 'memory', answers: ['A', 'C'],
+    id: 'giveaway', type: 'MSQ', topic: 'memory', answers: ['A', 'C'], msqType: 'category-membership',
     options: {
       A: 'Encoding operations can influence later retrieval.',
       B: 'Encoding operations never influence memory under any circumstances.',
@@ -66,7 +66,7 @@ test('daily selector prefers the strongest challenge band before topic weighting
 });
 test('daily selector gives authored GATE-hard items priority over generic bank items', () => {
   const authoredHard = {
-    id: 'authored-hard', type: 'MSQ', topic: 'memory', answers: ['A', 'C'], challengeLevel: 'gate-hard-v1',
+    id: 'authored-hard', type: 'MSQ', topic: 'memory', answers: ['A', 'C'], msqType: 'category-membership', challengeLevel: 'gate-hard-v1',
     options: {
       A: 'The encoding manipulation may affect later access when the retrieval cue reinstates the same operation.',
       B: 'The encoding manipulation may affect later access because one condition provides a modestly stronger trace.',
@@ -75,7 +75,7 @@ test('daily selector gives authored GATE-hard items priority over generic bank i
     },
   };
   const generic = {
-    id: 'generic', type: 'MSQ', topic: 'memory', answers: ['A', 'C'],
+    id: 'generic', type: 'MSQ', topic: 'memory', answers: ['A', 'C'], msqType: 'category-membership',
     options: {
       A: 'The procedure may influence encoding under the stated test conditions.',
       B: 'The procedure may influence retrieval under the stated test conditions.',
