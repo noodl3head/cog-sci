@@ -40,6 +40,23 @@ test('gate challenge scoring penalizes giveaway wording and rewards parallel pla
   assert.equal(gateMsqChallengeScore(nuanced) > gateMsqChallengeScore(obvious), true);
 });
 
+test('gate challenge scoring does not treat concise GATE-style options as weak', () => {
+  const concise = {
+    question: 'Which of the following are measures of central tendency?',
+    options: { A: 'Mean', B: 'Median', C: 'Mode', D: 'Variance' },
+  };
+  const verbose = {
+    question: 'A researcher considers several descriptive summaries. Which listed summaries can be interpreted as measures that identify a central or typical value in the observed distribution?',
+    options: {
+      A: 'The arithmetic mean calculated from all observed scores',
+      B: 'The median defined by the middle ordered observation',
+      C: 'The mode defined by the most frequent observed value',
+      D: 'The variance calculated from squared deviations around the mean',
+    },
+  };
+  assert.equal(gateMsqChallengeScore(concise) >= gateMsqChallengeScore(verbose), true);
+});
+
 test('daily selector prefers the strongest challenge band before topic weighting', () => {
   const nuanced = {
     id: 'nuanced', type: 'MSQ', topic: 'memory', answers: ['A', 'C'], msqType: 'category-membership',

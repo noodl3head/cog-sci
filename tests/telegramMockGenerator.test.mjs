@@ -32,7 +32,7 @@ test('deriveTopicWeights maps real chapter attempts through the playable questio
 });
 
 test('generateDailyTelegramMock builds ten fresh PYQ-profiled XH-C5 MSQs only', () => {
-  assert.equal(XH_C5_DAILY_MSQ_BANK_VERSION, 4);
+  assert.equal(XH_C5_DAILY_MSQ_BANK_VERSION, 5);
   const mock = generateDailyTelegramMock({
     'research-methods-statistics': 5,
     psychometrics: 5,

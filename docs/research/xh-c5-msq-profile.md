@@ -42,6 +42,8 @@ Common wording includes “Which of the following is/are…”, “Which … is/
 - Do not use “all of the above” or “none of the above.”
 - Avoid wording that leaks the number of correct options.
 - Use one-mark questions for direct knowledge/classification and two-mark questions for scenarios, conditional statements, multiple concepts, or method selection.
+- Match the PYQ surface style as well as its concepts: prefer direct “Which…” stems, ordinary textbook vocabulary, and short parallel options. Difficulty should come from construct boundaries, direction, scope, or application rather than verbal length.
+- The 2021–2026 PYQs average 15.9 stem words and 41.6 words including options. The delivered authored bank is kept close to that profile rather than penalizing short noun-phrase options.
 - The PYQ 6/56/40/1 distribution is a **generator target**, sampled per question; it is never displayed to the learner and does not impose a fixed pattern on a ten-question mock.
 
 ## Authored bank coverage
@@ -50,16 +52,18 @@ The daily bank uses all active XH-C5 topic IDs and deliberately includes every c
 
 | Topic | Questions |
 | --- | ---: |
-| research-methods-statistics | 12 |
-| psychometrics | 11 |
-| biological-evolutionary | 11 |
-| perception-learning-memory | 11 |
-| cognition | 11 |
-| personality | 11 |
-| motivation-emotion-stress | 11 |
-| social | 11 |
-| development | 11 |
-| clinical-organizational | 11 |
-| applications | 11 |
+| research-methods-statistics | 17 |
+| psychometrics | 16 |
+| biological-evolutionary | 15 |
+| perception-learning-memory | 16 |
+| cognition | 15 |
+| personality | 15 |
+| motivation-emotion-stress | 15 |
+| social | 16 |
+| development | 15 |
+| clinical-organizational | 16 |
+| applications | 15 |
 
 The authored bank uses 1-, 2-, 3-, and rare 4-correct MSQs; the sampler, rather than a visible quota, determines daily cardinalities.
+
+After the PYQ-style revision, the 171 delivered items average **19.7 stem words** and **49.8 total words**, with stems ranging from 6–33 words and complete items from 32–71 words.
