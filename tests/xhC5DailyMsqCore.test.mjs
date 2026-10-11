@@ -5,6 +5,7 @@ import { correctOptionCountFor, gateMsqChallengeScore, selectDailyXhC5Msqs } fro
 const candidates = [
   { id: 'one', type: 'MSQ', topic: 'memory', answers: ['A'], msqType: 'category-membership' },
   { id: 'two-a', type: 'MSQ', topic: 'memory', answers: ['A', 'B'], msqType: 'category-membership' },
+  { id: 'two-c', type: 'MSQ', topic: 'memory', answers: ['B', 'D'], msqType: 'category-membership' },
   { id: 'two-b', type: 'MSQ', topic: 'learning', answers: ['A', 'C'], msqType: 'theory-audit' },
   { id: 'three-a', type: 'MSQ', topic: 'memory', answers: ['A', 'B', 'C'], msqType: 'adjacent-construct' },
   { id: 'three-b', type: 'MSQ', topic: 'learning', answers: ['B', 'C', 'D'], msqType: 'category-membership' },
@@ -38,6 +39,27 @@ test('gate challenge scoring penalizes giveaway wording and rewards parallel pla
     },
   };
   assert.equal(gateMsqChallengeScore(nuanced) > gateMsqChallengeScore(obvious), true);
+});
+
+test('hard-tier metadata cannot rescue giveaway wording in the challenge score', () => {
+  const nuanced = {
+    options: {
+      A: 'The association may reflect common method variance rather than the proposed construct relation.',
+      B: 'The association may differ if the criterion samples another part of the construct domain.',
+      C: 'The observed pattern supports convergence while leaving discriminant evidence unresolved.',
+      D: 'The observed pattern can also arise when both measures share response-style variance.',
+    },
+  };
+  const labelledGiveaway = {
+    challengeLevel: 'gate-hard-v1',
+    options: {
+      A: 'The association provides some validity evidence.',
+      B: 'The association proves the test is valid in every population.',
+      C: 'The criterion concerns a related construct.',
+      D: 'One correlation guarantees all rival explanations are false.',
+    },
+  };
+  assert.equal(gateMsqChallengeScore(nuanced) > gateMsqChallengeScore(labelledGiveaway), true);
 });
 
 test('gate challenge scoring does not treat concise GATE-style options as weak', () => {

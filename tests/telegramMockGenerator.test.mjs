@@ -32,7 +32,7 @@ test('deriveTopicWeights maps real chapter attempts through the playable questio
 });
 
 test('generateDailyTelegramMock builds ten fresh PYQ-profiled XH-C5 MSQs only', () => {
-  assert.equal(XH_C5_DAILY_MSQ_BANK_VERSION, 5);
+  assert.equal(XH_C5_DAILY_MSQ_BANK_VERSION, 6);
   const mock = generateDailyTelegramMock({
     'research-methods-statistics': 5,
     psychometrics: 5,
@@ -48,6 +48,126 @@ test('generateDailyTelegramMock builds ten fresh PYQ-profiled XH-C5 MSQs only', 
   assert.equal(mock.every((question) => question.bankVersion === XH_C5_DAILY_MSQ_BANK_VERSION), true);
   assert.equal(mock.every((question) => msqTypesForCycle(1).includes(question.msqType)), true);
   assert.deepEqual([...new Set(mock.map((question) => question.msqType))].sort(), [...msqTypesForCycle(1)].sort());
+});
+
+test('Sphinx long-run selection matches the official two-mark MSQ proportion', () => {
+  const topicWeights = Object.fromEntries([
+    'research-methods-statistics', 'psychometrics', 'biological-evolutionary',
+    'perception-learning-memory', 'cognition', 'personality',
+    'motivation-emotion-stress', 'social', 'development',
+    'clinical-organizational', 'applications',
+  ].map((topic) => [topic, 1]));
+  let seed = 20261010;
+  const rng = () => ((seed = ((seed * 1664525) + 1013904223) >>> 0) / 4294967296);
+  let twoMark = 0;
+  let total = 0;
+  for (let attempt = 0; attempt < 1000; attempt += 1) {
+    const mock = generateDailyTelegramMock(topicWeights, [], rng, attempt % 5);
+    twoMark += mock.filter((question) => question.marks === 2).length;
+    total += mock.length;
+  }
+  const share = twoMark / total;
+  assert.equal(share >= 0.82 && share <= 0.92, true, `two-mark share ${share}`);
+});
+
+test('Sphinx long-run selection matches the official negative-stem proportion', () => {
+  const topicWeights = Object.fromEntries([
+    'research-methods-statistics', 'psychometrics', 'biological-evolutionary',
+    'perception-learning-memory', 'cognition', 'personality',
+    'motivation-emotion-stress', 'social', 'development',
+    'clinical-organizational', 'applications',
+  ].map((topic) => [topic, 1]));
+  let seed = 20261011;
+  const rng = () => ((seed = ((seed * 1664525) + 1013904223) >>> 0) / 4294967296);
+  let negative = 0;
+  let total = 0;
+  for (let attempt = 0; attempt < 1000; attempt += 1) {
+    const mock = generateDailyTelegramMock(topicWeights, [], rng, attempt % 5);
+    negative += mock.filter((question) => /\b(NOT|EXCEPT|incorrect|false)\b/i.test(question.question)).length;
+    total += mock.length;
+  }
+  const share = negative / total;
+  assert.equal(share >= 0.12 && share <= 0.24, true, `negative-stem share ${share}`);
+});
+
+test('Sphinx long-run answer cardinalities stay close to the official MSQ profile', () => {
+  const topicWeights = Object.fromEntries([
+    'research-methods-statistics', 'psychometrics', 'biological-evolutionary',
+    'perception-learning-memory', 'cognition', 'personality',
+    'motivation-emotion-stress', 'social', 'development',
+    'clinical-organizational', 'applications',
+  ].map((topic) => [topic, 1]));
+  let seed = 20261013;
+  const rng = () => ((seed = ((seed * 1664525) + 1013904223) >>> 0) / 4294967296);
+  const counts = { 1: 0, 2: 0, 3: 0, 4: 0 };
+  let total = 0;
+  for (let attempt = 0; attempt < 1000; attempt += 1) {
+    for (const question of generateDailyTelegramMock(topicWeights, [], rng, attempt % 5)) {
+      counts[question.answers.length] += 1;
+      total += 1;
+    }
+  }
+  const shares = Object.fromEntries(Object.entries(counts).map(([key, value]) => [key, value / total]));
+  assert.equal(shares[1] >= 0.03 && shares[1] <= 0.09, true, `one-correct share ${shares[1]}`);
+  assert.equal(shares[2] >= 0.48 && shares[2] <= 0.61, true, `two-correct share ${shares[2]}`);
+  assert.equal(shares[3] >= 0.32 && shares[3] <= 0.45, true, `three-correct share ${shares[3]}`);
+  assert.equal(shares[4] <= 0.02, true, `four-correct share ${shares[4]}`);
+});
+
+test('Sphinx includes a substantial reviewed hard tier in every long-run cycle mix', () => {
+  const topicWeights = Object.fromEntries([
+    'research-methods-statistics', 'psychometrics', 'biological-evolutionary',
+    'perception-learning-memory', 'cognition', 'personality',
+    'motivation-emotion-stress', 'social', 'development',
+    'clinical-organizational', 'applications',
+  ].map((topic) => [topic, 1]));
+  let seed = 20261012;
+  const rng = () => ((seed = ((seed * 1664525) + 1013904223) >>> 0) / 4294967296);
+  const byCycle = Array.from({ length: 5 }, () => ({ hard: 0, total: 0 }));
+  for (let attempt = 0; attempt < 1000; attempt += 1) {
+    const cycleIndex = attempt % 5;
+    const mock = generateDailyTelegramMock(topicWeights, [], rng, cycleIndex);
+    byCycle[cycleIndex].hard += mock.filter((question) => question.challengeLevel === 'gate-hard-v1').length;
+    byCycle[cycleIndex].total += mock.length;
+  }
+  for (let cycleIndex = 0; cycleIndex < byCycle.length; cycleIndex += 1) {
+    const share = byCycle[cycleIndex].hard / byCycle[cycleIndex].total;
+    assert.equal(share >= 0.30, true, `cycle ${cycleIndex} hard-tier share ${share}`);
+  }
+});
+
+test('Sphinx preserves the PYQ profile across a realistic recent-question exclusion history', () => {
+  const topicWeights = Object.fromEntries([
+    'research-methods-statistics', 'psychometrics', 'biological-evolutionary',
+    'perception-learning-memory', 'cognition', 'personality',
+    'motivation-emotion-stress', 'social', 'development',
+    'clinical-organizational', 'applications',
+  ].map((topic) => [topic, 1]));
+  let seed = 20261014;
+  const rng = () => ((seed = ((seed * 1664525) + 1013904223) >>> 0) / 4294967296);
+  const recentMocks = [];
+  const counts = { total: 0, twoMark: 0, negative: 0, hard: 0, cardinality: { 1: 0, 2: 0, 3: 0, 4: 0 } };
+  for (let attempt = 0; attempt < 15; attempt += 1) {
+    const usedIds = recentMocks.flat();
+    const mock = generateDailyTelegramMock(topicWeights, usedIds, rng, attempt % 5);
+    recentMocks.push(mock.map((question) => question.id));
+    if (recentMocks.length > 5) recentMocks.shift();
+    for (const question of mock) {
+      counts.total += 1;
+      counts.twoMark += question.marks === 2;
+      counts.negative += /\b(NOT|EXCEPT|incorrect|false)\b/i.test(question.question);
+      counts.hard += question.challengeLevel === 'gate-hard-v1';
+      counts.cardinality[question.answers.length] += 1;
+    }
+  }
+  const twoMarkShare = counts.twoMark / counts.total;
+  const negativeShare = counts.negative / counts.total;
+  const hardShare = counts.hard / counts.total;
+  const fourCorrectShare = counts.cardinality[4] / counts.total;
+  assert.equal(twoMarkShare >= 0.82 && twoMarkShare <= 0.92, true, `two-mark share ${twoMarkShare}`);
+  assert.equal(negativeShare >= 0.12 && negativeShare <= 0.24, true, `negative-stem share ${negativeShare}`);
+  assert.equal(hardShare >= 0.30, true, `hard-tier share ${hardShare}`);
+  assert.equal(fourCorrectShare <= 0.02, true, `four-correct share ${fourCorrectShare}`);
 });
 
 test('Sphinx advances to the next four MSQ types on each India-date mock', () => {

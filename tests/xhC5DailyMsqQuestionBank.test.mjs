@@ -1,6 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { XH_C5_DAILY_MSQ_QUESTIONS } from '../lib/xhC5DailyMsqQuestionBank.js';
+import { XH_C5_DAILY_MSQ_QUESTIONS as XH_C5_BASE_MSQS } from '../lib/xhC5DailyMsqQuestionBankData.js';
+import { XH_C5_HARD_MSQ_PART_1 } from '../lib/xhC5HardMsqPart1.js';
+import { XH_C5_HARD_MSQ_PART_2 } from '../lib/xhC5HardMsqPart2.js';
+import { XH_C5_HARD_MSQ_PART_3 } from '../lib/xhC5HardMsqPart3.js';
+import { XH_C5_HARD_MSQ_PART_4 } from '../lib/xhC5HardMsqPart4.js';
+import { XH_C5_MSQ_ARCHETYPE_EXPANSION } from '../lib/xhC5MsqArchetypeExpansion.js';
 import { XH_C5_PYQ_STYLE_OVERRIDES_BASE_1 } from '../lib/xhC5PyqStyleOverridesBase1.js';
 import { XH_C5_PYQ_STYLE_OVERRIDES_BASE_2 } from '../lib/xhC5PyqStyleOverridesBase2.js';
 import { XH_C5_PYQ_STYLE_OVERRIDES_BASE_3 } from '../lib/xhC5PyqStyleOverridesBase3.js';
@@ -30,6 +36,15 @@ const ALL_STYLE_OVERRIDES = {
   ...XH_C5_PYQ_STYLE_OVERRIDES_HARD_3,
   ...XH_C5_PYQ_STYLE_OVERRIDES_HARD_4,
 };
+
+const SOURCE_QUESTIONS = [
+  ...XH_C5_HARD_MSQ_PART_1,
+  ...XH_C5_HARD_MSQ_PART_2,
+  ...XH_C5_HARD_MSQ_PART_3,
+  ...XH_C5_HARD_MSQ_PART_4,
+  ...XH_C5_MSQ_ARCHETYPE_EXPANSION,
+  ...XH_C5_BASE_MSQS,
+];
 
 test('daily XH-C5 bank is entirely valid all-or-nothing MSQs', () => {
   assert.ok(XH_C5_DAILY_MSQ_QUESTIONS.length >= 120);
@@ -77,13 +92,36 @@ test('authored MSQs match the concise vocabulary and presentation of XH-C5 PYQs'
   assert.equal(academicFramingCount <= 12, true, `academic framing count ${academicFramingCount}`);
 });
 
+test('authored MSQs do not expose incorrect options through isolated absolute wording', () => {
+  const cue = /\b(always|never|only|merely|automatically|guarantees?|proves?|impossible|must|cannot|every|none|necessarily|regardless|entirely|sole)\b/i;
+  const exposed = XH_C5_DAILY_MSQ_QUESTIONS.filter((question) => {
+    const cued = Object.entries(question.options)
+      .filter(([, option]) => cue.test(option))
+      .map(([letter]) => letter);
+    return cued.length === 1 && !question.answers.includes(cued[0]);
+  });
+  const share = exposed.length / XH_C5_DAILY_MSQ_QUESTIONS.length;
+  assert.equal(share <= 0.05, true, `isolated giveaway share ${share}: ${exposed.map((q) => q.id).join(', ')}`);
+});
+
 test('PYQ-style overrides cover every delivered MSQ ID exactly once with no unknown entries', () => {
   const questionIds = XH_C5_DAILY_MSQ_QUESTIONS.map((question) => question.id).sort();
   const overrideIds = Object.keys(ALL_STYLE_OVERRIDES).sort();
-  assert.equal(questionIds.length, 171);
+  assert.equal(questionIds.length, 179);
   assert.equal(new Set(questionIds).size, questionIds.length);
-  assert.equal(overrideIds.length, 171);
+  assert.equal(overrideIds.length, 179);
   assert.deepEqual(overrideIds, questionIds);
+});
+
+test('text and challenge overrides preserve source answers, marks, and topics', () => {
+  const sourceById = new Map(SOURCE_QUESTIONS.map((question) => [question.id, question]));
+  for (const question of XH_C5_DAILY_MSQ_QUESTIONS) {
+    const source = sourceById.get(question.id);
+    assert.ok(source, `missing source for ${question.id}`);
+    assert.deepEqual(question.answers, source.answers, `${question.id} answers`);
+    assert.equal(question.marks, source.marks, `${question.id} marks`);
+    assert.equal(question.topic, source.topic, `${question.id} topic`);
+  }
 });
 
 test('option-level explanation verdicts agree with every stored MSQ answer key', () => {
@@ -98,11 +136,11 @@ test('option-level explanation verdicts agree with every stored MSQ answer key',
 
 test('bank includes a substantial authored GATE-hard tier with close distractors', () => {
   const hard = XH_C5_DAILY_MSQ_QUESTIONS.filter((q) => q.challengeLevel === 'gate-hard-v1');
-  assert.equal(hard.length, 44);
+  assert.equal(hard.length, 52);
   assert.equal(new Set(hard.map((q) => q.id)).size, hard.length);
   assert.equal(new Set(hard.map((q) => q.topic)).size, 11);
   for (const q of hard) {
-    assert.equal([2, 3].includes(q.answers.length), true, q.id);
+    assert.equal([2, 3, 4].includes(q.answers.length), true, q.id);
   }
 });
 

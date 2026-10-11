@@ -17,7 +17,7 @@ import {
   toggleTelegramMockSelection,
 } from '../lib/telegramMockStore.js';
 
-test('loadUsedQuestionIds scopes exclusions to the current bank version', async () => {
+test('loadUsedQuestionIds excludes stable IDs from the latest five sessions across bank versions', async () => {
   const calls = [];
   const sql = async (strings, ...values) => {
     calls.push({ text: strings.join('?'), values });
@@ -25,8 +25,10 @@ test('loadUsedQuestionIds scopes exclusions to the current bank version', async 
   };
   const ids = await loadUsedQuestionIds(sql, 'chat-1', 3);
   assert.deepEqual(ids, ['q-current']);
-  assert.match(calls[0].text, /item->>'bankVersion'/);
-  assert.equal(calls[0].values.includes('3'), true);
+  assert.doesNotMatch(calls[0].text, /item->>'bankVersion'/);
+  assert.match(calls[0].text, /ORDER BY mock_date DESC/);
+  assert.match(calls[0].text, /LIMIT 5/);
+  assert.deepEqual(calls[0].values, ['chat-1']);
 });
 
 test('advanceTelegramMockSession guards the update with the expected current index', async () => {

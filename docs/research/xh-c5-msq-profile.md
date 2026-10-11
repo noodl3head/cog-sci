@@ -45,6 +45,9 @@ Common wording includes “Which of the following is/are…”, “Which … is/
 - Match the PYQ surface style as well as its concepts: prefer direct “Which…” stems, ordinary textbook vocabulary, and short parallel options. Difficulty should come from construct boundaries, direction, scope, or application rather than verbal length.
 - The 2021–2026 PYQs average 15.9 stem words and 41.6 words including options. The delivered authored bank is kept close to that profile rather than penalizing short noun-phrase options.
 - The PYQ 6/56/40/1 distribution is a **generator target**, sampled per question; it is never displayed to the learner and does not impose a fixed pattern on a ten-question mock.
+- Match the PYQ marks profile at delivery time. Because finite topic/archetype pools create fallbacks, selector weights are calibrated against generated mocks rather than copied mechanically from the raw 13/90 paper counts.
+- Do not expose a false option through a lone absolute cue such as “proves”, “every”, “sole”, or “cannot”. Incorrect options should fail through an adjacent construct, direction, condition, or scope boundary.
+- Every four-archetype cycle must deliver a substantial reviewed-hard tier; bank-level hard-item counts alone are insufficient because sparse cycles can otherwise become much easier.
 
 ## Authored bank coverage
 
@@ -52,18 +55,20 @@ The daily bank uses all active XH-C5 topic IDs and deliberately includes every c
 
 | Topic | Questions |
 | --- | ---: |
-| research-methods-statistics | 17 |
-| psychometrics | 16 |
+| research-methods-statistics | 18 |
+| psychometrics | 17 |
 | biological-evolutionary | 15 |
-| perception-learning-memory | 16 |
+| perception-learning-memory | 17 |
 | cognition | 15 |
-| personality | 15 |
-| motivation-emotion-stress | 15 |
-| social | 16 |
-| development | 15 |
-| clinical-organizational | 16 |
+| personality | 16 |
+| motivation-emotion-stress | 16 |
+| social | 17 |
+| development | 16 |
+| clinical-organizational | 17 |
 | applications | 15 |
 
 The authored bank uses 1-, 2-, 3-, and rare 4-correct MSQs; the sampler, rather than a visible quota, determines daily cardinalities.
 
-After the PYQ-style revision, the 171 delivered items average **19.7 stem words** and **49.8 total words**, with stems ranging from 6–33 words and complete items from 32–71 words.
+After the difficulty-fidelity revision, the 179 delivered items average **19.6 stem words** and **51.4 total words**, with stems ranging from 6–33 words and complete items from 34–75 words.
+
+Bank version 6 adds delivery-level fidelity gates and an eight-item hard expansion for sparse archetypes. Across 20 deterministic 500-mock audits with a rolling five-session exclusion window, delivered questions produced **90.0–91.1% two-mark items**, **12.6–13.3% negative/exclusion stems**, **2.9–3.9% one-correct**, **56.8–58.6% two-correct**, **37.3–39.4% three-correct**, and **0.5–1.0% four-correct**. Every cycle delivered at least **30% reviewed-hard items**, and no bank item exposed a lone incorrect option through the audited absolute-word cues.
