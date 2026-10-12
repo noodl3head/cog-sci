@@ -4,23 +4,44 @@ import {
   deriveTopicWeights,
   generateDailyTelegramMock,
   msqCycleIndexForDate,
+  topicWeightsForDate,
+  XH_C5_COMPLETED_TOPIC_IDS,
   XH_C5_DAILY_MSQ_BANK_VERSION,
 } from '../lib/telegramMockGenerator.js';
+import { GATE_2027_TOPIC_IDS } from '../lib/gateSyllabus.js';
 import { msqTypesForCycle } from '../lib/xhC5MsqTypes.js';
 
 
-test('deriveTopicWeights includes only attempted chapters and weights weaker performance higher', () => {
+test('completed topic scope covers every official GATE 2027 XH5 syllabus section', () => {
+  assert.deepEqual(XH_C5_COMPLETED_TOPIC_IDS, GATE_2027_TOPIC_IDS);
+});
+
+test('daily topic scope rotates through every completed syllabus section', () => {
+  const weights = Object.fromEntries(GATE_2027_TOPIC_IDS.map((topic, index) => [topic, index + 1]));
+  const seen = new Set();
+  for (let day = 8; day <= 18; day += 1) {
+    const active = topicWeightsForDate(weights, `2026-10-${String(day).padStart(2, '0')}`);
+    assert.equal(Object.keys(active).length, 5);
+    for (const [topic, weight] of Object.entries(active)) {
+      seen.add(topic);
+      assert.equal(weight, weights[topic]);
+    }
+  }
+  assert.deepEqual([...seen].sort(), [...GATE_2027_TOPIC_IDS].sort());
+});
+
+test('deriveTopicWeights keeps the full completed syllabus eligible and weights weaker attempts higher', () => {
   const questions = [
-    { bookId: 'book', chapterId: 'weak-chapter', topics: ['memory'] },
-    { bookId: 'book', chapterId: 'strong-chapter', topics: ['learning'] },
-    { bookId: 'book', chapterId: 'untouched', topics: ['social'] },
+    { bookId: 'book', chapterId: 'weak-chapter', topics: ['research-methods-statistics'] },
+    { bookId: 'book', chapterId: 'strong-chapter', topics: ['social'] },
   ];
   const weights = deriveTopicWeights([
     { book_id: 'book', chapter_id: 'weak-chapter', attempted: 20, correct: 8 },
     { book_id: 'book', chapter_id: 'strong-chapter', attempted: 20, correct: 18 },
   ], questions);
-  assert.equal(weights.memory > weights.learning, true);
-  assert.equal(weights.social, undefined);
+  assert.deepEqual(Object.keys(weights).sort(), [...GATE_2027_TOPIC_IDS].sort());
+  assert.equal(weights['research-methods-statistics'] > weights.social, true);
+  assert.equal(weights.applications, 1);
 });
 
 test('deriveTopicWeights maps real chapter attempts through the playable question bank', () => {
@@ -32,7 +53,7 @@ test('deriveTopicWeights maps real chapter attempts through the playable questio
 });
 
 test('generateDailyTelegramMock builds ten fresh PYQ-profiled XH-C5 MSQs only', () => {
-  assert.equal(XH_C5_DAILY_MSQ_BANK_VERSION, 6);
+  assert.equal(XH_C5_DAILY_MSQ_BANK_VERSION, 7);
   const mock = generateDailyTelegramMock({
     'research-methods-statistics': 5,
     psychometrics: 5,
