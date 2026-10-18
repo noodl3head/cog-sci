@@ -142,3 +142,26 @@ test('daily selector emits only unique MSQs from eligible topics with matching a
   assert.equal(output.some((q) => q.id === 'two-a'), false);
   assert.equal(output.every((q) => q.answers.length >= 1 && q.answers.length <= 4), true);
 });
+
+test('daily selector prefers a fresh question over a recent question with a comparable profile', () => {
+  const repeatedExactProfile = {
+    id: 'recent-hard', type: 'MSQ', topic: 'memory', answers: ['A', 'B'], marks: 2,
+    msqType: 'category-membership', challengeLevel: 'gate-hard-v1',
+    question: 'Which statements are correct?',
+    options: { A: 'Alpha claim', B: 'Beta claim', C: 'Gamma claim', D: 'Delta claim' },
+  };
+  const freshImperfectProfile = {
+    id: 'fresh-standard', type: 'MSQ', topic: 'memory', answers: ['A', 'B'], marks: 2,
+    msqType: 'category-membership', challengeLevel: 'standard',
+    question: 'Which statements are correct?',
+    options: { A: 'Alpha claim', B: 'Beta claim', C: 'Gamma claim', D: 'Delta claim' },
+  };
+  const output = selectDailyXhC5Msqs({
+    candidates: [repeatedExactProfile, freshImperfectProfile],
+    topicWeights: { memory: 1 },
+    excludedIds: ['recent-hard'],
+    size: 1,
+    rng: () => 0.2,
+  });
+  assert.equal(output[0].id, 'fresh-standard');
+});
