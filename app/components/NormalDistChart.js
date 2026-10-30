@@ -1,30 +1,7 @@
-// Simulated exam population parameters
-export const ND_MU = 25;       // mean = 50% of 50 marks
-export const ND_SIGMA = 8;     // standard deviation
-export const ND_POP = 4500;    // simulated population
-
-// Abramowitz & Stegun approximation (max error 1.5×10⁻⁷)
-function erf(x) {
-  const sign = x < 0 ? -1 : 1;
-  const a = Math.abs(x);
-  const t = 1 / (1 + 0.3275911 * a);
-  const poly = ((((1.061405429 * t - 1.453152027) * t + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t;
-  return sign * (1 - poly * Math.exp(-a * a));
-}
-
-function normalCDF(x, mu, sigma) {
-  return (1 + erf((x - mu) / (sigma * Math.sqrt(2)))) / 2;
-}
+import { ND_MU, ND_POP, ND_SIGMA, scoreRank } from '../../lib/scoreRank';
 
 function pdf(x, mu, sigma) {
   return Math.exp(-0.5 * ((x - mu) / sigma) ** 2) / (sigma * Math.sqrt(2 * Math.PI));
-}
-
-// Returns { pct: 0-100, rank: 1-pop }
-export function scoreRank(score, mu = ND_MU, sigma = ND_SIGMA, total = 50, pop = ND_POP) {
-  const pct = normalCDF(Math.max(0, Math.min(total, score)), mu, sigma) * 100;
-  const rank = Math.max(1, Math.min(pop, Math.round((1 - pct / 100) * pop)));
-  return { pct, rank };
 }
 
 function tierColor(pct) {
@@ -35,10 +12,10 @@ function tierColor(pct) {
 
 export function NormalDistChart({
   score, label = 'You',
-  mu = ND_MU, sigma = ND_SIGMA, total = 50, pop = ND_POP,
+  mu = ND_MU, sigma = ND_SIGMA, total = 50, pop = ND_POP, topMark = null, basis = 'modelled',
 }) {
   const s = Math.max(0, Math.min(total, score));
-  const { pct, rank } = scoreRank(s, mu, sigma, total, pop);
+  const { pct, rank } = scoreRank(s, { mu, sigma, total, pop, topMark });
   const color = tierColor(pct);
 
   // SVG layout
@@ -81,7 +58,7 @@ export function NormalDistChart({
     <div className="nd-wrap">
       <div className="nd-header-row">
         <span className="nd-heading">Projected Score Distribution</span>
-        <span className="nd-sub">modelled cohort of {pop.toLocaleString()} · μ={mu} · σ={sigma}</span>
+        <span className="nd-sub">{basis} cohort of {pop.toLocaleString()} · μ={mu} · σ={sigma}</span>
       </div>
 
       <svg viewBox={`0 0 ${W} ${H}`} className="nd-svg">

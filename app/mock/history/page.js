@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { getMockHistory } from '../../../lib/clientStudyStore';
-import { scoreRank } from '../../components/NormalDistChart';
+import { scoreRank } from '../../../lib/scoreRank';
 
 function formatTime(seconds = 0) {
   const minutes = Math.floor(seconds / 60);

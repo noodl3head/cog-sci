@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { QUIZ_DATA } from '../../lib/quizData';
 import { buildQuestionIndex, getChapter, getChapterQuestionCount } from '../../lib/quizHelpers';
+import { getPyqRankProjection } from '../../lib/pyqRankProjection';
 import { NormalDistChart } from '../components/NormalDistChart';
 
 function computeStreak(activeDays) {
@@ -466,7 +467,16 @@ function PyqStats({ pyqData }) {
         </div>
       )}
 
-      <NormalDistChart score={Number(overall.avg_total)} label="Your Avg" total={100} mu={34.5} sigma={15} pop={4500} />
+      {perPaper.map((p) => (
+        <NormalDistChart
+          key={`projection-${p.paper_id}`}
+          score={Number(p.avg_total)}
+          label={`Your ${p.paper_id} avg`}
+          total={100}
+          basis="official XH-C5"
+          {...getPyqRankProjection(Number(p.paper_id))}
+        />
+      ))}
 
       <div>
         {recent.map((row, i) => {
