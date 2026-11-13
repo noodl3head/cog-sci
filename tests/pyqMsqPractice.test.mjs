@@ -1,31 +1,33 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getMsqPracticePaper, PYQ_PAPERS } from '../lib/pyqData.js';
+import { getMsqPracticeModules, getPaper, PYQ_PAPERS } from '../lib/pyqData.js';
 
-test('MSQ practice paper includes only MSQs from every PYQ and all three sections', () => {
-  const practice = getMsqPracticePaper();
-  const sourceMsqs = PYQ_PAPERS.flatMap((paper) =>
-    paper.questions.filter((question) => question.type === 'MSQ')
-  );
-
-  assert.equal(practice.id, 'msq-practice');
-  assert.equal(practice.isPractice, true);
-  assert.equal(practice.questions.length, sourceMsqs.length);
-  assert.equal(practice.questions.every((question) => question.type === 'MSQ'), true);
-  assert.deepEqual(
-    practice.sections.map((section) => section.code),
-    ['GA', 'XH-B1', 'XH-C5']
-  );
-  for (const question of practice.questions) {
-    assert.equal(question.section === 'GA' || question.section === 'XH-B1' || question.section === 'XH-C5', true);
+test('MSQs are divided into section-specific modules of at most 20 without omissions', () => {
+  const sections = getMsqPracticeModules();
+  assert.deepEqual(sections.map((section) => section.code), ['XH-B1', 'XH-C5']);
+  const source = PYQ_PAPERS.flatMap((paper) => paper.questions
+    .filter((question) => question.type === 'MSQ')
+    .map((question) => `${paper.year}:${question.num}`));
+  const modules = sections.flatMap((section) => section.modules);
+  for (const section of sections) {
+    const items = section.modules.flatMap((module) => module.questions);
+    assert.ok(section.modules.every((module) => module.questions.length > 0 && module.questions.length <= 20));
+    assert.ok(section.modules.slice(0, -1).every((module) => module.questions.length === 20));
+    assert.ok(items.every((question) => question.section === section.code && question.type === 'MSQ'));
+    assert.deepEqual(section.modules.map((module) => module.number), section.modules.map((_, i) => i + 1));
   }
-  assert.deepEqual(
-    [...new Set(practice.questions.map((question) => question.sourceYear))].sort(),
-    PYQ_PAPERS.map((paper) => paper.year).sort()
-  );
-  assert.equal(new Set(practice.questions.map((question) => question.num)).size, practice.questions.length);
-  assert.equal(
-    practice.totalMarks,
-    sourceMsqs.reduce((total, question) => total + question.marks, 0)
-  );
+  const collected = modules.flatMap((module) => module.questions.map((q) => `${q.sourceYear}:${q.sourceQuestionNum}`));
+  assert.equal(new Set(collected).size, source.length);
+  assert.deepEqual(collected.sort(), source.sort());
+  for (const module of modules) {
+    const paper = getPaper(module.id);
+    assert.ok(paper?.isPractice);
+    assert.deepEqual(paper.sections.map((section) => section.code), [module.section]);
+    assert.deepEqual(paper.questions, module.questions);
+    assert.equal(new Set(paper.questions.map((question) => question.num)).size, paper.questions.length);
+    assert.equal(paper.totalMarks, paper.questions.reduce((sum, question) => sum + question.marks, 0));
+  }
+  assert.equal(getPaper('msq'), null);
+  assert.equal(getPaper('msq-xh-b1-0'), null);
+  assert.equal(getPaper('msq-xh-c5-999'), null);
 });

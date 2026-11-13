@@ -205,7 +205,7 @@ export default function PyqPage() {
       <h1>GATE <span className="accent">Psych</span> Quizzer</h1>
       <div className="nav-links">
         <span className="mock-timer-chip"><span className="mock-timer-icon">⏱</span>{formatTime(timeElapsed)}</span>
-        <Link href="/pyq" className="btn-link">← Papers</Link>
+        <Link href={paper.isPractice ? '/pyq/msq' : '/pyq'} className="btn-link">← {paper.isPractice ? 'MSQ modules' : 'Papers'}</Link>
       </div>
     </div>
   );
@@ -446,7 +446,7 @@ export default function PyqPage() {
 
             <div className="summary-actions">
               <button className="btn" onClick={() => { setReviewIndex(0); setPhase('review'); }}>View Answer Key</button>
-              <Link href="/pyq" className="btn btn-secondary">Back to Papers</Link>
+              <Link href={paper.isPractice ? '/pyq/msq' : '/pyq'} className="btn btn-secondary">{paper.isPractice ? 'Back to MSQ Modules' : 'Back to Papers'}</Link>
             </div>
           </div>
         </div>

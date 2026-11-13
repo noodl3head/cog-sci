@@ -45,9 +45,9 @@ export default function PyqListPage() {
           <div className="mock-card pyq-card">
             <div className="mock-card-num">PYQ MSQ Practice</div>
             <div className="mock-card-empty">
-              <span className="mock-card-empty-text">MSQ-only practice · all available PYQs · GA has no MSQs in the loaded papers</span>
+              <span className="mock-card-empty-text">Choose XH-B1 or XH-C5 · practice in modules of up to 20 questions</span>
             </div>
-            <Link href="/pyq/msq" className="btn mock-start-btn">Start MSQ-only practice</Link>
+            <Link href="/pyq/msq" className="btn mock-start-btn">Browse MSQ modules</Link>
           </div>
           {PYQ_PAPERS.map((p) => {
             const stat = stats[p.id];

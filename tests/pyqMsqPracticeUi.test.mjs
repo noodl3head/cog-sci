@@ -5,10 +5,19 @@ import { readFile } from 'node:fs/promises';
 const listSource = await readFile(new URL('../app/pyq/page.js', import.meta.url), 'utf8');
 const runnerSource = await readFile(new URL('../app/pyq/[id]/page.js', import.meta.url), 'utf8');
 
-test('PYQ list exposes the MSQ-only practice route', () => {
+test('PYQ list links to the MSQ module navigator', () => {
   assert.match(listSource, /href="\/pyq\/msq"/);
-  assert.match(listSource, /MSQ-only practice/);
-  assert.match(listSource, /GA has no MSQs in the loaded papers/);
+  assert.match(listSource, /Browse MSQ modules/);
+});
+
+test('MSQ navigator has section tabs and individual module links', async () => {
+  const source = await readFile(new URL('../app/pyq/msq/page.js', import.meta.url), 'utf8');
+  assert.match(source, /getMsqPracticeModules/);
+  assert.match(source, /role="tablist"/);
+  assert.match(source, /role="tab"/);
+  assert.match(source, /\/pyq\/\$\{module\.id\}/);
+  assert.match(source, /module\.questions\.length/);
+  assert.match(runnerSource, /paper\.isPractice \? '\/pyq\/msq' : '\/pyq'/);
 });
 
 test('MSQ practice attempts remain separate from full-paper result history', () => {

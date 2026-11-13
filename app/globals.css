@@ -3014,3 +3014,30 @@ html[data-theme="dark"] .fc-term{ color:var(--text-bright); }
   .web-msq-reasoning{ min-height:108px; font-size:16px; }
   .web-msq-review-answer-grid{ grid-template-columns:1fr; gap:4px; }
 }
+
+/* PYQ MSQ section and module navigation */
+.msq-module-heading{ margin-bottom:26px; }
+.msq-module-heading .btn-link{ display:inline-block; margin-bottom:20px; }
+.msq-module-heading h2{ margin:0 0 6px; color:var(--text-bright); font-size:clamp(26px,3vw,36px); font-weight:600; letter-spacing:-.03em; }
+.msq-module-heading p,.msq-module-note{ margin:0; color:var(--text-muted); font-size:13px; }
+.msq-section-tabs{ display:flex; border-bottom:1px solid var(--divider); gap:28px; }
+.msq-section-tabs button{ display:flex; flex-direction:column; align-items:flex-start; gap:5px; min-width:170px; padding:12px 0; border:0; border-bottom:2px solid transparent; margin-bottom:-1px; background:transparent; color:var(--text-muted); cursor:pointer; text-align:left; font:700 14px var(--font-body); }
+.msq-section-tabs button.selected{ border-bottom-color:var(--text-bright); color:var(--text-bright); }
+.msq-section-tabs button:hover{ color:var(--text-bright); }
+.msq-section-tabs button:focus-visible,.msq-module-row:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; }
+.msq-section-tabs small{ font:400 11px var(--font-mono); color:var(--text-faint); }
+.msq-module-summary{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:30px 0 12px; }
+.msq-module-summary h3{ margin:0; color:var(--text-bright); font-size:16px; }
+.msq-module-summary span,.msq-module-count,.msq-module-index{ color:var(--text-muted); font:12px var(--font-mono); }
+.msq-module-list{ border-top:1px solid var(--divider); }
+.msq-module-row{ display:flex; align-items:center; gap:18px; padding:15px 8px; border-bottom:1px solid var(--divider); color:var(--text-normal); text-decoration:none; }
+.msq-module-row:hover{ background:var(--bg-modifier-hover); }
+.msq-module-index{ width:30px; flex:none; }
+.msq-module-title{ flex:1; font-size:14px; font-weight:600; }
+.msq-module-count{ min-width:95px; }
+.msq-module-note{ margin-top:18px; }
+@media (max-width:560px){
+  .msq-section-tabs{ gap:15px; }
+  .msq-section-tabs button{ min-width:0; width:50%; }
+  .msq-module-summary{ flex-wrap:wrap; }
+}
